@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-confidentiality 
 InstanceOf: NamingSystem
+Title: "Core NamingSystem nsi-confidentiality (Уровень конфиденциалбьности медицинского документа)"
 Usage: #definition
 
 * name =   "core-ns-nsi-confidentiality"
