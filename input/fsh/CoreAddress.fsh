@@ -27,6 +27,8 @@ Description: "Адрес"
 
 Instance:   core-address-instance-full
 InstanceOf: Core_Address
+Title: "Core Instance Address Full"
+Description: "Полное заполнение адреса, но иды одинаковые"
 Usage: #inline
 
 * use = #home

@@ -54,6 +54,8 @@ Description: "Источник финансирования"
 //----------instance-full-------------------------------
 Instance: core-coverage-instance-full
 InstanceOf: Core_Coverage
+Title: "Core Instance Coverage Full"
+Description: "Полное заполнение страховки, полис ОМС, но плательщиком указано физ лицо"
 Usage: #example
 
 * type = $МЗРФ_Справочник_ИсточникиОплаты#1

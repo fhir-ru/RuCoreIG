@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-coverage-document
 InstanceOf: NamingSystem
+Title: "Core NamingSystem NSI coverage document (Типы документов оснований)"
 Usage: #definition
 
 * name =   "core-ns-nsi-coverage-document"

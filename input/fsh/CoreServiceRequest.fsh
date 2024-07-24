@@ -12,6 +12,8 @@ Description: "Заказ услуги"
 
 Instance:   core-servicerequest-instance-full
 InstanceOf: Core_ServiceRequest
+Title: "Core Instance Service Request Full"
+Description: "запрос услуги (неполный! - непонятно что заказано)"
 Usage: #example
 
 * status = #active

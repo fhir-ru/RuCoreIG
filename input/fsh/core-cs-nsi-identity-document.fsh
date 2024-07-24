@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-identity-document
 InstanceOf: NamingSystem
+Title: "Core NamingSystem NSI identity document (Документы удостоверяющие личность)"
 Usage: #definition
 
 * name =   "core-ns-nsi-identity-document"

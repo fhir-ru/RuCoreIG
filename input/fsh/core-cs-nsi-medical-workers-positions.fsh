@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-medical-workers-positions
 InstanceOf: NamingSystem
+Title: "Core NamingSystem NSI medical workers position (Должности мед и фарм работников)"
 Usage: #definition
 
 * name =   "core-ns-nsi-medical-workers-positions"

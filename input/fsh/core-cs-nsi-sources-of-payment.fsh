@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-sources-of-payment
 InstanceOf: NamingSystem
+Title: "Core NamingSystem NSI sources of payment (Источники оплаты)"
 Usage: #definition
 
 * name =   "core-ns-nsi-sources-of-payment"

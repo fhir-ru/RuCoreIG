@@ -1,5 +1,6 @@
 Instance:   core-ns-rf-birth-certificate
 InstanceOf: NamingSystem
+Title: "Core NamingSystem RF Birth Certificate (Номер гос свидетельства о рождении)"
 Usage: #definition
 
 * name =   "Core_Ns_Rf_Birth_Certificate"

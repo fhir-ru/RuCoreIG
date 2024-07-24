@@ -9,6 +9,8 @@ Description: "Пациент – плательщик, передача ИНН �
 //----------instance-full-------------------------------
 Instance: core-patient-payer-instance-full 
 InstanceOf: Core_Patient_Payer
+Title: "Core Instance Patient Payer Full"
+Description: "Пациент с ИНН"
 Usage: #example
 
 * address = core-address-instance-full

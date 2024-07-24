@@ -1,5 +1,6 @@
 Instance:   core-ns-rf-inn
 InstanceOf: NamingSystem
+Title: "Core NamingSystem RF INN (ИНН)"
 Usage: #definition
 
 * name =   "Core_Ns_Rf_INN"

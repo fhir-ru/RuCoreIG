@@ -14,6 +14,8 @@ Description: "Лицо-плательщик, имеющее связь с пац
 //----------instance-full-------------------------------
 Instance: core-related-person-payer-instance-full
 InstanceOf: Core_Related_Person_Payer
+Title: "Core Instance Related Person Payer Full"
+Description: "Физлицо с ФИО адресом ссылкой на пациента и ИНН"
 Usage: #example
 * patient = Reference(core-patient-instance-full)
 

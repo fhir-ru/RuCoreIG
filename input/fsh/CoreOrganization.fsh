@@ -52,6 +52,8 @@ Description: "Организация"
 //----------instance-full-------------------------------
 Instance: core-organization-instance-full
 InstanceOf: Core_Organization
+Title: "Core Instance Organization Full"
+Description: "Психиатрическая больница им.Кащенко с адресом и идентификаторами ФРМР, ИНН, ОГРН"
 Usage: #example
 * name = "САНКТ-ПЕТЕРБУРГСКОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ ЗДРАВООХРАНЕНИЯ 'ПСИХИАТРИЧЕСКАЯ БОЛЬНИЦА № 1 ИМ. П.П.КАЩЕНКО'"
 * address

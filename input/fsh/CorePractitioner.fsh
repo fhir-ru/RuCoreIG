@@ -46,6 +46,8 @@ Description: "Врач, медицинский работник, специал�
 //----------instance-full-------------------------------
 Instance: core-practitioner-instance-full
 InstanceOf: Core_Practitioner
+Title: "Core Instance Practitioner Full"
+Description: "Врач с паспортом, ИНН, СНИЛСом и адресом"
 Usage: #example
 
 * identifier[INN]

@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-register-of-medical-organizations
 InstanceOf: NamingSystem
+Title: "Core NamingSystem NSI register of med organizations (Реестр медицинских организаций)"
 Usage: #definition
 
 * name =   "core-ns-nsi-register_of_medical_organizations"

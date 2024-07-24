@@ -1,5 +1,6 @@
 Instance:   core-ns-nsi-types-medical-documentation
 InstanceOf: NamingSystem
+Title: "Core NamingSystem NSI types of med documentation (Виды мед документации)"
 Usage: #definition
 
 * name =   "core-ns-nsi-types-medical-documentation"

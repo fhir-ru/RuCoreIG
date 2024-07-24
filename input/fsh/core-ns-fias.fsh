@@ -1,5 +1,6 @@
 Instance:   core-ns-fias-aoguid
 InstanceOf: NamingSystem
+Title: "Core NamingSystem FIAS aoguid (ид адресного объекта по ФИАС)"
 Usage: #definition
 
 * name =   "Core_Ns_Fias_Aoguid"
@@ -21,6 +22,7 @@ Usage: #definition
 
 Instance:   core-ns-fias-houseguid
 InstanceOf: NamingSystem
+Title: "Core NamingSystem FIAS houseguid (ид дома по ФИАС)"
 Usage: #definition
 
 * name =   "Core_Ns_Fias_Houseguid"

@@ -13,6 +13,8 @@ Description: " Измерения и простые утверждения о п
 //----------instance-full-------------------------------
 Instance: core-observation-instance-full
 InstanceOf: Core_Observation
+Title: "Core Instance Observation Full"
+Description: "Объем альбумина для трансфузии"
 Usage: #example
 * subject = Reference(core-patient-instance-full)
 

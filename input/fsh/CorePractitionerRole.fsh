@@ -19,6 +19,8 @@ Description: " Роль (должность) врача, медицинског�
 //--------------------------------------
 Instance: core-practitioner-role-instance-full
 InstanceOf: Core_Practitioner_Role
+Title: "Core Instance practitioner Role Full"
+Description: "Врач с должностью и организацией"
 Usage: #example
 * practitioner = Reference(core-practitioner-instance-full)
 

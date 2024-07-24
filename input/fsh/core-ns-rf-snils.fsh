@@ -1,5 +1,6 @@
 Instance:   core-ns-rf-snils
 InstanceOf: NamingSystem
+Title: "Core NamingSystem RF SNILS (СНИЛС)"
 Usage: #definition
 
 * name =   "Core_Ns_Rf_SNILS"

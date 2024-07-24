@@ -66,6 +66,8 @@ Description: "Пациент"
 //----------instance-full-------------------------------
 Instance:   core-patient-instance-full
 InstanceOf: Core_Patient
+Title: "Core Instance Patient Full"
+Description: "Пациент с паспортом, свидетельством о рождении, ИНН, СНИЛСом и парой телефонов"
 Usage: #example
 
 * address = core-address-instance-full

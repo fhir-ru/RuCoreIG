@@ -11,6 +11,8 @@ Description: "Лицо, имеющее связь с пациентом"
 //----------instance-full-------------------------------
 Instance: core-related-person-instance-full
 InstanceOf: Core_Related_Person
+Title: "Core Instance Related Person Full"
+Description: "Физлицо с ФИО, адресом и ссылкой на пациента"
 Usage: #example
 
 * patient = Reference(core-patient-instance-full)
