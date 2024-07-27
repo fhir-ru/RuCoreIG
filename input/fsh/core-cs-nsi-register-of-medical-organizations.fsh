@@ -3,7 +3,7 @@ InstanceOf: NamingSystem
 Title: "Core NamingSystem NSI register of med organizations (Реестр медицинских организаций)"
 Usage: #definition
 
-* name =   "core-ns-nsi-register_of_medical_organizations"
+* name =   "Core_Ns_Nsi_Register_Of_Medical_Organizations"
 
 * status = #active
 
@@ -11,7 +11,7 @@ Usage: #definition
 
 * date = "2023-12-01"
 
-* description = " Справочник НСИ Минздрава <Реестр медицинских организаций Российской Федерации>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1461, Дополнительный OID:???, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-ns-nsi-register_of_ medical_organizations"
+* description = "Справочник НСИ Минздрава <Реестр медицинских организаций Российской Федерации>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1461, Дополнительный OID:???, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-ns-nsi-register_of_ medical_organizations"
 
 * uniqueId[0]
   * type = #oid

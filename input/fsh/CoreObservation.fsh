@@ -2,7 +2,7 @@ Profile: Core_Observation
 Id:      core-observation
 Parent:       Observation
 Title: "Core Observation (Измерения и простые утверждения о пациенте)"
-Description: " Измерения и простые утверждения о пациенте, устройстве или других объектах"
+Description: "Измерения и простые утверждения о пациенте, устройстве или других объектах"
 
 * subject only Reference(Core_Patient)
 
@@ -23,6 +23,8 @@ Usage: #example
 * performer = Reference(core-practitioner-instance-full)
 
 * status = #final
+
+* effective = "2024-07-27"
 
 * code
   * coding.system = "http://loinc.org"

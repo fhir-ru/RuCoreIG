@@ -3,7 +3,7 @@ InstanceOf: NamingSystem
 Title: "Core NamingSystem NSI confidentiality (Уровень конфиденциальности медицинского документа)"
 Usage: #definition
 
-* name =   "core-ns-nsi-confidentiality"
+* name =   "Core_Ns_Nsi_Confidentiality"
 
 * status = #active
 

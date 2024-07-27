@@ -3,7 +3,7 @@ InstanceOf: NamingSystem
 Title: "Core NamingSystem NSI coverage document (Типы документов оснований)"
 Usage: #definition
 
-* name =   "core-ns-nsi-coverage-document"
+* name =   "Core_Ns_Nsi_Coverage_Document"
  
 * status = #active
 
@@ -11,7 +11,7 @@ Usage: #definition
 
 * date = "2024-01-01"
 
-* description = " Справочник НСИ Минздрава <Типы документов оснований>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.724, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-cs-nsi-coverage-document "
+* description = "Справочник НСИ Минздрава <Типы документов оснований>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.724, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-cs-nsi-coverage-document "
 
 * uniqueId[0]
   * type = #oid

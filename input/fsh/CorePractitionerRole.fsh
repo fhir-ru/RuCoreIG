@@ -2,7 +2,7 @@ Profile: Core_Practitioner_Role
 Id:      core-practitioner-role
 Parent:       PractitionerRole
 Title: "Core PractitionerRole (Роль/должность сотрудника)"
-Description: " Роль (должность) врача, медицинского работника, специалиста"
+Description: "Роль (должность) врача, медицинского работника, специалиста"
 
 * practitioner only Reference(Core_Practitioner)
 

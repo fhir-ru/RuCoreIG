@@ -3,7 +3,7 @@ InstanceOf: NamingSystem
 Title: "Core NamingSystem NSI sources of payment (Источники оплаты)"
 Usage: #definition
 
-* name =   "core-ns-nsi-sources-of-payment"
+* name =   "Core_Ns_Nsi_Sources_Of_Payment"
 
 * status = #active
 
@@ -11,7 +11,7 @@ Usage: #definition
 
 * date = "2024-01-01"
 
-* description = " Справочник НСИ Минздрава <Источники оплаты медицинской помощи>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1039, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-cs-nsi-sources-of-payment"
+* description = "Справочник НСИ Минздрава <Источники оплаты медицинской помощи>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1039, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-cs-nsi-sources-of-payment"
 
 * uniqueId[0]
   * type = #oid

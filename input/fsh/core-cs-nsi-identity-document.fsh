@@ -3,7 +3,7 @@ InstanceOf: NamingSystem
 Title: "Core NamingSystem NSI identity document (Документы удостоверяющие личность)"
 Usage: #definition
 
-* name =   "core-ns-nsi-identity-document"
+* name =   "Core_Ns_Nsi_Identity_Document"
 
 * status = #active
 
@@ -11,7 +11,7 @@ Usage: #definition
 
 * date = "2023-10-23"
 
-* description = " Справочник НСИ Минздрава <Документы, удостоверяющие личность>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.48, Дополнительный OID: 1.2.643.5.1.13.13.11.1011, 1.2.643.5.1.13.2.1.1.736, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-cs-nsi-identity-document "
+* description = "Справочник НСИ Минздрава <Документы, удостоверяющие личность>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.48, Дополнительный OID: 1.2.643.5.1.13.13.11.1011, 1.2.643.5.1.13.2.1.1.736, предпочтительно URI: http://fhir.ru/core/CodeSystem/core-cs-nsi-identity-document "
 
 * uniqueId[0]
   * type = #oid
