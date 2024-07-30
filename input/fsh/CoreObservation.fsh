@@ -24,7 +24,7 @@ Usage: #example
 
 * status = #final
 
-* effective = "2024-07-27"
+* effectiveDateTime = "2024-07-27"
 
 * code
   * coding.system = "http://loinc.org"
