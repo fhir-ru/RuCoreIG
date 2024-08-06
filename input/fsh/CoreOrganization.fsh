@@ -30,8 +30,8 @@ Description: "Организация"
   * system = "http://fhir.ru/core/systems/inn" 
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по Fixed value: http://terminology.hl7.org/CodeSystem/v2-0203" 
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
-//  * type = #TAX
+//  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
+  * type = #TAX
 //  * type from http://terminology.hl7.org/CodeSystem/v2-0203
 
 * identifier[FRMO] ^short = "Федеральный реестр медицинских органзаций МЗ РФ (ФРМО)"
@@ -79,8 +79,8 @@ Usage: #example
 * identifier[INN]
   * system = "http://fhir.ru/core/systems/inn"
   * value = "4719008550"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
-//  * type = #TAX
+//  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
+  * type = #TAX
 * identifier[FRMO]
   * system = "http://fhir.ru/core/systems/frmo"
   * value = "1.2.643.5.1.13.13.12.2.78.8575"
