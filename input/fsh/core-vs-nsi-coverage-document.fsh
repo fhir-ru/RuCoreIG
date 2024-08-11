@@ -7,4 +7,4 @@ Description: "документы-основания для оплаты меди
 * ^experimental = false
 
 //* include codes from system $МЗРФ_Справочник_ДокументыОснованияОплаты
-* include system Core_Cs_Nsi_Coverage_Document
+* include codes from system Core_Cs_Nsi_Coverage_Document
