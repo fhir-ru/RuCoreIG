@@ -19,7 +19,7 @@ Usage: #definition
   * comment = "Основной"
 
 
-Alias: $МЗРФ_Справочник_РеестрМедицинскихОрганизаций = Core_Cs_Nsi_Register_Of_Medical_Organizations
+//Alias: $МЗРФ_Справочник_РеестрМедицинскихОрганизаций = Core_Cs_Nsi_Register_Of_Medical_Organizations
 CodeSystem: Core_Cs_Nsi_Register_Of_Medical_Organizations
 Id:         core-cs-nsi-register-of-medical-organizations
 Title: "Core CodeSystem NSI register of medical organizations (Реестр медицинских организаций)"

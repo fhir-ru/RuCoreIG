@@ -22,7 +22,8 @@ Description: "Адрес"
 
 * period ^short = "Период времени, когда адрес был/является действительным"
 
-* extension contains $Ядро_Расширение_КодыФИАС named fias 0..1 MS
+//* extension contains $Ядро_Расширение_КодыФИАС named fias 0..1 MS
+* extension contains Core_Ex_Address_Fias named fias 0..1 MS
 
 
 Instance:   core-address-instance-full

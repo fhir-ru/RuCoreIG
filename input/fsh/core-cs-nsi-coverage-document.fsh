@@ -28,7 +28,7 @@ Usage: #definition
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.724/passport/1.1"
 
 
-Alias: $МЗРФ_Справочник_ДокументыОснованияОплаты = Core_Cs_Nsi_Coverage_Document
+//Alias: $МЗРФ_Справочник_ДокументыОснованияОплаты = Core_Cs_Nsi_Coverage_Document
 CodeSystem: Core_Cs_Nsi_Coverage_Document
 Id:         core-cs-nsi-coverage-document
 Title: "Core CodeSystem NSI coverage document (Документы-основания для оплаты медицинских услуг)"

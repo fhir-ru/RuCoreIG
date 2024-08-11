@@ -1,4 +1,4 @@
-Alias: $Ядро_Расширение_КодыФИАС = Core_Ex_Address_Fias
+//Alias: $Ядро_Расширение_КодыФИАС = Core_Ex_Address_Fias
 Extension: Core_Ex_Address_Fias
 Id:        core-ex-address-fias
 Title: "Core Extension address fias (Кодирование адреса по ФИАС)"

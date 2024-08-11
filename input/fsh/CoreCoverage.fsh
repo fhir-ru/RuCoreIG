@@ -29,8 +29,10 @@ Description: "Источник финансирования"
   * system = "http://fhir.ru/core/systems/OMS"
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по НСИ"
-  * type from $Ядро_НаборЗначений_ДокументыОснованияОплаты (required)
-  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#1
+//  * type from $Ядро_НаборЗначений_ДокументыОснованияОплаты (required)
+  * type from Core_Vs_Nsi_Coverage_Document (required)
+//  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#1
+  * type = Core_Cs_Nsi_Coverage_Document#1
 // второй слой слайсинга по типам полиса ОМС = старые, новые, электронные
 
 * identifier[DMS] ^short = "Полис ДМС - добровольного медицинского страхования"
@@ -39,8 +41,10 @@ Description: "Источник финансирования"
   * system = "http://fhir.ru/core/systems/DMS"
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по НСИ"
-  * type from $Ядро_НаборЗначений_ДокументыОснованияОплаты (required)
-  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#2
+//  * type from $Ядро_НаборЗначений_ДокументыОснованияОплаты (required)
+  * type from Core_Vs_Nsi_Coverage_Document (required)
+//  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#2
+  * type = Core_Cs_Nsi_Coverage_Document#2
 
 * identifier[Contract] ^short = "Договор на оказание платных медицинских услугя"
   * value only string
@@ -48,9 +52,11 @@ Description: "Источник финансирования"
   * system = "http://fhir.ru/core/systems/Contract"
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по НСИ"
-  * type from $Ядро_НаборЗначений_ДокументыОснованияОплаты (required)
-  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#3
-  
+//  * type from $Ядро_НаборЗначений_ДокументыОснованияОплаты (required)
+  * type from Core_Vs_Nsi_Coverage_Document (required)
+//  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#3
+  * type = Core_Cs_Nsi_Coverage_Document#3
+
 //----------instance-full-------------------------------
 Instance: core-coverage-instance-full
 InstanceOf: Core_Coverage
@@ -58,7 +64,8 @@ Title: "Core Instance Coverage Full"
 Description: "Полное заполнение страховки, полис ОМС, но плательщиком указано физ лицо"
 Usage: #example
 
-* type = $МЗРФ_Справочник_ИсточникиОплаты#1
+//* type = $МЗРФ_Справочник_ИсточникиОплаты#1
+* type = Core_Cs_Nsi_Sources_Of_Payment#1
 
 * payor = Reference(core-patient-payer-instance-full)
 
@@ -67,7 +74,7 @@ Usage: #example
 * identifier[OMS]
   * system = "http://fhir.ru/core/systems/OMS"
   * value = "1234567898765432"
-  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#1
-
+//  * type = $МЗРФ_Справочник_ДокументыОснованияОплаты#1
+  * type = Core_Cs_Nsi_Coverage_Document#1
 * status = #active
  

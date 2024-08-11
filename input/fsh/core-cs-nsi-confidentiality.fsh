@@ -28,7 +28,7 @@ Usage: #definition
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.285/passport/1.2"
 
 
-Alias: $МЗРФ_Справочник_УровеньКонфиденциальностиМедицинскогоДокумента = Core_Cs_Nsi_Confidentiality
+//Alias: $МЗРФ_Справочник_УровеньКонфиденциальностиМедицинскогоДокумента = Core_Cs_Nsi_Confidentiality
 CodeSystem: Core_Cs_Nsi_Confidentiality
 Id:         core-cs-nsi-confidentiality
 Title: "Core CodeSystem NSI Confidentiality (Уровень конфиденциальности медицинского документа)"

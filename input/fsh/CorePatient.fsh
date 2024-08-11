@@ -23,9 +23,10 @@ Description: "Пациент"
   * system = "http://fhir.ru/core/systems/birth-certificate"
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по НСИ"
-  * type from $Ядро_НаборЗначений_ДокументыУдостоверяющиеЛичность (required)
-  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#6
-  
+//  * type from $Ядро_НаборЗначений_ДокументыУдостоверяющиеЛичность (required)
+  * type from Core_Vs_Nsi_Identity_Documents (required)
+//  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#6
+  * type = Core_Cs_Nsi_Identity_Document#6 
 
 * identifier[INN] ^short = "Государственный идентификационный номер налогоплательщика (ИНН)"
   * value only string
@@ -42,8 +43,10 @@ Description: "Пациент"
   * system = "http://fhir.ru/core/systems/passport-RF"
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по НСИ"
-  * type from $Ядро_НаборЗначений_ДокументыУдостоверяющиеЛичность (required)
-  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#1
+//  * type from $Ядро_НаборЗначений_ДокументыУдостоверяющиеЛичность (required)
+  * type from Core_Vs_Nsi_Identity_Documents (required)
+//  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#1
+  * type = Core_Cs_Nsi_Identity_Document#1
 
 * identifier[SNILS] ^short = "Страховой номер индивидуального лицевого счёта, СНИЛС — уникальный номер индивидуального лицевого счёта застрахованного лица в системе обязательного пенсионного страхования"
   * value only string
@@ -77,7 +80,8 @@ Usage: #example
 * identifier[birthCertificate]
   * system = "http://fhir.ru/core/systems/birth-certificate"
   * value = "IIЮБ-123456"
-  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#6  
+  //* type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#6  
+  * type = Core_Cs_Nsi_Identity_Document#6
   
 * identifier[INN]
   * system = "http://fhir.ru/core/systems/inn"
@@ -87,7 +91,8 @@ Usage: #example
 * identifier[passportRF]
   * system = "http://fhir.ru/core/systems/passport-RF"
   * value = "7412 809982"
-  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#1
+  //* type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#1
+  * type = Core_Cs_Nsi_Identity_Document#1
   
 * identifier[SNILS]
   * system = "http://fhir.ru/core/systems/snils"

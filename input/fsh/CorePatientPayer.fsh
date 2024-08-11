@@ -20,7 +20,8 @@ Usage: #example
 * identifier[passportRF]
   * system = "http://fhir.ru/core/systems/passport-RF"
   * value = "7412 809982"
-  * type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#1
+  //* type = $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность#1
+  * type = Core_Cs_Nsi_Identity_Document#1
  
 * identifier[INN]
   * system = "http://fhir.ru/core/systems/inn"

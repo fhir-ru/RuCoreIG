@@ -27,7 +27,7 @@ Usage: #definition
   * type = #uri
   * value = "https://nsi.egisz.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039/passport/5.2"
   
-Alias: $МЗРФ_Справочник_ИсточникиОплаты = Core_Cs_Nsi_Sources_Of_Payment
+//Alias: $МЗРФ_Справочник_ИсточникиОплаты = Core_Cs_Nsi_Sources_Of_Payment
 CodeSystem: Core_Cs_Nsi_Sources_Of_Payment
 Id:         core-cs-nsi-sources-of-payment
 Title: "Core CodeSystem NSI sources of payment (Источники оплаты медицинской помощи)"

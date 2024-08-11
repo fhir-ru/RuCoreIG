@@ -28,7 +28,7 @@ Usage: #definition
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1002/passport/9.5"
 
 
-Alias: $МЗРФ_Справочник_ДолжностиМедицинскихРаботников = Core_Cs_Nsi_Medical_Workers_Positions
+//Alias: $МЗРФ_Справочник_ДолжностиМедицинскихРаботников = Core_Cs_Nsi_Medical_Workers_Positions
 CodeSystem: Core_Cs_Nsi_Medical_Workers_Positions
 Id:         core-cs-nsi-medical-workers-positions
 Title: "Core CodeSystem NSI medical workers positions (Должности медицинских работников)"

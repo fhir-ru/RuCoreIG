@@ -38,7 +38,7 @@ Usage: #definition
   * value = "http://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.48"
 
 
-Alias: $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность = Core_Cs_Nsi_Identity_Document
+//Alias: $МЗРФ_Справочник_ДокументыУдостоверяющиеЛичность = Core_Cs_Nsi_Identity_Document
 CodeSystem: Core_Cs_Nsi_Identity_Document
 Id:         core-cs-nsi-identity-document
 Title: "Core CodeSystem NSI Identity Documents (Документы удостоверяющие личность)"

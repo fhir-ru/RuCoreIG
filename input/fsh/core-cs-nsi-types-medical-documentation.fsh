@@ -29,7 +29,7 @@ Usage: #definition
 
 
 
-Alias: $МЗРФ_Справочник_ВидыМедицинскойДокументации = Core_Cs_Nsi_Types_Medical_Documentation
+//Alias: $МЗРФ_Справочник_ВидыМедицинскойДокументации = Core_Cs_Nsi_Types_Medical_Documentation
 CodeSystem: Core_Cs_Nsi_Types_Medical_Documentation
 Id:         core-cs-nsi-types-medical-documentation
 Title: "Core CodeSystem NSI types of medical documentation (Виды медицинской документации)"
