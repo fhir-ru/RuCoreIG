@@ -33,7 +33,7 @@ Usage: #example
 * identifier[INN]
   * system = "http://fhir.ru/core/systems/inn"
   * value = "7806605614"
-  * type = #TAX
+ // * type = #TAX
 
 * identifier[OGRN]
   * system = "http://fhir.ru/core/systems/ogrn"
