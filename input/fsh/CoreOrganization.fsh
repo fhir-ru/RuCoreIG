@@ -80,7 +80,7 @@ Usage: #example
   * system = "http://fhir.ru/core/systems/inn"
   * value = "4719008550"
 //  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
-  * type = #TAX
+//  * type = #TAX
 * identifier[FRMO]
   * system = "http://fhir.ru/core/systems/frmo"
   * value = "1.2.643.5.1.13.13.12.2.78.8575"
