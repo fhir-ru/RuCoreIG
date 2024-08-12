@@ -31,7 +31,7 @@ Usage: #example
 
 * identifier
   * system = "http://fhir.ru/core/systems/inn"
-  * type = #TAX
+  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * value = "463217055385" 
 
 * gender = #male   
