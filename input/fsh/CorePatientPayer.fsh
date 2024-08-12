@@ -25,7 +25,7 @@ Usage: #example
  
 * identifier[INN]
   * system = "http://fhir.ru/core/systems/inn"
-  * type = #TAX
+//  * type = #TAX
   * value = "463217055385"
 
 * name

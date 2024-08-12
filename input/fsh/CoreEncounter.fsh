@@ -13,5 +13,5 @@ Title: "Core Instance Encounter Full"
 Description: "Случай обслуживания госпитализация - надо дополнять"
 Usage: #example
 * status = #in-progress
-* class = #IMP
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
 

@@ -34,7 +34,7 @@ Description: "Пациент"
   * system = "http://fhir.ru/core/systems/inn" 
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по Fixed value: http://terminology.hl7.org/CodeSystem/v2-0203" 
-  * type = #TAX
+  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
 //  * type from http://terminology.hl7.org/CodeSystem/v2-0203
 
 * identifier[passportRF] ^short = "Паспорт гражданина Российской Федерации"
@@ -54,7 +54,7 @@ Description: "Пациент"
   * system = "http://fhir.ru/core/systems/snils"
   * type 1..1
   * type ^short = "Тип идентификатора, кодируется по Fixed value: http://terminology.hl7.org/CodeSystem/v2-0203" 
-  * type = #SB
+  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
 //  * type from http://terminology.hl7.org/CodeSystem/v2-0203
   
 * name ^short = "ФИО пациента"
@@ -86,7 +86,7 @@ Usage: #example
 * identifier[INN]
   * system = "http://fhir.ru/core/systems/inn"
   * value = "463217055385"
-  * type = #TAX
+//  * type = #TAX
   
 * identifier[passportRF]
   * system = "http://fhir.ru/core/systems/passport-RF"
@@ -97,7 +97,7 @@ Usage: #example
 * identifier[SNILS]
   * system = "http://fhir.ru/core/systems/snils"
   * value = "152-873-614 14"
-  * type = #SB
+//  * type = #SB
 
 * name
   * family = "Габсбург-Лотарингская"
