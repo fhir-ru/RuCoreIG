@@ -3,6 +3,7 @@ Extension: Core_Ex_Address_Fias
 Id:        core-ex-address-fias
 Title: "Core Extension address fias (Кодирование адреса по ФИАС)"
 Description: "Кодирование адреса по ФИАС. При маппинге на СЭМД данный url соответствует urn:hl7-ru:fias"
+Context: Address
 
 * extension contains
     aoguid 1..1 MS and
