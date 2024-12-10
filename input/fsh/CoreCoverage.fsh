@@ -67,7 +67,11 @@ Usage: #example
 //* type = $МЗРФ_Справочник_ИсточникиОплаты#1
 * type = Core_Cs_Nsi_Sources_Of_Payment#1
 
-* payor = Reference(core-patient-payer-instance-full)
+* payor
+  * identifier[+]
+    * system = "http://fhir.ru/core/systems/ffoms_smo"
+    * value = "22001"
+  * display = "Ресо Алтай"
 
 * beneficiary = Reference(core-patient-instance-full)
 
