@@ -15,7 +15,7 @@ Description: "Адрес"
 * city ^short = "Город"
 
 * state ^short = "Регион"
-
+ 
 * postalCode ^short = "Почтовый код"
 
 * country ^short = "Страна"
