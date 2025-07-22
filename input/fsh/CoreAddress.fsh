@@ -3,7 +3,7 @@ Id:      core-address
 Parent:       Address
 Title: "Core Address (Адрес)"
 Description: "Адрес"
-
+ 
 * use ^short = "Целевое назначение адреса: home | work | temp | old | billing"
 
 * type ^short = "Тип адреса: postal | physical | both"
