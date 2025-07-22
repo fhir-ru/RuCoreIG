@@ -92,7 +92,10 @@ Description: "НСИ МЗ РФ справочник [Должности меди
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #not-present
+
+//* ^content = #not-present
+* ^content = #complete
+* #1 "тестовое значение"
 
 
 // Реестр медицинских организаций (ФРМО) - 6
@@ -104,7 +107,10 @@ Description: "НСИ МЗ РФ справочник Реестр медицин�
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #not-present
+
+//* ^content = #not-present
+* ^content = #complete
+* #1 "тестовое значение"
 
 
 // Типы адресов - 7
@@ -194,5 +200,7 @@ Description: "НСИ МЗ РФ справочник Отраслевой кла�
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #not-present
 
+//* ^content = #not-present
+* ^content = #complete
+* #1 "тестовое значение"
