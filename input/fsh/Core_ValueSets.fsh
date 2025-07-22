@@ -8,7 +8,7 @@ Description: "Источники оплаты по НСИ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment
 
@@ -22,8 +22,7 @@ Description: "Типы полисов ОМС по НСИ МЗ РФ"
 
 * ^url = "http://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms"
 * ^status = #active
-* ^experimental = true
-* ^version = "1.1"
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms
 
@@ -36,7 +35,7 @@ Description: "Документы, удостоверяющие личность 
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-identity-documents"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document
 
@@ -49,9 +48,7 @@ Description: "Должности медицинских и фармацевти�
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions"
 * ^status = #active
-* ^experimental = true
-* ^expansion.timestamp = "2025-07-22T00:00:00Z"
-* ^expansion.total = 0
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions
 
@@ -64,9 +61,7 @@ Description: "НСИ МЗ РФ Федеральный реестр медици�
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-register-of-medical-organizations"
 * ^status = #active
-* ^experimental = true
-* ^expansion.timestamp = "2025-07-22T00:00:00Z"
-* ^expansion.total = 0
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations
 
@@ -79,7 +74,7 @@ Description: "Типы адресов по НСИ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-address-type"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type
 
@@ -93,7 +88,7 @@ Description: "НСИ МЗ РФ справочник [Регионы РФ]"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-region-rf"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf
 
@@ -107,7 +102,7 @@ Description: "Медицинские услуги по Номенклатуре 
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-services"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services
 
@@ -121,7 +116,7 @@ Description: "Справочник единиц измерения"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-units-of-measurement"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement
 
@@ -135,9 +130,7 @@ Description: "НСИ МЗ РФ справочник Отраслевой кла�
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-okato"
 * ^status = #active
-* ^experimental = true
-* ^expansion.timestamp = "2025-07-22T00:00:00Z"
-* ^expansion.total = 0
+* ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato
 
