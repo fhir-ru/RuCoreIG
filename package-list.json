@@ -1,0 +1,15 @@
+{
+  "package-id": "ru.core",
+  "canonical": "https://fhir.ru/ig/core",
+  "title": "Russian FHIR Semantic Model IG",
+  "introduction": "IG for semantic data model based on FHIR.",
+  "version": "0.1.0",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build",
+      "path": "https://build.fhir.org/ig/fhir-ru/RuCoreIG/",
+      "status": "ci-build"
+    }
+  ]
+}
