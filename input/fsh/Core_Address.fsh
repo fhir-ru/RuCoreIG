@@ -20,4 +20,3 @@ Description: "Базовый профиль адреса для российск
 * postalCode ^short = "Почтовый индекс"
 
 * state ^short = "Регион"
-
