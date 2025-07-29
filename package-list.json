@@ -3,7 +3,7 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "list": [
     {
       "version": "current",
