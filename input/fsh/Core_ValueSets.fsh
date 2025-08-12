@@ -169,6 +169,7 @@ Description: "Типы родственных связей для предста
 * ^expansion.contains[=].code = #WIFE
 * ^expansion.contains[=].display = "Жена"
 
+/*
 * ^expansion.contains[+].system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
 * ^expansion.contains[=].code = #HUSB
 * ^expansion.contains[=].display = "Муж"
@@ -213,7 +214,7 @@ Description: "Типы родственных связей для предста
 * ^expansion.contains[=].code = #2
 * ^expansion.contains[=].display = "Опекун"
 
-/*
+
 * ^expansion.contains[+].system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
 * ^expansion.contains[=].code = #3
 * ^expansion.contains[=].display = "Попечитель"

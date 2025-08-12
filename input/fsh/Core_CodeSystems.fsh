@@ -226,11 +226,11 @@ Description: "Коды родственных связей по справочн
 
 // Family member relationships from v3-RoleCode
 * #WIFE "Жена"
-  * ^designation[0].language = #ru
-  * ^designation[0].use = #primary
-  * ^designation[0].value = "Жена"
-  * ^designation[1].language = #en-US
-  * ^designation[1].value = "wife"
+//  * ^designation[0].language = #ru
+//  * ^designation[0].use = #primary
+//  * ^designation[0].value = "Жена"
+//  * ^designation[1].language = #en-US
+//  * ^designation[1].value = "wife"
 
 /*
 * #HUSB "Муж"
