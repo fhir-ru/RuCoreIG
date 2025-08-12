@@ -6,7 +6,7 @@
 |-------------------|---------|---------------------------|
 | Описание сотрудника должен соответствовать требованиям | practitioner | Должен быть представлен профилем Core_Practitioner |
 | Описание организации должен соответствовать требованиям | organization | Должен быть представлен профилем Core_Organization |
-| Должность следует указывать по справочнику должностей медицинских работников НСИ | code | Должна быть указана по справочнику НСИ МЗ РФ ([ValueSet](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-worker-position), [CodeSystem](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-worker-position)) |
+| Должность следует указывать по справочнику должностей медицинских работников НСИ | code | Должна быть указана по справочнику НСИ МЗ РФ ([ValueSet](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions), [CodeSystem](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions)) |
 
 ## Описание профиля
 
@@ -16,8 +16,8 @@
 - Должность должна быть указана по справочнику НСИ МЗ РФ
 
 ### Используемые справочники и системы идентификации
-- [НСИ МЗ РФ — Должности медицинских работников (CodeSystem)](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-worker-position)
-- [НСИ МЗ РФ — Должности медицинских работников (ValueSet)](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-worker-position)
+- [НСИ МЗ РФ — Должности медицинских работников (CodeSystem)](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions)
+- [НСИ МЗ РФ — Должности медицинских работников (ValueSet)](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions)
 
 ---
 
@@ -32,5 +32,5 @@ Description: "Базовый профиль роли медицинского р
 
 * practitioner only Reference(Core_Practitioner)
 * organization only Reference(Core_Organization)
-* code from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-worker-position (required)
+* code from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions (required)
 ``` 
