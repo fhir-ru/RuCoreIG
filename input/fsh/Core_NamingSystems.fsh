@@ -143,8 +143,8 @@ Usage: #definition
 
 Instance: core-ns-nsi-address-type
 InstanceOf: NamingSystem
-Title: "Тип адреса"
-Description: "Core NamingSystem Типы адреса"
+Title: "Core NamingSystem Типы адреса"
+Description: "Типы адреса"
 Usage: #definition
 * name = "Core_Ns_Nsi_Address_Type"
 * status = #active
@@ -168,8 +168,8 @@ Usage: #definition
 
 Instance: core-ns-nsi-region-rf
 InstanceOf: NamingSystem
-Title: "Регионы РФ"
-Description: "Core NamingSystem Регионы РФ"
+Title: "Core NamingSystem Регионы РФ"
+Description: "Регионы РФ"
 Usage: #definition
 * name = "Core_Ns_Nsi_Region_Rf"
 * status = #active
@@ -192,8 +192,8 @@ Usage: #definition
 
 Instance: core-ns-nsi-medical-services
 InstanceOf: NamingSystem
-Title: "Медицинские услуги"
-Description: "Core NamingSystem Номенклатура медицинских услуг"
+Title: "Core NamingSystem Номенклатура медицинских услуг"
+Description: "Номенклатура медицинских услуг"
 Usage: #definition
 
 * name = "Core_Ns_Nsi_Medical_Services"
@@ -216,8 +216,8 @@ Usage: #definition
 
 Instance: core-ns-nsi-units-of-measurement
 InstanceOf: NamingSystem
-Title: "Единицы измерения"
-Description: "Core NamingSystem Единицы измерения"
+Title: "Core NamingSystem Единицы измерения"
+Description: "Единицы измерения"
 Usage: #definition
 
 * name = "Core_Ns_Nsi_Units_Of_Measurement"
