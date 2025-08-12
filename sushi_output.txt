@@ -4,6 +4,9 @@ info    /Users/ekogan/git3/RuCoreIG
 info  No output path specified. Output to .
 info  Using configuration file: /Users/ekogan/git3/RuCoreIG/sushi-config.yaml
 info  Importing FSH text...
+error no viable alternative at input '\n  * designation[0].language'
+  File: /Users/ekogan/git3/RuCoreIG/input/fsh/Core_CodeSystems.fsh
+  Line: 229
 info  Preprocessed 18 documents with 0 aliases.
 info  Imported 43 definitions and 19 instances.
 info  Resolved hl7.fhir.uv.tools.r5#latest to concrete version 0.8.0
@@ -38,7 +41,7 @@ info  Assembled Implementation Guide sources; ready for IG Publisher.
 |  -------------------------------------------------------------  |
 |                                                                 |
 ===================================================================
-| That was a sea breeze!                 0 Errors      0 Warnings |
+| Are you lost at sea?                    1 Error      0 Warnings |
 ===================================================================
 |    You are using SUSHI version 3.15.0, but the latest stable    |
 | release is version 3.16.3. To install the latest release, run:  |
