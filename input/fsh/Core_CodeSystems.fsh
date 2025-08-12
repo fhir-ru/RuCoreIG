@@ -168,12 +168,6 @@ Description: "Ссылка на НСИ МЗ РФ справочник медиц
 * ^content = #not-present  // Ключевое отличие!
 * ^caseSensitive = false
 
-// Указываем, где найти полный справочник
-* ^property[0].code = #source
-* ^property[0].uri = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1070"
-* ^property[0].description = "Источник данных - НСИ МЗ РФ"
-
-
 
 // Единицы измерения - 10
 
