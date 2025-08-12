@@ -161,8 +161,8 @@ Description: "Типы родственных связей для предста
 * ^language = #ru
 
 // Include all codes from the code system
-* include codes from system https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship
-/*
+//* include codes from system https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship
+
 // Explicit expansion
 * ^expansion.timestamp = "2025-04-29T11:55:00+03:00"
 * ^expansion.contains[+].system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
@@ -213,6 +213,7 @@ Description: "Типы родственных связей для предста
 * ^expansion.contains[=].code = #2
 * ^expansion.contains[=].display = "Опекун"
 
+/*
 * ^expansion.contains[+].system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
 * ^expansion.contains[=].code = #3
 * ^expansion.contains[=].display = "Попечитель"
