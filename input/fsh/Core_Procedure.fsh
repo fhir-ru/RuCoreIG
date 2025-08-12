@@ -19,7 +19,7 @@ Description: "Базовый профиль процедуры для росси
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#PLAC
 
 * status ^short = "Статус процедуры"
-* status from http://hl7.org/fhir/ValueSet/event-status-codes (required)
+* status from http://hl7.org/fhir/ValueSet/event-status (required)
 
 * code ^short = "Код процедуры"
 * code from Core_Vs_Nsi_Medical_Services (required)
