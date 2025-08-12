@@ -134,9 +134,9 @@ Id:         core-cs-nsi-region-rf
 Title: "Регионы РФ"
 Description: "НСИ МЗ РФ справочник [Регионы РФ]"
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf"
-//* ^experimental = false
-//* ^caseSensitive = false
-//* ^content = #complete
+* ^experimental = false
+* ^caseSensitive = false
+* ^content = #complete
 
 * #77 "г. Москва" 
 * #22 "Алтайский край"

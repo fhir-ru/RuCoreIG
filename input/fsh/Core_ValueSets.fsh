@@ -157,7 +157,7 @@ Description: "Типы родственных связей для предста
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/relatedperson-relationship"
 * ^status = #active
-* ^experimental = true
+* ^experimental = false
 * ^language = #ru
 
 // Include all codes from the code system
