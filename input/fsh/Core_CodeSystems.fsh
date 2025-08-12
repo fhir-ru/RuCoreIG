@@ -131,7 +131,7 @@ Description: "НСИ МЗ РФ Тип адреса"
 
 CodeSystem: Core_Cs_Nsi_Region_RF
 Id:         core-cs-nsi-region-rf
-Title: "Регионы РФ"
+Title: "Core CodeSystem Регионы РФ"
 Description: "Core CodeSystem Регионы РФ"
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf"
 * ^experimental = false
@@ -159,13 +159,13 @@ Description: "НСИ МЗ РФ справочник медицинских ус�
 
 CodeSystem: Core_Cs_Nsi_Medical_Services
 Id: core-cs-nsi-medical-services
-Title: "Core CodeSystem Медицинские услуги"
+Title: "Core CodeSystem Номенклатура медицинских услуг"
 Description: "Ссылка на НСИ МЗ РФ справочник медицинских услуг"
 
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services"
 * ^status = #active
 * ^experimental = false
-* ^content = #not-present  // Ключевое отличие!
+* ^content = #not-present
 * ^caseSensitive = false
 
 
@@ -173,8 +173,8 @@ Description: "Ссылка на НСИ МЗ РФ справочник медиц
 
 CodeSystem: Core_Cs_Nsi_Units_Of_Measurement
 Id: core-cs-nsi-units-of-measurement
-Title: "Core CodeSystem NSI Units Of Measurement (Единицы измерения)"
-Description: "Core CodeSystem Единицы измерения"
+Title: "Core CodeSystem Единицы измерения"
+Description: "Core CodeSystem НСИ МЗ РФ Справочник единиц измерения"
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement"
 * ^experimental = false
 * ^caseSensitive = false

@@ -4,7 +4,7 @@
 // Источники финансирования - 1
 Instance:   core-ns-nsi-sources-of-payment
 InstanceOf: NamingSystem
-Title: "Core NamingSystem NSI sources of payment (Источники финансирования)"
+Title: "Core NamingSystem Источники финансирования"
 Usage: #definition
 * name = "Core_Ns_Nsi_Sources_Of_Payment"
 * status = #active
@@ -27,7 +27,7 @@ Usage: #definition
 // Типы документов-оснований оплаты - 2
 Instance:   core-ns-nsi-coverage-document
 InstanceOf: NamingSystem
-Title: "Core NamingSystem NSI coverage document (Типы документов оснований)"
+Title: "Core NamingSystem Документы-основания для оплаты медицинских услуг"
 Usage: #definition
 * name = "Core_Ns_Nsi_Coverage_Document"
 * status = #active
@@ -50,7 +50,7 @@ Usage: #definition
 // Типы полисов ОМС - 3
 Instance:   core-ns-nsi-coverage-document-oms
 InstanceOf: NamingSystem
-Title: "Core NamingSystem NSI coverage document OMS (Типы полисов ОМС)"
+Title: "Core NamingSystem Типы полисов ОМС"
 Usage: #definition
 * name = "Core_Ns_Nsi_Coverage_Document_OMS"
 * status = #active
@@ -73,7 +73,7 @@ Usage: #definition
 // Документы, удостоверяющие личность - 4
 Instance:   core-ns-nsi-identity-document
 InstanceOf: NamingSystem
-Title: "Core NamingSystem NSI identity document (Документы удостоверяющие личность)"
+Title: "Core NamingSystem Документы удостоверяющие личность"
 Usage: #definition
 * name = "Core_Ns_Nsi_Identity_Document"
 * status = #active
@@ -96,7 +96,7 @@ Usage: #definition
 // Должности медицинских работников - 5
 Instance:   core-ns-nsi-medical-workers-positions
 InstanceOf: NamingSystem
-Title: "Core NamingSystem NSI medical workers position (Должности мед и фарм работников)"
+Title: "Core NamingSystem Должности медицинских работников"
 Usage: #definition
 * name = "Core_Ns_Nsi_Medical_Workers_Positions"
 * status = #active
@@ -119,7 +119,7 @@ Usage: #definition
 // Реестр медицинских организаций (ФРМО) - 6
 Instance:   core-ns-nsi-register-of-medical-organizations
 InstanceOf: NamingSystem
-Title: "Core NamingSystem NSI register of med organizations (Реестр медицинских организаций)"
+Title: "Core NamingSystem Реестр медицинских организаций (ФРМО)"
 Usage: #definition
 * name = "Core_Ns_Nsi_Register_Of_Medical_Organizations"
 * status = #active
@@ -144,7 +144,7 @@ Usage: #definition
 Instance: core-ns-nsi-address-type
 InstanceOf: NamingSystem
 Title: "Тип адреса"
-Description: "НСИ МЗ РФ Тип адреса"
+Description: "Core NamingSystem Типы адреса"
 Usage: #definition
 * name = "Core_Ns_Nsi_Address_Type"
 * status = #active
@@ -169,7 +169,7 @@ Usage: #definition
 Instance: core-ns-nsi-region-rf
 InstanceOf: NamingSystem
 Title: "Регионы РФ"
-Description: "НСИ МЗ РФ Регионы РФ"
+Description: "Core NamingSystem Регионы РФ"
 Usage: #definition
 * name = "Core_Ns_Nsi_Region_Rf"
 * status = #active
@@ -193,7 +193,7 @@ Usage: #definition
 Instance: core-ns-nsi-medical-services
 InstanceOf: NamingSystem
 Title: "Медицинские услуги"
-Description: "НСИ МЗ РФ номенклатура медицинских услуг"
+Description: "Core NamingSystem Номенклатура медицинских услуг"
 Usage: #definition
 
 * name = "Core_Ns_Nsi_Medical_Services"
@@ -217,7 +217,7 @@ Usage: #definition
 Instance: core-ns-nsi-units-of-measurement
 InstanceOf: NamingSystem
 Title: "Единицы измерения"
-Description: "НСИ МЗ РФ справочник единиц измерения"
+Description: "Core NamingSystem Единицы измерения"
 Usage: #definition
 
 * name = "Core_Ns_Nsi_Units_Of_Measurement"
@@ -241,7 +241,7 @@ Usage: #definition
 
 Instance: core-ns-nsi-okato
 InstanceOf: NamingSystem
-Title: "Отраслевой классификатор административно-территориальных объектов"
+Title: "Core NamingSystem ОКАТО"
 Description: "НСИ МЗ РФ справочник Отраслевой классификатор объектов административно-территориального деления"
 Usage: #definition
 
@@ -267,13 +267,13 @@ Usage: #definition
 // номер полиса ОМС
 Instance:   core-ns-rf-oms
 InstanceOf: NamingSystem
-Title: "Номер полиса ОМС как идентификатор"
+Title: "Core NamingSystem - Номер полиса ОМС"
 Usage: #definition
 * name = "Core_Ns_Rf_OMS"
 * status = #active
 * kind = #identifier
 * date = "2023-12-01"
-* description = "НОмер полиса ОМС - идентификатор гражданина в системе обязательного медицинского страхования"
+* description = "Номер полиса ОМС - идентификатор гражданина в системе обязательного медицинского страхования"
 * uniqueId
   * type = #uri
   * value = "https://fhir.ru/ig/core/systems/oms"
@@ -283,7 +283,7 @@ Usage: #definition
 // СНИЛС
 Instance:   core-ns-rf-snils
 InstanceOf: NamingSystem
-Title: "Core NamingSystem RF SNILS (СНИЛС)"
+Title: "Core NamingSystem - СНИЛС"
 Usage: #definition
 * name = "Core_Ns_Rf_SNILS"
 * status = #active
@@ -298,7 +298,7 @@ Usage: #definition
 // ОГРН
 Instance:   core-ns-rf-ogrn
 InstanceOf: NamingSystem
-Title: "Core NamingSystem RF OGRN (ОГРН)"
+Title: "Core NamingSystem - ОГРН"
 Usage: #definition
 * name = "Core_Ns_Rf_OGRN"
 * status = #active
@@ -313,7 +313,7 @@ Usage: #definition
 // ИНН
 Instance:   core-ns-rf-inn
 InstanceOf: NamingSystem
-Title: "Core NamingSystem RF INN (ИНН)"
+Title: "Core NamingSystem - ИНН"
 Usage: #definition
 * name = "Core_Ns_Rf_INN"
 * status = #active
@@ -328,7 +328,7 @@ Usage: #definition
 // Номер свидетельства о рождении
 Instance:   core-ns-rf-birth-certificate
 InstanceOf: NamingSystem
-Title: "Core NamingSystem RF Birth Certificate (Номер гос свидетельства о рождении)"
+Title: "Core NamingSystem - Номер государственного свидетельства о рождении"
 Usage: #definition
 * name = "Core_Ns_Rf_Birth_Certificate"
 * status = #active
@@ -343,7 +343,7 @@ Usage: #definition
 // Лицензия на осуществление медицинской деятельности
 Instance:   core-ns-rf-medlicense
 InstanceOf: NamingSystem
-Title: "Лицензия на осуществление медицинской деятельности"
+Title: "Core NamingSystem - Лицензия на осуществление медицинской деятельности"
 Usage: #definition
 * name = "Core_Ns_Rf_Medlicense"
 * status = #active
@@ -359,7 +359,7 @@ Usage: #definition
 // ФИАС - идентификатор адресного объекта
 Instance:   core-ns-fias-aoguid
 InstanceOf: NamingSystem
-Title: "Core NamingSystem FIAS aoguid (ид адресного объекта по ФИАС)"
+Title: "Core NamingSystem - Код адресного объекта по ФИАС"
 Usage: #definition
 * name = "Core_Ns_Fias_Aoguid"
 * status = #active
@@ -374,7 +374,7 @@ Usage: #definition
 // ФИАС - идентификатор дома
 Instance:   core-ns-fias-houseguid
 InstanceOf: NamingSystem
-Title: "Core NamingSystem FIAS houseguid (ид дома по ФИАС)"
+Title: "Core NamingSystem - Код дома по ФИАС"
 Usage: #definition
 * name = "Core_Ns_Fias_Houseguid"
 * status = #active

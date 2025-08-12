@@ -97,7 +97,7 @@ Description: "НСИ МЗ РФ справочник [Регионы РФ]"
 
 ValueSet: Core_Vs_Nsi_Medical_Services
 Id: core-vs-nsi-medical-services
-Title: "Core ValueSet Медицинские услуги"
+Title: "Core ValueSet Номенклатура медицинских услуг"
 Description: "Медицинские услуги по Номенклатуре медицинских услуг МЗ РФ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-services"
