@@ -5,7 +5,7 @@
 | Бизнес-требование | Атрибут | Решение по профилированию |
 |-------------------|---------|---------------------------|
 | Описание пациента должно соответствовать требованиям РФ | patient | Должен быть представлен профилем Core_Patient |
-| Требуется указать отношение представителя к пациенту по НСИ МЗ РФ | relationship | Уточнен атрибут – значение может браться из справочника НСИ МЗ РФ ([ValueSet](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-relatedperson-relationship), [CodeSystem](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-relatedperson-relationship)) |
+| Требуется указать отношение представителя к пациенту по НСИ МЗ РФ | relationship | Уточнен атрибут – значение может браться из справочника НСИ МЗ РФ |
 | Требуется указать СНИЛС представителя | identifier[snils] | Определен вариант атрибута Identifier[snils] |
 | Требуется указать отчество представителя | name.given[1] | Аналогично пациенту и медицинскому работнику, определено, что отчество указывается в массиве name.given вторым элементом (при наличии) |
 | Описание адреса должно соответствовать требованиям РФ | address | Должен быть представлен профилем Core_Address |
@@ -21,8 +21,6 @@
 
 ### Используемые справочники и системы идентификации
 - [СНИЛС](https://www.pfrf.ru/) (Страховой номер индивидуального лицевого счета)
-- [НСИ МЗ РФ — Отношения связанного лица (CodeSystem)](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-relatedperson-relationship)
-- [НСИ МЗ РФ — Отношения связанного лица (ValueSet)](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-relatedperson-relationship)
 
 ### Соответствие отношений
 Справочник НСИ МЗ РФ для отношений связанного лица включает следующие основные категории:
@@ -46,7 +44,7 @@ Description: "Базовый профиль связанного лица для
 
 * patient only Reference(Core_Patient)
 
-* relationship from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-relatedperson-relationship (required)
+* relationship ^comment = "Значение должно браться из справочника НСИ МЗ РФ"
 
 * identifier contains
     snils 0..1

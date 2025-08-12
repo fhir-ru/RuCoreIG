@@ -25,10 +25,6 @@
 ### Используемые справочники и системы идентификации
 - [СНИЛС](https://www.pfrf.ru/) (Страховой номер индивидуального лицевого счета)
 - [ИНН](https://www.nalog.gov.ru/) (Индивидуальный номер налогоплательщика)
-- [НСИ МЗ РФ — Пол пациента (CodeSystem)](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-patient-gender)
-- [НСИ МЗ РФ — Пол пациента (ValueSet)](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-patient-gender)
-- [НСИ МЗ РФ — Типы полисов ОМС (CodeSystem)](https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-oms-policy-type)
-- [НСИ МЗ РФ — Типы полисов ОМС (ValueSet)](https://fhir.ru/ig/core/ValueSet/core-vs-nsi-oms-policy-type)
 
 ---
 
@@ -58,7 +54,6 @@ Description: "Базовый профиль пациента для россий
 * name.given ^short = "Имя и отчество"
 * name.given ^comment = "Первым элементом должно быть имя, вторым - отчество"
 
-* gender from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-patient-gender (required)
 * gender ^comment = "Используются только male, female, unknown. Other не используется для совместимости со Справочником НСИ Пол пациента"
 
 * address only Core_Address
