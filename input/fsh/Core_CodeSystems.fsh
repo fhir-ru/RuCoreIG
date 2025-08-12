@@ -143,7 +143,7 @@ Description: "НСИ МЗ РФ справочник [Регионы РФ]"
 
 
 // Медицинские услуги - 9
-
+/*
 CodeSystem: Core_Cs_Nsi_Medical_Services
 Id: core-cs-nsi-medical-services
 Title: "Core CodeSystem NSI Medical Services (Медицинские услуги)"
@@ -155,6 +155,24 @@ Description: "НСИ МЗ РФ справочник медицинских ус�
 
 * #B03.016.002 "Общий (клинический) анализ крови"
 * #A11.12.009 "Взятие крови из периферической вены"
+*/
+
+CodeSystem: Core_Cs_Nsi_Medical_Services
+Id: core-cs-nsi-medical-services
+Title: "Медицинские услуги"
+Description: "Ссылка на НСИ МЗ РФ справочник медицинских услуг"
+
+* ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services"
+* ^status = #active
+* ^experimental = false
+* ^content = #not-present  // Ключевое отличие!
+* ^caseSensitive = false
+
+// Указываем, где найти полный справочник
+* ^property[0].code = #source
+* ^property[0].uri = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1070"
+* ^property[0].description = "Источник данных - НСИ МЗ РФ"
+
 
 
 // Единицы измерения - 10
