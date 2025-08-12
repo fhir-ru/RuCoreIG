@@ -232,6 +232,7 @@ Description: "Коды родственных связей по справочн
   * ^designation[1].language = #en-US
   * ^designation[1].value = "wife"
 
+/*
 * #HUSB "Муж"
   * ^designation[0].language = #ru
   * ^designation[0].use = #primary
@@ -317,3 +318,4 @@ Description: "Коды родственных связей по справочн
   * ^designation[0].value = "Попечитель"
   * ^designation[1].language = #en-US
   * ^designation[1].value = "trustee"
+*/
