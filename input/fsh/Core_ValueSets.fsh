@@ -3,7 +3,7 @@
 
 ValueSet: Core_Vs_Nsi_Sources_Of_Payment
 Id: core-vs-nsi-sources-of-payment
-Title: "Источники оплаты"
+Title: "Core ValueSet Источники оплаты"
 Description: "Источники оплаты по НСИ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment"
@@ -17,7 +17,7 @@ Description: "Источники оплаты по НСИ"
 // ValueSet для типов полисов ОМС - 3
 ValueSet: Core_Vs_Nsi_Coverage_Document_OMS
 Id: core-vs-nsi-coverage-document-oms
-Title: "Типы полисов ОМС"
+Title: "Core ValueSet Типы полисов ОМС"
 Description: "Типы полисов ОМС по НСИ МЗ РФ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms"
@@ -30,7 +30,7 @@ Description: "Типы полисов ОМС по НСИ МЗ РФ"
 // ValueSet для документов, удостоверяющих личность - 4
 ValueSet: Core_Vs_Nsi_Identity_Documents
 Id: core-vs-nsi-identity-documents
-Title: "Документы, удостоверяющие личность"
+Title: "Core ValueSet Документы, удостоверяющие личность"
 Description: "Документы, удостоверяющие личность по НСИ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-identity-documents"
@@ -43,7 +43,7 @@ Description: "Документы, удостоверяющие личность 
 // ValueSet для должностей медицинских работников - 5
 ValueSet: Core_Vs_Nsi_Medical_Workers_Positions
 Id: core-vs-nsi-medical-workers-positions
-Title: "Должности медицинских работников"
+Title: "Core ValueSet Должности медицинских работников"
 Description: "Должности медицинских и фармацевтических работников по НСИ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions"
@@ -56,7 +56,7 @@ Description: "Должности медицинских и фармацевти�
 // ValueSet Федеральный реестр медицинских организаций (НСИ-ФРМО) - 6
 ValueSet: Core_Vs_Nsi_Register_Of_Medical_Organizations
 Id: core-vs-nsi-register-of-medical-organizations
-Title: "Core ValueSet NSI-FRMO (Федеральный реестр медицинских организаций)"
+Title: "Core ValueSet Федеральный реестр медицинских организаций"
 Description: "НСИ МЗ РФ Федеральный реестр медицинских организаций (ФРМО) - все значения кодовой системы."
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-register-of-medical-organizations"
@@ -69,7 +69,7 @@ Description: "НСИ МЗ РФ Федеральный реестр медици�
 // ValueSet для типов адресов - 7
 ValueSet: Core_Vs_Nsi_Address_Type
 Id: core-vs-nsi-address-type
-Title: "Типы адресов"
+Title: "Core ValueSet Типы адресов"
 Description: "Типы адресов по НСИ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-address-type"
@@ -83,7 +83,7 @@ Description: "Типы адресов по НСИ"
 
 ValueSet: Core_Vs_Nsi_Region_RF
 Id: core-vs-nsi-region-rf
-Title: "Регионы РФ"
+Title: "Core ValueSet Регионы РФ"
 Description: "НСИ МЗ РФ справочник [Регионы РФ]"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-region-rf"
@@ -97,7 +97,7 @@ Description: "НСИ МЗ РФ справочник [Регионы РФ]"
 
 ValueSet: Core_Vs_Nsi_Medical_Services
 Id: core-vs-nsi-medical-services
-Title: "Медицинские услуги"
+Title: "Core ValueSet Медицинские услуги"
 Description: "Медицинские услуги по Номенклатуре медицинских услуг МЗ РФ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-services"
@@ -111,7 +111,7 @@ Description: "Медицинские услуги по Номенклатуре 
 
 ValueSet: Core_Vs_Nsi_Units_Of_Measurement
 Id: core-vs-nsi-units-of-measurement
-Title: "Единицы измерения"
+Title: "Core ValueSet Единицы измерения"
 Description: "Справочник единиц измерения"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-units-of-measurement"
@@ -125,7 +125,7 @@ Description: "Справочник единиц измерения"
 
 ValueSet: Core_Vs_Nsi_OKATO
 Id: core-vs-nsi-okato
-Title: "Отраслевой классификатор административно-территориальных объектов"
+Title: "Core ValueSet ОКАТО"
 Description: "НСИ МЗ РФ справочник Отраслевой классификатор объектов административно-территориального деления"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-okato"
@@ -152,7 +152,7 @@ Description: "НСИ МЗ РФ справочник Отраслевой кла�
 
 ValueSet: RelatedPerson_Relationship
 Id: relatedperson-relationship
-Title: "Типы родственных связей"
+Title: "Core ValueSet Типы родственных связей"
 Description: "Типы родственных связей для представителя пациента. Источник: [НСИ Минздрава](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1014)"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/relatedperson-relationship"

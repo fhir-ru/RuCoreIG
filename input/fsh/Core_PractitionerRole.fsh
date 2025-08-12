@@ -1,7 +1,7 @@
 Profile: Core_PractitionerRole
 Parent: PractitionerRole
 Id: core-practitionerrole
-Title: "Роль медицинского работника"
+Title: "Core PractitionerRole (Роль медицинского работника)"
 Description: "Профиль PractitionerRole для RuCore"
 
 * practitioner ^short = "Медицинский работник"

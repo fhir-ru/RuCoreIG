@@ -1,7 +1,7 @@
 Profile: Core_RelatedPerson
 Parent: RelatedPerson
 Id: core-relatedperson
-Title: "Представитель пациента"
+Title: "Core RelatedPerson (Представитель пациента)"
 Description: "Базовый профиль RelatedPerson для РФ. Определено использвание СНИЛС как идентификатора, справочник типов родственных связей."
 
 * patient ^short = "Пациент"

@@ -1,7 +1,7 @@
 Profile: Core_EpisodeOfCare
 Parent: EpisodeOfCare
 Id: core-episodeofcare
-Title: "Эпизод медицинской помощи"
+Title: "Core EpisodeOfCare (Эпизод медицинской помощи)"
 Description: "Профиль EpisodeOfCare для RuCore"
 
 * patient ^short = "Пациент"

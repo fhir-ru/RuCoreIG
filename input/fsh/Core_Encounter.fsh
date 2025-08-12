@@ -1,7 +1,7 @@
 Profile: Core_Encounter
 Parent: Encounter
 Id: core-encounter
-Title: "Случай оказания медицинской помощи RuCore"
+Title: "Core Encounter (Случай оказания медицинской помощи)"
 Description: "Профиль Encounter для RuCore"
 
 * subject ^short = "Пациент"

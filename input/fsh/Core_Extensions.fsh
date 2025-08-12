@@ -3,7 +3,7 @@
 // --- Расширение: Тип адреса ---
 Extension: AddressType
 Id: address-type
-Title: "Тип адреса"
+Title: "Core Extension AddressType (Тип адреса)"
 Description: "Расширение для хранения типа адреса по НСИ 2.1504"
 
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/address-type"
@@ -16,7 +16,7 @@ Description: "Расширение для хранения типа адреса
 // --- Расширение: Код региона ---
 Extension: RegionRF
 Id: regionRF
-Title: "Код региона РФ"
+Title: "Core Extension RegionRF (Регион РФ)"
 Description: "Расширение для хранения кода региона по НСИ 2.206"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/regionRF"
 * value[x] only CodeableConcept
@@ -28,7 +28,7 @@ Description: "Расширение для хранения кода регион
 // --- Расширение: FIAS ---
 Extension: FIAS
 Id: fias
-Title: "ФИАС"
+Title: "Core Extension FIAS (коды ФИАС)"
 Description: "Расширение для хранения идентификаторов ФИАС"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/fias"
 * extension contains
@@ -40,7 +40,7 @@ Description: "Расширение для хранения идентифика�
 // --- Расширение: FIAS AOGUID ---
 Extension: AOGUID
 Id: aoguid
-Title: "ФИАС AOGUID"
+Title: "Core Extension AOGUID (код адресного объекта ФИАС)"
 Description: "Расширение для хранения идентификатора AOGUID по ФИАС"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/aoguid"
 * value[x] only Identifier
@@ -52,7 +52,7 @@ Description: "Расширение для хранения идентифика�
 // --- Расширение: FIAS HOUSEGUID ---
 Extension: HOUSEGUID
 Id: houseguid
-Title: "ФИАС HOUSEGUID"
+Title: "Core Extension HOUSEGUID (код дома ФИАС)"
 Description: "Расширение для хранения идентификатора HOUSEGUID по ФИАС"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/houseguid"
 * value[x] only Identifier
@@ -64,7 +64,7 @@ Description: "Расширение для хранения идентифика�
 // --- Расширение: ОКАТО ---
 Extension: OKATO
 Id: okato
-Title: "Код ОКАТО"
+Title: "Core Extension OKATO (Код ОКАТО)"
 Description: "Расширение для хранения кода по Общероссийскому классификатору административно-территориальных образований (ОКАТО)"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/okato"
 * value[x] only CodeableConcept

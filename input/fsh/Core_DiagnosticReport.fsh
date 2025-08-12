@@ -1,7 +1,7 @@
 Profile: Core_DiagnosticReport
 Parent: DiagnosticReport
 Id: core-diagnosticreport
-Title: "Протокол исследования"
+Title: "Core DiagnosticReport (Протокол исследования)"
 Description: "Профиль DiagnosticReport для RuCore"
 
 
