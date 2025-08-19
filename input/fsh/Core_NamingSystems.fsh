@@ -4,7 +4,7 @@
 // Источники финансирования - 1
 Instance:   core-ns-nsi-sources-of-payment
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Источники финансирования"
+Title: "Core NamingSystem Справочник - Источники финансирования"
 Usage: #definition
 * name = "Core_Ns_Nsi_Sources_Of_Payment"
 * status = #active
@@ -27,7 +27,7 @@ Usage: #definition
 // Типы документов-оснований оплаты - 2
 Instance:   core-ns-nsi-coverage-document
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Документы-основания для оплаты медицинских услуг"
+Title: "Core NamingSystem Справочник - Документы-основания для оплаты медицинских услуг"
 Usage: #definition
 * name = "Core_Ns_Nsi_Coverage_Document"
 * status = #active
@@ -50,7 +50,7 @@ Usage: #definition
 // Типы полисов ОМС - 3
 Instance:   core-ns-nsi-coverage-document-oms
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Типы полисов ОМС"
+Title: "Core NamingSystem Справочник - Типы полисов ОМС"
 Usage: #definition
 * name = "Core_Ns_Nsi_Coverage_Document_OMS"
 * status = #active
@@ -73,7 +73,7 @@ Usage: #definition
 // Документы, удостоверяющие личность - 4
 Instance:   core-ns-nsi-identity-document
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Документы удостоверяющие личность"
+Title: "Core NamingSystem Справочник - Документы удостоверяющие личность"
 Usage: #definition
 * name = "Core_Ns_Nsi_Identity_Document"
 * status = #active
@@ -96,7 +96,7 @@ Usage: #definition
 // Должности медицинских работников - 5
 Instance:   core-ns-nsi-medical-workers-positions
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Должности медицинских работников"
+Title: "Core NamingSystem Справочник - Должности медицинских работников"
 Usage: #definition
 * name = "Core_Ns_Nsi_Medical_Workers_Positions"
 * status = #active
@@ -119,7 +119,7 @@ Usage: #definition
 // Реестр медицинских организаций (ФРМО) - 6
 Instance:   core-ns-nsi-register-of-medical-organizations
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Реестр медицинских организаций (ФРМО)"
+Title: "Core NamingSystem Справочник - Реестр медицинских организаций (ФРМО)"
 Usage: #definition
 * name = "Core_Ns_Nsi_Register_Of_Medical_Organizations"
 * status = #active
@@ -143,7 +143,7 @@ Usage: #definition
 
 Instance: core-ns-nsi-address-type
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Типы адреса"
+Title: "Core NamingSystem Справочник - Типы адреса"
 Description: "Типы адреса"
 Usage: #definition
 * name = "Core_Ns_Nsi_Address_Type"
@@ -168,7 +168,7 @@ Usage: #definition
 
 Instance: core-ns-nsi-region-rf
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Регионы РФ"
+Title: "Core NamingSystem Справочник - Регионы РФ"
 Description: "Регионы РФ"
 Usage: #definition
 * name = "Core_Ns_Nsi_Region_Rf"
@@ -192,7 +192,7 @@ Usage: #definition
 
 Instance: core-ns-nsi-medical-services
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Номенклатура медицинских услуг"
+Title: "Core NamingSystem Справочник - Номенклатура медицинских услуг"
 Description: "Номенклатура медицинских услуг"
 Usage: #definition
 
@@ -216,7 +216,7 @@ Usage: #definition
 
 Instance: core-ns-nsi-units-of-measurement
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Единицы измерения"
+Title: "Core NamingSystem Справочник - Единицы измерения"
 Description: "Единицы измерения"
 Usage: #definition
 
@@ -241,7 +241,7 @@ Usage: #definition
 
 Instance: core-ns-nsi-okato
 InstanceOf: NamingSystem
-Title: "Core NamingSystem ОКАТО"
+Title: "Core NamingSystem Справочник - ОКАТО"
 Description: "НСИ МЗ РФ справочник Отраслевой классификатор объектов административно-территориального деления"
 Usage: #definition
 
@@ -267,7 +267,7 @@ Usage: #definition
 // номер полиса ОМС
 Instance:   core-ns-rf-oms
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - Номер полиса ОМС"
+Title: "Core NamingSystem Идентификатор - Номер полиса ОМС"
 Usage: #definition
 * name = "Core_Ns_Rf_OMS"
 * status = #active
@@ -283,7 +283,7 @@ Usage: #definition
 // СНИЛС
 Instance:   core-ns-rf-snils
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - СНИЛС"
+Title: "Core NamingSystem Идентификатор - СНИЛС"
 Usage: #definition
 * name = "Core_Ns_Rf_SNILS"
 * status = #active
@@ -298,7 +298,7 @@ Usage: #definition
 // ОГРН
 Instance:   core-ns-rf-ogrn
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - ОГРН"
+Title: "Core NamingSystem Идентификатор - ОГРН"
 Usage: #definition
 * name = "Core_Ns_Rf_OGRN"
 * status = #active
@@ -313,7 +313,7 @@ Usage: #definition
 // ИНН
 Instance:   core-ns-rf-inn
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - ИНН"
+Title: "Core NamingSystem Идентификатор - ИНН"
 Usage: #definition
 * name = "Core_Ns_Rf_INN"
 * status = #active
@@ -328,7 +328,7 @@ Usage: #definition
 // Номер свидетельства о рождении
 Instance:   core-ns-rf-birth-certificate
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - Номер государственного свидетельства о рождении"
+Title: "Core NamingSystem Идентификатор - Номер государственного свидетельства о рождении"
 Usage: #definition
 * name = "Core_Ns_Rf_Birth_Certificate"
 * status = #active
@@ -343,7 +343,7 @@ Usage: #definition
 // Лицензия на осуществление медицинской деятельности
 Instance:   core-ns-rf-medlicense
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - Лицензия на осуществление медицинской деятельности"
+Title: "Core NamingSystem Идентификатор - Лицензия на осуществление медицинской деятельности"
 Usage: #definition
 * name = "Core_Ns_Rf_Medlicense"
 * status = #active
@@ -359,7 +359,7 @@ Usage: #definition
 // ФИАС - идентификатор адресного объекта
 Instance:   core-ns-fias-aoguid
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - Код адресного объекта по ФИАС"
+Title: "Core NamingSystem Идентификатор - Код адресного объекта по ФИАС"
 Usage: #definition
 * name = "Core_Ns_Fias_Aoguid"
 * status = #active
@@ -374,7 +374,7 @@ Usage: #definition
 // ФИАС - идентификатор дома
 Instance:   core-ns-fias-houseguid
 InstanceOf: NamingSystem
-Title: "Core NamingSystem - Код дома по ФИАС"
+Title: "Core NamingSystem Идентификатор - Код дома по ФИАС"
 Usage: #definition
 * name = "Core_Ns_Fias_Houseguid"
 * status = #active
