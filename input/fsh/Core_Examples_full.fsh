@@ -307,7 +307,7 @@ Description: "Полный пример случая обслуживания с
   * value = "ENC-2024-001"
   * use = #official
 
-* status = #finished
+* status = #completed
 * class[0]
   * coding[0]
     * system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
