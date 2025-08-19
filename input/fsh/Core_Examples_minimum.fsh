@@ -71,10 +71,10 @@ Description: "Минимальный пример роли медицинско�
 
 * active = true
 * practitioner
-  * reference = "Practitioner/example-core-practitioner-smirnov"
+  * reference = "Practitioner/example-core-practitioner-smirnov-min"
 
 * organization
-  * reference = "Organization/example-core-organization-polyclinic"
+  * reference = "Organization/example-core-organization-polyclinic-min"
 
 * code[0]
   * coding[0]
@@ -94,7 +94,7 @@ Description: "Минимальный пример связанного лица 
 
 * active = true
 * patient
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * relationship
   * coding[0]
@@ -133,7 +133,7 @@ Description: "Минимальный пример обращения с испо
     * display = "Consultation"
 
 * subject
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * participant[0]
   * type[0]
@@ -142,10 +142,10 @@ Description: "Минимальный пример обращения с испо
       * code = #ATND
       * display = "attender"
   * actor
-    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist"
+    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
 * serviceProvider
-  * reference = "Organization/example-core-organization-polyclinic"
+  * reference = "Organization/example-core-organization-polyclinic-min"
 
 // Пример 7: Core_EpisodeOfCare
 Instance: example-core-episodeofcare-ivanov-2024-min
@@ -159,10 +159,10 @@ Description: "Минимальный пример эпизода лечения 
 
 * status = #active
 * patient
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * managingOrganization
-  * reference = "Organization/example-core-organization-polyclinic"
+  * reference = "Organization/example-core-organization-polyclinic-min"
 
 // Пример 8: Core_CareTeam
 Instance: example-core-careteam-ivanov-min
@@ -178,7 +178,7 @@ Description: "Минимальный пример бригады с исполь
 * name = "Бригада по лечению Иванова И.П."
 
 * subject
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * participant[0]
   * role
@@ -187,7 +187,7 @@ Description: "Минимальный пример бригады с исполь
       * code = #PPRF
       * display = "Primary Care Provider"
   * member
-    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist"
+    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
 // Пример 9: Core_Composition
 Instance: example-core-composition-ivanov-consultation-min
@@ -207,13 +207,13 @@ Description: "Минимальный пример состава докумен�
     * display = "Progress note"
 
 * subject
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * date = "2024-01-15T10:30:00Z"
 * title = "Запись о приеме пациента Иванова И.П."
 
 * author
-  * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist"
+  * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
 // Пример 10: Core_Coverage
 Instance: example-core-coverage-ivanov-oms-min
@@ -234,10 +234,10 @@ Description: "Минимальный пример страхового покр�
     * display = "ОМС"
 
 * subscriber
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * beneficiary
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * class[0]
   * type
@@ -293,16 +293,16 @@ Description: "Минимальный пример диагностическог
     * display = "CBC panel - Blood by Automated count"
 
 * subject
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * encounter
-  * reference = "Encounter/example-core-encounter-consultation"
+  * reference = "Encounter/example-core-encounter-consultation-min"
 
 * effectiveDateTime = "2024-01-15T08:00:00Z"
 * issued = "2024-01-15T10:00:00Z"
 
 * performer[0]
-  * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist"
+  * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
 // Пример 13: Core_Procedure
 Instance: example-core-procedure-ivanov-consultation-min
@@ -322,14 +322,14 @@ Description: "Минимальный пример процедуры с испо
     * display = "Взятие крови из периферической вены"
 
 * subject
-  * reference = "Patient/example-core-patient-ivanov"
+  * reference = "Patient/example-core-patient-ivanov-min"
 
 * encounter
-  * reference = "Encounter/example-core-encounter-consultation"
+  * reference = "Encounter/example-core-encounter-consultation-min"
 
 * performer[0]
   * actor
-    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist"
+    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
 // ========================================
 // ПРИМЕРЫ РАСШИРЕНИЙ
@@ -428,7 +428,7 @@ Description: "Минимальный пример локации для испо
   * country = "RU"
 
 * managingOrganization
-  * reference = "Organization/example-core-organization-polyclinic"
+  * reference = "Organization/example-core-organization-polyclinic-min"
 
 // Пример 20: HealthcareService (для ссылок)
 Instance: example-core-healthcareservice-therapy-min
@@ -442,7 +442,7 @@ Description: "Минимальный пример медицинской усл�
 
 * active = true
 * providedBy
-  * reference = "Organization/example-core-organization-polyclinic"
+  * reference = "Organization/example-core-organization-polyclinic-min"
 
 * category[0]
   * coding[0]
@@ -505,7 +505,7 @@ Description: "Минимальный пример приема для испол
       * code = #ATND
       * display = "attender"
   * actor
-    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist"
+    * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
   * required = true
   * status = #accepted
 
@@ -516,7 +516,7 @@ Description: "Минимальный пример приема для испол
       * code = #PPRF
       * display = "primary performer"
   * actor
-    * reference = "Patient/example-core-patient-ivanov"
+    * reference = "Patient/example-core-patient-ivanov-min"
   * required = true
   * status = #accepted
 
