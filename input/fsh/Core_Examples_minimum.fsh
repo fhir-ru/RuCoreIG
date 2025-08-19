@@ -119,7 +119,7 @@ Description: "Минимальный пример обращения с испо
   * system = "https://fhir.ru/ig/core/systems/encounter"
   * value = "ENC-2024-001"
 
-* status = #finished
+* status = #completed
 * class[0]
   * coding[0]
     * system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
