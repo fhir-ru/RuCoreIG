@@ -330,3 +330,15 @@ Description: "Коды родственных связей по справочн
 //  * ^designation[0].value = "Попечитель"
 //  * ^designation[1].language = #en-US
 //  * ^designation[1].value = "trustee"
+
+
+// Страховые медицинские организации (страховщики) - 12
+
+CodeSystem: Core_Cs_Nsi_Insurer
+Id: core-cs-nsi-insurer
+Title: "Core CodeSystem Страховые медицинские организации"
+Description: "НСИ МЗ РФ справочник [Страховые медицинские организации](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.183)"
+* ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-insurer"
+* ^experimental = false
+* ^caseSensitive = false
+* ^content = #not-present

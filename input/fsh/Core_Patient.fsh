@@ -40,11 +40,18 @@ Description: "Базовый профиль пациента для россий
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/OMS"
   * type 1..1
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
+  * type.coding ^slicing.discriminator.type = #value
+  * type.coding ^slicing.discriminator.path = "system"
+  * type.coding ^slicing.rules = #open
+  * type.coding ^slicing.description = "Нарезка по способу указания кода полиса ОМС"
+  * type.coding contains 
+      hl7Type 0..1
+  * type.coding[hl7Type] = http://terminology.hl7.org/CodeSystem/v2-0203#SB
 
 * name ^short = "ФИО пациента"
-  * family ^short = "Фамилия пациента"
-  * given ^short = "Имя и отчество пациента. Первым должно идти имя, вторым - отчество"
+  * family ^short = "Фамилия"
+  * given ^short = "Имя и отчество пациента"
+  * given ^definition = "Массив строк: первый элемент - имя, второй элемент - отчество"
   * use ^short = "Тип имени пациента. Рекомендуемое значение: official"
 
 * gender ^short = "Пол пациента. Используются позиции: male | female | unknown. Other - не используется для совместимости со Справочником НСИ Пол пациента"

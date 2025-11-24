@@ -139,6 +139,29 @@ Usage: #definition
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1461"
 
 
+// Страховые медицинские организации (страховщики) - 12
+Instance:   core-ns-nsi-insurer
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Справочник - Страховые медицинские организации"
+Usage: #definition
+* name = "Core_Ns_Nsi_Insurer"
+* status = #active
+* kind = #codesystem
+* date = "2024-01-01"
+* description = "Справочник НСИ Минздрава <Страховые медицинские организации>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.183"
+
+* uniqueId[0]
+  * type = #oid
+  * value = "1.2.643.5.1.13.13.99.2.183"
+* uniqueId[1]
+  * type = #uri
+  * preferred = true
+  * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-insurer"
+* uniqueId[2]
+  * type = #uri
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.183"
+
+
 // Типы адресов - 7
 
 Instance: core-ns-nsi-address-type
@@ -353,6 +376,21 @@ Usage: #definition
 * uniqueId
   * type = #uri
   * value = "https://fhir.ru/ig/core/systems/medlicense"
+  * preferred = true
+
+// Код подразделения (номер подразделения) - для документов, удостоверяющих личность
+Instance:   core-ns-rf-ns-division-code
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Идентификатор - Код подразделения (номер подразделения)"
+Usage: #definition
+* name = "Core_Ns_Rf_NS_Division_Code"
+* status = #active
+* kind = #identifier
+* date = "2024-01-01"
+* description = "Код подразделения (номер подразделения) организации, выдавшей документ, удостоверяющий личность. Используется для идентификации подразделения, выдавшего паспорт или иной документ"
+* uniqueId
+  * type = #uri
+  * value = "https://fhir.ru/ig/core/systems/ns-division-code"
   * preferred = true
 
 

@@ -38,10 +38,10 @@ info  Assembled Implementation Guide sources; ready for IG Publisher.
 |  -------------------------------------------------------------  |
 |                                                                 |
 ===================================================================
-| You've found your sea legs.            0 Errors      0 Warnings |
+| Ex-clam-ation point!                   0 Errors      0 Warnings |
 ===================================================================
 |    You are using SUSHI version 3.15.0, but the latest stable    |
-| release is version 3.16.3. To install the latest release, run:  |
+| release is version 3.16.5. To install the latest release, run:  |
 |                    npm install -g fsh-sushi                     |
 ===================================================================
 
