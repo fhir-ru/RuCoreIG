@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "list": [
+    {
+      "version": "0.3.0",
+      "desc": "Draft release with revised handling of Russian addresses: Core_Address applies to addresses on the territory of the Russian Federation; foreign addresses use the base Address datatype.",
+      "path": "https://fhir.ru/ig/core/0.3.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "current",
       "desc": "Continuous Integration Build",
