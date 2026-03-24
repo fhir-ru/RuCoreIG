@@ -1,20 +1,40 @@
 info  Running SUSHI v3.15.0 (implements FHIR Shorthand specification v3.0.0)
 info  Arguments:
 info    /Users/ekogan/git3/RuCoreIG
+npm error code ENOTFOUND
+npm error syscall getaddrinfo
+npm error errno ENOTFOUND
+npm error network request to https://registry.npmjs.org/fsh-sushi failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error Log files were not written due to an error writing to the directory: /Users/ekogan/.npm/_logs
+npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal
+info  Unable to determine the latest version of sushi: Command failed: npm view fsh-sushi version
+npm error code ENOTFOUND
+npm error syscall getaddrinfo
+npm error errno ENOTFOUND
+npm error network request to https://registry.npmjs.org/fsh-sushi failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error Log files were not written due to an error writing to the directory: /Users/ekogan/.npm/_logs
+npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal
+
+info  Attempting fallback to determine version of sushi.
+warn  Unable to determine the latest version of sushi: getaddrinfo ENOTFOUND registry.npmjs.org
 info  No output path specified. Output to .
 info  Using configuration file: /Users/ekogan/git3/RuCoreIG/sushi-config.yaml
 info  Importing FSH text...
 info  Preprocessed 20 documents with 0 aliases.
 info  Imported 44 definitions and 69 instances.
-info  Resolved hl7.fhir.uv.tools.r5#latest to concrete version 0.8.0
-info  Loaded hl7.fhir.uv.tools.r5#0.8.0 with 107 resources
-info  Resolved hl7.terminology.r5#latest to concrete version 7.0.0
-info  Attempting to download hl7.terminology.r5#7.0.0 from https://packages.fhir.org/hl7.terminology.r5/7.0.0
-info  Downloaded hl7.terminology.r5#7.0.0
-info  Cached hl7.terminology.r5#7.0.0 to /Users/ekogan/.fhir/packages/hl7.terminology.r5#7.0.0
-info  Loaded hl7.terminology.r5#7.0.0 with 4096 resources
-info  Resolved hl7.fhir.uv.extensions.r5#latest to concrete version 5.2.0
-info  Loaded hl7.fhir.uv.extensions.r5#5.2.0 with 759 resources
+warn  Failed to load automatically-provided hl7.fhir.uv.tools.r5#latest
+warn  Failed to load automatically-provided hl7.terminology.r5#latest
+warn  Failed to load automatically-provided hl7.fhir.uv.extensions.r5#latest
 info  Loaded hl7.fhir.r5.core#5.0.0 with 2968 resources
 info  Loaded virtual package sushi-local#LOCAL with 0 resources
 info  Converting FSH to FHIR resources...
@@ -25,6 +45,8 @@ info  Converted 69 FHIR instances.
 info  Exporting FHIR resources as JSON...
 info  Exported 101 FHIR resources as JSON.
 info  Assembling Implementation Guide sources...
+warn  Files not in the supported file types (.md and .xml) were detected.
+  File: /Users/ekogan/git3/RuCoreIG/input/pagecontent
 info  Generated ImplementationGuide-ru.core.json
 info  Assembled Implementation Guide sources; ready for IG Publisher.
 
@@ -41,10 +63,10 @@ info  Assembled Implementation Guide sources; ready for IG Publisher.
 |  -------------------------------------------------------------  |
 |                                                                 |
 ===================================================================
-| You're swimming in success!            0 Errors      0 Warnings |
+| You seem to be casting about.          0 Errors      5 Warnings |
 ===================================================================
-|    You are using SUSHI version 3.15.0, but the latest stable    |
-| release is version 3.16.5. To install the latest release, run:  |
-|                    npm install -g fsh-sushi                     |
+|   SUSHI cannot determine if it is running the latest version.   |
+|   To see a listing of releases, including the latest, visit:    |
+|             https://github.com/FHIR/sushi/releases              |
 ===================================================================
 

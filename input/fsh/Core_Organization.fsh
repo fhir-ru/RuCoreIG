@@ -13,7 +13,7 @@ Description: "Базовый профиль организации для рос
 
 * contact
   * address ^short = "Адрес организации"
-  * address only Core_Address
+  * address ^comment = "Для адресов на территории Российской Федерации следует использовать правила профиля Core_Address. Для адресов вне территории Российской Федерации применяется базовый тип Address."
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"

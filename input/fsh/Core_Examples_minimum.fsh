@@ -525,7 +525,7 @@ Instance: example-core-address-moscow-home-min
 InstanceOf: Core_Address
 Usage: #inline
 Title: "Пример адреса - домашний адрес в Москве (минимальный)"
-Description: "Минимальный пример адреса с использованием Core_Address профиля"
+Description: "Минимальный пример адреса на территории РФ с использованием профиля Core_Address"
 
 * use = #home
 * type = #physical

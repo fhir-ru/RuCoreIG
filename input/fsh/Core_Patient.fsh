@@ -59,7 +59,7 @@ Description: "Базовый профиль пациента для россий
 * birthDate ^short = "Дата рождения пациента, формат YYYY-MM-DD или YYYY-MM-DDTHH:MM для новорождённых"
 
 * address ^short = "Адрес пациента"
-* address only Core_Address
+* address ^comment = "Для адресов на территории Российской Федерации следует использовать правила профиля Core_Address. Для адресов вне территории Российской Федерации применяется базовый тип Address."
 
 * managingOrganization ^short = "Ответственная организация"
 * managingOrganization only Reference(Core_Organization) 

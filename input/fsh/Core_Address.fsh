@@ -1,8 +1,8 @@
 Profile: Core_Address
 Parent: Address
 Id: core-address
-Title: "Core Address (Адрес)"
-Description: "Базовый профиль адреса для российских FHIR-реализаций"
+Title: "Core Address Ru (Адрес на территории РФ)"
+Description: "Профиль адреса для объектов, расположенных на территории Российской Федерации"
 
 * extension contains
     https://fhir.ru/ig/core/StructureDefinition/fias named fias 0..1 and
@@ -20,5 +20,4 @@ Description: "Базовый профиль адреса для российск
 * postalCode ^short = "Почтовый индекс"
 
 * state ^short = "Регион"
-
 
