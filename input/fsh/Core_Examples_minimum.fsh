@@ -98,9 +98,9 @@ Description: "Минимальный пример связанного лица 
 
 * relationship
   * coding[0]
-    * system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-codesystem"
-    * code = #SPS
-    * display = "Spouse"
+    * system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
+    * code = #spouse
+    * display = "Супруг(а)"
 
 * name[0]
   * family = "Иванова"
