@@ -1,1 +1,4 @@
 sushi_output.txt
+
+fsh-generated/
+.DS_Store
