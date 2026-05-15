@@ -8,11 +8,14 @@ Instance: core-cm-relatedperson-hl7
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "Core ConceptMap RuCore -> HL7 RoleCode"
-Description: "Соответствия между каноническими отношениями RuCore и кодами HL7 RoleCode для RelatedPerson."
+Description: "Соответствия между каноническими отношениями RuCore и [кодами HL7 RoleCode](https://terminology.hl7.org/CodeSystem-v3-RoleCode.html) для `RelatedPerson`."
 
 * url = "https://fhir.ru/ig/core/ConceptMap/core-cm-relatedperson-hl7"
+* name = "CoreCmRelatedpersonHl7"
 * status = #active
 * experimental = false
+* sourceScopeUri = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
+* targetScopeUri = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
 * group[0].source = $ru-relatedperson
 * group[0].target = $hl7-rolecode
 * group[0].element[0].code = #mother
@@ -86,11 +89,14 @@ Instance: core-cm-relatedperson-nsi-14
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "Core ConceptMap RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.14"
-Description: "Соответствия между каноническими отношениями RuCore и словарем НСИ МЗ РФ 'Родственные и иные связи'."
+Description: "Соответствия между каноническими отношениями RuCore и [справочником НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.14 «Родственные и иные связи»](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.14)."
 
 * url = "https://fhir.ru/ig/core/ConceptMap/core-cm-relatedperson-nsi-14"
+* name = "CoreCmRelatedpersonNsi14"
 * status = #active
 * experimental = false
+* sourceScopeUri = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
+* targetScopeUri = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.14"
 * group[0].source = $ru-relatedperson
 * group[0].target = $nsi-rel-14
 * group[0].element[0].code = #mother
@@ -121,11 +127,14 @@ Instance: core-cm-relatedperson-nsi-1021
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "Core ConceptMap RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.11.1021"
-Description: "Соответствия между каноническими отношениями RuCore и словарем НСИ МЗ РФ для трансплантологии, версия 1.1."
+Description: "Соответствия между каноническими отношениями RuCore и [справочником НСИ МЗ РФ 1.2.643.5.1.13.13.11.1021 «Тип родственной связи»](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1021)."
 
 * url = "https://fhir.ru/ig/core/ConceptMap/core-cm-relatedperson-nsi-1021"
+* name = "CoreCmRelatedpersonNsi1021"
 * status = #active
 * experimental = false
+* sourceScopeUri = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
+* targetScopeUri = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1021"
 * group[0].source = $ru-relatedperson
 * group[0].target = $nsi-rel-1021
 * group[0].element[0].code = #spouse
@@ -173,11 +182,14 @@ Instance: core-cm-relatedperson-nsi-240
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "Core ConceptMap RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.240"
-Description: "Соответствия между каноническими отношениями RuCore и словарем НСИ МЗ РФ для трансплантологии, версия 1.2."
+Description: "Соответствия между каноническими отношениями RuCore и [справочником НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.240 «Трансплантология. Типы родственной связи»](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.240)."
 
 * url = "https://fhir.ru/ig/core/ConceptMap/core-cm-relatedperson-nsi-240"
+* name = "CoreCmRelatedpersonNsi240"
 * status = #active
 * experimental = false
+* sourceScopeUri = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
+* targetScopeUri = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.240"
 * group[0].source = $ru-relatedperson
 * group[0].target = $nsi-rel-240
 * group[0].element[0].code = #spouse

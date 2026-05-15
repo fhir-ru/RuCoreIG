@@ -7,9 +7,9 @@
 Для сопоставления канонических понятий RuCore с внешними терминологиями используются следующие `ConceptMap`:
 
 * [RuCore -> HL7 RoleCode](ConceptMap-core-cm-relatedperson-hl7.html)
-* [RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.14](ConceptMap-core-cm-relatedperson-nsi-14.html)
-* [RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.11.1021](ConceptMap-core-cm-relatedperson-nsi-1021.html)
-* [RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.240](ConceptMap-core-cm-relatedperson-nsi-240.html)
+* [RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.14 «Родственные и иные связи»](ConceptMap-core-cm-relatedperson-nsi-14.html)
+* [RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.11.1021 «Тип родственной связи»](ConceptMap-core-cm-relatedperson-nsi-1021.html)
+* [RuCore -> НСИ МЗ РФ 1.2.643.5.1.13.13.99.2.240 «Трансплантология. Типы родственной связи»](ConceptMap-core-cm-relatedperson-nsi-240.html)
 
 ### Примечание
 
