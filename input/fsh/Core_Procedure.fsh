@@ -25,12 +25,12 @@ Description: "Базовый профиль процедуры для росси
 * code from Core_Vs_Nsi_Medical_Services (required)
 
 * subject ^short = "Пациент"
-* subject only Reference(Core_Patient)
+* subject only Reference(Core_Patient or Group or Device or Core_Practitioner or Core_Organization or Location)
 
 * occurrence[x] ^short = "Дата и время выполнения процедуры"
 
 * performer ^short = "Исполнитель процедуры"
-* performer.actor only Reference(Core_PractitionerRole)
+* performer.actor only Reference(Core_Practitioner or Core_PractitionerRole or Core_Organization or Core_Patient or Core_RelatedPerson or Device or Core_CareTeam or HealthcareService)
 
 * reason ^short = "Причина выполнения процедуры"
 * reason from http://hl7.org/fhir/ValueSet/procedure-reason (extensible)

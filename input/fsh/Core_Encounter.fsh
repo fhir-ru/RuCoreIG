@@ -5,11 +5,10 @@ Title: "Core Encounter (Случай оказания медицинской п�
 Description: "Профиль Encounter для RuCore"
 
 * subject ^short = "Пациент"
-* subject only Reference(Core_Patient)
+* subject only Reference(Core_Patient or Group)
 
 * episodeOfCare ^short = "Эпизод медицинской помощи"
 * episodeOfCare only Reference(Core_EpisodeOfCare)
 
 * serviceProvider ^short = "Поставщик медицинских услуг"
 * serviceProvider only Reference(Core_Organization)
-

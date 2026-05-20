@@ -4,18 +4,18 @@
 
 | Бизнес-требование | Атрибут | Решение по профилированию |
 |-------------------|---------|---------------------------|
-| Описание пациента должно соответствовать требованиям РФ | subject | Должен быть представлен профилем Core_Patient |
-| Описание автора документа должно соответствовать требованиям РФ | author | Должен быть представлен профилем Core_PractitionerRole |
+| Описание субъекта документа должно соответствовать требованиям РФ, если ссылка указывает на профилируемый ресурс RuCore | subject | Тип `Composition.subject` в R5 не сужается, чтобы не потерять допустимые варианты `Reference(Any)` |
+| Описание автора документа должно соответствовать требованиям РФ, если ссылка указывает на профилируемый ресурс RuCore | author | Для `Organization`, `Patient`, `Practitioner`, `PractitionerRole`, `RelatedPerson` используются профили RuCore, остальные допустимые типы R5 сохранены |
 | Описание хранителя документа должно соответствовать требованиям РФ | custodian | Должен быть представлен профилем Core_Organization |
-| Описание лица, придавшего документу юридическую силу, должно соответствовать требованиям РФ | attester | Должен быть представлен профилем Core_PractitionerRole |
+| Описание лица, придавшего документу юридическую силу, должно соответствовать требованиям РФ, если ссылка указывает на профилируемый ресурс RuCore | attester | Для `Organization`, `Patient`, `Practitioner`, `PractitionerRole`, `RelatedPerson` используются профили RuCore |
 
 ## Описание профиля
 
 Профиль Core_Composition расширяет стандартный ресурс Composition для поддержки российских требований:
-- Субъект документа (пациент) должен быть представлен профилем Core_Patient
-- Автор документа должен быть представлен профилем Core_PractitionerRole
+- `Composition.subject` оставлен без сужения типов, чтобы сохранить полную семантику `Reference(Any)` из R5
+- Если `author` ссылается на профилируемый ресурс RuCore, должен использоваться соответствующий профиль RuCore
 - Хранитель документа должен быть представлен профилем Core_Organization
-- Лицо, придавшее документу юридическую силу, должно быть представлено профилем Core_PractitionerRole
+- Если `attester.party` ссылается на профилируемый ресурс RuCore, должен использоваться соответствующий профиль RuCore
 
 ---
 
@@ -28,9 +28,8 @@ Id: core-composition
 Title: "Core Composition (Состав документа)"
 Description: "Базовый профиль состава документа для российских FHIR-реализаций"
 
-* subject only Reference(Core_Patient)
-* author only Reference(Core_PractitionerRole)
+* author only Reference(Device or Core_Organization or Core_Patient or Core_Practitioner or Core_PractitionerRole or Core_RelatedPerson)
 * custodian only Reference(Core_Organization)
 * attester
-  * party only Reference(Core_PractitionerRole)
+  * party only Reference(Core_Organization or Core_Patient or Core_Practitioner or Core_PractitionerRole or Core_RelatedPerson)
 ``` 
