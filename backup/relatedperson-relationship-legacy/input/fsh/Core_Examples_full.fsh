@@ -1016,8 +1016,8 @@ Description: "Полный пример связанного лица с исп�
 
 * relationship
   * coding[0]
-    * system = "urn:oid:1.2.643.5.1.13.13.11.1021"
-    * code = #"1"
+    * system = "https://fhir.ru/ig/core/CodeSystem/core-relatedperson-relationship"
+    * code = #spouse
     * display = "Супруг(а)"
 
 * name[0]
