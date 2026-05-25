@@ -22,14 +22,14 @@ Description: "Базовый профиль страхового покрыти�
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/oms"
   * type 1..1
-  * type.coding 2..*
+  * type.coding 1..*
   * type.coding ^slicing.discriminator.type = #value
   * type.coding ^slicing.discriminator.path = "system"
   * type.coding ^slicing.rules = #open
   * type.coding ^slicing.description = "Нарезка по способу указания кода полиса ОМС - HL7 и РФ"
   * type.coding contains 
-      hl7Type 1..1 and
-      omsType 1..1
+      hl7Type 0..1 and
+      omsType 0..1
   * type.coding[hl7Type] = http://terminology.hl7.org/CodeSystem/v2-0203#SB
   * type.coding[omsType] ^short = "Тип полиса ОМС по справочнику НСИ МЗ РФ"
     * system 1..1

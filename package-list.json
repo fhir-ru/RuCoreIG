@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "list": [
+    {
+      "version": "0.8.0",
+      "desc": "Draft release aligning RuCore slicing with interoperability-first rules by relaxing Core_Coverage omsPolicy type coding so downstream guides are not forced to use both HL7 and NSI codings simultaneously.",
+      "path": "https://fhir.ru/ig/core/0.8.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.7.0",
       "desc": "Draft release relaxing national terminology bindings to extensible and normalizing canonical identifier system URIs, NamingSystems, and examples across RuCore.",
