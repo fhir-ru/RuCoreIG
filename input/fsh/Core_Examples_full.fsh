@@ -57,13 +57,13 @@ Description: "Полный пример пациента с использова
   * assigner.display = "ПФР РФ"
 
 * identifier[1]
-  * system = "https://www.nalog.gov.ru/inn"
+  * system = "https://fhir.ru/ig/core/systems/inn"
   * value = "123456789012"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * identifier[2]
-  * system = "https://fhir.ru/ig/core/systems/passport"
+  * system = "https://fhir.ru/ig/core/systems/identity-document"
   * value = "4510-123456"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#PPN
   * use = #official
@@ -175,7 +175,7 @@ Description: "Полный пример медицинской организа�
     """
 
 * identifier[0]
-  * system = "https://www.nalog.gov.ru/inn"
+  * system = "https://fhir.ru/ig/core/systems/inn"
   * value = "7701234567"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
@@ -290,7 +290,7 @@ Description: "Полный пример медицинского работни�
   * use = #official
 
 * identifier[1]
-  * system = "https://fhir.ru/ig/core/systems/passport"
+  * system = "https://fhir.ru/ig/core/systems/identity-document"
   * value = "4510-654321"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#PPN
   * use = #official

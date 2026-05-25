@@ -30,7 +30,7 @@ Title: "Пример организации - Городская поликли�
 Description: "Минимальный пример медицинской организации с использованием Core_Organization профиля"
 
 * identifier[0]
-  * system = "https://www.nalog.gov.ru/inn"
+  * system = "https://fhir.ru/ig/core/systems/inn"
   * value = "7701234567"
 
 * active = true
