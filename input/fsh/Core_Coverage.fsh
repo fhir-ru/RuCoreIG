@@ -21,8 +21,6 @@ Description: "Базовый профиль страхового покрыти�
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/oms"
-  * type 1..1
-  * type.coding 1..*
   * type.coding ^slicing.discriminator.type = #value
   * type.coding ^slicing.discriminator.path = "system"
   * type.coding ^slicing.rules = #open

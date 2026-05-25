@@ -39,14 +39,19 @@ Description: "Базовый профиль пациента для россий
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/oms"
-  * type 1..1
   * type.coding ^slicing.discriminator.type = #value
   * type.coding ^slicing.discriminator.path = "system"
   * type.coding ^slicing.rules = #open
   * type.coding ^slicing.description = "Нарезка по способу указания кода полиса ОМС"
   * type.coding contains 
-      hl7Type 0..1
+      hl7Type 0..1 and
+      omsType 0..1
   * type.coding[hl7Type] = http://terminology.hl7.org/CodeSystem/v2-0203#SB
+  * type.coding[omsType] ^short = "Тип полиса ОМС по справочнику НСИ МЗ РФ"
+    * system 1..1
+    * system = "urn:oid:1.2.643.5.1.13.13.99.2.245"
+    * code 1..1
+    * code from Core_Vs_Nsi_Coverage_Document_OMS (extensible)
 
 * name ^short = "ФИО пациента"
   * family ^short = "Фамилия"
