@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "list": [
+    {
+      "version": "0.7.0",
+      "desc": "Draft release relaxing national terminology bindings to extensible and normalizing canonical identifier system URIs, NamingSystems, and examples across RuCore.",
+      "path": "https://fhir.ru/ig/core/0.7.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.6.0",
       "desc": "Draft release restoring the full FHIR R5 reference target sets in core workflow profiles while keeping RuCore profiles for those resource types that RuCore defines.",
