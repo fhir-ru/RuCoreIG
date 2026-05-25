@@ -49,7 +49,7 @@ Description: "Базовый профиль организации для рос
 * identifier[NSI-FRMO] ^short = "Федеральный реестр медицинских организаций МЗ РФ (ФРМО)"
   * value only string
   * system 1..1
-  * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations"
+  * system = "https://fhir.ru/ig/core/systems/frmo"
 //  * type 1..1
 //  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
 

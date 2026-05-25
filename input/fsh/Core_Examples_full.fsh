@@ -193,7 +193,7 @@ Description: "Полный пример медицинской организа�
   * use = #official
 
 * identifier[3]
-  * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations"
+  * system = "https://fhir.ru/ig/core/systems/frmo"
   * value = "7701001"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official

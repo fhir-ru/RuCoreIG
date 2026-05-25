@@ -10,9 +10,10 @@
 
 * Национальные терминологические привязки в базовых профилях RuCore ослаблены с `required` до `extensible`, чтобы использование российских справочников оставалось обязательным по смыслу, но отсутствие нужного кода не блокировало реализацию.
 * Нормализованы канонические URI identifier system для `snils`, `identity-document` и `oms` во всех затронутых профилях.
-* Добавлены `NamingSystem` для `identity-document` и `okpo`.
+* Добавлены `NamingSystem` для `identity-document`, `okpo` и `frmo`.
 * Примеры ресурсов приведены к каноническим identifier system RuCore для основных идентификаторов, чтобы опубликованные образцы демонстрировали эталонную модель RuCore.
 * Из профилей удалены явные тавтологии базовой FHIR-спецификации, которые не добавляли собственного контракта RuCore, включая повторные bindings для `Procedure.status` и `RelatedPerson.telecom.system`.
+* Для идентификатора ФРМО введен отдельный URI identifier system `https://fhir.ru/ig/core/systems/frmo` вместо использования URI `CodeSystem` в `Organization.identifier.system`.
 
 ## Версия 0.6.0
 

@@ -384,6 +384,24 @@ Usage: #definition
   * type = #uri
   * value = "https://websbor.rosstat.gov.ru/online/info"
 
+// ФРМО
+Instance:   core-ns-rf-frmo
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Идентификатор - ФРМО"
+Usage: #definition
+* name = "Core_Ns_Rf_FRMO"
+* status = #active
+* kind = #identifier
+* date = "2026-05-25"
+* description = "Идентификатор медицинской организации в Федеральном реестре медицинских организаций (ФРМО). В RuCore используется собственный identifier system URI с явной ссылкой на соответствующий справочник НСИ МЗ РФ."
+* uniqueId[0]
+  * type = #uri
+  * value = "https://fhir.ru/ig/core/systems/frmo"
+  * preferred = true
+* uniqueId[1]
+  * type = #uri
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1461"
+
 // Номер свидетельства о рождении
 Instance:   core-ns-rf-birth-certificate
 InstanceOf: NamingSystem
