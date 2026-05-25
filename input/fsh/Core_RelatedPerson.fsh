@@ -28,7 +28,6 @@ Description: "Базовый профиль RelatedPerson для РФ. Опре�
   * use ^short = "Тип имени представителя пациента. Рекомендуемое значение: official"
 
 * telecom ^short = "Контакты представителя пациента"
-* telecom.system from http://hl7.org/fhir/ValueSet/contact-point-system (required)
 * telecom.value 1..1
 
 * address ^short = "Адрес представителя пациента"
