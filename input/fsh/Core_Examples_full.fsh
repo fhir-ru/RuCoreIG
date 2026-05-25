@@ -181,19 +181,19 @@ Description: "Полный пример медицинской организа�
   * use = #official
 
 * identifier[1]
-  * system = "https://egrul.nalog.ru/ogrn"
+  * system = "https://fhir.ru/ig/core/systems/ogrn"
   * value = "1027700000001"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * identifier[2]
-  * system = "https://classifikators.ru/okpo"
+  * system = "https://fhir.ru/ig/core/systems/okpo"
   * value = "12345678"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * identifier[3]
-  * system = "https://www.rosminzdrav.ru/frmo"
+  * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations"
   * value = "7701001"
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
@@ -229,7 +229,7 @@ Description: "Полный пример медицинской организа�
 
 * qualification[0]
   * identifier[0]
-    * system = "https://www.rosminzdrav.ru/license"
+    * system = "https://fhir.ru/ig/core/systems/medlicense"
     * value = "ЛО-77-01-000001"
   * code
     * coding[0]
