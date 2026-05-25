@@ -12,6 +12,7 @@
 * Нормализованы канонические URI identifier system для `snils`, `identity-document` и `oms` во всех затронутых профилях.
 * Добавлены `NamingSystem` для `identity-document` и `okpo`.
 * Примеры ресурсов приведены к каноническим identifier system RuCore для основных идентификаторов, чтобы опубликованные образцы демонстрировали эталонную модель RuCore.
+* Из профилей удалены явные тавтологии базовой FHIR-спецификации, которые не добавляли собственного контракта RuCore, включая повторные bindings для `Procedure.status` и `RelatedPerson.telecom.system`.
 
 ## Версия 0.6.0
 
