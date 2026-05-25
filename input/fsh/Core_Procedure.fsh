@@ -22,7 +22,7 @@ Description: "Базовый профиль процедуры для росси
 * status from http://hl7.org/fhir/ValueSet/event-status (required)
 
 * code ^short = "Код процедуры"
-* code from Core_Vs_Nsi_Medical_Services (required)
+* code from Core_Vs_Nsi_Medical_Services (extensible)
 
 * subject ^short = "Пациент"
 * subject only Reference(Core_Patient or Group or Device or Core_Practitioner or Core_Organization or Location)

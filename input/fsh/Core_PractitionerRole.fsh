@@ -11,4 +11,4 @@ Description: "Профиль PractitionerRole для RuCore"
 * organization only Reference(Core_Organization)
 
 * code ^short = "Должность медицинского работника"
-* code from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions (required) 
+* code from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions (extensible) 

@@ -24,7 +24,7 @@ Description: "Базовый профиль медицинского работ�
   * system 1..1
   * system = "https://fhir.ru/ig/semd/systems/identity-document"
   * type 1..1
-  * type from Core_Vs_Nsi_Identity_Documents (required)
+  * type from Core_Vs_Nsi_Identity_Documents (extensible)
 
 * name ^short = "ФИО медицинского работника"
   * family ^short = "Фамилия"

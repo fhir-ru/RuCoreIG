@@ -33,7 +33,7 @@ Description: "Базовый профиль пациента для россий
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/identity-document"
   * type 1..1
-  * type from Core_Vs_Nsi_Identity_Documents (required)
+  * type from Core_Vs_Nsi_Identity_Documents (extensible)
 
 * identifier[omsPolicy] ^short = "Полис ОМС"
   * value only string

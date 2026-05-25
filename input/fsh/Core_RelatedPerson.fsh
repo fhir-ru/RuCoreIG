@@ -8,7 +8,7 @@ Description: "Базовый профиль RelatedPerson для РФ. Опре�
 * patient only Reference(Core_Patient)
 
 * relationship ^short = "Отношение представителя к пациенту"
-* relationship from https://fhir.ru/ig/core/ValueSet/relatedperson-relationship (required)
+* relationship from https://fhir.ru/ig/core/ValueSet/relatedperson-relationship (extensible)
 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"

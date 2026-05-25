@@ -5,7 +5,7 @@ Title: "Core Coverage (Страховое покрытие)"
 Description: "Базовый профиль страхового покрытия для российских FHIR-реализаций"
 
 * type ^short = "Тип источника оплаты"
-* type from Core_Vs_Nsi_Sources_Of_Payment (required)
+* type from Core_Vs_Nsi_Sources_Of_Payment (extensible)
 
 * beneficiary ^short = "Бенефициар"
 * beneficiary only Reference(Core_Patient)
@@ -35,4 +35,4 @@ Description: "Базовый профиль страхового покрыти�
     * system 1..1
     * system = "urn:oid:1.2.643.5.1.13.13.99.2.245"
     * code 1..1
-    * code from Core_Vs_Nsi_Coverage_Document_OMS (required)
+    * code from Core_Vs_Nsi_Coverage_Document_OMS (extensible)

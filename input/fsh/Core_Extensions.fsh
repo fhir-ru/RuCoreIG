@@ -8,7 +8,7 @@ Description: "Расширение для хранения типа адреса
 
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/address-type"
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-address-type (required)
+* valueCodeableConcept from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-address-type (extensible)
 * valueCodeableConcept ^short = "Код типа адреса (по НСИ 2.1504)"
 * ^context.type = #element
 * ^context.expression = "Address"
@@ -20,7 +20,7 @@ Title: "Core Extension RegionRF (Регион РФ)"
 Description: "Расширение для хранения кода региона по НСИ 2.206"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/regionRF"
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-region-rf (required)
+* valueCodeableConcept from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-region-rf (extensible)
 * valueCodeableConcept ^short = "Код региона (по НСИ 2.206)"
 * ^context.type = #element
 * ^context.expression = "Address"
@@ -68,7 +68,7 @@ Title: "Core Extension OKATO (Код ОКАТО)"
 Description: "Расширение для хранения кода по Общероссийскому классификатору административно-территориальных образований (ОКАТО)"
 * ^url = "https://fhir.ru/ig/core/StructureDefinition/okato"
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-okato (required)
+* valueCodeableConcept from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-okato (extensible)
 * valueCodeableConcept ^short = "Код ОКАТО"
 * ^context.type = #element
 * ^context.expression = "Organization"
