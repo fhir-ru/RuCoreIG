@@ -38,7 +38,7 @@ Description: "Базовый профиль пациента для россий
 * identifier[omsPolicy] ^short = "Полис ОМС"
   * value only string
   * system 1..1
-  * system = "https://fhir.ru/ig/core/systems/OMS"
+  * system = "https://fhir.ru/ig/core/systems/oms"
   * type 1..1
   * type.coding ^slicing.discriminator.type = #value
   * type.coding ^slicing.discriminator.path = "system"

@@ -15,14 +15,14 @@ Description: "Базовый профиль медицинского работ�
 * identifier[snils] ^short = "Страховой номер индивидуального лицевого счёта (СНИЛС)"
   * value only string
   * system 1..1
-  * system = "https://fhir.ru/ig/semd/systems/snils"
+  * system = "https://fhir.ru/ig/core/systems/snils"
   * type 1..1
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
 
 * identifier[identityDocument] ^short = "Документ, удостоверяющий личность"
   * value only string
   * system 1..1
-  * system = "https://fhir.ru/ig/semd/systems/identity-document"
+  * system = "https://fhir.ru/ig/core/systems/identity-document"
   * type 1..1
   * type from Core_Vs_Nsi_Identity_Documents (extensible)
 

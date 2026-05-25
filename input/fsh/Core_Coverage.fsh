@@ -20,7 +20,7 @@ Description: "Базовый профиль страхового покрыти�
 * identifier[omsPolicy] ^short = "Документ, подтверждающий страховку по ОМС"
   * value only string
   * system 1..1
-  * system = "http://fhir.ru/ig/core/systems/oms"
+  * system = "https://fhir.ru/ig/core/systems/oms"
   * type 1..1
   * type.coding 2..*
   * type.coding ^slicing.discriminator.type = #value

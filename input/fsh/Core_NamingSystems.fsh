@@ -318,6 +318,24 @@ Usage: #definition
   * value = "https://fhir.ru/ig/core/systems/snils"
   * preferred = true
 
+// Документ, удостоверяющий личность
+Instance:   core-ns-rf-identity-document
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Идентификатор - Документ, удостоверяющий личность"
+Usage: #definition
+* name = "Core_Ns_Rf_Identity_Document"
+* status = #active
+* kind = #identifier
+* date = "2026-05-25"
+* description = "Идентификатор документа, удостоверяющего личность. В RuCore используется URI собственной системы идентификаторов, связанной со справочником НСИ МЗ РФ <Документы, удостоверяющие личность>."
+* uniqueId[0]
+  * type = #uri
+  * value = "https://fhir.ru/ig/core/systems/identity-document"
+  * preferred = true
+* uniqueId[1]
+  * type = #uri
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.48"
+
 // ОГРН
 Instance:   core-ns-rf-ogrn
 InstanceOf: NamingSystem
@@ -347,6 +365,24 @@ Usage: #definition
   * type = #uri
   * value = "https://fhir.ru/ig/core/systems/inn"
   * preferred = true
+
+// ОКПО
+Instance:   core-ns-rf-okpo
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Идентификатор - ОКПО"
+Usage: #definition
+* name = "Core_Ns_Rf_OKPO"
+* status = #active
+* kind = #identifier
+* date = "2026-05-25"
+* description = "Код по Общероссийскому классификатору предприятий и организаций (ОКПО). В RuCore используется URI собственной системы идентификаторов, а официальная информация о кодах публикуется Росстатом."
+* uniqueId[0]
+  * type = #uri
+  * value = "https://fhir.ru/ig/core/systems/okpo"
+  * preferred = true
+* uniqueId[1]
+  * type = #uri
+  * value = "https://websbor.rosstat.gov.ru/online/info"
 
 // Номер свидетельства о рождении
 Instance:   core-ns-rf-birth-certificate
@@ -423,4 +459,3 @@ Usage: #definition
   * type = #uri
   * value = "urn:hl7-ru:fias:houseguid"
   * preferred = true
-
