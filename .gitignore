@@ -2,3 +2,6 @@ sushi_output.txt
 
 fsh-generated/
 .DS_Store
+
+# Local source materials used while preparing the GOST draft
+/gost-local/

@@ -1,0 +1,11 @@
+gost/title.md
+input/pagecontent/gost-01-introduction.md
+input/pagecontent/gost-02-scope.md
+input/pagecontent/gost-03-normative-references.md
+input/pagecontent/gost-04-terms.md
+input/pagecontent/gost-05-profiling.md
+input/pagecontent/gost-06-resources.md
+input/pagecontent/gost-07-bibliography.md
+input/pagecontent/gost-08-appendices.md
+input/pagecontent/gost-appendix-a.md
+input/pagecontent/gost-appendix-b.md
