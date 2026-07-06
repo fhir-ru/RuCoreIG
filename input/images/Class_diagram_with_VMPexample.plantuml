@@ -1,0 +1,234 @@
+@startuml
+' Изменяем направление графа для вертикальной ориентации (узкая и высокая диаграмма)
+left to right direction
+
+' Настройки стилей для соответствия оригинальному изображению и визуального разделения
+skinparam nodesep 20
+skinparam ranksep 40
+
+skinparam class {
+    BackgroundColor #E8F5E9
+    BackgroundColor<<DataType>> #E1F5FE
+    BackgroundColor<<Resource>> #FFF59D
+    BackgroundColor<<RuCore_Profile>> #F8BBD0
+    BackgroundColor<<VMP_Profile>> #FFFFFF
+    ArrowColor #000080
+    BorderColor #333333
+}
+hide methods
+
+' ==========================================
+' БАЗОВЫЕ КЛАССЫ
+' ==========================================
+
+class Base
+
+class Element {
+  id : string [0..1] << C >>
+  extension : Extension [0..*]
+}
+
+class Resource {
+  id : id [0..1]
+  meta : Meta [0..1]
+  implicitRules : uri [0..1]
+  language : code [0..1] << AllLanguages! >>
+}
+
+class DataType
+class PrimitiveType
+class BackboneElement {
+  modifierExtension : Extension [0..*]
+}
+class BackboneType {
+  modifierExtension : Extension [0..*]
+}
+
+class DomainResource {
+  text : Narrative [0..1] << C >>
+  contained : Resource [0..*] << C >>
+  extension : Extension [0..*]
+  modifierExtension : Extension [0..*]
+}
+
+class CanonicalResource <<Interface>> {
+  url : uri [0..1]
+  identifier : Identifier [0..*]
+  version : string [0..1]
+  ...
+  status : code [1..1] << PublicationStatus! >>
+  ...
+  copyright : markdown [0..1]
+  copyrightLabel : string [0..1]
+}
+
+class MetadataResource <<Interface>> {
+  approvalDate : date [0..1]
+  lastReviewDate : date [0..1]
+  effectivePeriod : Period [0..1]
+  author : ContactDetail [0..*]
+  editor : ContactDetail [0..*]
+  reviewer : ContactDetail [0..*]
+  endorser : ContactDetail [0..*]
+  relatedArtifact : RelatedArtifact [0..*]
+}
+
+' Отношения наследования базовой архитектуры
+Base <|-- Element
+Base <|-- Resource
+
+Element <|-- DataType
+Element <|-- BackboneElement
+
+DataType <|-- PrimitiveType
+DataType <|-- BackboneType
+
+Resource <|-- DomainResource
+DomainResource <|-- CanonicalResource
+CanonicalResource <|-- MetadataResource
+
+
+' ==========================================
+' ОБОГАЩЕНИЕ: БАЗОВЫЕ РЕСУРСЫ (RuCore и ВМП)
+' ==========================================
+
+class Patient <<Resource>>
+class ServiceRequest <<Resource>>
+class Condition <<Resource>>
+class Coverage <<Resource>>
+class DocumentReference <<Resource>>
+class Encounter <<Resource>>
+class CareTeam <<Resource>>
+class Composition <<Resource>>
+class DiagnosticReport <<Resource>>
+class EpisodeOfCare <<Resource>>
+class Organization <<Resource>>
+class Practitioner <<Resource>>
+class PractitionerRole <<Resource>>
+class Procedure <<Resource>>
+class RelatedPerson <<Resource>>
+
+' Наследование от DomainResource
+DomainResource <|-- Patient
+DomainResource <|-- ServiceRequest
+DomainResource <|-- Condition
+DomainResource <|-- Coverage
+DomainResource <|-- DocumentReference
+DomainResource <|-- Encounter
+DomainResource <|-- CareTeam
+DomainResource <|-- Composition
+DomainResource <|-- DiagnosticReport
+DomainResource <|-- EpisodeOfCare
+DomainResource <|-- Organization
+DomainResource <|-- Practitioner
+DomainResource <|-- PractitionerRole
+DomainResource <|-- Procedure
+DomainResource <|-- RelatedPerson
+
+' ==========================================
+' ОБОГАЩЕНИЕ: ПРОФИЛИ RUCORE
+' ==========================================
+
+class Core_Patient <<RuCore_Profile>>
+class Core_ServiceRequest <<RuCore_Profile>>
+class Core_Coverage <<RuCore_Profile>>
+class Core_Encounter <<RuCore_Profile>>
+class Core_CareTeam <<RuCore_Profile>>
+class Core_Composition <<RuCore_Profile>>
+class Core_DiagnosticReport <<RuCore_Profile>>
+class Core_EpisodeOfCare <<RuCore_Profile>>
+class Core_Organization <<RuCore_Profile>>
+class Core_Practitioner <<RuCore_Profile>>
+class Core_PractitionerRole <<RuCore_Profile>>
+class Core_Procedure <<RuCore_Profile>>
+class Core_RelatedPerson <<RuCore_Profile>>
+
+Patient <|-- Core_Patient
+ServiceRequest <|-- Core_ServiceRequest
+Coverage <|-- Core_Coverage
+Encounter <|-- Core_Encounter
+CareTeam <|-- Core_CareTeam
+Composition <|-- Core_Composition
+DiagnosticReport <|-- Core_DiagnosticReport
+EpisodeOfCare <|-- Core_EpisodeOfCare
+Organization <|-- Core_Organization
+Practitioner <|-- Core_Practitioner
+PractitionerRole <|-- Core_PractitionerRole
+Procedure <|-- Core_Procedure
+RelatedPerson <|-- Core_RelatedPerson
+
+' ==========================================
+' ОБОГАЩЕНИЕ: ПРИКЛАДНЫЕ ПРОФИЛИ ВМП
+' ==========================================
+
+class VMP_Patient <<VMP_Profile>> ##[dashed]
+class VMP_ServiceRequest <<VMP_Profile>> ##[dashed]
+class VMP_Coverage <<VMP_Profile>> ##[dashed]
+class VMP_Encounter <<VMP_Profile>> ##[dashed]
+class VMP_Condition <<VMP_Profile>> ##[dashed]
+class VMP_DocumentReference <<VMP_Profile>> ##[dashed]
+
+' Наследование профилей ВМП согласно документу
+Core_Patient <|-- VMP_Patient
+Core_ServiceRequest <|-- VMP_ServiceRequest
+Core_Coverage <|-- VMP_Coverage
+Core_Encounter <|-- VMP_Encounter
+Condition <|-- VMP_Condition
+DocumentReference <|-- VMP_DocumentReference
+
+
+' ==========================================
+' КАНОНИЧЕСКИЕ РЕСУРСЫ И ТИПЫ ДАННЫХ
+' ==========================================
+
+class StructureDefinition <<Resource>>
+class NamingSystem <<Resource>>
+class CodeSystem <<Resource>>
+class ValueSet <<Resource>>
+class PlanDefinition <<Resource>>
+class ActivityDefinition <<Resource>>
+class Questionnaire <<Resource>>
+
+CanonicalResource <|-- StructureDefinition
+CanonicalResource <|-- CodeSystem
+CanonicalResource <|-- ValueSet
+CanonicalResource <|-- NamingSystem
+MetadataResource <|-- PlanDefinition
+MetadataResource <|-- ActivityDefinition
+MetadataResource <|-- Questionnaire
+
+class string <<DataType>>
+class dateTime <<DataType>>
+class boolean <<DataType>>
+
+class CodeableConcept <<DataType>>
+class Identifier <<DataType>>
+class Address <<DataType>>
+
+class "Core_Address" as Core_Address <<RuCore_Profile>>
+
+PrimitiveType <|-- string
+PrimitiveType <|-- dateTime
+PrimitiveType <|-- boolean
+
+DataType <|-- CodeableConcept
+DataType <|-- Identifier
+DataType <|-- Address
+
+Address <|-- Core_Address
+
+class "Patient.contact" as PatientContact <<DataType>>
+class "Condition.stage" as ConditionStage <<DataType>>
+
+BackboneElement <|-- PatientContact
+BackboneElement <|-- ConditionStage
+
+class Timing <<DataType>>
+class Dosage <<DataType>>
+class ElementDefinition <<DataType>>
+
+BackboneType <|-- Timing
+BackboneType <|-- Dosage
+BackboneType <|-- ElementDefinition
+
+@enduml
