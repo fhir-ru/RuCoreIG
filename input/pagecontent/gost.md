@@ -16,7 +16,7 @@
 1. [Введение](gost-01-introduction.html)
 2. [Область применения](gost-02-scope.html)
 3. [Нормативные ссылки](gost-03-normative-references.html)
-4. [Термины и определения](gost-04-terms.html)
+4. [Термины, определения и сокращения](gost-04-terms.html)
 5. [Требования к расширению и профилированию ресурсов](gost-05-profiling.html)
 6. [Информационные ресурсы](gost-06-resources.html)
 7. [Библиография](gost-07-bibliography.html)
