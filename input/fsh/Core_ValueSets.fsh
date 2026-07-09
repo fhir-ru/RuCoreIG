@@ -12,7 +12,18 @@ Description: "Источники оплаты медицинской помощ�
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment
 
-//ValueSet для документов - оснований оплаты - 2
+// ValueSet для документов - оснований оплаты - 2
+
+ValueSet: Core_Vs_Nsi_Coverage_Document
+Id: core-vs-nsi-coverage-document
+Title: "Core ValueSet Документы-основания для оплаты медицинских услуг"
+Description: "Документы-основания для оплаты медицинских услуг по НСИ МЗ РФ"
+
+* ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document
 
 // ValueSet для видов полиса ОМС - 3
 ValueSet: Core_Vs_Nsi_Coverage_Document_OMS

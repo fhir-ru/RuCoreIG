@@ -180,7 +180,7 @@ Usage: #definition
 * uniqueId[1]
   * type = #uri
   * preferred = true
-  * value = "http://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type" 
+  * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type" 
 * uniqueId[2]
   * type = #uri
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1504"
@@ -205,7 +205,7 @@ Usage: #definition
 * uniqueId[1]
   * type = #uri
   * preferred = true
-  * value = "http://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf" 
+  * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf" 
 * uniqueId[2]
   * type = #uri
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.206"

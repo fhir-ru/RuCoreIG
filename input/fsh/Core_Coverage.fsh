@@ -15,7 +15,13 @@ Description: "Базовый профиль страхового покрыти�
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Нарезка по типам документов подтверждения страховки"
 * identifier contains 
+  coverageDocument 0..* and
   omsPolicy 0..1
+
+* identifier[coverageDocument] ^short = "Документ-основание для оплаты медицинских услуг"
+  * value only string
+  * type 1..1
+  * type from Core_Vs_Nsi_Coverage_Document (extensible)
 
 * identifier[omsPolicy] ^short = "Документ, подтверждающий страховку по ОМС"
   * value only string

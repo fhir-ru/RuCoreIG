@@ -254,7 +254,7 @@
 
 Профиль `Core_Coverage` предназначен для представления сведений о страховом покрытии и иных источниках оплаты медицинской помощи в российских сценариях обмена, прежде всего в случаях, когда необходимо передавать полис ОМС как характеристику страхового покрытия.
 
-При профилировании приняты следующие решения. Для элемента `type` установлена расширяемая привязка к российскому справочнику источников оплаты. Для `identifier` введен срез `omsPolicy`, предназначенный для идентификатора полиса ОМС. Если вид полиса передается, внутри `identifier[omsPolicy].type.coding` используется нормированный вариант кодирования вида полиса ОМС через срез `omsType`. Получатель страхового покрытия ограничен профилем `Core_Patient`, что обеспечивает согласованное связывание данных о покрытии с пациентом.
+При профилировании приняты следующие решения. Для элемента `type` установлена расширяемая привязка к российскому справочнику источников оплаты. Для `identifier` введен общий срез `coverageDocument`, предназначенный для документа-основания оплаты медицинских услуг, и специализированный срез `omsPolicy` для идентификатора полиса ОМС. Если вид полиса передается, внутри `identifier[omsPolicy].type.coding` используется нормированный вариант кодирования вида полиса ОМС через срез `omsType`. Получатель страхового покрытия ограничен профилем `Core_Patient`, что обеспечивает согласованное связывание данных о покрытии с пациентом.
 
 ### 6.4.2 Структура профиля
 
@@ -283,6 +283,8 @@
 | Имя | Описание | Тип данных | Кратность | Статус элемента | Требование/ограничение |
 |---|---|---|---|---|---|
 | `identifier` | — | `Identifier` | `0..*` | Уточнено заполнение | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. |
+| `identifier:coverageDocument` | Документ-основание для оплаты медицинских услуг | `Identifier` | `0..*` | Добавлен срез | Кратность элемента ограничена профилем. |
+| `identifier:coverageDocument.type` | — | `—` | `1..—` | Добавлена привязка | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document`; привязка расширяемая. |
 | `identifier:omsPolicy` | Идентификатор полиса обязательного медицинского страхования | `Identifier` | `0..1` | Добавлен срез | Кратность элемента ограничена профилем. |
 | `identifier:omsPolicy.type` | — | `CodeableConcept` | `0..1` | Без изменений | — |
 | `identifier:omsPolicy.type.coding` | — | `—` | `0..*` | Добавлен срез | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. |
@@ -341,6 +343,7 @@
 
 | Путь | Набор значений | Тип привязки | Описание |
 |---|---|---|---|
+| `identifier:coverageDocument.type` | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document` | Расширяемая | — |
 | `identifier:omsPolicy.type.coding:omsType.code` | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms` | Расширяемая | — |
 | `type` | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment` | Расширяемая | Тип источника оплаты |
 
@@ -351,12 +354,13 @@
 | Идентификатор | Вид | Путь | Описание |
 |---|---|---|---|
 | `core-coverage-1` | Правило нарезки | `identifier` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по типам документов подтверждения страховки. |
-| `core-coverage-2` | Правило нарезки | `identifier:omsPolicy.type.coding` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по способу указания вида полиса ОМС по справочнику НСИ МЗ РФ. |
-| `core-coverage-3` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |
-| `core-coverage-4` | Привязка к набору значений | `identifier:omsPolicy.type.coding:omsType.code` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms`; привязка расширяемая. |
-| `core-coverage-5` | Шаблон | `identifier:omsPolicy.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/oms`. |
-| `core-coverage-6` | Привязка к набору значений | `type` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment`; привязка расширяемая. |
-| `core-coverage-7` | Ограничение типа | `beneficiary` | Ссылка должна указывать на ресурс, соответствующий профилю `Core_Patient`. |
+| `core-coverage-2` | Привязка к набору значений | `identifier:coverageDocument.type` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document`; привязка расширяемая. |
+| `core-coverage-3` | Правило нарезки | `identifier:omsPolicy.type.coding` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по способу указания вида полиса ОМС по справочнику НСИ МЗ РФ. |
+| `core-coverage-4` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |
+| `core-coverage-5` | Привязка к набору значений | `identifier:omsPolicy.type.coding:omsType.code` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms`; привязка расширяемая. |
+| `core-coverage-6` | Шаблон | `identifier:omsPolicy.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/oms`. |
+| `core-coverage-7` | Привязка к набору значений | `type` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment`; привязка расширяемая. |
+| `core-coverage-8` | Ограничение типа | `beneficiary` | Ссылка должна указывать на ресурс, соответствующий профилю `Core_Patient`. |
 
 ### 6.4.5 Примечания по применению
 
@@ -1326,10 +1330,11 @@
 
 | № | Набор значений | Профили применения | Опорный справочник или система кодирования | Правило отбора элементов |
 |---|---|---|---|---|
-| 1 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms` | `Core_Coverage`, `Core_Patient` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms` — НСИ МЗ РФ «Виды полиса ОМС», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
-| 2 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment` | `Core_Coverage` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment` — НСИ МЗ РФ «Источники оплаты медицинской помощи», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
-| 3 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-identity-documents` | `Core_Patient`, `Core_Practitioner` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document` — НСИ МЗ РФ «Документы, удостоверяющие личность», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.48` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
-| 4 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions` | `Core_PractitionerRole` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions` — НСИ МЗ РФ «Должности медицинских и фармацевтических работников», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1002` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
-| 5 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-services` | `Core_Procedure` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services` — НСИ МЗ РФ «Номенклатура медицинских услуг», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1070` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). Кодовая система опубликована как ссылка на внешний справочник НСИ МЗ РФ; локальное перечисление кодов в настоящем документе не приводится. |
+| 1 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document` | `Core_Coverage` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document` — НСИ МЗ РФ «Документы-основания для оплаты», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.724` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 2 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms` | `Core_Coverage`, `Core_Patient` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms` — НСИ МЗ РФ «Виды полиса ОМС», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 3 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment` | `Core_Coverage` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment` — НСИ МЗ РФ «Источники оплаты медицинской помощи», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 4 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-identity-documents` | `Core_Patient`, `Core_Practitioner` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document` — НСИ МЗ РФ «Документы, удостоверяющие личность», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.48` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 5 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions` | `Core_PractitionerRole` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions` — НСИ МЗ РФ «Должности медицинских и фармацевтических работников», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1002` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 6 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-services` | `Core_Procedure` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services` — НСИ МЗ РФ «Номенклатура медицинских услуг», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1070` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). Кодовая система опубликована как ссылка на внешний справочник НСИ МЗ РФ; локальное перечисление кодов в настоящем документе не приводится. |
 | 6 | `https://fhir.ru/ig/core/ValueSet/relatedperson-relationship` | `Core_RelatedPerson` | НСИ МЗ РФ `1.2.643.5.1.13.13.99.2.14` «Родственные и иные связи», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.14`; НСИ МЗ РФ `1.2.643.5.1.13.13.11.1021` «Тип родственной связи», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1021` | В набор значений включаются все коды справочника `1.2.643.5.1.13.13.99.2.14` и коды `1`–`8` справочника `1.2.643.5.1.13.13.11.1021`. |
 | 7 | `http://hl7.org/fhir/ValueSet/procedure-reason` | `Core_Procedure` | стандартный набор значений HL7 FHIR `Procedure Reason Codes`; источником кодов служит внешняя терминология, определяемая спецификацией HL7 FHIR | Используются коды, входящие в стандартный набор значений HL7 FHIR `Procedure Reason Codes`; локальное переопределение состава набора в настоящем документе отсутствует. |
