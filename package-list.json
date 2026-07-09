@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "list": [
+    {
+      "version": "0.10.0",
+      "desc": "Draft release switching OMS policy type and medical care payment source terminology to the corresponding main NSI dictionaries.",
+      "path": "https://fhir.ru/ig/core/0.10.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.9.1",
       "desc": "Draft patch release correcting NSI CodeSystem descriptions so human-facing links point to the corresponding NSI dictionaries while preserving RuCore canonical URLs.",

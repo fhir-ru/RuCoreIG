@@ -1,10 +1,10 @@
 
-// ValueSet для источников финансирования - 1
+// ValueSet для источников оплаты медицинской помощи - 1
 
 ValueSet: Core_Vs_Nsi_Sources_Of_Payment
 Id: core-vs-nsi-sources-of-payment
-Title: "Core ValueSet Источники оплаты"
-Description: "Источники оплаты по НСИ"
+Title: "Core ValueSet Источники оплаты медицинской помощи"
+Description: "Источники оплаты медицинской помощи по НСИ МЗ РФ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment"
 * ^status = #active
@@ -14,11 +14,11 @@ Description: "Источники оплаты по НСИ"
 
 //ValueSet для документов - оснований оплаты - 2
 
-// ValueSet для типов полисов ОМС - 3
+// ValueSet для видов полиса ОМС - 3
 ValueSet: Core_Vs_Nsi_Coverage_Document_OMS
 Id: core-vs-nsi-coverage-document-oms
-Title: "Core ValueSet Типы полисов ОМС"
-Description: "Типы полисов ОМС по НСИ МЗ РФ"
+Title: "Core ValueSet Виды полиса ОМС"
+Description: "Виды полиса ОМС по НСИ МЗ РФ"
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms"
 * ^status = #active

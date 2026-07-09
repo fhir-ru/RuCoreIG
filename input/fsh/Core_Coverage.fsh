@@ -29,8 +29,8 @@ Description: "Базовый профиль страхового покрыти�
       hl7Type 0..1 and
       omsType 0..1
   * type.coding[hl7Type] = http://terminology.hl7.org/CodeSystem/v2-0203#SB
-  * type.coding[omsType] ^short = "Тип полиса ОМС по справочнику НСИ МЗ РФ"
+  * type.coding[omsType] ^short = "Вид полиса ОМС по справочнику НСИ МЗ РФ"
     * system 1..1
-    * system = "urn:oid:1.2.643.5.1.13.13.99.2.245"
+    * system = "urn:oid:1.2.643.5.1.13.13.11.1035"
     * code 1..1
     * code from Core_Vs_Nsi_Coverage_Document_OMS (extensible)

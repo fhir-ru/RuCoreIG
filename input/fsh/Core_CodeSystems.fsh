@@ -1,12 +1,12 @@
 // Системы кодирования
 
 
-// Источники финансирования - 1
+// Источники оплаты медицинской помощи - 1
 
 CodeSystem: Core_Cs_Nsi_Sources_Of_Payment
 Id:         core-cs-nsi-sources-of-payment
-Title: "Core CodeSystem Источники финансирования"
-Description: "НСИ МЗ РФ справочник [Источники финансирования](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.2.1.1.153)"
+Title: "Core CodeSystem Источники оплаты медицинской помощи"
+Description: "НСИ МЗ РФ справочник [Источники оплаты медицинской помощи](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039)"
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment"
 * ^experimental = false
 * ^caseSensitive = false
@@ -40,22 +40,22 @@ Description: "НСИ МЗ РФ справочник [Документы-осно
 * #3 "Договор на оказание платных медицинских услуг"
 
 
-// Типы полисов ОМС - 3
+// Виды полиса ОМС - 3
 
 CodeSystem: Core_Cs_Nsi_Coverage_Document_OMS  
 Id: core-cs-nsi-coverage-document-oms  
-Title: "Core CodeSystem Типы полисов ОМС"
-Description: "НСИ МЗ РФ справочник [Типы полисов ОМС](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.245/passport/1.1)"
+Title: "Core CodeSystem Виды полиса ОМС"
+Description: "НСИ МЗ РФ справочник [Виды полиса ОМС](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035)"
 
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms"
-* ^version = "1.1"
 * ^experimental = false
 * ^caseSensitive = false
 * ^content = #complete
 
 * #1 "Полис ОМС старого образца"  
-* #2 "Временное свидетельство"  
-* #3 "Полис ОМС единого образца"
+* #2 "Полис ОМС единого образца, бессрочный"
+* #3 "Полис ОМС единого образца, со сроком действия"
+* #4 "Временное свидетельство"
 
 
 // Документы, удостоверяющие личность - 4

@@ -1,27 +1,27 @@
 // Все системы именования
 // Системы именования для справочников НСИ
 
-// Источники финансирования - 1
+// Источники оплаты медицинской помощи - 1
 Instance:   core-ns-nsi-sources-of-payment
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Справочник - Источники финансирования"
+Title: "Core NamingSystem Справочник - Источники оплаты медицинской помощи"
 Usage: #definition
 * name = "Core_Ns_Nsi_Sources_Of_Payment"
 * status = #active
 * kind = #codesystem
 * date = "2024-01-01"
-* description = "Справочник НСИ Минздрава <Источники финансирования>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.2.1.1.153"
+* description = "Справочник НСИ Минздрава <Источники оплаты медицинской помощи>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1039"
 
 * uniqueId[0]
   * type = #oid
-  * value = "1.2.643.5.1.13.2.1.1.153"
+  * value = "1.2.643.5.1.13.13.11.1039"
 * uniqueId[1]
   * type = #uri
   * preferred = true
   * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment" 
 * uniqueId[2]
   * type = #uri
-  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.2.1.1.153"
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039"
 
 
 // Типы документов-оснований оплаты - 2
@@ -47,27 +47,27 @@ Usage: #definition
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.724"
 
 
-// Типы полисов ОМС - 3
+// Виды полиса ОМС - 3
 Instance:   core-ns-nsi-coverage-document-oms
 InstanceOf: NamingSystem
-Title: "Core NamingSystem Справочник - Типы полисов ОМС"
+Title: "Core NamingSystem Справочник - Виды полиса ОМС"
 Usage: #definition
 * name = "Core_Ns_Nsi_Coverage_Document_OMS"
 * status = #active
 * kind = #codesystem
 * date = "2024-01-01"
-* description = "Справочник НСИ Минздрава <Типы полисов ОМС>"
+* description = "Справочник НСИ Минздрава <Виды полиса ОМС>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1035"
 
 * uniqueId[0]
   * type = #oid
-  * value = "urn:oid:1.2.643.5.1.13.13.99.2.245"
+  * value = "urn:oid:1.2.643.5.1.13.13.11.1035"
 * uniqueId[1]
   * type = #uri
   * preferred = true
   * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms"
 * uniqueId[2]
   * type = #uri
-  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.245"
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035"
 
 
 // Документы, удостоверяющие личность - 4

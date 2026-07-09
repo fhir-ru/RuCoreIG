@@ -912,7 +912,7 @@ Description: "Полный пример страхового покрытия с
   * coding[0]
     * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment"
     * code = #"1"
-    * display = "ОМС"
+    * display = "Средства обязательного медицинского страхования"
 
 * subscriber
   * reference = "Patient/example-core-patient-ivanov"

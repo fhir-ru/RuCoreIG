@@ -254,7 +254,7 @@
 
 Профиль `Core_Coverage` предназначен для представления сведений о страховом покрытии и иных источниках оплаты медицинской помощи в российских сценариях обмена, прежде всего в случаях, когда необходимо передавать полис ОМС как характеристику страхового покрытия.
 
-При профилировании приняты следующие решения. Для элемента `type` установлена расширяемая привязка к российскому справочнику источников оплаты. Для `identifier` введен срез `omsPolicy`, предназначенный для идентификатора полиса ОМС. Если тип полиса передается, внутри `identifier[omsPolicy].type.coding` могут использоваться нормированные варианты кодирования `hl7Type` и `omsType`, причем одновременное использование обоих вариантов не является обязательным. Получатель страхового покрытия ограничен профилем `Core_Patient`, что обеспечивает согласованное связывание данных о покрытии с пациентом.
+При профилировании приняты следующие решения. Для элемента `type` установлена расширяемая привязка к российскому справочнику источников оплаты. Для `identifier` введен срез `omsPolicy`, предназначенный для идентификатора полиса ОМС. Если вид полиса передается, внутри `identifier[omsPolicy].type.coding` могут использоваться нормированные варианты кодирования `hl7Type` и `omsType`, причем одновременное использование обоих вариантов не является обязательным. Получатель страхового покрытия ограничен профилем `Core_Patient`, что обеспечивает согласованное связывание данных о покрытии с пациентом.
 
 ### 6.4.2 Структура профиля
 
@@ -287,8 +287,8 @@
 | `identifier:omsPolicy.type` | — | `CodeableConcept` | `0..1` | Без изменений | — |
 | `identifier:omsPolicy.type.coding` | — | `—` | `0..*` | Добавлен срез | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. |
 | `identifier:omsPolicy.type.coding:hl7Type` | — | `—` | `0..1` | Установлен шаблон | Кодируемое значение элемента должно соответствовать шаблону `{"code": "SB", "system": "http://terminology.hl7.org/CodeSystem/v2-0203"}`. |
-| `identifier:omsPolicy.type.coding:omsType` | Тип полиса ОМС по справочнику НСИ МЗ РФ | `—` | `0..1` | Добавлен срез | Кратность элемента ограничена профилем. |
-| `identifier:omsPolicy.type.coding:omsType.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.99.2.245`. |
+| `identifier:omsPolicy.type.coding:omsType` | Вид полиса ОМС по справочнику НСИ МЗ РФ | `—` | `0..1` | Добавлен срез | Кратность элемента ограничена профилем. |
+| `identifier:omsPolicy.type.coding:omsType.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |
 | `identifier:omsPolicy.type.coding:omsType.code` | — | `—` | `1..—` | Добавлена привязка | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms`; привязка расширяемая. |
 | `identifier:omsPolicy.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/oms`. |
 | `status` | Статус объекта. | `code` | `1..1` | Без изменений | — |
@@ -354,7 +354,7 @@
 | `core-coverage-1` | Правило нарезки | `identifier` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по типам документов подтверждения страховки. |
 | `core-coverage-2` | Правило нарезки | `identifier:omsPolicy.type.coding` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по способу указания кода полиса ОМС: код HL7 и код из российского справочника. |
 | `core-coverage-3` | Шаблон | `identifier:omsPolicy.type.coding:hl7Type` | Кодируемое значение элемента должно соответствовать шаблону `{"code": "SB", "system": "http://terminology.hl7.org/CodeSystem/v2-0203"}`. |
-| `core-coverage-4` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.99.2.245`. |
+| `core-coverage-4` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |
 | `core-coverage-5` | Привязка к набору значений | `identifier:omsPolicy.type.coding:omsType.code` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms`; привязка расширяемая. |
 | `core-coverage-6` | Шаблон | `identifier:omsPolicy.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/oms`. |
 | `core-coverage-7` | Привязка к набору значений | `type` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment`; привязка расширяемая. |
@@ -755,7 +755,7 @@
 
 Профиль `Core_Patient` предназначен для представления сведений о пациенте в тех случаях, когда при информационном обмене требуется использовать российские идентификаторы пациента, правила заполнения ФИО и связи с отечественными справочниками и моделями адресов и организаций.
 
-При профилировании приняты следующие решения. Для идентификации пациента введены отдельные срезы для СНИЛС, ИНН, документа, удостоверяющего личность, и полиса ОМС. Если тип полиса ОМС передается, внутри `identifier[omsPolicy].type.coding` могут использоваться нормированные варианты кодирования `hl7Type` и `omsType`, причем одновременное использование обоих вариантов не является обязательным. Для имени сохранена базовая модель `HumanName`, но уточнен порядок заполнения `name.given`: первым указывается имя, вторым — отчество. Для `gender` закреплено использование значений `male`, `female` и `unknown` в целях совместимости с российским справочником пола пациента. Для `address` установлено правило применения профиля `Core_Address` только для адресов на территории Российской Федерации, тогда как для иностранных адресов используется базовый тип `Address`. Для `managingOrganization` установлено соответствие профилю `Core_Organization`.
+При профилировании приняты следующие решения. Для идентификации пациента введены отдельные срезы для СНИЛС, ИНН, документа, удостоверяющего личность, и полиса ОМС. Если вид полиса ОМС передается, внутри `identifier[omsPolicy].type.coding` могут использоваться нормированные варианты кодирования `hl7Type` и `omsType`, причем одновременное использование обоих вариантов не является обязательным. Для имени сохранена базовая модель `HumanName`, но уточнен порядок заполнения `name.given`: первым указывается имя, вторым — отчество. Для `gender` закреплено использование значений `male`, `female` и `unknown` в целях совместимости с российским справочником пола пациента. Для `address` установлено правило применения профиля `Core_Address` только для адресов на территории Российской Федерации, тогда как для иностранных адресов используется базовый тип `Address`. Для `managingOrganization` установлено соответствие профилю `Core_Organization`.
 
 ### 6.9.2 Структура профиля
 
@@ -797,8 +797,8 @@
 | `identifier:omsPolicy.type` | — | `CodeableConcept` | `0..1` | Без изменений | — |
 | `identifier:omsPolicy.type.coding` | — | `—` | `0..*` | Добавлен срез | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. |
 | `identifier:omsPolicy.type.coding:hl7Type` | — | `—` | `0..1` | Установлен шаблон | Кодируемое значение элемента должно соответствовать шаблону `{"code": "SB", "system": "http://terminology.hl7.org/CodeSystem/v2-0203"}`. |
-| `identifier:omsPolicy.type.coding:omsType` | Тип полиса ОМС по справочнику НСИ МЗ РФ | `—` | `0..1` | Добавлен срез | Кратность элемента ограничена профилем. |
-| `identifier:omsPolicy.type.coding:omsType.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.99.2.245`. |
+| `identifier:omsPolicy.type.coding:omsType` | Вид полиса ОМС по справочнику НСИ МЗ РФ | `—` | `0..1` | Добавлен срез | Кратность элемента ограничена профилем. |
+| `identifier:omsPolicy.type.coding:omsType.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |
 | `identifier:omsPolicy.type.coding:omsType.code` | — | `—` | `1..—` | Добавлена привязка | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms`; привязка расширяемая. |
 | `identifier:omsPolicy.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/oms`. |
 | `active` | Признак активности записи. | `boolean` | `0..1` | Без изменений | — |
@@ -863,7 +863,7 @@
 | `core-patient-7` | Шаблон | `identifier:identityDocument.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/identity-document`. |
 | `core-patient-8` | Правило нарезки | `identifier:omsPolicy.type.coding` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по способу указания кода полиса ОМС. |
 | `core-patient-9` | Шаблон | `identifier:omsPolicy.type.coding:hl7Type` | Кодируемое значение элемента должно соответствовать шаблону `{"code": "SB", "system": "http://terminology.hl7.org/CodeSystem/v2-0203"}`. |
-| `core-patient-10` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.99.2.245`. |
+| `core-patient-10` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |
 | `core-patient-11` | Привязка к набору значений | `identifier:omsPolicy.type.coding:omsType.code` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms`; привязка расширяемая. |
 | `core-patient-12` | Шаблон | `identifier:omsPolicy.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/oms`. |
 | `core-patient-13` | Правило применения | `address` | Для адресов на территории Российской Федерации следует использовать правила профиля `Core_Address`. Для адресов вне территории Российской Федерации применяется базовый тип `Address`. |
@@ -1338,8 +1338,8 @@
 
 | № | Набор значений | Профили применения | Опорный справочник или система кодирования | Правило отбора элементов |
 |---|---|---|---|---|
-| 1 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms` | `Core_Coverage`, `Core_Patient` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms` — НСИ МЗ РФ «Типы полисов ОМС», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.245` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
-| 2 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment` | `Core_Coverage` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment` — НСИ МЗ РФ «Источники финансирования», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.2.1.1.153` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 1 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-coverage-document-oms` | `Core_Coverage`, `Core_Patient` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms` — НСИ МЗ РФ «Виды полиса ОМС», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
+| 2 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-sources-of-payment` | `Core_Coverage` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment` — НСИ МЗ РФ «Источники оплаты медицинской помощи», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
 | 3 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-identity-documents` | `Core_Patient`, `Core_Practitioner` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document` — НСИ МЗ РФ «Документы, удостоверяющие личность», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.48` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
 | 4 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions` | `Core_PractitionerRole` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions` — НСИ МЗ РФ «Должности медицинских и фармацевтических работников», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1002` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). |
 | 5 | `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-services` | `Core_Procedure` | `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services` — НСИ МЗ РФ «Номенклатура медицинских услуг», `https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1070` | В набор значений включаются все коды опорной кодовой системы (`include codes from system`). Кодовая система опубликована как ссылка на внешний справочник НСИ МЗ РФ; локальное перечисление кодов в настоящем документе не приводится. |
