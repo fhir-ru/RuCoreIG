@@ -36,22 +36,16 @@ Description: "Базовый профиль организации для рос
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/ogrn"
-//  * type 1..1
-//  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
 
 * identifier[OKPO] ^short = "Код ОКПО"
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/okpo"
-//  * type 1..1
-//  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
 
 * identifier[NSI-FRMO] ^short = "Федеральный реестр медицинских организаций МЗ РФ (ФРМО)"
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/frmo"
-//  * type 1..1
-//  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
 
 * qualification ^slicing.discriminator.type = #value
 * qualification ^slicing.discriminator.path = "code.text"

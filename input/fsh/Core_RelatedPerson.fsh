@@ -18,9 +18,6 @@ Description: "Базовый профиль RelatedPerson для РФ. Опре�
 
 * identifier[snils] ^short = "СНИЛС представителя пациента"
   * system = "https://fhir.ru/ig/core/systems/snils" (exactly)
-  * type 1..1
-  * type ^short = "Тип идентификатора, кодируется по Fixed value: http://terminology.hl7.org/CodeSystem/v2-0203" 
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
 
 * name ^short = "ФИО представителя пациента"
   * family ^short = "Фамилия представителя пациента"

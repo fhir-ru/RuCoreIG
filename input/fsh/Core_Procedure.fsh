@@ -15,8 +15,6 @@ Description: "Базовый профиль процедуры для росси
   * value only string
   * system 1..1
   * system = "urn:oid:1.2.643.5.1.13.13.11.1070"
-  * type 1..1
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#PLAC
 
 * status ^short = "Статус процедуры"
 

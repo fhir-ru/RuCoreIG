@@ -16,8 +16,6 @@ Description: "Базовый профиль медицинского работ�
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/snils"
-  * type 1..1
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
 
 * identifier[identityDocument] ^short = "Документ, удостоверяющий личность"
   * value only string

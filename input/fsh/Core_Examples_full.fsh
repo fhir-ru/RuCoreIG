@@ -52,7 +52,6 @@ Description: "Полный пример пациента с использова
 * identifier[0]
   * system = "https://fhir.ru/ig/core/systems/snils"
   * value = "123-456-789-01"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
   * use = #official
   * assigner.display = "ПФР РФ"
 
@@ -65,13 +64,11 @@ Description: "Полный пример пациента с использова
 * identifier[2]
   * system = "https://fhir.ru/ig/core/systems/identity-document"
   * value = "4510-123456"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#PPN
   * use = #official
 
 * identifier[3]
   * system = "https://fhir.ru/ig/core/systems/oms"
   * value = "1234567890123456"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#PPN
   * use = #official
 
 * active = true
@@ -183,19 +180,16 @@ Description: "Полный пример медицинской организа�
 * identifier[1]
   * system = "https://fhir.ru/ig/core/systems/ogrn"
   * value = "1027700000001"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * identifier[2]
   * system = "https://fhir.ru/ig/core/systems/okpo"
   * value = "12345678"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * identifier[3]
   * system = "https://fhir.ru/ig/core/systems/frmo"
   * value = "7701001"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * active = true
@@ -286,13 +280,11 @@ Description: "Полный пример медицинского работни�
 * identifier[0]
   * system = "https://fhir.ru/ig/core/systems/snils"
   * value = "987-654-321-09"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
   * use = #official
 
 * identifier[1]
   * system = "https://fhir.ru/ig/core/systems/identity-document"
   * value = "4510-654321"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#PPN
   * use = #official
 
 * active = true
@@ -903,7 +895,6 @@ Description: "Полный пример страхового покрытия с
 * identifier[0]
   * system = "https://fhir.ru/ig/core/systems/oms"
   * value = "1234567890123456"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#PPN
   * use = #official
 
 * status = #active
@@ -1006,7 +997,6 @@ Description: "Полный пример связанного лица с исп�
 * identifier[0]
   * system = "https://fhir.ru/ig/core/systems/snils"
   * value = "111-222-333-44"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#SB
   * use = #official
 
 * active = true
