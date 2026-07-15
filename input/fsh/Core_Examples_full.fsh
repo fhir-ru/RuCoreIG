@@ -69,6 +69,15 @@ Description: "Полный пример пациента с использова
 * identifier[3]
   * system = "https://fhir.ru/ig/core/systems/oms"
   * value = "1234567890123456"
+  * type
+    * coding[0]
+      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document"
+      * code = #1
+      * display = "Полис ОМС"
+    * coding[1]
+      * system = "urn:oid:1.2.643.5.1.13.13.11.1035"
+      * code = #2
+      * display = "Полис ОМС единого образца, бессрочный"
   * use = #official
 
 * active = true
@@ -893,16 +902,6 @@ Description: "Полный пример страхового покрытия с
     """
 
 * identifier[0]
-  * system = "https://fhir.ru/ig/core/systems/oms"
-  * value = "1234567890123456"
-  * type
-    * coding[0]
-      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document"
-      * code = #1
-      * display = "Полис ОМС"
-  * use = #official
-
-* identifier[1]
   * system = "https://fhir.ru/ig/core/systems/oms"
   * value = "1234567890123456"
   * type

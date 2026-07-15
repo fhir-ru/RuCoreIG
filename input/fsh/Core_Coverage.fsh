@@ -27,11 +27,19 @@ Description: "Базовый профиль страхового покрыти�
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/oms"
+  * type 1..1
   * type.coding ^slicing.discriminator.type = #value
   * type.coding ^slicing.discriminator.path = "system"
   * type.coding ^slicing.rules = #open
-  * type.coding ^slicing.description = "Нарезка по способу указания кода вида полиса ОМС"
-  * type.coding contains omsType 0..1
+  * type.coding ^slicing.description = "Нарезка по уровням классификации полиса ОМС"
+  * type.coding contains
+      coverageDocumentType 1..1 and
+      omsType 1..1
+  * type.coding[coverageDocumentType] ^short = "Полис ОМС по справочнику документов-оснований оплаты"
+    * system 1..1
+    * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document"
+    * code 1..1
+    * code = #1
   * type.coding[omsType] ^short = "Вид полиса ОМС по справочнику НСИ МЗ РФ"
     * system 1..1
     * system = "urn:oid:1.2.643.5.1.13.13.11.1035"
