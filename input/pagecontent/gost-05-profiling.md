@@ -65,4 +65,4 @@ UML-диаграмма классов (Рисунок 1. ниже) предст�
 
 **Рисунок 1. UML-диаграмма классов стандарта FHIR и его профилей, описанных в данном документе**
 
-![UML class diagram](../images/Class_diagram_with_VMPexample.svg)
+![UML class diagram](Class_diagram_with_VMPexample.svg)
