@@ -41,9 +41,10 @@ ln -sfn ~/.local/pandoc-3.9.0.2/pandoc ~/.local/bin/pandoc
 ожидаемо для пересчета страниц оглавления.
 
 Файл `gost/templates/reference-styles.docx` используется при публикации как
-reference DOCX для pandoc: из него берутся стили Word. Итоговый файл создается
-как `input/assets/gost/GOST_Interoperability.docx`, откуда IG Publisher
-копирует его на публикуемый сайт.
+reference DOCX для pandoc: из него берутся стили Word. Канонический итоговый
+файл создается как `input/assets/gost/GOST_Interoperability.docx`. Скрипт также
+создает синхронную копию `input/images/GOST_Interoperability.docx`, которую
+IG Publisher копирует в корень публикуемого сайта.
 
 Локальные справочные материалы, промежуточные версии и другие файлы, которые
 не должны попадать в Git, хранятся в исключенном каталоге `gost-local`.

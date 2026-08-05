@@ -14,6 +14,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 GOST_ROOT = PROJECT_ROOT / "gost"
 ORDER_FILE = GOST_ROOT / "order.txt"
 DEFAULT_OUTPUT = PROJECT_ROOT / "input" / "assets" / "gost" / "GOST_Interoperability.docx"
+PUBLISHED_ASSET = PROJECT_ROOT / "input" / "images" / "GOST_Interoperability.docx"
 REFERENCE_DOC = GOST_ROOT / "templates" / "reference-styles.docx"
 
 W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
@@ -359,6 +360,10 @@ def publish(output: Path, pandoc_path: str) -> None:
 
     tables, paragraphs = postprocess_docx(output)
     print(f"Готово: {output}")
+    if output.resolve() == DEFAULT_OUTPUT.resolve():
+        PUBLISHED_ASSET.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(output, PUBLISHED_ASSET)
+        print(f"Копия для IG Publisher: {PUBLISHED_ASSET}")
     print(f"Обработано таблиц: {tables}")
     print(f"Обработано абзацев вне таблиц: {paragraphs}")
 
