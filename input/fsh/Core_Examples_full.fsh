@@ -334,7 +334,7 @@ Description: "Полный пример медицинского работни�
 Instance: example-core-practitionerrole-smirnov-therapist
 InstanceOf: Core_PractitionerRole
 Title: "Пример роли медицинского работника - терапевт Смирнов"
-Description: "Полный пример роли медицинского работника с использованием Core_PractitionerRole профиля"
+Description: "Полный пример роли медицинского работника; идентификатор роли взят из исходного XML протокола лабораторного исследования СЭМД редакции 4"
 
 * text
   * status = #generated
@@ -345,7 +345,7 @@ Description: "Полный пример роли медицинского раб
       <ul>
         <li><strong>Медицинский работник:</strong> <em>Смирнов Александр Иванович</em> (ссылка на Practitioner/example-core-practitioner-smirnov)</li>
         <li><strong>Организация:</strong> <em>ГБУЗ Городская поликлиника №1</em> (ссылка на Organization/example-core-organization-polyclinic)</li>
-        <li><strong>Идентификатор роли в МИС:</strong> MW-001</li>
+        <li><strong>Идентификатор роли в МИС:</strong> 542177</li>
         <li><strong>Статус:</strong> Активная роль</li>
         <li><strong>Дата начала работы:</strong> 01.01.2020</li>
       </ul>
@@ -365,8 +365,8 @@ Description: "Полный пример роли медицинского раб
     """
 
 * identifier[misPractitionerRole]
-  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.100.1.1.70"
-  * value = "MW-001"
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70"
+  * value = "542177"
 
 * active = true
 * practitioner

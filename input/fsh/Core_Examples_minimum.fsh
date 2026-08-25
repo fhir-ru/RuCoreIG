@@ -63,11 +63,11 @@ Description: "Минимальный пример медицинского ра�
 Instance: example-core-practitionerrole-smirnov-therapist-min
 InstanceOf: Core_PractitionerRole
 Title: "Пример роли медицинского работника - Смирнов А.И. терапевт"
-Description: "Минимальный пример роли медицинского работника с использованием Core_PractitionerRole профиля"
+Description: "Минимальный пример роли медицинского работника; идентификатор роли взят из исходного XML протокола лабораторного исследования СЭМД редакции 4"
 
 * identifier[misPractitionerRole]
-  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.100.1.1.70"
-  * value = "MW-001"
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70"
+  * value = "542177"
 
 * active = true
 * practitioner
