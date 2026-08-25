@@ -63,11 +63,7 @@ Description: "Минимальный пример медицинского ра�
 Instance: example-core-practitionerrole-smirnov-therapist-min
 InstanceOf: Core_PractitionerRole
 Title: "Пример роли медицинского работника - Смирнов А.И. терапевт"
-Description: "Минимальный пример роли медицинского работника; идентификатор роли взят из исходного XML протокола лабораторного исследования СЭМД редакции 4"
-
-* identifier[misPractitionerRole]
-  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70"
-  * value = "542177"
+Description: "Минимальный пример роли медицинского работника с использованием Core_PractitionerRole профиля"
 
 * active = true
 * practitioner
@@ -81,6 +77,16 @@ Description: "Минимальный пример роли медицинско�
     * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions"
     * code = #"01.001"
     * display = "Врач-терапевт участковый"
+
+// Проверочный пример с точной парой root/extension из СЭМД
+Instance: example-core-practitionerrole-laboratory-semd-min
+InstanceOf: Core_PractitionerRole
+Title: "Пример роли автора протокола лабораторного исследования СЭМД"
+Description: "Проверочный пример идентификатора роли автора по исходному XML протокола лабораторного исследования СЭМД редакции 4"
+
+* identifier[misPractitionerRole]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70"
+  * value = "542177"
 
 // Пример 5: Core_RelatedPerson
 Instance: example-core-relatedperson-ivanov-spouse-min
