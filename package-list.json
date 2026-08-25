@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.14.4",
+  "version": "0.15.0",
   "list": [
+    {
+      "version": "0.15.0",
+      "desc": "Draft release adding the SEMD-compatible MIS practitioner role identifier slice with a dynamic OID rule, examples, profile documentation, and synchronized GOST text.",
+      "path": "https://fhir.ru/ig/core/0.15.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.14.4",
       "desc": "Draft patch release publishing the generated GOST DOCX through the IG static asset path and updating the GOST synchronization marker.",

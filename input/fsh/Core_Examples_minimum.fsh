@@ -65,8 +65,8 @@ InstanceOf: Core_PractitionerRole
 Title: "Пример роли медицинского работника - Смирнов А.И. терапевт"
 Description: "Минимальный пример роли медицинского работника с использованием Core_PractitionerRole профиля"
 
-* identifier[0]
-  * system = "https://fhir.ru/ig/core/systems/medical-worker"
+* identifier[misPractitionerRole]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.100.1.1.70"
   * value = "MW-001"
 
 * active = true
