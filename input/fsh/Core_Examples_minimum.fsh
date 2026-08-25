@@ -147,6 +147,52 @@ Description: "Минимальный пример обращения с испо
 * serviceProvider
   * reference = "Organization/example-core-organization-polyclinic-min"
 
+// Дополнительный пример Core_Encounter по выписному эпикризу СЭМД, редакция 6
+Instance: example-core-encounter-inpatient-discharge-semd-min
+InstanceOf: Core_Encounter
+Title: "Пример стационарного случая по выписному эпикризу СЭМД"
+Description: "Проверочный пример идентификаторов общего и стационарного случаев по исходному XML выписного эпикриза СЭМД редакции 6"
+
+* identifier[misEncounter]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.66.6770.100.1.1.15"
+  * value = "2120"
+
+* identifier[misInpatientRecord]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.66.6770.100.1.1.16"
+  * value = "2120/23-3"
+
+* status = #completed
+* class[0].coding[0]
+  * system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  * code = #IMP
+  * display = "inpatient encounter"
+
+* subject.reference = "Patient/example-core-patient-ivanov-min"
+* serviceProvider.reference = "Organization/example-core-organization-polyclinic-min"
+
+// Дополнительный пример Core_Encounter по протоколу лабораторного исследования СЭМД, редакция 4
+Instance: example-core-encounter-laboratory-semd-min
+InstanceOf: Core_Encounter
+Title: "Пример амбулаторного случая по протоколу лабораторного исследования СЭМД"
+Description: "Проверочный пример идентификаторов общего и амбулаторного случаев по исходному XML протокола лабораторного исследования СЭМД редакции 4"
+
+* identifier[misEncounter]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.15"
+  * value = "5469-16"
+
+* identifier[misAmbulatoryEncounter]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.17"
+  * value = "5316-16"
+
+* status = #completed
+* class[0].coding[0]
+  * system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  * code = #AMB
+  * display = "ambulatory"
+
+* subject.reference = "Patient/example-core-patient-ivanov-min"
+* serviceProvider.reference = "Organization/example-core-organization-polyclinic-min"
+
 // Пример 7: Core_EpisodeOfCare
 Instance: example-core-episodeofcare-ivanov-2024-min
 InstanceOf: Core_EpisodeOfCare
@@ -214,6 +260,25 @@ Description: "Минимальный пример состава докумен�
 
 * author
   * reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
+
+// Дополнительный пример Core_Composition по протоколу лабораторного исследования СЭМД, редакция 4
+Instance: example-core-composition-laboratory-semd-min
+InstanceOf: Core_Composition
+Title: "Пример набора версий протокола лабораторного исследования СЭМД"
+Description: "Проверочный пример Composition.identifier по исходному XML протокола лабораторного исследования СЭМД редакции 4"
+
+* identifier[misDocumentSet]
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.50"
+  * value = "9633"
+
+* status = #final
+* type.coding[0]
+  * system = "urn:oid:1.2.643.5.1.13.13.11.1522"
+  * code = #7
+  * display = "Протокол лабораторного исследования"
+* date = "2024-01-15T10:30:00Z"
+* title = "Протокол лабораторного исследования"
+* author.reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
 // Пример 10: Core_Coverage
 Instance: example-core-coverage-ivanov-oms-min

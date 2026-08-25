@@ -10,10 +10,10 @@
 | Core_Practitioner | `example-core-practitioner-smirnov` | `example-core-practitioner-smirnov-min` |
 | Core_PractitionerRole | `example-core-practitionerrole-smirnov-therapist` | `example-core-practitionerrole-smirnov-therapist-min` |
 | Core_Address | `example-core-address-moscow-home` | `example-core-address-moscow-home-min` |
-| Core_Encounter | `example-core-encounter-consultation` | `example-core-encounter-consultation-min` |
+| Core_Encounter | `example-core-encounter-consultation` | `example-core-encounter-consultation-min`, `example-core-encounter-inpatient-discharge-semd-min`, `example-core-encounter-laboratory-semd-min` |
 | Core_EpisodeOfCare | `example-core-episodeofcare-ivanov-2024` | `example-core-episodeofcare-ivanov-2024-min` |
 | Core_CareTeam | `example-core-careteam-ivanov` | `example-core-careteam-ivanov-min` |
-| Core_Composition | `example-core-composition-ivanov-consultation` | `example-core-composition-ivanov-consultation-min` |
+| Core_Composition | `example-core-composition-ivanov-consultation` | `example-core-composition-ivanov-consultation-min`, `example-core-composition-laboratory-semd-min` |
 | Core_Coverage | `example-core-coverage-ivanov-oms` | `example-core-coverage-ivanov-oms-min` |
 | Core_RelatedPerson | `example-core-relatedperson-ivanov-spouse` | `example-core-relatedperson-ivanov-spouse-min` |
 | Core_ServiceRequest | `example-core-servicerequest-ivanov-consultation` | `example-core-servicerequest-ivanov-consultation-min` |
@@ -43,13 +43,13 @@
 
 - **Всего профилей:** 17
 - **Всего расширений:** 5
-- **Всего примеров:** 49 (27 full + 22 min)
+- **Всего примеров:** 52 (27 full + 25 min)
 - **Дополнительных примеров для ссылок:** 5
 
 ## Примечания
 
-- Все примеры имеют соответствующие пары full/min
+- Основные примеры профилей имеют пары full/min; дополнительные проверочные SEMD-примеры публикуются в минимальной форме
 - Имена примеров следуют единому формату: `example-core-{resource}-{description}`
 - Минимальные примеры имеют суффикс `-min`
 - Расширения имеют префикс `example-extension-` вместо `example-core-`
-- Дополнительные примеры для ссылок помечены как "пример для ссылки" и содержат минимальное заполнение 
+- Дополнительные примеры для ссылок помечены как "пример для ссылки" и содержат минимальное заполнение
