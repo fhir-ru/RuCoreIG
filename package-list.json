@@ -7,7 +7,7 @@
   "list": [
     {
       "version": "0.17.0",
-      "desc": "Draft release adding Core_Encounter diagnosis modeling: CodeableReference to Condition, two-axis NSI diagnosis classification, and a rank extension for author order, with synchronized examples and GOST text.",
+      "desc": "Draft release adding Core_Encounter diagnosis modeling and semantic RuCore identifier types, including patient, encounter, practitioner role, composition, and bundle variants with explicit FRMO-rooted OID rules.",
       "path": "https://fhir.ru/ig/core/0.17.0",
       "status": "draft",
       "sequence": "Draft"

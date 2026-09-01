@@ -211,3 +211,16 @@ Description: "Все коды актуальной версии НСИ МЗ РФ
 * ^experimental = false
 
 * include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree
+
+
+ValueSet: Core_Vs_Identifier_Type
+Id: core-vs-identifier-type
+Title: "Core ValueSet Типы идентификаторов"
+Description: "Типы идентификаторов, объединяющие стандартные типы HL7 и семантические типы идентификаторов СЭМД, определенные RuCore."
+
+* ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-identifier-type"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system http://terminology.hl7.org/CodeSystem/v2-0203
+* include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type
