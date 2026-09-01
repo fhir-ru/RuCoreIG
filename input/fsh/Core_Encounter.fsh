@@ -4,30 +4,39 @@ Id: core-encounter
 Title: "Core Encounter (Случай оказания медицинской помощи)"
 Description: "Профиль Encounter для RuCore"
 
+* identifier.type from Core_Vs_Identifier_Type (extensible)
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Идентификаторы случаев оказания медицинской помощи в экземпляре МИС по правилам СЭМД; срезы распознаются по совокупности установленных для них ограничений"
+* identifier ^slicing.description = "Идентификаторы случаев оказания медицинской помощи в экземпляре МИС; срезы распознаются по семантическому типу идентификатора"
 * identifier contains
-  misEncounter 0..* and
-  misInpatientRecord 0..* and
-  misAmbulatoryEncounter 0..*
+  misEncounter 0..1 and
+  misInpatientRecord 0..1 and
+  misAmbulatoryEncounter 0..1
 
 * identifier[misEncounter] ^short = "Идентификатор случая оказания медицинской помощи в экземпляре МИС"
 * identifier[misEncounter] ^definition = "Локальный идентификатор общего случая оказания медицинской помощи в экземпляре медицинской информационной системы по правилам СЭМД."
-* identifier[misEncounter] ^comment = "Identifier.system указывается в URI-форме OID: urn:oid:{OID медицинской организации}.{ветка МИС}.{номер МИС}.{номер экземпляра МИС}.15[.{дочерний узел}...]. Для ветки МИС обычно используется узел 100; если он уже занят, допускается другой узел."
+* identifier[misEncounter] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.15."
+  * type 1..1
+  * type = Core_Cs_Semd_Identifier_Type#mis-encounter
   * system 1..1
   * value 1..1
   * obeys core-encounter-mis-encounter-system
 
 * identifier[misInpatientRecord] ^short = "Номер стационарной медицинской карты в экземпляре МИС"
 * identifier[misInpatientRecord] ^definition = "Локальный номер стационарной медицинской карты (истории болезни), связанной со случаем обслуживания, в экземпляре медицинской информационной системы по правилам СЭМД."
-* identifier[misInpatientRecord] ^comment = "Identifier.system указывается в URI-форме OID: urn:oid:{OID медицинской организации}.{ветка МИС}.{номер МИС}.{номер экземпляра МИС}.16[.{дочерний узел}...]. Для ветки МИС обычно используется узел 100; если он уже занят, допускается другой узел."
+* identifier[misInpatientRecord] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.16."
+  * type 1..1
+  * type = Core_Cs_Semd_Identifier_Type#mis-inpatient-record
   * system 1..1
   * value 1..1
   * obeys core-encounter-mis-inpatient-system
 
 * identifier[misAmbulatoryEncounter] ^short = "Идентификатор амбулаторного случая или посещения в экземпляре МИС"
 * identifier[misAmbulatoryEncounter] ^definition = "Локальный идентификатор посещения или случая оказания медицинской помощи в амбулаторных условиях, в том числе передаваемый как номер амбулаторной медицинской карты, в экземпляре медицинской информационной системы по правилам СЭМД."
-* identifier[misAmbulatoryEncounter] ^comment = "Identifier.system указывается в URI-форме OID: urn:oid:{OID медицинской организации}.{ветка МИС}.{номер МИС}.{номер экземпляра МИС}.17[.{дочерний узел}...]. Для ветки МИС обычно используется узел 100; если он уже занят, допускается другой узел."
+* identifier[misAmbulatoryEncounter] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.17."
+  * type 1..1
+  * type = Core_Cs_Semd_Identifier_Type#mis-ambulatory-encounter
   * system 1..1
   * value 1..1
   * obeys core-encounter-mis-ambulatory-system
@@ -82,19 +91,19 @@ Description: "Профиль Encounter для RuCore"
     * code from Core_Vs_Nsi_Diagnosis_Justification_Degree (extensible)
 
 Invariant: core-encounter-mis-encounter-system
-Description: "Система идентификатора общего случая в МИС должна быть URI-формой OID по правилам СЭМД с типовым узлом 15"
+Description: "Система идентификатора общего случая в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.15"
 Severity: #error
-Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*)){2,}[.][1-9][0-9]*[.][1-9][0-9]*[.][1-9][0-9]*[.]15([.](0|[1-9][0-9]*))*$')"
+Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]15$')"
 
 Invariant: core-encounter-mis-inpatient-system
-Description: "Система номера стационарной медицинской карты в МИС должна быть URI-формой OID по правилам СЭМД с типовым узлом 16"
+Description: "Система номера стационарной медицинской карты в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.16"
 Severity: #error
-Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*)){2,}[.][1-9][0-9]*[.][1-9][0-9]*[.][1-9][0-9]*[.]16([.](0|[1-9][0-9]*))*$')"
+Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]16$')"
 
 Invariant: core-encounter-mis-ambulatory-system
-Description: "Система идентификатора амбулаторного случая или посещения в МИС должна быть URI-формой OID по правилам СЭМД с типовым узлом 17"
+Description: "Система идентификатора амбулаторного случая или посещения в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.17"
 Severity: #error
-Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*)){2,}[.][1-9][0-9]*[.][1-9][0-9]*[.][1-9][0-9]*[.]17([.](0|[1-9][0-9]*))*$')"
+Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]17$')"
 
 Invariant: core-encounter-diagnosis-condition
 Description: "В диагнозе случая должен быть указан код и/или текст и/или ссылка на ресурс Condition"

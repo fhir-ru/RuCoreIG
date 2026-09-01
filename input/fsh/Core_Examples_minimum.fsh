@@ -85,6 +85,7 @@ Title: "Пример роли автора протокола лаборатор
 Description: "Проверочный пример идентификатора роли автора по исходному XML протокола лабораторного исследования СЭМД редакции 4"
 
 * identifier[misPractitionerRole]
+  * type = Core_Cs_Semd_Identifier_Type#mis-practitioner-role
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70"
   * value = "542177"
 
@@ -160,10 +161,12 @@ Title: "Пример стационарного случая по выписно
 Description: "Проверочный пример идентификаторов общего и стационарного случаев по исходному XML выписного эпикриза СЭМД редакции 6"
 
 * identifier[misEncounter]
+  * type = Core_Cs_Semd_Identifier_Type#mis-encounter
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.66.6770.100.1.1.15"
   * value = "2120"
 
 * identifier[misInpatientRecord]
+  * type = Core_Cs_Semd_Identifier_Type#mis-inpatient-record
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.66.6770.100.1.1.16"
   * value = "2120/23-3"
 
@@ -203,10 +206,12 @@ Title: "Пример амбулаторного случая по протоко
 Description: "Проверочный пример идентификаторов общего и амбулаторного случаев по исходному XML протокола лабораторного исследования СЭМД редакции 4"
 
 * identifier[misEncounter]
+  * type = Core_Cs_Semd_Identifier_Type#mis-encounter
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.15"
   * value = "5469-16"
 
 * identifier[misAmbulatoryEncounter]
+  * type = Core_Cs_Semd_Identifier_Type#mis-ambulatory-encounter
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.17"
   * value = "5316-16"
 
@@ -294,6 +299,7 @@ Title: "Пример набора версий протокола лаборат
 Description: "Проверочный пример Composition.identifier по исходному XML протокола лабораторного исследования СЭМД редакции 4"
 
 * identifier[misDocumentSet]
+  * type = Core_Cs_Semd_Identifier_Type#mis-document-set
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.50"
   * value = "9633"
 
