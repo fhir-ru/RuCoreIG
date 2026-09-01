@@ -5,3 +5,12 @@ fsh-generated/
 
 # Local source materials used while preparing the GOST draft
 /gost-local/
+
+# Local IG Publisher working directories and logs
+/input-cache/
+/output/
+/temp/
+/template/
+ig-publisher.log
+jekyll-build.log
+Requirements-fromNarrative.json

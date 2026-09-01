@@ -183,3 +183,31 @@ Description: "Набор значений для описания отношен
 * urn:oid:1.2.643.5.1.13.13.11.1021#6 "Дедушка/бабушка"
 * urn:oid:1.2.643.5.1.13.13.11.1021#7 "Усыновлённый"
 * urn:oid:1.2.643.5.1.13.13.11.1021#8 "Усыновитель"
+
+
+// Виды нозологических единиц диагноза - 13
+
+ValueSet: Core_Vs_Nsi_Diagnosis_Nosology_Kind
+Id: core-vs-nsi-diagnosis-nosology-kind
+Title: "Core ValueSet Виды нозологических единиц диагноза"
+Description: "Структура диагноза (рубрика) по НСИ МЗ РФ «Виды нозологических единиц диагноза»"
+
+* ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-diagnosis-nosology-kind"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind
+
+
+// Степень обоснованности диагноза - 14
+
+ValueSet: Core_Vs_Nsi_Diagnosis_Justification_Degree
+Id: core-vs-nsi-diagnosis-justification-degree
+Title: "Core ValueSet Степень обоснованности диагноза"
+Description: "Все коды актуальной версии НСИ МЗ РФ «Степень обоснованности диагноза»"
+
+* ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-diagnosis-justification-degree"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree

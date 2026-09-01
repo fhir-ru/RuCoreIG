@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.16.1",
+  "version": "0.17.0",
   "list": [
+    {
+      "version": "0.17.0",
+      "desc": "Draft release adding Core_Encounter diagnosis modeling: CodeableReference to Condition, two-axis NSI diagnosis classification, and a rank extension for author order, with synchronized examples and GOST text.",
+      "path": "https://fhir.ru/ig/core/0.17.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.16.1",
       "desc": "Draft patch release correcting SEMD identifier examples from official source XML and documenting deferred identifier mappings and implementation options.",

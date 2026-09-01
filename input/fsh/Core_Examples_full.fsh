@@ -488,6 +488,12 @@ Description: "Полный пример случая обслуживания с
       <ul>
         <li><strong>Поставщик услуг:</strong> <em>ГБУЗ Городская поликлиника №1</em> (ссылка на Organization/example-core-organization-polyclinic)</li>
       </ul>
+
+      <p><strong>Диагнозы случая:</strong></p>
+      <ul>
+        <li><strong>Основное, предварительный:</strong> ОРВИ (J06.9), порядок 1</li>
+        <li><strong>Сопутствующее:</strong> лихорадка, ссылка на Condition, порядок 1</li>
+      </ul>
     </div>
     """
 
@@ -556,6 +562,38 @@ Description: "Полный пример случая обслуживания с
 * serviceProvider
   * reference = "Organization/example-core-organization-polyclinic"
   * display = "ГБУЗ Городская поликлиника №1"
+
+* diagnosis[0]
+  * extension[rank].valuePositiveInt = 1
+  * condition
+    * concept
+      * coding[0]
+        * system = "urn:oid:1.2.643.5.1.13.13.11.1005"
+        * code = #J06.9
+        * display = "Острая инфекция верхних дыхательных путей неуточненная"
+      * text = "ОРВИ"
+  * use[diagnosisStructure]
+    * coding[0]
+      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind"
+      * code = #1
+      * display = "Основное заболевание"
+  * use[diagnosisStage]
+    * coding[0]
+      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree"
+      * code = #1
+      * display = "Предварительный клинический диагноз"
+
+* diagnosis[1]
+  * extension[rank].valuePositiveInt = 1
+  * condition
+    * reference
+      * reference = "Condition/example-core-condition-ivanov-fever"
+      * display = "Лихорадка"
+  * use[diagnosisStructure]
+    * coding[0]
+      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind"
+      * code = #3
+      * display = "Сопутствующее заболевание"
 
 // Пример 7: Core_EpisodeOfCare
 Instance: example-core-episodeofcare-ivanov-2024

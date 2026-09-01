@@ -176,6 +176,26 @@ Description: "Проверочный пример идентификаторов
 * subject.reference = "Patient/example-core-patient-ivanov-min"
 * serviceProvider.reference = "Organization/example-core-organization-polyclinic-min"
 
+* diagnosis[0]
+  * extension[rank].valuePositiveInt = 1
+  * condition
+    * concept
+      * coding[0]
+        * system = "urn:oid:1.2.643.5.1.13.13.11.1005"
+        * code = #I20.8
+        * display = "Другие формы стенокардии"
+      * text = "Стенокардия"
+  * use[diagnosisStructure]
+    * coding[0]
+      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind"
+      * code = #1
+      * display = "Основное заболевание"
+  * use[diagnosisStage]
+    * coding[0]
+      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree"
+      * code = #3
+      * display = "Заключительный клинический диагноз"
+
 // Дополнительный пример Core_Encounter по протоколу лабораторного исследования СЭМД, редакция 4
 Instance: example-core-encounter-laboratory-semd-min
 InstanceOf: Core_Encounter

@@ -497,3 +497,56 @@ Usage: #definition
   * type = #uri
   * value = "urn:hl7-ru:fias:houseguid"
   * preferred = true
+
+
+// Виды нозологических единиц диагноза - 13
+Instance: core-ns-nsi-diagnosis-nosology-kind
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Справочник - Виды нозологических единиц диагноза"
+Description: "НСИ МЗ РФ справочник Виды нозологических единиц диагноза"
+Usage: #definition
+
+* name = "Core_Ns_Nsi_Diagnosis_Nosology_Kind"
+* status = #active
+* kind = #codesystem
+* date = "2026-09-01"
+* description = "Справочник НСИ Минздрава <Виды нозологических единиц диагноза>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1077"
+
+* uniqueId[0]
+  * type = #oid
+  * value = "1.2.643.5.1.13.13.11.1077"
+* uniqueId[1]
+  * type = #uri
+  * preferred = true
+  * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind"
+* uniqueId[2]
+  * type = #uri
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1077"
+
+
+// Степень обоснованности диагноза - 14
+Instance: core-ns-nsi-diagnosis-justification-degree
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Справочник - Степень обоснованности диагноза"
+Description: "НСИ МЗ РФ справочник Степень обоснованности диагноза"
+Usage: #definition
+
+* name = "Core_Ns_Nsi_Diagnosis_Justification_Degree"
+* status = #active
+* kind = #codesystem
+* date = "2026-09-01"
+* description = "Справочник НСИ Минздрава <Степень обоснованности диагноза>, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.795; дополнительный OID: 1.2.643.5.1.13.13.11.1076"
+
+* uniqueId[0]
+  * type = #oid
+  * value = "1.2.643.5.1.13.13.99.2.795"
+* uniqueId[1]
+  * type = #oid
+  * value = "1.2.643.5.1.13.13.11.1076"
+* uniqueId[2]
+  * type = #uri
+  * preferred = true
+  * value = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree"
+* uniqueId[3]
+  * type = #uri
+  * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.795"

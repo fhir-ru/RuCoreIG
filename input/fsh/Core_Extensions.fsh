@@ -72,3 +72,15 @@ Description: "Расширение для хранения кода по Общ�
 * valueCodeableConcept ^short = "Код ОКАТО"
 * ^context.type = #element
 * ^context.expression = "Organization"
+
+// --- Расширение: порядок диагноза случая ---
+Extension: DiagnosisRank
+Id: diagnosis-rank
+Title: "Core Extension DiagnosisRank (Порядок диагноза)"
+Description: "Порядковый номер диагноза в авторской последовательности врача. Восстанавливает исключенный в FHIR R5 элемент Encounter.diagnosis.rank и используется, когда в одной рубрике несколько диагнозов."
+* ^url = "https://fhir.ru/ig/core/StructureDefinition/diagnosis-rank"
+* value[x] 1..1
+* value[x] only positiveInt
+* valuePositiveInt ^short = "Порядковый номер диагноза"
+* ^context.type = #element
+* ^context.expression = "Encounter.diagnosis"

@@ -28,6 +28,7 @@
 | Extension.address-type | `example-extension-addresstype-home` | `example-extension-addresstype-home-min` |
 | Extension.okato | `example-extension-okato-moscow` | `example-extension-okato-moscow-min` |
 | Extension.houseguid | `example-extension-houseguid-moscow` | `example-extension-houseguid-moscow-min` |
+| Extension.diagnosis-rank | используется в `example-core-encounter-consultation` | используется в `example-core-encounter-inpatient-discharge-semd-min` |
 
 ## Дополнительные примеры для ссылок
 
@@ -42,7 +43,7 @@
 ## Статистика
 
 - **Всего профилей:** 17
-- **Всего расширений:** 5
+- **Всего расширений:** 6
 - **Всего примеров:** 52 (27 full + 25 min)
 - **Дополнительных примеров для ссылок:** 5
 
