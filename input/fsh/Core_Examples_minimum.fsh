@@ -312,6 +312,26 @@ Description: "Проверочный пример Composition.identifier по и
 * title = "Протокол лабораторного исследования"
 * author.reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
 
+// Дополнительный пример Core_Bundle по протоколу лабораторного исследования СЭМД, редакция 4
+Instance: example-core-bundle-laboratory-semd-min
+InstanceOf: Core_Bundle
+Title: "Пример пакета протокола лабораторного исследования СЭМД"
+Description: "Проверочный пример Bundle.identifier по исходному XML протокола лабораторного исследования СЭМД редакции 4"
+
+* identifier
+  * type = Core_Cs_Semd_Identifier_Type#mis-document
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.51"
+  * value = "7854321"
+
+* type = #document
+* timestamp = "2024-01-15T10:30:00Z"
+* entry[0]
+  * fullUrl = "https://fhir.ru/ig/core/Composition/example-core-composition-laboratory-semd-min"
+  * resource = example-core-composition-laboratory-semd-min
+* entry[1]
+  * fullUrl = "https://fhir.ru/ig/core/PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
+  * resource = example-core-practitionerrole-smirnov-therapist-min
+
 // Пример 10: Core_Coverage
 Instance: example-core-coverage-ivanov-oms-min
 InstanceOf: Core_Coverage
