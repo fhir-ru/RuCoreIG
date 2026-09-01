@@ -327,7 +327,7 @@ Description: "Проверочный пример Composition.identifier по и
   * display = "Протокол лабораторного исследования"
 * date = "2024-01-15T10:30:00Z"
 * title = "Протокол лабораторного исследования"
-* author.reference = "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
+* author.reference = "PractitionerRole/example-core-practitionerrole-laboratory-semd-min"
 
 // Дополнительный пример Core_Bundle по протоколу лабораторного исследования СЭМД, редакция 4
 Instance: example-core-bundle-laboratory-semd-min
@@ -346,8 +346,8 @@ Description: "Проверочный пример Bundle.identifier по исх�
   * fullUrl = "https://fhir.ru/ig/core/Composition/example-core-composition-laboratory-semd-min"
   * resource = example-core-composition-laboratory-semd-min
 * entry[1]
-  * fullUrl = "https://fhir.ru/ig/core/PractitionerRole/example-core-practitionerrole-smirnov-therapist-min"
-  * resource = example-core-practitionerrole-smirnov-therapist-min
+  * fullUrl = "https://fhir.ru/ig/core/PractitionerRole/example-core-practitionerrole-laboratory-semd-min"
+  * resource = example-core-practitionerrole-laboratory-semd-min
 
 // Пример 10: Core_Coverage
 Instance: example-core-coverage-ivanov-oms-min
