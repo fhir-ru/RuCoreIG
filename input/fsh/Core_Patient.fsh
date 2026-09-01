@@ -30,7 +30,14 @@ Description: "Базовый профиль пациента для россий
   * type 1..1
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #inn
-  * type obeys core-patient-inn-tax-type
+  * type.coding ^slicing.discriminator.type = #value
+  * type.coding ^slicing.discriminator.path = "system"
+  * type.coding ^slicing.rules = #open
+  * type.coding contains
+      identifierType 1..1 and
+      taxType 1..1
+  * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#inn
+  * type.coding[taxType] = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
 
 * identifier[identityDocument] ^short = "Документ, удостоверяющий личность"
   * value only string
@@ -48,7 +55,20 @@ Description: "Базовый профиль пациента для россий
   * type 1..1
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #oms-policy
-  * type obeys core-patient-oms-type
+  * type.coding ^slicing.discriminator.type = #value
+  * type.coding ^slicing.discriminator.path = "system"
+  * type.coding ^slicing.rules = #open
+  * type.coding contains
+      identifierType 1..1 and
+      coverageDocumentType 1..1 and
+      omsType 1..1
+  * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#oms-policy
+  * type.coding[coverageDocumentType] = Core_Cs_Nsi_Coverage_Document#1
+  * type.coding[omsType]
+    * ^patternCoding.system = "urn:oid:1.2.643.5.1.13.13.11.1035"
+    * system 1..1
+    * code 1..1
+    * code from Core_Vs_Nsi_Coverage_Document_OMS (extensible)
 
 * identifier[misPatient] ^short = "Идентификатор пациента в экземпляре МИС"
 * identifier[misPatient] ^definition = "Локальный идентификатор пациента в конкретном экземпляре медицинской информационной системы."
@@ -79,13 +99,3 @@ Invariant: core-patient-mis-patient-system
 Description: "Система идентификатора пациента в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.10"
 Severity: #error
 Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]10$')"
-
-Invariant: core-patient-inn-tax-type
-Description: "Тип ИНН должен дополнительно содержать стандартный код TAX"
-Severity: #error
-Expression: "coding.where(system = 'http://terminology.hl7.org/CodeSystem/v2-0203' and code = 'TAX').exists()"
-
-Invariant: core-patient-oms-type
-Description: "Тип полиса ОМС должен содержать код документа-основания оплаты и код вида полиса ОМС"
-Severity: #error
-Expression: "coding.where(system = 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document' and code = '1').exists() and coding.where(system = 'urn:oid:1.2.643.5.1.13.13.11.1035' and code.exists()).exists()"

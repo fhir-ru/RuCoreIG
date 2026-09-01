@@ -59,8 +59,8 @@ Description: "Полный пример пациента с использова
 * identifier[inn]
   * system = "https://fhir.ru/ig/core/systems/inn"
   * value = "123456789012"
-  * type.coding[0] = Core_Cs_Semd_Identifier_Type#inn
-  * type.coding[1] = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
+  * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#inn
+  * type.coding[taxType] = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
 * identifier[identityDocument]
@@ -73,9 +73,9 @@ Description: "Полный пример пациента с использова
 * identifier[omsPolicy]
   * system = "https://fhir.ru/ig/core/systems/oms"
   * value = "1234567890123456"
-  * type.coding[0] = Core_Cs_Semd_Identifier_Type#oms-policy
-  * type.coding[1] = Core_Cs_Nsi_Coverage_Document#1 "Полис ОМС"
-  * type.coding[2] = urn:oid:1.2.643.5.1.13.13.11.1035#2 "Полис ОМС единого образца, бессрочный"
+  * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#oms-policy
+  * type.coding[coverageDocumentType] = Core_Cs_Nsi_Coverage_Document#1 "Полис ОМС"
+  * type.coding[omsType] = urn:oid:1.2.643.5.1.13.13.11.1035#2 "Полис ОМС единого образца, бессрочный"
   * use = #official
 
 * active = true
