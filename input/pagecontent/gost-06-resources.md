@@ -844,7 +844,7 @@
 | `identifier:identityDocument.system` | — | `—` | `1..—` | Установлен шаблон | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/identity-document`. |
 | `identifier:omsPolicy` | Полис ОМС | `Identifier` | `0..1` | Добавлен срез | Кратность элемента ограничена профилем. |
 | `identifier:omsPolicy.type` | — | `CodeableConcept` | `1..1` | Ограничена кратность | Содержит код `oms-policy` RuCore, код документа-основания оплаты и конкретный вид полиса ОМС. |
-| `identifier:omsPolicy.type.coding` | — | `Coding` | `3..*` | Добавлен срез | Открытая нарезка по системе кодирования. |
+| `identifier:omsPolicy.type.coding` | — | `Coding` | `3..*` | Добавлен срез | Открытая нарезка по шаблону полного `Coding`. |
 | `identifier:omsPolicy.type.coding:identifierType` | Семантический тип. | `Coding` | `1..1` | Добавлен срез | Код `oms-policy` системы типов идентификаторов RuCore. |
 | `identifier:omsPolicy.type.coding:coverageDocumentType` | Полис ОМС по справочнику документов-оснований оплаты | `Coding` | `1..1` | Добавлен срез | Используется фиксированный код `1` «Полис ОМС». |
 | `identifier:omsPolicy.type.coding:coverageDocumentType.system` | — | `uri` | `1..1` | Установлен шаблон | Значение должно соответствовать `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document`. |
@@ -916,7 +916,7 @@
 | `core-patient-4` | Шаблон | `identifier:inn.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/inn`. |
 | `core-patient-5` | Привязка к набору значений | `identifier:identityDocument.type` | Значение выбирается из набора значений `https://fhir.ru/ig/core/ValueSet/core-vs-nsi-identity-documents`; привязка расширяемая. |
 | `core-patient-6` | Шаблон | `identifier:identityDocument.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/systems/identity-document`. |
-| `core-patient-7` | Правило нарезки | `identifier:omsPolicy.type.coding` | Разбиение на срезы выполняется по значению элемента `system`; допускается добавление дополнительных срезов. Нарезка по уровням классификации полиса ОМС. |
+| `core-patient-7` | Правило нарезки | `identifier:omsPolicy.type.coding` | Разбиение на срезы выполняется по шаблону полного `Coding`; допускается добавление дополнительных срезов. |
 | `core-patient-8` | Шаблон | `identifier:omsPolicy.type.coding:coverageDocumentType.system` | Значение элемента должно соответствовать шаблону URI `https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document`. |
 | `core-patient-9` | Фиксированное значение | `identifier:omsPolicy.type.coding:coverageDocumentType.code` | Значение элемента должно быть равно `1` («Полис ОМС»). |
 | `core-patient-10` | Шаблон | `identifier:omsPolicy.type.coding:omsType.system` | Значение элемента должно соответствовать шаблону URI `urn:oid:1.2.643.5.1.13.13.11.1035`. |

@@ -30,8 +30,8 @@ Description: "Базовый профиль пациента для россий
   * type 1..1
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #inn
-  * type.coding ^slicing.discriminator.type = #value
-  * type.coding ^slicing.discriminator.path = "system"
+  * type.coding ^slicing.discriminator.type = #pattern
+  * type.coding ^slicing.discriminator.path = "$this"
   * type.coding ^slicing.rules = #open
   * type.coding contains
       identifierType 1..1 and
@@ -55,8 +55,8 @@ Description: "Базовый профиль пациента для россий
   * type 1..1
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #oms-policy
-  * type.coding ^slicing.discriminator.type = #value
-  * type.coding ^slicing.discriminator.path = "system"
+  * type.coding ^slicing.discriminator.type = #pattern
+  * type.coding ^slicing.discriminator.path = "$this"
   * type.coding ^slicing.rules = #open
   * type.coding contains
       identifierType 1..1 and
