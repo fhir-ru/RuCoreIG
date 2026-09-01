@@ -5,15 +5,16 @@
 | Профиль/Расширение | Пример full | Пример min |
 |-------------------|-------------|------------|
 | **Профили** |
-| Core_Patient | `example-core-patient-ivanov` | `example-core-patient-ivanov-min` |
+| Core_Patient | `example-core-patient-ivanov` | `example-core-patient-ivanov-min`, `example-core-patient-laboratory-semd-min` |
 | Core_Organization | `example-core-organization-polyclinic` | `example-core-organization-polyclinic-min` |
 | Core_Practitioner | `example-core-practitioner-smirnov` | `example-core-practitioner-smirnov-min` |
-| Core_PractitionerRole | `example-core-practitionerrole-smirnov-therapist` | `example-core-practitionerrole-smirnov-therapist-min` |
+| Core_PractitionerRole | `example-core-practitionerrole-smirnov-therapist` | `example-core-practitionerrole-smirnov-therapist-min`, `example-core-practitionerrole-laboratory-semd-min` |
 | Core_Address | `example-core-address-moscow-home` | `example-core-address-moscow-home-min` |
 | Core_Encounter | `example-core-encounter-consultation` | `example-core-encounter-consultation-min`, `example-core-encounter-inpatient-discharge-semd-min`, `example-core-encounter-laboratory-semd-min` |
 | Core_EpisodeOfCare | `example-core-episodeofcare-ivanov-2024` | `example-core-episodeofcare-ivanov-2024-min` |
 | Core_CareTeam | `example-core-careteam-ivanov` | `example-core-careteam-ivanov-min` |
 | Core_Composition | `example-core-composition-ivanov-consultation` | `example-core-composition-ivanov-consultation-min`, `example-core-composition-laboratory-semd-min` |
+| Core_Bundle | — | `example-core-bundle-laboratory-semd-min` |
 | Core_Coverage | `example-core-coverage-ivanov-oms` | `example-core-coverage-ivanov-oms-min` |
 | Core_RelatedPerson | `example-core-relatedperson-ivanov-spouse` | `example-core-relatedperson-ivanov-spouse-min` |
 | Core_ServiceRequest | `example-core-servicerequest-ivanov-consultation` | `example-core-servicerequest-ivanov-consultation-min` |
@@ -42,14 +43,16 @@
 
 ## Статистика
 
-- **Всего профилей:** 17
-- **Всего расширений:** 6
-- **Всего примеров:** 52 (27 full + 25 min)
+- **Всего профилей:** 15
+- **Всего расширений:** 7
+- **Всего примеров:** 54 (26 full + 28 min)
 - **Дополнительных примеров для ссылок:** 5
 
 ## Примечания
 
-- Основные примеры профилей имеют пары full/min; дополнительные проверочные SEMD-примеры публикуются в минимальной форме
+- Основные примеры профилей имеют пары full/min; дополнительные проверочные СЭМД-примеры публикуются в минимальной форме
+- Примеры СЭМД показывают идентификаторы пациента `.10`, случая и медицинских карт `.15`–`.17`, набора версий документа `.50`, экземпляра документа `.51` и роли медицинского работника `.70` вместе с обязательным семантическим `Identifier.type`
+- `example-core-bundle-laboratory-semd-min` является document Bundle: первым ресурсом идет Composition, `Bundle.identifier` представляет CDA `ClinicalDocument.id`, а `Composition.identifier` — CDA `ClinicalDocument.setId`
 - Имена примеров следуют единому формату: `example-core-{resource}-{description}`
 - Минимальные примеры имеют суффикс `-min`
 - Расширения имеют префикс `example-extension-` вместо `example-core-`
