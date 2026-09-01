@@ -49,35 +49,33 @@ Description: "Полный пример пациента с использова
     </div>
     """
 
-* identifier[0]
+* identifier[snils]
+  * type = Core_Cs_Semd_Identifier_Type#snils
   * system = "https://fhir.ru/ig/core/systems/snils"
   * value = "123-456-789-01"
   * use = #official
   * assigner.display = "ПФР РФ"
 
-* identifier[1]
+* identifier[inn]
   * system = "https://fhir.ru/ig/core/systems/inn"
   * value = "123456789012"
-  * type = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
+  * type.coding[0] = Core_Cs_Semd_Identifier_Type#inn
+  * type.coding[1] = http://terminology.hl7.org/CodeSystem/v2-0203#TAX
   * use = #official
 
-* identifier[2]
+* identifier[identityDocument]
   * system = "https://fhir.ru/ig/core/systems/identity-document"
   * value = "4510-123456"
+  * type.coding[0] = Core_Cs_Semd_Identifier_Type#identity-document
+  * type.coding[1] = Core_Cs_Nsi_Identity_Document#1 "Паспорт гражданина Российской Федерации"
   * use = #official
 
-* identifier[3]
+* identifier[omsPolicy]
   * system = "https://fhir.ru/ig/core/systems/oms"
   * value = "1234567890123456"
-  * type
-    * coding[0]
-      * system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document"
-      * code = #1
-      * display = "Полис ОМС"
-    * coding[1]
-      * system = "urn:oid:1.2.643.5.1.13.13.11.1035"
-      * code = #2
-      * display = "Полис ОМС единого образца, бессрочный"
+  * type.coding[0] = Core_Cs_Semd_Identifier_Type#oms-policy
+  * type.coding[1] = Core_Cs_Nsi_Coverage_Document#1 "Полис ОМС"
+  * type.coding[2] = urn:oid:1.2.643.5.1.13.13.11.1035#2 "Полис ОМС единого образца, бессрочный"
   * use = #official
 
 * active = true

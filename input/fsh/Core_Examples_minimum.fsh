@@ -11,7 +11,8 @@ InstanceOf: Core_Patient
 Title: "Пример пациента - Иван Иванов (минимальный)"
 Description: "Минимальный пример пациента с использованием Core_Patient профиля"
 
-* identifier[0]
+* identifier[snils]
+  * type = Core_Cs_Semd_Identifier_Type#snils
   * system = "https://fhir.ru/ig/core/systems/snils"
   * value = "123-456-789-01"
 
@@ -20,6 +21,22 @@ Description: "Минимальный пример пациента с испол
   * family = "Иванов"
   * given[0] = "Иван"
 
+* gender = #male
+* birthDate = "1985-03-15"
+
+// Дополнительный пример Core_Patient по протоколу лабораторного исследования СЭМД, редакция 4
+Instance: example-core-patient-laboratory-semd-min
+InstanceOf: Core_Patient
+Title: "Пример пациента из протокола лабораторного исследования СЭМД"
+Description: "Проверочный пример идентификатора пациента в МИС по исходному XML протокола лабораторного исследования СЭМД редакции 4"
+
+* identifier[misPatient]
+  * type = Core_Cs_Semd_Identifier_Type#mis-patient
+  * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10"
+  * value = "735486"
+* name[0]
+  * family = "Иванов"
+  * given[0] = "Иван"
 * gender = #male
 * birthDate = "1985-03-15"
 
