@@ -1,0 +1,29 @@
+{
+  "source_sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+  "source_values": 1347,
+  "coverage": {
+    "technical": 395,
+    "mapped": 848,
+    "report-only": 54,
+    "transformed": 50
+  },
+  "resources": {
+    "Composition": 1,
+    "Patient": 1,
+    "Organization": 9,
+    "PractitionerRole": 8,
+    "Practitioner": 7,
+    "Encounter": 1,
+    "Procedure": 2,
+    "Coverage": 1,
+    "DocumentReference": 6,
+    "Observation": 52,
+    "AllergyIntolerance": 1,
+    "MedicationStatement": 1,
+    "Medication": 1,
+    "Condition": 2,
+    "CarePlan": 1
+  },
+  "resource_count": 94,
+  "source_sections": 18
+}

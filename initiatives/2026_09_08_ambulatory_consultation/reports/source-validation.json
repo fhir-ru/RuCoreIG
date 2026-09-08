@@ -1,0 +1,20 @@
+{
+  "xsd": {
+    "valid": true,
+    "errors": []
+  },
+  "negative_control": {
+    "mutation": "remove ClinicalDocument.templateId",
+    "schematron_failures": 1,
+    "passed": true
+  },
+  "schematron": {
+    "engine": "SaxonC-HE; flat-schema adapter with xpath-default-namespace=urn:hl7-org:v3",
+    "rules": 959,
+    "assertions": 3291,
+    "matched_rules": 615,
+    "matched_contexts": 961,
+    "failures": [],
+    "valid": true
+  }
+}

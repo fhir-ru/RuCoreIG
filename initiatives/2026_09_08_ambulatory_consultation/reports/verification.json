@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "source_values_accounted_for": 1347,
+  "resolvable_mapping_targets": 1043,
+  "internal_references": 225,
+  "resources": 94,
+  "source_sections": 18,
+  "coverage": {
+    "technical": 395,
+    "mapped": 848,
+    "report-only": 54,
+    "transformed": 50
+  },
+  "checks": [
+    "frozen archive/XML identity",
+    "deterministic output",
+    "every XPath and target resolves",
+    "reference closure",
+    "identifier semantics",
+    "missing dates",
+    "identity collision preservation",
+    "legacy OID preservation",
+    "clinical values and units",
+    "diagnosis axes",
+    "treatment vs recommendation",
+    "all ST source values mapped",
+    "18 readable sections"
+  ]
+}

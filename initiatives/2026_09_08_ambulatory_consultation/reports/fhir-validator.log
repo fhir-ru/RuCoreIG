@@ -1,0 +1,29 @@
+FHIR Validation tool Version 6.10.4 (Git# 1b90fb13f77b). Built 2026-09-04T05:45:41.468Z (4 days old)
+The option '-show-message-ids' is no longer in use. Using '-verbose'
+  Java:   21.0.12.1 from /private/tmp/ambulatory-jre/Contents/Home on aarch64 (64bit). 3072MB available
+  Paths:  Current = /Users/ekogan/git3/RuCoreIG, Package Cache = /Users/ekogan/.fhir/packages
+  Params: initiatives/2026_09_08_ambulatory_consultation/examples/consultation-bundle.json -version 5.0.0 -ig fsh-generated/resources -tx n/a -verbose -output initiatives/2026_09_08_ambulatory_consultation/reports/fhir-validation.json
+  Locale: Russia/RU
+  Jurisdiction: Russian Federation
+Loading
+  Loading FHIR v5.0.0 from hl7.fhir.r5.core#5.0.0
+  Load hl7.terminology.r5#6.2.0 - 4288 resources (00:05.556)
+  Load hl7.fhir.uv.extensions.r5#5.2.0 - 759 resources (00:00.030)
+  Loaded FHIR - 8001 resources (00:00.000)
+  Terminology server null - Version n/a: No Terminology Server (00:00.000)
+  Load hl7.terminology.r5#7.1.0 - 4072 resources (00:02.025)
+  Load hl7.fhir.uv.extensions.r5#5.3.0 - 856 resources (00:00.034)
+  Load hl7.terminology#7.3.0 - 4146 resources (00:00.558)
+  Load fsh-generated/resources - 121 resources (00:00.091)
+  Package Summary: [hl7.fhir.r5.core#5.0.0, hl7.fhir.xver-extensions#0.1.0, hl7.terminology.r5#6.2.0, hl7.fhir.uv.extensions.r5#5.2.0, hl7.terminology.r5#7.1.0, hl7.fhir.uv.extensions.r5#5.3.0, hl7.terminology#7.3.0]
+  Terminology Cache at /var/folders/q2/q5m76v8x55n6yqhrjk3xp8qr0000gn/T/default-tx-cache
+  Get set...
+  ...go! (00:02.171)
+Cached new session. Cache size = 1
+Sources to validate: initiatives/2026_09_08_ambulatory_consultation/examples/consultation-bundle.json
+Validating
+  Validate initiatives/2026_09_08_ambulatory_consultation/examples/consultation-bundle.json
+ 00:01.685
+Done. Times: Loading: 00:10.521, validation: 00:01.689. Memory = 577Mb
+
+Done. Times: Loading: 00:10.521, validation: 00:01.689. Max Memory = 3Gb

@@ -1,0 +1,14 @@
+{
+  "purpose": "Bind reports to the frozen inputs and generated candidate; FHIR profile validation has 12 known errors.",
+  "sha256": {
+    "source/package.zip": "62e0f37f461286f333c74da7c7525d818dac84c6cd565ed4f7e9a178b234ae0d",
+    "source/consultation.xml": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+    "source/manifest.json": "96bd890330a06991a1029149c52f5da258f6737abea4165782d9fc1a91662965",
+    "examples/consultation-bundle.json": "1a9e5a7f9fd893d18bb2119b1a4dd1bf6f747e03cfb1f8456e95db82a8f956ba",
+    "examples/trace.json": "b0471bd16da5108e81cea767038e2964e6099e0e10c2be7214f00e9d1c63fafa",
+    "examples/mapping.tsv": "7661263acf74eed6de571bf844474d5013191f39f8b51c1f853335442cdc27f4",
+    "reports/source-validation.json": "b71f92de6309ba15216744416c8156b8ac38d3b7c22845dbe9927840fb42abe0",
+    "reports/fhir-validation.json": "a67d9b1d0f9098c64fb86148ea031e7772fcf50229ac7786f9ae809a732a7db8",
+    "reports/verification.json": "fdfb7079567c3e508fc40ae9066a849d70d0602fde2e2274a6679682d57596c2"
+  }
+}

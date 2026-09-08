@@ -1,0 +1,46 @@
+info  Running SUSHI v3.15.0 (implements FHIR Shorthand specification v3.0.0)
+info  Arguments:
+info    /Users/ekogan/git3/RuCoreIG
+info  No output path specified. Output to .
+info  Using configuration file: /Users/ekogan/git3/RuCoreIG/sushi-config.yaml
+info  Importing FSH text...
+info  Preprocessed 21 documents with 0 aliases.
+info  Imported 52 definitions and 80 instances.
+info  Resolved hl7.fhir.uv.tools.r5#latest to concrete version 1.1.2
+info  Loaded hl7.fhir.uv.tools.r5#1.1.2 with 116 resources
+info  Resolved hl7.terminology.r5#latest to concrete version 7.3.0
+info  Loaded hl7.terminology.r5#7.3.0 with 4176 resources
+info  Resolved hl7.fhir.uv.extensions.r5#latest to concrete version 5.3.0
+info  Loaded hl7.fhir.uv.extensions.r5#5.3.0 with 856 resources
+info  Loaded hl7.fhir.r5.core#5.0.0 with 2968 resources
+info  Loaded virtual package sushi-local#LOCAL with 0 resources
+info  Converting FSH to FHIR resources...
+info  Converted 22 FHIR StructureDefinitions.
+info  Converted 15 FHIR CodeSystems.
+info  Converted 15 FHIR ValueSets.
+info  Converted 80 FHIR instances.
+info  Exporting FHIR resources as JSON...
+info  Exported 120 FHIR resources as JSON.
+info  Assembling Implementation Guide sources...
+info  Generated ImplementationGuide-ru.core.json
+info  Assembled Implementation Guide sources; ready for IG Publisher.
+
+========================= SUSHI RESULTS ===========================
+|  -------------------------------------------------------------  |
+| |    Profiles   |  Extensions  |   Logicals   |   Resources   | |
+| |-------------------------------------------------------------| |
+| |      15       |      7       |      0       |       0       | |
+|  -------------------------------------------------------------  |
+|  -------------------------------------------------------------  |
+| |      ValueSets     |    CodeSystems    |     Instances      | |
+| |-------------------------------------------------------------| |
+| |         15         |        15         |         80         | |
+|  -------------------------------------------------------------  |
+|                                                                 |
+===================================================================
+| Fin-tastic job!                        0 Errors      0 Warnings |
+===================================================================
+|    You are using SUSHI version 3.15.0, but the latest stable    |
+| release is version 3.20.1. To install the latest release, run:  |
+|                    npm install -g fsh-sushi                     |
+===================================================================

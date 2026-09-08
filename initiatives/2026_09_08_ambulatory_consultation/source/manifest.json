@@ -1,0 +1,231 @@
+{
+  "retrieved": "2026-09-08",
+  "original_archive": "Руководство по реализации СЭМД (227)  Протокол консультации (CDA)  Редакция 5.zip",
+  "archive_sha256": "62e0f37f461286f333c74da7c7525d818dac84c6cd565ed4f7e9a178b234ae0d",
+  "source_xml_sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+  "template_id": "1.2.643.5.1.13.13.15.13.5",
+  "archive_root": "1.2.643.5.1.13.13.15.13-1.2.643.5.1.13.13.15.13.5",
+  "source_url": "https://git.minzdrav.gov.ru/semd/1.2.643.5.1.13.13.15.13/-/tree/1.2.643.5.1.13.13.15.13.5",
+  "revision": null,
+  "note": "Downloaded by operator from the specification repository; commit is not embedded in the archive name. README references revision 7; no claim that revision 5 is latest.",
+  "assembled_at": "2026-09-08T14:15:01Z",
+  "rucore_base_commit": "557ab5d7fe5e99e97cb56c5fa6966447b73f2f66",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1658,
+      "sha256": "34e4a056400c7b46bdeeb6edb2cd829d5fdd1565d2a5ccd8c4f9d2109a1c2de1"
+    },
+    {
+      "path": "example/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "guide/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "guide/CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5.pdf",
+      "bytes": 3309840,
+      "sha256": "c08cee5012cd40817d718d135cbcf9c3c4084aa4c7970e6d8577e24e06d4b6bc"
+    },
+    {
+      "path": "guide/Пояснения (разъяснения) к Руководству по реализации СЭМД.docx",
+      "bytes": 61256,
+      "sha256": "a1c07784a59aff61b2ded5509d7d93a19f1c99d615031eec78739fbe47ee0565"
+    },
+    {
+      "path": "html/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "schematron/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "schematron/227 Schematron v.1.10.sch",
+      "bytes": 900517,
+      "sha256": "0e1b9a56ad59d78c780cd4f0d40a7db8c0e5f4a88f64a49147932134ce7b6982"
+    },
+    {
+      "path": "template_pdf/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "template_pdf/Протокол консультации.pdf",
+      "bytes": 191965,
+      "sha256": "5a8d01e84512ad9ae2da2a68ee75b99d7c42ddd92b8ff3d431ba3dfd197d0029"
+    },
+    {
+      "path": "xml/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "xml/Протокол консультации.xml",
+      "bytes": 126566,
+      "sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45"
+    },
+    {
+      "path": "xpath/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "xpath/Протокол консультации.xlsx",
+      "bytes": 38333,
+      "sha256": "f5f6e4845a542976c2fa7d4cab1588884bcee9b2d35aea17e53a6395684c248e"
+    },
+    {
+      "path": "xsd/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "xsd/XSD CDA/CDA.xsd",
+      "bytes": 506,
+      "sha256": "00773d7af2ce8e16a4badaee336259dca404e0dd4b30eb90b7c197137c62f9e6"
+    },
+    {
+      "path": "xsd/XSD CDA/POCD_MT000040.xsd",
+      "bytes": 86613,
+      "sha256": "58d6e1f0960063628ef9ae0f221de4d338387e7a4c13af8b437f20c95241679b"
+    },
+    {
+      "path": "xsd/XSD CDA/coreschemas/NarrativeBlock.xsd",
+      "bytes": 24950,
+      "sha256": "8f02813bd43e0e1f383543dc22da1880ab8d93868116ee511888241cb8ebdfac"
+    },
+    {
+      "path": "xsd/XSD CDA/coreschemas/datatypes-base.xsd",
+      "bytes": 83638,
+      "sha256": "39c7273772024ee79247202f2f3344d1648aacb2c2ed90865c1fd0787131456f"
+    },
+    {
+      "path": "xsd/XSD CDA/coreschemas/datatypes.xsd",
+      "bytes": 65977,
+      "sha256": "e3ced45f77a48478e7db3b50cb753b50eb0f39fd2c3228e2faebde1945f6045f"
+    },
+    {
+      "path": "xsd/XSD CDA/coreschemas/voc.xsd",
+      "bytes": 84535,
+      "sha256": "22970695278df249ead5aacced0cdf9a77b731bd249d7f2234dd3f79511e4b6b"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/AUTHOR.xsd",
+      "bytes": 6257,
+      "sha256": "1049638740147bad0c362a400d4076f106aff899e6cb2f690601c236942c55d5"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/CDA.xsd",
+      "bytes": 15797,
+      "sha256": "06a27f2b4689cc9526fa1a50d700c75a3d888f12ed12bf511032886ea096a7dc"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/COMPONENT_OF.xsd",
+      "bytes": 7065,
+      "sha256": "ba5ccef05936cfa98c6268ade44728c23248a3511be5add73963ffff87ac2414"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/CUSTODIAN.xsd",
+      "bytes": 6843,
+      "sha256": "89aaf78333127f7b93a2c31e5eaf227ab0c0ab2accf7c7f98cd3ab770c749167"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/DOCUMENTATION_OF.xsd",
+      "bytes": 9492,
+      "sha256": "d4ec98b333ace61c246e5b16b4676f61fb4ca351e01b7e1a999ad529709155a7"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/INFORMATION_RECIPIENT.xsd",
+      "bytes": 4654,
+      "sha256": "6cf804a5eb6fd16afc2b905bcdd99c593a5373850d3921565db920d998d9baaa"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/IN_FULFILLMENT_OF.xsd",
+      "bytes": 5510,
+      "sha256": "1646f3b42bfdd1e589867898372384320b134c1c1a1454502e9fd14bd0f3bec1"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/LEGAL_AUTHENTICATOR.xsd",
+      "bytes": 7302,
+      "sha256": "09e282e5ced047d4cc2d2891fd8cc1fd685929bfd71918b140aad15d53cf559b"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/PARTICIPANT.xsd",
+      "bytes": 11342,
+      "sha256": "566c09c508736db85fdcc8910abc0c565e596328ca9a88aafbb23079d73adafd"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/RECORD_TARGET.xsd",
+      "bytes": 19748,
+      "sha256": "c2578af07235700764cec5fdbfaa7afbe58914ad7e16caf345098f5d3de983ec"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/STRUCTURED_BODY.xsd",
+      "bytes": 61320,
+      "sha256": "273acd300b9284f418c5f13a58cfcadab8dae1eeb644be080e65cc2cfa74d927"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/address.xsd",
+      "bytes": 3459,
+      "sha256": "8fc7dc286bab5e2b4ab9051d9a70f9c5e1b47f873c83256025c419a583b1370d"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/coreschemas/NarrativeBlock.xsd",
+      "bytes": 24950,
+      "sha256": "8f02813bd43e0e1f383543dc22da1880ab8d93868116ee511888241cb8ebdfac"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/coreschemas/datatypes-base.xsd",
+      "bytes": 69039,
+      "sha256": "23cc5aade9967727bd9fa75a1bcbe72f153d5b0b75e17c212a0671bd4aa6cc5a"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/coreschemas/datatypes.xsd",
+      "bytes": 66351,
+      "sha256": "b745befa6ce72d13158451fb41ef9e03065d26b6d8f14c5bfe6762b0713d2667"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/coreschemas/voc.xsd",
+      "bytes": 84891,
+      "sha256": "4d5f658b7a996d5390ba50333ac41bc692ad620ff47c57bfe0ed640806dcb809"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/fias.xsd",
+      "bytes": 3922,
+      "sha256": "572cbb666fe97d584709441a9243ae55dcead683f94518b6abe4569a39fc4130"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/identity.xsd",
+      "bytes": 15814,
+      "sha256": "237a3cc420dbd460f616c5b59ed927d14f92303d35e4d03679cf38b6573bba9f"
+    },
+    {
+      "path": "xsd/XSD_CDA_ПРОТОКОЛ_КОНСУЛЬТАЦИИ_Р5/medService.xsd",
+      "bytes": 5647,
+      "sha256": "d3d5131b15af7a26f9ec764cc40da8a2db7e0b2c49fe372883d825f917389d02"
+    },
+    {
+      "path": "xsl/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "xsl/227_10012024_v1.13.xsl",
+      "bytes": 228296,
+      "sha256": "60eb7654fbca171f6bf7ee0d770d41e53b9c07bceae1d9c3c81207ae98b22b5e"
+    },
+    {
+      "path": "Список изменений.docx",
+      "bytes": 529617,
+      "sha256": "72aad8fef9594428a5d34fbe31b212758a5bd39462bb819d7445e99f1c4c7aec"
+    }
+  ],
+  "assembled_at_note": "Pinned time of generation of the experimental FHIR package, not the unknown CDA authoring time."
+}
