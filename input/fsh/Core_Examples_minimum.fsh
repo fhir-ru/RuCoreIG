@@ -24,6 +24,28 @@ Description: "Минимальный пример пациента с испол
 * gender = #male
 * birthDate = "1985-03-15"
 
+// ОМС без необязательных номера, системы номера и вида полиса.
+Instance: example-core-patient-oms-no-kind
+InstanceOf: Core_Patient
+Title: "Пациент: идентификатор ОМС без вида полиса"
+Description: "Пример оформления типа идентификатора ОМС без необязательных реквизитов; обязательность реквизитов для обмена определяет прикладной профиль."
+
+* identifier[omsPolicy].type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#oms-policy
+* identifier[omsPolicy].type.coding[coverageDocumentType] = Core_Cs_Nsi_Coverage_Document#1
+
+// OID-кодирование вне canonical-среза: намеренно неполная проверка Core.
+Instance: example-core-patient-oms-oid
+InstanceOf: Core_Patient
+Title: "Пациент: вид полиса ОМС с OID системы кодирования"
+Description: "Альтернативное OID-кодирование допускается открытой нарезкой, но не проверяется ограничениями canonical-среза omsType."
+
+* identifier[omsPolicy]
+  * system = "https://fhir.ru/ig/core/systems/oms"
+  * value = "1234567890123456"
+  * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#oms-policy
+  * type.coding[coverageDocumentType] = Core_Cs_Nsi_Coverage_Document#1
+  * type.coding[+] = urn:oid:1.2.643.5.1.13.13.11.1035#2 "Полис ОМС единого образца, бессрочный"
+
 // Дополнительный пример Core_Patient по протоколу лабораторного исследования СЭМД, редакция 4
 Instance: example-core-patient-laboratory-semd-min
 InstanceOf: Core_Patient

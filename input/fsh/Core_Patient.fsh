@@ -50,25 +50,25 @@ Description: "Базовый профиль пациента для россий
 
 * identifier[omsPolicy] ^short = "Полис ОМС"
   * value only string
-  * system 1..1
   * system = "https://fhir.ru/ig/core/systems/oms"
   * type 1..1
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #oms-policy
+  * type.coding ^comment = "Срез omsType проверяет кодирование с canonical URI RuCore. Эквивалентное обозначение системы urn:oid:1.2.643.5.1.13.13.11.1035 сохранено в NamingSystem и допускается открытой нарезкой, но ограничения omsType к такому coding не применяются. NamingSystem не обеспечивает автоматическую эквивалентность при валидации; полноту проверки альтернативных кодирований определяют прикладные профили и их средства валидации."
   * type.coding ^slicing.discriminator.type = #pattern
   * type.coding ^slicing.discriminator.path = "$this"
   * type.coding ^slicing.rules = #open
   * type.coding contains
       identifierType 1..1 and
       coverageDocumentType 1..1 and
-      omsType 1..1
+      omsType 0..1
   * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#oms-policy
   * type.coding[coverageDocumentType] = Core_Cs_Nsi_Coverage_Document#1
   * type.coding[omsType]
-    * ^patternCoding.system = "urn:oid:1.2.643.5.1.13.13.11.1035"
+    * ^patternCoding.system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms"
     * system 1..1
     * code 1..1
-    * code from Core_Vs_Nsi_Coverage_Document_OMS (extensible)
+    * code from Core_Vs_Nsi_Coverage_Document_OMS (required)
 
 * identifier[misPatient] ^short = "Идентификатор пациента в экземпляре МИС"
 * identifier[misPatient] ^definition = "Локальный идентификатор пациента в конкретном экземпляре медицинской информационной системы."

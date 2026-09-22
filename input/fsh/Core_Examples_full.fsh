@@ -75,7 +75,7 @@ Description: "Полный пример пациента с использова
   * value = "1234567890123456"
   * type.coding[identifierType] = Core_Cs_Semd_Identifier_Type#oms-policy
   * type.coding[coverageDocumentType] = Core_Cs_Nsi_Coverage_Document#1 "Полис ОМС"
-  * type.coding[omsType] = urn:oid:1.2.643.5.1.13.13.11.1035#2 "Полис ОМС единого образца, бессрочный"
+  * type.coding[omsType] = Core_Cs_Nsi_Coverage_Document_OMS#2 "Полис ОМС единого образца, бессрочный"
   * use = #official
 
 * active = true

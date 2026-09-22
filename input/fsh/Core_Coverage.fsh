@@ -34,6 +34,7 @@ Description: "Базовый профиль страхового покрыти�
   * system = "https://fhir.ru/ig/core/systems/oms"
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document"
   * type ^patternCodeableConcept.coding[0].code = #1
+  * type.coding ^comment = "Срез omsType проверяет кодирование с canonical URI RuCore. Эквивалентное обозначение системы urn:oid:1.2.643.5.1.13.13.11.1035 сохранено в NamingSystem и допускается открытой нарезкой, но ограничения omsType к такому coding не применяются. NamingSystem не обеспечивает автоматическую эквивалентность при валидации; полноту проверки альтернативных кодирований определяют прикладные профили и их средства валидации."
   * type.coding ^slicing.discriminator.type = #pattern
   * type.coding ^slicing.discriminator.path = "$this"
   * type.coding ^slicing.rules = #open
