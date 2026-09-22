@@ -2,8 +2,8 @@
 <title>Эксперимент: протокол консультации</title>
 <style>body{font:16px/1.5 system-ui;max-width:1100px;margin:40px auto;padding:0 24px;color:#152536}section{border-left:3px solid #dae4ed;padding-left:20px;margin:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:16px}a{color:#155ca0}td,th{text-align:left;border-bottom:1px solid #dde;padding:8px}table{border-collapse:collapse;width:100%}</style>
 <h1>Протокол консультации: эксперимент СЭМД → FHIR</h1>
-<p>СЭМД 227, редакция 5. Это исследовательское представление исходного примера, не официальный документ и не пример подтверждённого соответствия RuCore. Полная проверка: 12 ошибок; подробности — в <a href="../gaps.md">списке пробелов</a>.</p>
-<p>Narrative сформирована из структурированных entry: исходный XML не содержит section/text. <a href="consultation-bundle.json">Полный Bundle</a> · <a href="mapping.tsv">Маппинг</a> · <a href="../reports/report-only.md">54 значения без структурного переноса</a></p>
+<p>СЭМД 227, редакция 5. Это исследовательское представление исходного примера, не официальный документ и не пример подтверждённого соответствия RuCore. Актуальные результаты проверки и её ограничения — в <a href="../gaps.md">списке пробелов</a>.</p>
+<p>Narrative сформирована из структурированных entry: исходный XML не содержит section/text. <a href="consultation-bundle.json">Полный Bundle</a> · <a href="mapping.tsv">Маппинг</a> · <a href="../reports/report-only.md">Значения без структурного переноса</a></p>
 <section><h2>Сведения о консультации</h2>
 <div xmlns="http://www.w3.org/1999/xhtml"><p>Обращение</p><p>Повторный</p><p>Место проведения</p><p>Амбулаторно-поликлиническое учреждение</p><p>Состояние пациента</p><p>Удовлетворительное</p><p>Объективные данные</p><p>Сознание ясное. Контакт доступен. Кожные покровы и видимые слизистые обычной окраски, достаточной влажности. Кожные высыпания. Питание:повыш. Щитовидная железа пальпаторно не определяется. Периферические лимфоузлы не увеличены. Костно-мышечная система без видимых изменений. Грудная клетка правильной формы. Голосовое дрожание не изменено. Перкуторно над легкими легочный звук. При аускультации в легких дыхание везикулярное, хрипов нет. При осмотре области сердца и крупных кровеносных сосудов б/о. Пальпаторно - верхушечный толчок в пятом межреберье; перкуторно: левая граница относительной тупости сердца по срединно-ключичной линии, правая – по правому краю грудины, верхняя – 3 ребро. При аускультации – тоны сердца достаточной звучности, ритм сердечных сокращений правильный, дефицита пульса нет.</p><p>Заключение консультации</p><p>Состояние пациента без существенной динамики. Планируется продолжить проводимую терапию. Необходимо произвести доп. обследование – ЭКГ.</p><p>Выявленные патологии</p><p>Тахикардия</p></div>
 <p><a href="#348face2-c97c-5944-8010-f6e866c5081c">348face2-c97c-5944-8010-f6e866c5081c</a></p>
@@ -797,7 +797,14 @@
       },
       &quot;value&quot;: &quot;4509 395643&quot;,
       &quot;assigner&quot;: {
-        &quot;display&quot;: &quot;ОВД \&quot;Твардовское\&quot; ОУФМС России по гор. Москве&quot;
+        &quot;display&quot;: &quot;ОВД \&quot;Твардовское\&quot; ОУФМС России по гор. Москве&quot;,
+        &quot;identifier&quot;: {
+          &quot;system&quot;: &quot;https://fhir.ru/ig/core/systems/ns-division-code&quot;,
+          &quot;value&quot;: &quot;770-095&quot;
+        }
+      },
+      &quot;period&quot;: {
+        &quot;start&quot;: &quot;2005-02-18&quot;
       }
     },
     {
@@ -1552,12 +1559,21 @@
           }
         ]
       }
-    },
-    {
+    }
+  ],
+  &quot;partOf&quot;: {
+    &quot;type&quot;: &quot;Encounter&quot;,
+    &quot;identifier&quot;: {
       &quot;system&quot;: &quot;urn:oid:1.2.643.5.1.13.13.12.2.77.7831.100.1.1.17&quot;,
       &quot;value&quot;: &quot;5499-16&quot;,
       &quot;type&quot;: {
         &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;urn:oid:1.2.643.5.1.13.13.99.2.723&quot;,
+            &quot;code&quot;: &quot;1&quot;,
+            &quot;display&quot;: &quot;Амбулаторная медицинская карта&quot;,
+            &quot;version&quot;: &quot;1.1&quot;
+          },
           {
             &quot;system&quot;: &quot;https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type&quot;,
             &quot;code&quot;: &quot;mis-ambulatory-encounter&quot;
@@ -1565,7 +1581,7 @@
         ]
       }
     }
-  ],
+  },
   &quot;actualPeriod&quot;: {
     &quot;start&quot;: &quot;2023-05-02T15:30:00+03:00&quot;,
     &quot;end&quot;: &quot;2023-05-02T15:45:00+03:00&quot;

@@ -62,6 +62,18 @@ def main():
             for child in value:
                 walk(child)
     walk(result)
+    encounter = next(r for r in resources.values() if r['resourceType'] == 'Encounter')
+    assert [(i['system'].rsplit('.', 1)[-1], i['value']) for i in encounter['identifier']] == [('15', '5469-16')]
+    chart = encounter['partOf']['identifier']
+    assert encounter['partOf']['type'] == 'Encounter' and 'reference' not in encounter['partOf']
+    assert chart['system'].endswith('.17') and chart['value'] == '5499-16'
+    assert any(c['system'] == 'urn:oid:1.2.643.5.1.13.13.99.2.723' and c['code'] == '1' and c['version'] == '1.1' for c in chart['type']['coding'])
+    assert not any(r['resourceType'] == 'EpisodeOfCare' for r in resources.values())
+    assert sum(r['resourceType'] == 'Encounter' for r in resources.values()) == 1
+    patient = next(r for r in resources.values() if r['resourceType'] == 'Patient')
+    passport = next(i for i in patient['identifier'] if i.get('system', '').endswith('/identity-document'))
+    assert passport['period']['start'] == '2005-02-18'
+    assert passport['assigner']['identifier'] == {'system': 'https://fhir.ru/ig/core/systems/ns-division-code', 'value': '770-095'}
     comp = result['entry'][0]['resource']
     assert comp['resourceType'] == 'Composition'
     assert comp['identifier'][0]['system'].endswith('.50')

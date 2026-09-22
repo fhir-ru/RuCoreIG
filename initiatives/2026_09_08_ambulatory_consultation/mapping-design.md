@@ -14,7 +14,7 @@
 | `author`, `legalAuthenticator`, `informationRecipient`, участники | Practitioner, PractitionerRole, Organization; author, attester и административный раздел | Совпадающие ID при противоречивых именах не объединяются |
 | `representedOrganization`, provider/custodian | Organization, qualification, идентификаторы и адреса Core | Подразделение сохраняется как II, отдельная иерархия не выводится |
 | `documentationOf/serviceEvent` | Procedure события, участники, период | Тип события не подменяется кодом медицинской услуги |
-| `componentOf/encompassingEncounter` | Encounter, период, локальные идентификаторы | Тип медицинской карты не переносится в Encounter.type |
+| `componentOf/encompassingEncounter` | Encounter, период, локальные идентификаторы | Идентификатор .15 — Encounter.identifier посещения; .17 и код типа карты — partOf.identifier и его type; экземпляр карты и СПО не создаются |
 | Плательщик, `identity:DocInfo` | Coverage и Patient.identifier | Срез Core Coverage блокирует валидацию |
 | DOCINFO / LINKDOCS, сведения о направлении | DocumentReference | При отсутствии файла — название и причина отсутствия, без выдуманного URL |
 | COMPLNTS, ANAM, LANAM, SOCANAM, EPIDEM | Observation с исходными кодами, значениями и вложенными hasMember | Текст переносится без NLP; связи COMP сохраняются как группировка |
@@ -36,7 +36,7 @@
 
 Отсутствие клинического статуса не означает final/active. Composition и Observation имеют unknown, Condition.clinicalStatus — unknown. Новые технические записи DocumentReference имеют status=current, Coverage — draft (непроверенная запись), что не утверждает актуальность клинического документа или действительность страхового покрытия. docStatus не выдумывается. Исходные nullFlavor учитываются отдельно.
 
-Даты сохраняют точность: отсутствующие даты не заменяются датой встречи/сборки; к времени с минутной точностью добавляются нулевые секунды для синтаксиса FHIR, часовой пояс не придумывается. Дата выдачи паспорта не является началом identifier.period.
+Даты сохраняют точность: отсутствующие даты не заменяются датой встречи/сборки; к времени с минутной точностью добавляются нулевые секунды для синтаксиса FHIR, часовой пояс не придумывается. Для российского паспорта принято соглашение: дата выдачи передаётся в identifier.period.start; код подразделения — в assigner.identifier с системой RuCore ns-division-code.
 
 У Quantity сохранено исходное значение и unit. Альтернативная единица НСИ переносится стандартным расширением `iso21090-PQ-translation`. Исходное `kg/m^2` оставлено в unit без объявления валидным UCUM code. Пульс `100 U/s` сохранён с предупреждением о качестве источника. Версия НСИ единиц не помещается в несуществующее поле Quantity.version.
 

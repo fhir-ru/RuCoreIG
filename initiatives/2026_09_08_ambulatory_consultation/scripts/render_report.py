@@ -11,8 +11,8 @@ parts = ['<!doctype html><html lang="ru"><meta charset="utf-8">',
          '<title>Эксперимент: протокол консультации</title>',
          '<style>body{font:16px/1.5 system-ui;max-width:1100px;margin:40px auto;padding:0 24px;color:#152536}section{border-left:3px solid #dae4ed;padding-left:20px;margin:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:16px}a{color:#155ca0}td,th{text-align:left;border-bottom:1px solid #dde;padding:8px}table{border-collapse:collapse;width:100%}</style>',
          '<h1>Протокол консультации: эксперимент СЭМД → FHIR</h1>',
-         '<p>СЭМД 227, редакция 5. Это исследовательское представление исходного примера, не официальный документ и не пример подтверждённого соответствия RuCore. Полная проверка: 12 ошибок; подробности — в <a href="../gaps.md">списке пробелов</a>.</p>',
-         '<p>Narrative сформирована из структурированных entry: исходный XML не содержит section/text. <a href="consultation-bundle.json">Полный Bundle</a> · <a href="mapping.tsv">Маппинг</a> · <a href="../reports/report-only.md">54 значения без структурного переноса</a></p>']
+         '<p>СЭМД 227, редакция 5. Это исследовательское представление исходного примера, не официальный документ и не пример подтверждённого соответствия RuCore. Актуальные результаты проверки и её ограничения — в <a href="../gaps.md">списке пробелов</a>.</p>',
+         '<p>Narrative сформирована из структурированных entry: исходный XML не содержит section/text. <a href="consultation-bundle.json">Полный Bundle</a> · <a href="mapping.tsv">Маппинг</a> · <a href="../reports/report-only.md">Значения без структурного переноса</a></p>']
 
 def section(s):
     parts.append('<section><h2>' + esc(s.get('title', 'Раздел')) + '</h2>')

@@ -1,0 +1,21 @@
+{
+  "version": "0.23.0",
+  "validator": "6.10.4",
+  "terminology_server": "n/a",
+  "counts": {
+    "information": 151,
+    "warning": 257
+  },
+  "errors": 0,
+  "source_sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+  "bundle_sha256": "7ff396c73a0a2ccbec31cc1ca5a865cf86b611c094ebbc5c8e75a9db28ef8a01",
+  "new_warnings": [
+    "Unknown CodeSystem urn:oid:1.2.643.5.1.13.13.99.2.723 version 1.1",
+    "Logical-reference identifier.type uses source NSI and RuCore codes outside base extensible Identifier Type Codes; no suppression or automatic HL7 mapping applied"
+  ],
+  "closed_for_prototype": [
+    "APP-01",
+    "APP-02"
+  ],
+  "remaining": "Community approval; APP-03–10; source inconsistencies. External terminology validity is not established by offline validation."
+}

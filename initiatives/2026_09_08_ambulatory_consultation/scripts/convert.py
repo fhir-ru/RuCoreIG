@@ -601,7 +601,18 @@ class Conversion:
         docid['type']['coding'].append({'system': CS + 'semd-identifier-type', 'code': 'identity-document'})
         docid['value'] = ' '.join(self.scalar(one(identity, 'identity:' + x), 'text()', it + '/value', 'series + space + number') for x in ['Series', 'Number'])
         docid['assigner'] = {'display': self.scalar(one(identity, 'identity:IssueOrgName'), 'text()', it + '/assigner/display')}
-        # IssueDate is not the start of Identifier.period; kept as a gap pending a proper extension.
+        # Agreed Russian-passport convention (APP-01); do not generalize to other documents.
+        if one(identity, 'identity:IdentityCardType').get('code') == '1':
+            issue_date = one(identity, 'identity:IssueDate')
+            if issue_date is not None:
+                docid['period'] = {}
+                self.date_field(docid['period'], 'start', issue_date, it + '/period/start')
+        issue_code = one(identity, 'identity:IssueOrgCode')
+        if issue_code is not None:
+            docid['assigner']['identifier'] = {
+                'system': CORE + 'systems/ns-division-code',
+                'value': self.scalar(issue_code, 'text()', it + '/assigner/identifier/value')}
+
         pr['identifier'].append(docid)
         pr['identifier'].append(self.policy_id(one(pat, 'identity:InsurancePolicy'), pd + '/identifier/' + str(len(pr['identifier']))))
         person = one(pat, 'cda:patient')
@@ -623,7 +634,23 @@ class Conversion:
         enc = one(self.doc, 'cda:componentOf/cda:encompassingEncounter')
         self.encounter = self.resource('Encounter', enc, profile='core-encounter'); er = self.encounter; ed = self.loc(er)
         er['status'] = 'unknown'; er['subject'] = self.ref(pr); er['serviceProvider'] = self.ref(org)
-        er['identifier'] = [self.identifier(x, ed + '/identifier/' + str(i), 'mis-encounter' if x.get('root').endswith('.15') else 'mis-ambulatory-encounter') for i, x in enumerate(many(enc, 'cda:id'))]
+        # Consultation R5, U1-22: .15 identifies the encounter; .16/.17 identifies the chart.
+        er['identifier'] = []
+        for node in many(enc, 'cda:id'):
+            suffix = node.get('root', '').rsplit('.', 1)[-1]
+            if suffix == '15':
+                er['identifier'].append(self.identifier(node, ed + '/identifier/' + str(len(er['identifier'])), 'mis-encounter'))
+            elif suffix in ('16', '17'):
+                if 'partOf' in er:
+                    raise ValueError('Multiple chart identifiers require an explicit mapping decision')
+                target = ed + '/partOf/identifier'
+                chart = self.identifier(node, target)
+                chart['type'] = self.code(one(enc, 'cda:code'), target + '/type')
+                chart['type']['coding'].append({'system': CS + 'semd-identifier-type',
+                    'code': 'mis-inpatient-record' if suffix == '16' else 'mis-ambulatory-encounter'})
+                er['partOf'] = {'type': 'Encounter', 'identifier': chart}
+            else:
+                raise ValueError('Unrecognized encounter identifier namespace: ' + node.get('root', ''))
         er['actualPeriod'] = self.period(one(enc, 'cda:effectiveTime'), ed + '/actualPeriod')
         comp['encounter'] = self.ref(er)
         event = one(self.doc, 'cda:documentationOf/cda:serviceEvent')

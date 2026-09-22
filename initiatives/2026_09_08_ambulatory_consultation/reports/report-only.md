@@ -1,11 +1,9 @@
 # Значения без структурного переноса
 
-Все значения сохранены в исходном XML и полной трассировке; таблица не означает, что эквивалентная информация нигде не представлена косвенно.
+После решений APP-01/02 осталось 48 значений. Все сохранены в исходном XML и полной трассировке.
 
 | ID | Строка XML | XPath | Значение | Причина |
 |---|---:|---|---|---|
-| amb-map-0040 | 50 | /cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/identity:IdentityDoc[1]/identity:IssueOrgCode[1]/text() | 770-095 | GAP: no structured rule; source retained |
-| amb-map-0041 | 52 | /cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/identity:IdentityDoc[1]/identity:IssueDate[1]/@value | 20050218 | GAP: no structured rule; source retained |
 | amb-map-0069 | 95 | /cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/cda:patient[1]/cda:administrativeGenderCode[1]/@codeSystem | 1.2.643.5.1.13.13.11.1040 | GAP: no structured rule; source retained |
 | amb-map-0071 | 95 | /cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/cda:patient[1]/cda:administrativeGenderCode[1]/@displayName | Мужской | GAP: no structured rule; source retained |
 | amb-map-0072 | 95 | /cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/cda:patient[1]/cda:administrativeGenderCode[1]/@codeSystemVersion | 2.1 | GAP: no structured rule; source retained |
@@ -15,10 +13,6 @@
 | amb-map-0198 | 335 | /cda:ClinicalDocument[1]/cda:participant[1]/cda:associatedEntity[1]/identity:DocInfo[1]/identity:IdentityDocType[1]/@codeSystem | 1.2.643.5.1.13.13.99.2.724 | GAP: no structured rule; source retained |
 | amb-map-0200 | 335 | /cda:ClinicalDocument[1]/cda:participant[1]/cda:associatedEntity[1]/identity:DocInfo[1]/identity:IdentityDocType[1]/@displayName | Полис ОМС | GAP: no structured rule; source retained |
 | amb-map-0201 | 335 | /cda:ClinicalDocument[1]/cda:participant[1]/cda:associatedEntity[1]/identity:DocInfo[1]/identity:IdentityDocType[1]/@codeSystemVersion | 1.1 | GAP: no structured rule; source retained |
-| amb-map-0356 | 586 | /cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@code | 1 | GAP: no structured rule; source retained |
-| amb-map-0357 | 586 | /cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@codeSystem | 1.2.643.5.1.13.13.99.2.723 | GAP: no structured rule; source retained |
-| amb-map-0359 | 586 | /cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@displayName | Амбулаторная медицинская карта | GAP: no structured rule; source retained |
-| amb-map-0360 | 586 | /cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@codeSystemVersion | 1.1 | GAP: no structured rule; source retained |
 | amb-map-0564 | 800 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[5]/cda:section[1]/cda:component[1]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:entryRelationship[3]/cda:observation[1]/cda:value[1]/cda:translation[1]/@codeSystemVersion | 3.23 | GAP: no structured rule; source retained |
 | amb-map-0655 | 891 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[5]/cda:section[1]/cda:component[2]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:code[1]/@code | 11036 | GAP: no structured rule; source retained |
 | amb-map-0656 | 891 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[5]/cda:section[1]/cda:component[2]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:code[1]/@codeSystem | 1.2.643.5.1.13.13.99.2.166 | GAP: no structured rule; source retained |

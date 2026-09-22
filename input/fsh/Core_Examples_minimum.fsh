@@ -242,15 +242,16 @@ Description: "Проверочный пример идентификаторов
 Instance: example-core-encounter-laboratory-semd-min
 InstanceOf: Core_Encounter
 Title: "Пример амбулаторного случая по протоколу лабораторного исследования СЭМД"
-Description: "Проверочный пример идентификаторов общего и амбулаторного случаев по исходному XML протокола лабораторного исследования СЭМД редакции 4"
+Description: "Пример идентификатора случая и логической ссылки на амбулаторную карту по исходному XML протокола лабораторного исследования СЭМД редакции 4"
 
 * identifier[misEncounter]
   * type = Core_Cs_Semd_Identifier_Type#mis-encounter
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.15"
   * value = "5469-16"
 
-* identifier[misAmbulatoryEncounter]
-  * type = Core_Cs_Semd_Identifier_Type#mis-ambulatory-encounter
+* partOf.type = "Encounter"
+* partOf.identifier
+  * type.coding[0] = Core_Cs_Semd_Identifier_Type#mis-ambulatory-encounter
   * system = "urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.17"
   * value = "5316-16"
 

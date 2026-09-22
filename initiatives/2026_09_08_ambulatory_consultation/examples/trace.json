@@ -419,18 +419,22 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/identity:IdentityDoc[1]/identity:IssueOrgCode[1]/text()",
     "line": 50,
     "value": "770-095",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Patient/20e7b661-ffe9-55e1-af83-a6bbec433090#/identifier/2/assigner/identifier/value"
+    ],
+    "rule": "copy",
     "id": "amb-map-0040"
   },
   {
     "xpath": "/cda:ClinicalDocument[1]/cda:recordTarget[1]/cda:patientRole[1]/identity:IdentityDoc[1]/identity:IssueDate[1]/@value",
     "line": 52,
     "value": "20050218",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Patient/20e7b661-ffe9-55e1-af83-a6bbec433090#/identifier/2/period/start"
+    ],
+    "rule": "CDA TS -> FHIR temporal value (minute precision padded with :00)",
     "id": "amb-map-0041"
   },
   {
@@ -3859,7 +3863,7 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831.100.1.1.17",
     "status": "mapped",
     "targets": [
-      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/identifier/1/system"
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/partOf/identifier/system"
     ],
     "rule": "OID namespace -> URI",
     "id": "amb-map-0354"
@@ -3870,7 +3874,7 @@
     "value": "5499-16",
     "status": "mapped",
     "targets": [
-      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/identifier/1/value"
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/partOf/identifier/value"
     ],
     "rule": "copy",
     "id": "amb-map-0355"
@@ -3879,18 +3883,22 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@code",
     "line": 586,
     "value": "1",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/partOf/identifier/type/coding/0/code"
+    ],
+    "rule": "copy",
     "id": "amb-map-0356"
   },
   {
     "xpath": "/cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@codeSystem",
     "line": 586,
     "value": "1.2.643.5.1.13.13.99.2.723",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/partOf/identifier/type/coding/0/system"
+    ],
+    "rule": "OID -> canonical RuCore URI or urn:oid",
     "id": "amb-map-0357"
   },
   {
@@ -3906,18 +3914,22 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@displayName",
     "line": 586,
     "value": "Амбулаторная медицинская карта",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/partOf/identifier/type/coding/0/display"
+    ],
+    "rule": "copy",
     "id": "amb-map-0359"
   },
   {
     "xpath": "/cda:ClinicalDocument[1]/cda:componentOf[1]/cda:encompassingEncounter[1]/cda:code[1]/@codeSystemVersion",
     "line": 586,
     "value": "1.1",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/partOf/identifier/type/coding/0/version"
+    ],
+    "rule": "copy",
     "id": "amb-map-0360"
   },
   {

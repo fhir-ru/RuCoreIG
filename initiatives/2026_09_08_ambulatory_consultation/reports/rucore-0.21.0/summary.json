@@ -1,0 +1,19 @@
+{
+  "rucore_version": "0.21.0",
+  "source_commit": "39e2f1fb9b1c50769ef8f38671348f5e718dec1c",
+  "bundle_sha256": "1a9e5a7f9fd893d18bb2119b1a4dd1bf6f747e03cfb1f8456e95db82a8f956ba",
+  "severity_counts": {
+    "fatal": 0,
+    "error": 0,
+    "warning": 255,
+    "information": 151
+  },
+  "validator": "6.10.4",
+  "terminology_server": "n/a",
+  "scope": "Unmodified original generated Bundle validated against current generated RuCore definitions; no claim of full NSI terminology verification.",
+  "core_blockers": {
+    "CORE-01": "resolved",
+    "CORE-02": "resolved as false completeness; terminology remains incomplete",
+    "CORE-03": "resolved as false completeness; terminology remains incomplete"
+  }
+}
