@@ -1,0 +1,31 @@
+{
+  "base": "https://build.fhir.org/ig/fhir-ru/RuCoreIG/",
+  "captured": "2026-09-22T14:37:20.056341+00:00",
+  "files": {
+    "qa.json": {
+      "sha256": "278cfe444c93e9d6905565b110eb272f939a3e8f777659467b50b1e9da7780e2",
+      "bytes": 480,
+      "last_modified": "Tue, 01 Sep 2026 14:52:09 GMT"
+    },
+    "qa.xml": {
+      "sha256": "8ee1b411a6532000de7eba97fc028ebd36a747f6fef590fa3d4c58f5622fa4aa",
+      "bytes": 288534,
+      "last_modified": "Tue, 01 Sep 2026 14:52:09 GMT"
+    },
+    "qa.txt": {
+      "sha256": "1305316bfc2097ddb818b2f6a12e8864a8661d02f4d821cd744fa1e1ac756d2c",
+      "bytes": 104237,
+      "last_modified": "Tue, 01 Sep 2026 14:52:09 GMT"
+    },
+    "build.log": {
+      "sha256": "59e0f8bf0e803fea9e0662a6e6ef0abb3ec862f81d6889a506b4e005809fe625",
+      "bytes": 24037,
+      "last_modified": "Tue, 01 Sep 2026 14:52:10 GMT"
+    },
+    "index.html": {
+      "sha256": "fe5a879bcf997514ba9313daa0fff783bb5df28914447f9065349d8cc1a4fec1",
+      "bytes": 46665,
+      "last_modified": "Tue, 01 Sep 2026 14:51:16 GMT"
+    }
+  }
+}

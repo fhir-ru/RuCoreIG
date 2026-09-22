@@ -148,19 +148,6 @@ Description: "НСИ МЗ РФ справочник Отраслевой кла�
 
 
 
-// ValueSet для видов медицинских карт
-//Гипотеза в том, что справочник возник случайно и должен быть удален
-//ValueSet: Core_Vs_Nsi_Types_Medical_Cards
-//Id: core-vs-nsi-types-medical-cards
-//Title: "Виды медицинских карт"
-//Description: "Виды медицинских карт по НСИ МЗ РФ"
-
-//* ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-types-medical-cards"
-//* ^status = #active
-//* ^experimental = false
-
-//* include codes from system https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-types-medical-cards
-
 ValueSet: RelatedPerson_Relationship
 Id: relatedperson-relationship
 Title: "Core ValueSet Типы родственных связей"
@@ -204,7 +191,7 @@ Description: "Структура диагноза (рубрика) по НСИ �
 ValueSet: Core_Vs_Nsi_Diagnosis_Justification_Degree
 Id: core-vs-nsi-diagnosis-justification-degree
 Title: "Core ValueSet Степень обоснованности диагноза"
-Description: "Все коды актуальной версии НСИ МЗ РФ «Степень обоснованности диагноза»"
+Description: "Все коды системы НСИ МЗ РФ «Степень обоснованности диагноза». Состав набора значений не ограничивается концептами локального фрагмента CodeSystem RuCore; полное раскрытие и проверка остальных кодов требуют внешних терминологических данных."
 
 * ^url = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-diagnosis-justification-degree"
 * ^status = #active

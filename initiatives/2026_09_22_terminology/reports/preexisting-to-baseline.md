@@ -1,0 +1,961 @@
+# Publisher QA comparison
+
+| Category | Occurrences | Distinct |
+|---|---:|---:|
+| new | 13 | 13 |
+| resolved | 11 | 11 |
+| unchanged | 288 | 288 |
+
+## Normalization
+
+- Collapse whitespace in message fields.
+- Replace absolute build-root prefixes before output/, input/, fsh-generated/ or temp/ with <ROOT>/.
+- Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> with <IG_VERSION>.
+- Do not replace CodeSystem/ValueSet versions, systems, codes, indexes or other numbers.
+- Ignore source line/column offsets; compare file, expression, severity, message-id, source and text.
+- Keep duplicate occurrence counts; no fuzzy matching. Changed text becomes resolved + new.
+
+## new
+
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
+- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
+  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.20.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code`
+  - Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.20.0'
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code`
+  - Unknown code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.20.0'
+- **warning ×1** `http://hl7.org/fhir/StructureDefinition/Identifier#ident-1` — `fsh-generated/resources/Patient-example-core-patient-oms-no-kind.json`
+  - Location: `Patient/example-core-patient-oms-no-kind: Patient.identifier[0]`
+  - Constraint failed: ident-1: 'Identifier with no value has limited utility. If communicating that an identifier value has been suppressed or missing, the value element SHOULD be present with an extension indicating the missing semantic - e.g. data-absent-reason (value.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Identifier)
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Patient-example-core-patient-oms-oid.json`
+  - Location: `Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-patient|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Patient-example-core-patient-oms-oid.json`
+  - Location: `Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].code`
+  - Unknown code '2' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.20.0'
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].code`
+  - Unknown code '01.001' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.20.0'
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+
+## resolved
+
+- **error ×1** `SLICING_CANNOT_BE_EVALUATED` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms-min.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms-min: Coverage.identifier[0]`
+  - Slicing cannot be evaluated: Could not match discriminator (system) for slice Coverage.identifier:coverageDocument in profile https://fhir.ru/ig/core/StructureDefinition/core-coverage|<IG_VERSION> - the discriminator [system] does not have fixed value, binding or existence assertions
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms-min.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms-min: Coverage.identifier[0].type.coding[1].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
+- **error ×1** `SLICING_CANNOT_BE_EVALUATED` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.identifier[0]`
+  - Slicing cannot be evaluated: Could not match discriminator (system) for slice Coverage.identifier:coverageDocument in profile https://fhir.ru/ig/core/StructureDefinition/core-coverage|<IG_VERSION> - the discriminator [system] does not have fixed value, binding or existence assertions
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.identifier[0].type.coding[1]`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0]`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
+- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
+  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.18.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code`
+  - Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.18.0'
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code`
+  - Unknown code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.18.0'
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.identifier[3].type.coding[2]`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].code`
+  - Unknown code '2' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.18.0'
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].code`
+  - Unknown code '01.001' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.18.0'
+
+## unchanged
+
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[10].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[11].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[12].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[13].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[14].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[15].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[16].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[22].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[3].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[4].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[5].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[6].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[7].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[8].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `MSG_EXPERIMENTAL` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `ImplementationGuide/ru.core: ImplementationGuide.definition.parameter[9].code`
+  - Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+- **information ×1** `(no message ID)` — `<ROOT>/fsh-generated/resources/ImplementationGuide-ru.core.json`
+  - Location: `Resource`
+  - The resource ImplementationGuide/ru.core could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-coverage-document-oms.html`
+  - Illegal HTML: illegal html element: Виды (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1035)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-coverage-document.html`
+  - Illegal HTML: illegal html element: Типы (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.724)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-diagnosis-justification-degree.html`
+  - Illegal HTML: illegal html element: Степень (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.795; дополнительный OID: 1.2.643.5.1.13.13.11.1076)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-diagnosis-nosology-kind.html`
+  - Illegal HTML: illegal html element: Виды (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1077)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-insurer.html`
+  - Illegal HTML: illegal html element: Страховые (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.99.2.183)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-medical-workers-positions.html`
+  - Illegal HTML: illegal html element: Должности (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1002)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-register-of-medical-organizations.html`
+  - Illegal HTML: illegal html element: Реестр (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1461)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/NamingSystem-core-ns-nsi-sources-of-payment.html`
+  - Illegal HTML: illegal html element: Источники (, может быть известен под следующими идентификаторами: OID: 1.2.643.5.1.13.13.11.1039)
+- **warning ×1** `(no message ID)` — `Build Errors`
+  - Location: `<ROOT>/output/history.html`
+  - This IG generates a page named 'history.html'. That file name is reserved by the publication process, which replaces it with the directory of published versions when the IG is published, so the content generated here will be overwritten and lost. Rename the page to something else (e.g. test-history.html).
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation-min.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation-min: Appointment.appointmentType`
+  - None of the codings provided are in the value set 'hl7VS-appointmentReasonCodes' (http://terminology.hl7.org/ValueSet/v2-0276|3.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0276#ROUTINE)
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation-min.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation-min: Appointment.appointmentType.coding[0].display`
+  - Wrong Display Name 'Routine' for http://terminology.hl7.org/CodeSystem/v2-0276#ROUTINE. Valid display is 'Routine appointment - default if not valued' (for the language(s) 'en-US')
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation-min.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation-min: Appointment.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/appointment'
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation-min.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation-min: Appointment.specialty[0]`
+  - None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/c80-practice-codes#GP)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation-min.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation-min: Appointment.specialty[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/c80-practice-codes'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation-min.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation-min: Appointment.specialty[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/c80-practice-codes' could not be found, so the code cannot be validated
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation: Appointment.appointmentType`
+  - None of the codings provided are in the value set 'hl7VS-appointmentReasonCodes' (http://terminology.hl7.org/ValueSet/v2-0276|3.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0276#ROUTINE)
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation: Appointment.appointmentType.coding[0].display`
+  - Wrong Display Name 'Routine' for http://terminology.hl7.org/CodeSystem/v2-0276#ROUTINE. Valid display is 'Routine appointment - default if not valued' (for the language(s) 'en-US')
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation: Appointment.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/appointment'
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation: Appointment.specialty[0]`
+  - None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/c80-practice-codes#GP)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation: Appointment.specialty[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/c80-practice-codes'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Appointment-example-core-appointment-ivanov-consultation.json`
+  - Location: `Appointment/example-core-appointment-ivanov-consultation: Appointment.specialty[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/c80-practice-codes' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Bundle-example-core-bundle-laboratory-semd-min.json`
+  - Location: `Bundle/example-core-bundle-laboratory-semd-min: Bundle.entry[0].resource/*Composition/example-core-composition-laboratory-semd-min*/.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.50'
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Bundle-example-core-bundle-laboratory-semd-min.json`
+  - Location: `Bundle/example-core-bundle-laboratory-semd-min: Bundle.entry[0].resource/*Composition/example-core-composition-laboratory-semd-min*/.type`
+  - None of the codings provided are in the value set 'FHIR Document Type Codes' (http://hl7.org/fhir/ValueSet/doc-typecodes|5.0.0), and a coding is recommended to come from this value set (codes = urn:oid:1.2.643.5.1.13.13.11.1522#7)
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Bundle-example-core-bundle-laboratory-semd-min.json`
+  - Location: `Bundle/example-core-bundle-laboratory-semd-min: Bundle.entry[0].resource/*Composition/example-core-composition-laboratory-semd-min*/.type.coding[0].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1522' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Bundle-example-core-bundle-laboratory-semd-min.json`
+  - Location: `Bundle/example-core-bundle-laboratory-semd-min: Bundle.entry[1].resource/*PractitionerRole/example-core-practitionerrole-laboratory-semd-min*/.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Bundle-example-core-bundle-laboratory-semd-min.json`
+  - Location: `Bundle/example-core-bundle-laboratory-semd-min: Bundle.identifier.system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.51'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov-min.json`
+  - Location: `CareTeam/example-core-careteam-ivanov-min: CareTeam.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/careteam'
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov-min.json`
+  - Location: `CareTeam/example-core-careteam-ivanov-min: CareTeam.participant[0].role.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/participant-role'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov-min.json`
+  - Location: `CareTeam/example-core-careteam-ivanov-min: CareTeam.participant[0].role.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/participant-role' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/careteam'
+- **error ×1** `http://hl7.org/fhir/StructureDefinition/CareTeam#ctm-1` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.participant[0]`
+  - Constraint failed: ctm-1: 'CareTeam.participant.onBehalfOf can only be populated when CareTeam.participant.member is a Practitioner (onBehalfOf.exists() implies (member.resolve() is Practitioner))' (defined in http://hl7.org/fhir/StructureDefinition/CareTeam)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.participant[0].role.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/participant-role'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.participant[0].role.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/participant-role' could not be found, so the code cannot be validated
+- **error ×1** `http://hl7.org/fhir/StructureDefinition/CareTeam#ctm-1` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.participant[1]`
+  - Constraint failed: ctm-1: 'CareTeam.participant.onBehalfOf can only be populated when CareTeam.participant.member is a Practitioner (onBehalfOf.exists() implies (member.resolve() is Practitioner))' (defined in http://hl7.org/fhir/StructureDefinition/CareTeam)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.participant[1].role.coding[0]`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/participant-role' could not be found, so the code cannot be validated
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/CareTeam-example-core-careteam-ivanov.json`
+  - Location: `CareTeam/example-core-careteam-ivanov: CareTeam.participant[1].role.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/participant-role'
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-address-type.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-address-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-coverage-document-oms.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-coverage-document-oms should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-coverage-document.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-coverage-document should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-diagnosis-justification-degree.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-diagnosis-justification-degree should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-diagnosis-nosology-kind.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-diagnosis-nosology-kind should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-identity-document.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-identity-document should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-insurer.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-insurer should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-medical-services.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-medical-services should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-medical-workers-positions.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-medical-workers-positions should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-okato.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-okato should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-region-rf.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-region-rf should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-register-of-medical-organizations.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-register-of-medical-organizations should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-sources-of-payment.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-sources-of-payment should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-nsi-units-of-measurement.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-nsi-units-of-measurement should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/CodeSystem-core-cs-semd-identifier-type.json`
+  - Location: `Resource`
+  - The resource CodeSystem/core-cs-semd-identifier-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation-min.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation-min: Composition.identifier[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-composition|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation-min.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation-min: Composition.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/composition'
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.attester[0].mode`
+  - None of the codings provided are in the value set 'Composition Attestation Mode' (http://hl7.org/fhir/ValueSet/composition-attestation-mode|5.0.0), and a coding is recommended to come from this value set (codes = null#legal)
+- **warning ×1** `Coding_has_no_system__cannot_validate` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.attester[0].mode.coding[0]`
+  - Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.category[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/document-classcodes'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.category[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/document-classcodes' could not be found, so the code cannot be validated
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.identifier[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-composition|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/composition'
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.section[0].code.coding[0].display`
+  - Wrong Display Name 'Chief complaint' for http://loinc.org#46239-0. Valid display is one of 3 choices: 'Chief complaint+Reason for visit Narrative' (en-US), 'Chief complaint+Reason for visit Narrative' (en-US) or 'Chief complaint+Reason for visit' (en-US) (for the language(s) 'en-US')
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/Composition-example-core-composition-ivanov-consultation.json`
+  - Location: `Composition/example-core-composition-ivanov-consultation: Composition.section[1].code.coding[0].display`
+  - Wrong Display Name 'Vital signs' for http://loinc.org#8716-3. Valid display is one of 3 choices: 'Vital signs note' (en-US), 'Vital signs note' (en-US) or 'Vital signs note' (en-US) (for the language(s) 'en-US')
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Composition-example-core-composition-laboratory-semd-min.json`
+  - Location: `Composition/example-core-composition-laboratory-semd-min: Composition.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.50'
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Composition-example-core-composition-laboratory-semd-min.json`
+  - Location: `Composition/example-core-composition-laboratory-semd-min: Composition.type`
+  - None of the codings provided are in the value set 'FHIR Document Type Codes' (http://hl7.org/fhir/ValueSet/doc-typecodes|5.0.0), and a coding is recommended to come from this value set (codes = urn:oid:1.2.643.5.1.13.13.11.1522#7)
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Composition-example-core-composition-laboratory-semd-min.json`
+  - Location: `Composition/example-core-composition-laboratory-semd-min: Composition.type.coding[0].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1522' could not be found, so the code cannot be validated
+- **warning ×1** `Coding_has_no_system__cannot_validate` — `fsh-generated/resources/Condition-example-core-condition-ivanov-fever.json`
+  - Location: `Condition/example-core-condition-ivanov-fever: Condition.participant[0].function.coding[0]`
+  - Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.costToBeneficiary[0].type.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/benefit-category'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.costToBeneficiary[0].type.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
+- **information ×1** `(no message ID)` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.costToBeneficiary[0].value.ofType(Quantity).code`
+  - Error processing unit 'RUB': The unit 'RUB' is unknown at character 1
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
+  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.costToBeneficiary[0].value.ofType(Quantity).code`
+  - Unknown code 'RUB' in the CodeSystem 'http://unitsofmeasure.org' version '2.2'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood-min.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood-min: DiagnosticReport.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/diagnosticreport'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/diagnosticreport'
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.media[0].link`
+  - Unable to resolve resource with reference 'Media/example-core-media-ivanov-blood-smear'
+- **error ×1** `TYPE_SPECIFIC_CHECKS_DT_ATT_HASH_MISMATCH` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.presentedForm[0]`
+  - The hash of the data did not match the data (stated: 'MTIzNDU2Nzg5MA==', actual: 'lWB7AtSKeGy3hol9cnEU/HmBSx4=')
+- **error ×1** `TYPE_SPECIFIC_CHECKS_DT_ATT_SIZE_CORRECT` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.presentedForm[0]`
+  - Stated Attachment Size 24,576 does not match actual attachment size 9
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.result[0]`
+  - Unable to resolve resource with reference 'Observation/example-core-observation-ivanov-hemoglobin'
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.result[1]`
+  - Unable to resolve resource with reference 'Observation/example-core-observation-ivanov-leukocytes'
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.specimen[0]`
+  - Unable to resolve resource with reference 'Specimen/example-core-specimen-ivanov-blood'
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/DiagnosticReport-example-core-diagnosticreport-ivanov-blood.json`
+  - Location: `DiagnosticReport/example-core-diagnosticreport-ivanov-blood: DiagnosticReport.study[0]`
+  - Unable to resolve resource with reference 'ImagingStudy/example-core-imagingstudy-ivanov-chest'
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Encounter-example-core-encounter-consultation-min.json`
+  - Location: `Encounter/example-core-encounter-consultation-min: Encounter.identifier[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-encounter|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Encounter-example-core-encounter-consultation-min.json`
+  - Location: `Encounter/example-core-encounter-consultation-min: Encounter.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/encounter'
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Encounter-example-core-encounter-consultation-min.json`
+  - Location: `Encounter/example-core-encounter-consultation-min: Encounter.type[0].coding[0].code`
+  - Unknown code 'CONS' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/encounter-type' version '1.0.1'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.diagnosis[0].condition[0].concept.coding[0].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1005' could not be found, so the code cannot be validated
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.diagnosis[0].use[0]`
+  - None of the codings provided are in the value set 'Encounter Diagnosis Use' (http://hl7.org/fhir/ValueSet/encounter-diagnosis-use|5.0.0), and a coding is recommended to come from this value set (codes = https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind#1)
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.diagnosis[0].use[1]`
+  - None of the codings provided are in the value set 'Encounter Diagnosis Use' (http://hl7.org/fhir/ValueSet/encounter-diagnosis-use|5.0.0), and a coding is recommended to come from this value set (codes = https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree#1)
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.diagnosis[1].use[0]`
+  - None of the codings provided are in the value set 'Encounter Diagnosis Use' (http://hl7.org/fhir/ValueSet/encounter-diagnosis-use|5.0.0), and a coding is recommended to come from this value set (codes = https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind#3)
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.identifier[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-encounter|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/encounter'
+- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Encounter-example-core-encounter-consultation.json`
+  - Location: `Encounter/example-core-encounter-consultation: Encounter.type[0].coding[0].code`
+  - Unknown code 'CONS' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/encounter-type' version '1.0.1'
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/Encounter-example-core-encounter-inpatient-discharge-semd-min.json`
+  - Location: `Encounter/example-core-encounter-inpatient-discharge-semd-min: Encounter.diagnosis[0].condition[0].concept.coding[0]`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1005' could not be found, so the code cannot be validated
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Encounter-example-core-encounter-inpatient-discharge-semd-min.json`
+  - Location: `Encounter/example-core-encounter-inpatient-discharge-semd-min: Encounter.diagnosis[0].use[0]`
+  - None of the codings provided are in the value set 'Encounter Diagnosis Use' (http://hl7.org/fhir/ValueSet/encounter-diagnosis-use|5.0.0), and a coding is recommended to come from this value set (codes = https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind#1)
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/Encounter-example-core-encounter-inpatient-discharge-semd-min.json`
+  - Location: `Encounter/example-core-encounter-inpatient-discharge-semd-min: Encounter.diagnosis[0].use[1]`
+  - None of the codings provided are in the value set 'Encounter Diagnosis Use' (http://hl7.org/fhir/ValueSet/encounter-diagnosis-use|5.0.0), and a coding is recommended to come from this value set (codes = https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree#3)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Encounter-example-core-encounter-inpatient-discharge-semd-min.json`
+  - Location: `Encounter/example-core-encounter-inpatient-discharge-semd-min: Encounter.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.66.6770.100.1.1.15'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Encounter-example-core-encounter-inpatient-discharge-semd-min.json`
+  - Location: `Encounter/example-core-encounter-inpatient-discharge-semd-min: Encounter.identifier[1].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.66.6770.100.1.1.16'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Encounter-example-core-encounter-laboratory-semd-min.json`
+  - Location: `Encounter/example-core-encounter-laboratory-semd-min: Encounter.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.15'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Encounter-example-core-encounter-laboratory-semd-min.json`
+  - Location: `Encounter/example-core-encounter-laboratory-semd-min: Encounter.identifier[1].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.17'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/EpisodeOfCare-example-core-episodeofcare-ivanov-2024-min.json`
+  - Location: `EpisodeOfCare/example-core-episodeofcare-ivanov-2024-min: EpisodeOfCare.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/episode'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/EpisodeOfCare-example-core-episodeofcare-ivanov-2024.json`
+  - Location: `EpisodeOfCare/example-core-episodeofcare-ivanov-2024: EpisodeOfCare.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/episode'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy-min.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy-min: HealthcareService.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/healthcareservice'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy-min.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy-min: HealthcareService.type[0].coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the code cannot be validated
+- **error ×1** `(no message ID)` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService.text.div`
+  - Hyperlink 'Endpoint/example-core-endpoint-therapy' at 'div/p/a' for 'Электронная регистратура' does not resolve
+- **error ×1** `(no message ID)` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService.text.div`
+  - Hyperlink 'Location/example-core-location-moscow' at 'div/p/a' for 'г. Москва' does not resolve
+- **error ×1** `Terminology_TX_NoValid_1_CC` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.communication[0]`
+  - None of the codings provided are in the value set 'All Languages' (http://hl7.org/fhir/ValueSet/all-languages|5.0.0), and a coding from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/communication#ru)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.communication[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/communication'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.communication[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/communication' could not be found, so the code cannot be validated
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.coverageArea[0]`
+  - Unable to resolve resource with reference 'Location/example-core-location-moscow'
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/benefit-category'
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.endpoint[0]`
+  - Unable to resolve resource with reference 'Endpoint/example-core-endpoint-therapy'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/healthcareservice'
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.program[0].coding[0].display`
+  - Wrong Display Name 'ОМС' for http://terminology.hl7.org/CodeSystem/program#1. Valid display is 'Acquired Brain Injury (ABI) Program' (for the language(s) 'en-US')
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.specialty[0]`
+  - None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/c80-practice-codes#GP)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.specialty[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/c80-practice-codes'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.specialty[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/c80-practice-codes' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.type[0].coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Location-example-core-location-therapy-office-min.json`
+  - Location: `Location/example-core-location-therapy-office-min: Location.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/location'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Location-example-core-location-therapy-office.json`
+  - Location: `Location/example-core-location-therapy-office: Location.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/location'
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Location-example-core-location-therapy-office.json`
+  - Location: `Location/example-core-location-therapy-office: Location.type[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/v3-ServiceDeliveryLocationRoleType'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Location-example-core-location-therapy-office.json`
+  - Location: `Location/example-core-location-therapy-office: Location.type[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/v3-ServiceDeliveryLocationRoleType' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/MedicationRequest-example-core-medicationrequest-ivanov-paracetamol.json`
+  - Location: `MedicationRequest/example-core-medicationrequest-ivanov-paracetamol: MedicationRequest.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/medicationrequest'
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/MedicationRequest-example-core-medicationrequest-ivanov-paracetamol.json`
+  - Location: `MedicationRequest/example-core-medicationrequest-ivanov-paracetamol: MedicationRequest.medication.concept.coding[0].display`
+  - Wrong Display Name 'Acetaminophen 500 MG Oral Tablet' for http://www.nlm.nih.gov/research/umls/rxnorm#313782. Valid display is one of 3 choices: 'acetaminophen 325 MG Oral Tablet' (en-US), 'APAP 325 MG Oral Tablet' (en-US) or 'acetaminophen 325 MG Oral Tablet' (en-US) (for the language(s) 'en-US')
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-fias-aoguid.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-fias-aoguid could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-fias-houseguid.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-fias-houseguid could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-address-type.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-address-type could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-coverage-document-oms.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-coverage-document-oms could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-coverage-document.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-coverage-document could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-diagnosis-justification-degree.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-diagnosis-justification-degree could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-diagnosis-nosology-kind.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-diagnosis-nosology-kind could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-identity-document.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-identity-document could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-insurer.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-insurer could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-medical-services.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-medical-services could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-medical-workers-positions.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-medical-workers-positions could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-okato.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-okato could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-region-rf.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-region-rf could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-register-of-medical-organizations.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-register-of-medical-organizations could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-sources-of-payment.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-sources-of-payment could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-nsi-units-of-measurement.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-nsi-units-of-measurement could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-birth-certificate.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-birth-certificate could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-frmo.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-frmo could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-identity-document.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-identity-document could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-inn.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-inn could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-medlicense.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-medlicense could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-ns-division-code.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-ns-division-code could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-ogrn.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-ogrn could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-okpo.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-okpo could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-oms.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-oms could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/NamingSystem-core-ns-rf-snils.json`
+  - Location: `Resource`
+  - The resource NamingSystem/core-ns-rf-snils could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **error ×1** `Validation_VAL_Profile_Minimum` — `fsh-generated/resources/Organization-example-core-organization-polyclinic-min.json`
+  - Location: `Organization/example-core-organization-polyclinic-min: Organization.identifier[0]`
+  - Organization.identifier:INN.type: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION>)
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.qualification[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.qualification[0].code.coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-license' could not be found, so the code cannot be validated
+- **error ×1** `Extension_EXT_Type` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[0]`
+  - The Extension 'https://fhir.ru/ig/core/StructureDefinition/fias' definition allows for the types [] but found type CodeableConcept
+- **error ×1** `Validation_VAL_Profile_Maximum` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[0]`
+  - Extension.value[x]: max allowed = 0, but found 1 (from https://fhir.ru/ig/core/StructureDefinition/fias|<IG_VERSION>)
+- **error ×1** `Validation_VAL_Profile_Minimum` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[0]`
+  - Extension.extension: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/fias|<IG_VERSION>)
+- **error ×1** `Validation_VAL_Profile_Minimum_SLICE` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[0]`
+  - Slice 'Extension.extension:aoguid': a matching slice is required, but not found (from https://fhir.ru/ig/core/StructureDefinition/fias|<IG_VERSION>). Note that other slices are allowed in addition to this required slice
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[0].value.ofType(CodeableConcept).coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-fias' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Patient-example-core-patient-laboratory-semd-min.json`
+  - Location: `Patient/example-core-patient-laboratory-semd-min: Patient.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10'
+- **error ×1** `Validation_VAL_Profile_Minimum` — `fsh-generated/resources/Practitioner-example-core-practitioner-smirnov.json`
+  - Location: `Practitioner/example-core-practitioner-smirnov: Practitioner.identifier[1]`
+  - Practitioner.identifier:identityDocument.type: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/core-practitioner|<IG_VERSION>)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Practitioner-example-core-practitioner-smirnov.json`
+  - Location: `Practitioner/example-core-practitioner-smirnov: Practitioner.qualification[0].identifier[0].system`
+  - No definition could be found for URL value 'https://www.rosminzdrav.ru/medical-education'
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-laboratory-semd-min.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-laboratory-semd-min: PractitionerRole.identifier[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70'
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].display`
+  - Wrong Display Name 'Врач-терапевт участковый' for https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions#1. Valid display is 'тестовое значение' (for the language(s) 'en-US')
+- **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.specialty[0]`
+  - None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/c80-practice-codes#GP)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.specialty[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/c80-practice-codes'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.specialty[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/c80-practice-codes' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation-min.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation-min: Procedure.code.coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the code cannot be validated
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation-min.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation-min: Procedure.identifier[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-procedure|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation-min.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation-min: Procedure.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/procedure'
+- **warning ×1** `INACTIVE_CONCEPT_FOUND` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.category[0].coding[0]`
+  - The concept '103693007' has a status of inactive and its use should be reviewed
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.code.coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the code cannot be validated
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.followUp[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/procedure-followup'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.followUp[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/procedure-followup' could not be found, so the code cannot be validated
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.identifier[0]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-procedure|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/procedure'
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.outcome.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/procedure-outcome'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.outcome.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/procedure-outcome' could not be found, so the code cannot be validated
+- **error ×1** `http://hl7.org/fhir/StructureDefinition/Procedure#prc-1` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.performer[0]`
+  - Constraint failed: prc-1: 'Procedure.performer.onBehalfOf can only be populated when performer.actor isn't Practitioner or PractitionerRole (onBehalfOf.exists() and actor.resolve().exists() implies actor.resolve().where($this is Practitioner or $this is PractitionerRole).empty())' (defined in http://hl7.org/fhir/StructureDefinition/Procedure)
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.performer[0].function.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/performer-role'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.performer[0].function.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/performer-role' could not be found, so the code cannot be validated
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.statusReason.coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/procedure-not-performed-reason'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Procedure-example-core-procedure-ivanov-consultation.json`
+  - Location: `Procedure/example-core-procedure-ivanov-consultation: Procedure.statusReason.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/procedure-not-performed-reason' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/RelatedPerson-example-core-relatedperson-ivanov-spouse-min.json`
+  - Location: `RelatedPerson/example-core-relatedperson-ivanov-spouse-min: RelatedPerson.relationship[0].coding[0].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1021' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/RelatedPerson-example-core-relatedperson-ivanov-spouse.json`
+  - Location: `RelatedPerson/example-core-relatedperson-ivanov-spouse: RelatedPerson.relationship[0].coding[0].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1021' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation-min.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation-min: ServiceRequest.code.concept.coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation-min.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation-min: ServiceRequest.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/servicerequest'
+- **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation: ServiceRequest.category[0].coding[0].system`
+  - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/servicerequest-category'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation: ServiceRequest.category[0].coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/servicerequest-category' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation: ServiceRequest.code.concept.coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the code cannot be validated
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation: ServiceRequest.identifier[0].system`
+  - No definition could be found for URL value 'https://fhir.ru/ig/core/systems/servicerequest'
+- **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/ServiceRequest-example-core-servicerequest-ivanov-consultation.json`
+  - Location: `ServiceRequest/example-core-servicerequest-ivanov-consultation: ServiceRequest.specimen[0]`
+  - Unable to resolve resource with reference 'Specimen/example-core-specimen-ivanov-blood'
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-address-type.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/address-type could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-aoguid.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/aoguid could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-aoguid.json`
+  - Location: `StructureDefinition.where(url = 'https://fhir.ru/ig/core/StructureDefinition/aoguid')`
+  - The Implementation Guide contains no examples for this extension
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-address.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-address could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-address.json`
+  - Location: `StructureDefinition.where(url = 'https://fhir.ru/ig/core/StructureDefinition/core-address')`
+  - The Implementation Guide contains no examples for this data type profile
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-bundle.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-bundle could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-careteam.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-careteam could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-composition.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-composition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-composition.json`
+  - Location: `StructureDefinition/core-composition: StructureDefinition.differential.element[1].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-composition.json`
+  - Location: `StructureDefinition/core-composition: StructureDefinition.differential.element[1].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-composition.json`
+  - Location: `StructureDefinition/core-composition: StructureDefinition.snapshot.element[10].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-composition.json`
+  - Location: `StructureDefinition/core-composition: StructureDefinition.snapshot.element[10].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-coverage could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[48].binding`
+  - The definition for the element 'Coverage.status' binds to the value set 'http://hl7.org/fhir/ValueSet/fm-status|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-diagnosticreport.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-diagnosticreport could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-encounter could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `StructureDefinition/core-encounter: StructureDefinition.differential.element[1].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `StructureDefinition/core-encounter: StructureDefinition.differential.element[1].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `StructureDefinition/core-encounter: StructureDefinition.snapshot.element[45].binding`
+  - The definition for the element 'Encounter.status' binds to the value set 'http://hl7.org/fhir/ValueSet/encounter-status|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `StructureDefinition/core-encounter: StructureDefinition.snapshot.element[75].binding`
+  - The definition for the element 'Encounter.reason.value' binds to the value set 'http://hl7.org/fhir/ValueSet/encounter-reason|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `StructureDefinition/core-encounter: StructureDefinition.snapshot.element[9].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-encounter.json`
+  - Location: `StructureDefinition/core-encounter: StructureDefinition.snapshot.element[9].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-episodeofcare.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-episodeofcare could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-organization.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-organization could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-patient could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.differential.element[17].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.differential.element[17].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.differential.element[1].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.differential.element[1].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.differential.element[8].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.differential.element[8].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.snapshot.element[34].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.snapshot.element[34].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.snapshot.element[58].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.snapshot.element[58].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.snapshot.element[9].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-patient.json`
+  - Location: `StructureDefinition/core-patient: StructureDefinition.snapshot.element[9].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-practitioner.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-practitioner could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-practitionerrole.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-practitionerrole could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-practitionerrole.json`
+  - Location: `StructureDefinition/core-practitionerrole: StructureDefinition.differential.element[1].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-practitionerrole.json`
+  - Location: `StructureDefinition/core-practitionerrole: StructureDefinition.differential.element[1].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-practitionerrole.json`
+  - Location: `StructureDefinition/core-practitionerrole: StructureDefinition.snapshot.element[32].binding`
+  - The definition for the element 'PractitionerRole.specialty' binds to the value set 'http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-practitionerrole.json`
+  - Location: `StructureDefinition/core-practitionerrole: StructureDefinition.snapshot.element[9].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-practitionerrole.json`
+  - Location: `StructureDefinition/core-practitionerrole: StructureDefinition.snapshot.element[9].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-procedure.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-procedure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-procedure.json`
+  - Location: `StructureDefinition/core-procedure: StructureDefinition.differential.element[10].binding`
+  - The definition for the element 'Procedure.reason' binds to the value set 'http://hl7.org/fhir/ValueSet/procedure-reason' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-procedure.json`
+  - Location: `StructureDefinition/core-procedure: StructureDefinition.snapshot.element[23].binding`
+  - The definition for the element 'Procedure.status' binds to the value set 'http://hl7.org/fhir/ValueSet/event-status|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-procedure.json`
+  - Location: `StructureDefinition/core-procedure: StructureDefinition.snapshot.element[43].binding`
+  - The definition for the element 'Procedure.reason' binds to the value set 'http://hl7.org/fhir/ValueSet/procedure-reason' which is experimental, but this structure is not labeled as experimental
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-relatedperson could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `StructureDefinition/core-relatedperson: StructureDefinition.differential.element[1].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `StructureDefinition/core-relatedperson: StructureDefinition.differential.element[1].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `http://hl7.org/fhir/StructureDefinition/ElementDefinition#eld-24` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `StructureDefinition/core-relatedperson: StructureDefinition.differential.element[3]`
+  - Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x] (fixed.exists().not())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+- **warning ×1** `http://hl7.org/fhir/StructureDefinition/ElementDefinition#eld-24` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `StructureDefinition/core-relatedperson: StructureDefinition.snapshot.element[15]`
+  - Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x] (fixed.exists().not())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `StructureDefinition/core-relatedperson: StructureDefinition.snapshot.element[9].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-relatedperson.json`
+  - Location: `StructureDefinition/core-relatedperson: StructureDefinition.snapshot.element[9].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-servicerequest.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/core-servicerequest could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-servicerequest.json`
+  - Location: `StructureDefinition/core-servicerequest: StructureDefinition.snapshot.element[15].binding`
+  - The definition for the element 'ServiceRequest.status' binds to the value set 'http://hl7.org/fhir/ValueSet/request-status|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-servicerequest.json`
+  - Location: `StructureDefinition/core-servicerequest: StructureDefinition.snapshot.element[16].binding`
+  - The definition for the element 'ServiceRequest.intent' binds to the value set 'http://hl7.org/fhir/ValueSet/request-intent|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-servicerequest.json`
+  - Location: `StructureDefinition/core-servicerequest: StructureDefinition.snapshot.element[18].binding`
+  - The definition for the element 'ServiceRequest.priority' binds to the value set 'http://hl7.org/fhir/ValueSet/request-priority|5.0.0' which is experimental, but this structure is not labeled as experimental
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-diagnosis-rank.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/diagnosis-rank could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-fias.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/fias could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-houseguid.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/houseguid could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-houseguid.json`
+  - Location: `StructureDefinition.where(url = 'https://fhir.ru/ig/core/StructureDefinition/houseguid')`
+  - The Implementation Guide contains no examples for this extension
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-okato.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/okato could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-regionRF.json`
+  - Location: `Resource`
+  - The resource StructureDefinition/regionRF could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-identifier-type.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-identifier-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-address-type.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-address-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-coverage-document-oms.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-coverage-document-oms should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-coverage-document.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-coverage-document should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-diagnosis-justification-degree.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-diagnosis-justification-degree should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-diagnosis-nosology-kind.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-diagnosis-nosology-kind should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-identity-documents.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-identity-documents should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-medical-services.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-medical-services should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-medical-services.json`
+  - Location: `ValueSet.where(id = 'core-vs-nsi-medical-services')`
+  - Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services' could not be found, so the value set cannot be expanded
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-medical-workers-positions.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-medical-workers-positions should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-okato.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-okato should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-region-rf.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-region-rf should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-register-of-medical-organizations.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-register-of-medical-organizations should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-sources-of-payment.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-sources-of-payment should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-units-of-measurement.json`
+  - Location: `Resource`
+  - The resource ValueSet/core-vs-nsi-units-of-measurement should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-relatedperson-relationship.json`
+  - Location: `Resource`
+  - The resource ValueSet/relatedperson-relationship should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-relatedperson-relationship.json`
+  - Location: `ValueSet.where(id = 'relatedperson-relationship')`
+  - Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.99.2.14' could not be found, so the value set cannot be expanded
+- **information ×1** `VALUESET_INC_CS_NO_SUPPORT` — `fsh-generated/resources/ValueSet-relatedperson-relationship.json`
+  - Location: `ValueSet/relatedperson-relationship: ValueSet.compose.include[0]`
+  - The concepts in the value set include have not been validated because the code system 'urn:oid:1.2.643.5.1.13.13.99.2.14' is not known, and no terminology service supports it
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/ValueSet-relatedperson-relationship.json`
+  - Location: `ValueSet/relatedperson-relationship: ValueSet.compose.include[0].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.99.2.14'
+- **information ×1** `VALUESET_INC_CS_NO_SUPPORT` — `fsh-generated/resources/ValueSet-relatedperson-relationship.json`
+  - Location: `ValueSet/relatedperson-relationship: ValueSet.compose.include[1]`
+  - The concepts in the value set include have not been validated because the code system 'urn:oid:1.2.643.5.1.13.13.11.1021' is not known, and no terminology service supports it
+- **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/ValueSet-relatedperson-relationship.json`
+  - Location: `ValueSet/relatedperson-relationship: ValueSet.compose.include[1].system`
+  - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.11.1021'

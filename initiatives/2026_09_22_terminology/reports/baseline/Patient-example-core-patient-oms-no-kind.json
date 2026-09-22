@@ -1,0 +1,23 @@
+{
+  "resourceType" : "Patient",
+  "id" : "example-core-patient-oms-no-kind",
+  "meta" : {
+    "profile" : ["https://fhir.ru/ig/core/StructureDefinition/core-patient"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient example-core-patient-oms-no-kind</b></p><a name=\"example-core-patient-oms-no-kind\"> </a><a name=\"hcexample-core-patient-oms-no-kind\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-core-patient.html\">Core Patient (Пациент)</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Anonymous Patient (no stated gender), DoB Unknown ( Полис ОМС)</p><hr/></div>"
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type",
+        "code" : "oms-policy"
+      },
+      {
+        "system" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document",
+        "code" : "1"
+      }]
+    }
+  }]
+}

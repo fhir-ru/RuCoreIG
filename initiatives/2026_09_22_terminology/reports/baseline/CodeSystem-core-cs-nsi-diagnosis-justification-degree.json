@@ -1,0 +1,68 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-nsi-diagnosis-justification-degree",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-nsi-diagnosis-justification-degree</b></p><a name=\"core-cs-nsi-diagnosis-justification-degree\"> </a><a name=\"hccore-cs-nsi-diagnosis-justification-degree\"> </a><p>This case-insensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree</code> defines the following codes in a Is-A hierarchy:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">10<a name=\"core-cs-nsi-diagnosis-justification-degree-10\"> </a></td><td>Клинический диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a01<a name=\"core-cs-nsi-diagnosis-justification-degree-1\"> </a></td><td>Предварительный клинический диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a02<a name=\"core-cs-nsi-diagnosis-justification-degree-2\"> </a></td><td>Этапный клинический диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a03<a name=\"core-cs-nsi-diagnosis-justification-degree-3\"> </a></td><td>Заключительный клинический диагноз</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">4<a name=\"core-cs-nsi-diagnosis-justification-degree-4\"> </a></td><td>Патолого-анатомический диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a041<a name=\"core-cs-nsi-diagnosis-justification-degree-41\"> </a></td><td>Предварительный патолого-анатомический диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a042<a name=\"core-cs-nsi-diagnosis-justification-degree-42\"> </a></td><td>Заключительный патолого-анатомический диагноз</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">5<a name=\"core-cs-nsi-diagnosis-justification-degree-5\"> </a></td><td>Судебно-медицинский диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a051<a name=\"core-cs-nsi-diagnosis-justification-degree-51\"> </a></td><td>Предварительный судебно-медицинский диагноз</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a052<a name=\"core-cs-nsi-diagnosis-justification-degree-52\"> </a></td><td>Заключительный судебно-медицинский диагноз</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree",
+  "version" : "0.20.0",
+  "name" : "Core_Cs_Nsi_Diagnosis_Justification_Degree",
+  "title" : "Core CodeSystem Степень обоснованности диагноза",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:39:43+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "НСИ МЗ РФ справочник [Степень обоснованности диагноза](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.795). Состав зафиксирован по актуальной версии 3.2 справочника, включая иерархию клинических, патолого-анатомических и судебно-медицинских диагнозов. В стационарной практике предварительный клинический диагноз соответствует диагнозу при поступлении, заключительный клинический — выписному.",
+  "caseSensitive" : false,
+  "hierarchyMeaning" : "is-a",
+  "content" : "complete",
+  "count" : 10,
+  "concept" : [{
+    "code" : "10",
+    "display" : "Клинический диагноз",
+    "concept" : [{
+      "code" : "1",
+      "display" : "Предварительный клинический диагноз"
+    },
+    {
+      "code" : "2",
+      "display" : "Этапный клинический диагноз"
+    },
+    {
+      "code" : "3",
+      "display" : "Заключительный клинический диагноз"
+    }]
+  },
+  {
+    "code" : "4",
+    "display" : "Патолого-анатомический диагноз",
+    "concept" : [{
+      "code" : "41",
+      "display" : "Предварительный патолого-анатомический диагноз"
+    },
+    {
+      "code" : "42",
+      "display" : "Заключительный патолого-анатомический диагноз"
+    }]
+  },
+  {
+    "code" : "5",
+    "display" : "Судебно-медицинский диагноз",
+    "concept" : [{
+      "code" : "51",
+      "display" : "Предварительный судебно-медицинский диагноз"
+    },
+    {
+      "code" : "52",
+      "display" : "Заключительный судебно-медицинский диагноз"
+    }]
+  }]
+}

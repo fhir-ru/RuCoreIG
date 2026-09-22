@@ -1,0 +1,8 @@
+reports/**/qa.* -text -whitespace
+reports/**/*.log -text -whitespace
+reports/**/StructureDefinition-*.json -text -whitespace
+reports/**/CodeSystem-*.json -text -whitespace
+reports/**/Patient-*.json -text -whitespace
+reports/**/index.html -text -whitespace
+reports/**/coverage-validation.json -text -whitespace
+reports/**/*.html -text -whitespace

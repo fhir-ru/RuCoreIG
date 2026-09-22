@@ -1,0 +1,155 @@
+{
+  "base": "https://build.fhir.org/ig/fhir-ru/RuCoreIG/",
+  "expected_source_commit": "af7a7134dd29df9154d9de8703e8a3dde29fcff9",
+  "expected_version": "0.20.0",
+  "captured_at": "2026-09-22T14:43:37.414676+00:00",
+  "files": {
+    "qa.json": {
+      "sha256": "68b79fcd81c709c42f8d7d61e918ca985705112046418410a689d789f54086ae",
+      "bytes": 480,
+      "last_modified": "Tue, 22 Sep 2026 14:42:41 GMT"
+    },
+    "build.log": {
+      "sha256": "14f402d4daad96334c6f06004a7f180471c2796180a2da21eb1aa4f5cdcf5b5a",
+      "bytes": 24291,
+      "last_modified": "Tue, 22 Sep 2026 14:42:42 GMT"
+    },
+    "qa.xml": {
+      "sha256": "6d1de18b2ba8cad872c44fab0ce7fffb9b6f60b249b92d1c533207398430a05d",
+      "bytes": 290995,
+      "last_modified": "Tue, 22 Sep 2026 14:42:41 GMT"
+    },
+    "qa.html": {
+      "sha256": "29ccb5cb3e646281861d630eec2aaf4741d3975ea7a86cc7320750eaf83765b7",
+      "bytes": 489018,
+      "last_modified": "Tue, 22 Sep 2026 14:42:41 GMT"
+    },
+    "CodeSystem-core-cs-nsi-region-rf.json": {
+      "sha256": "ac433cecd9751708d5e4776663f7d49794cebe1edb920e6241fa88aa0650b69d",
+      "bytes": 1703,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "qa-txservers.html": {
+      "sha256": "2a1d2e4b39e77687713a89ed7fa020ca53e9ffddb793af71df9f34fe7aa3dcb7",
+      "bytes": 63791,
+      "last_modified": "Tue, 22 Sep 2026 14:42:41 GMT"
+    },
+    "StructureDefinition-core-patient.json": {
+      "sha256": "7f72b7f83838d853e7e1605945bb0ec3887ab6936ac2c37e340d7448753918e1",
+      "bytes": 358319,
+      "last_modified": "Tue, 22 Sep 2026 14:40:59 GMT",
+      "matches_expected_source": true
+    },
+    "StructureDefinition-core-coverage.json": {
+      "sha256": "5fd477e433aeb0ea8877281e6bcb902fb9cd37fa98c38bf03c8d2e7397525668",
+      "bytes": 211473,
+      "last_modified": "Tue, 22 Sep 2026 14:40:57 GMT",
+      "matches_expected_source": true
+    },
+    "qa.txt": {
+      "sha256": "2a2aa67235f9fe0cfc78be37926dbc66b73a3f43e51c15256d7c416252ac42f4",
+      "bytes": 105035,
+      "last_modified": "Tue, 22 Sep 2026 14:42:41 GMT"
+    },
+    "CodeSystem-core-cs-nsi-sources-of-payment.json": {
+      "sha256": "748bfa21655c020ced3c5f1d37f04cd36e54bcace8c5e7d8e978d71f909dd542",
+      "bytes": 4455,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-address-type.json": {
+      "sha256": "a3d9415ef9746d4615a0cc14ba10eb9adcf15dd88a96e87c0eba804d097fecdb",
+      "bytes": 1673,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-register-of-medical-organizations.json": {
+      "sha256": "1f616c81645807675bb9ebeee2b5a980bbbcc4b3963a4b4292d4d906ff98ab66",
+      "bytes": 1797,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-okato.json": {
+      "sha256": "d373584284e8f491559c32de666d8f705fdd598c6a0c95120a8703d935343044",
+      "bytes": 1609,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-coverage-document.json": {
+      "sha256": "ffbdf6a9ba11e23c3a726674cd43d577193e04550cc9e3995816e01a2d6352db",
+      "bytes": 2187,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-diagnosis-justification-degree.json": {
+      "sha256": "efb0ac340bc4cc68378085f47931ade6e9c644ab4079d166bc9d2e89bd854154",
+      "bytes": 5481,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-medical-services.json": {
+      "sha256": "802e168385b901669d1d29c167099098eefff9d4d5edaa4efcde256de0f89f68",
+      "bytes": 1315,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-medical-workers-positions.json": {
+      "sha256": "fa41c59ea3d95e7be661c098393b7c0b909b59d2736bc7e22d9c094ecbab8295",
+      "bytes": 1777,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-units-of-measurement.json": {
+      "sha256": "afcd906ac71f3005353176d8e6c66ea10c9aea7ebef6775bbaa6f1a6ccd12ff2",
+      "bytes": 2623,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-diagnosis-nosology-kind.json": {
+      "sha256": "62d3b80e8ffb12172a23a5fb895783341018de9cef5ae5a8b316ff31ecd85ffd",
+      "bytes": 3669,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-insurer.json": {
+      "sha256": "27a81020cb3de83ca80f38a1706e84a3713e1c88792dbc36a491274e7f39d24e",
+      "bytes": 1272,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-semd-identifier-type.json": {
+      "sha256": "f92c104ee1ecb998f51fdeece2816f3fe885702a1fc0db6062c004be4322d702",
+      "bytes": 9341,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-coverage-document-oms.json": {
+      "sha256": "c24ec77c7cc22e759b51dd040ccdf6fd7287f44c51a3e7cfa462b1a0ff4bc194",
+      "bytes": 2544,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "CodeSystem-core-cs-nsi-identity-document.json": {
+      "sha256": "066930bb217eebf13943aec221c6dbeaa83585ac34a3cea6d53eafb1cb1dab91",
+      "bytes": 5447,
+      "last_modified": "Tue, 22 Sep 2026 14:40:55 GMT",
+      "matches_expected_source": true
+    },
+    "Patient-example-core-patient-oms-no-kind.json": {
+      "sha256": "9c3d0e567579b447e09d54a841d5a58f775707ce7aa31e1dbea2ff3c6c99d13b",
+      "bytes": 1307,
+      "last_modified": "Tue, 22 Sep 2026 14:40:56 GMT",
+      "matches_expected_source": true
+    },
+    "Patient-example-core-patient-oms-oid.json": {
+      "sha256": "ab19978a40e07b6bb46a8c80025a7aaf32af2db8086ee7f0efd8a61ab1719b34",
+      "bytes": 1573,
+      "last_modified": "Tue, 22 Sep 2026 14:40:56 GMT",
+      "matches_expected_source": true
+    }
+  },
+  "source_evidence": "Expected version plus exact profile differential / CodeSystem content / example fingerprints; autobuilder does not publish commit SHA.",
+  "stable_qa_during_capture": true,
+  "verified": true
+}

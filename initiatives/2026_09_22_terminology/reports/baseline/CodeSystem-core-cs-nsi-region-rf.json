@@ -1,0 +1,35 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-nsi-region-rf",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-nsi-region-rf</b></p><a name=\"core-cs-nsi-region-rf\"> </a><a name=\"hccore-cs-nsi-region-rf\"> </a><p>This case-insensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">77<a name=\"core-cs-nsi-region-rf-77\"> </a></td><td>г. Москва</td></tr><tr><td style=\"white-space:nowrap\">22<a name=\"core-cs-nsi-region-rf-22\"> </a></td><td>Алтайский край</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf",
+  "version" : "0.20.0",
+  "name" : "Core_Cs_Nsi_Region_RF",
+  "title" : "Core CodeSystem Регионы РФ",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:39:43+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "НСИ МЗ РФ справочник [Регионы РФ](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.206)",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 2,
+  "concept" : [{
+    "code" : "77",
+    "display" : "г. Москва"
+  },
+  {
+    "code" : "22",
+    "display" : "Алтайский край"
+  }]
+}

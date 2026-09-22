@@ -1,0 +1,6 @@
+{
+  "requested_at": "2026-09-22T14:39:31.737798+00:00",
+  "commit": "af7a7134dd29df9154d9de8703e8a3dde29fcff9",
+  "status": 200,
+  "response": "{\"ok\":true,\"created\":true,\"state\":\"C\",\"jobId\":\"igbuild-fhir-ru-rucoreig-main-aba344a5-a\",\"canceled\":\"igbuild-fhir-ru-rucoreig-main-aba344a5-b\",\"org\":\"fhir-ru\",\"repo\":\"RuCoreIG\",\"branch\":\"main\"}"
+}

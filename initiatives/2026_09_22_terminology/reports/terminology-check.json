@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "code_systems": 15,
+  "nsi_value_sets": 13,
+  "content_counts": {
+    "fragment": 9,
+    "not-present": 5,
+    "complete": 1
+  },
+  "errors": [],
+  "limits": "Checks publication integrity only; does not verify codes/displays or completeness against source NSI.",
+  "negative_controls": [
+    "placeholder",
+    "not-present contains concepts",
+    "external complete"
+  ]
+}

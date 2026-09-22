@@ -6,11 +6,11 @@
 CodeSystem: Core_Cs_Nsi_Sources_Of_Payment
 Id:         core-cs-nsi-sources-of-payment
 Title: "Core CodeSystem Источники оплаты медицинской помощи"
-Description: "НСИ МЗ РФ справочник [Источники оплаты медицинской помощи](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039)"
+Description: "НСИ МЗ РФ справочник [Источники оплаты медицинской помощи](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1039). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 * #1 "Средства обязательного медицинского страхования"
 * #3 "Средства добровольного медицинского страхования"
 * #4 "Средства пациента"
@@ -28,12 +28,12 @@ Description: "НСИ МЗ РФ справочник [Источники опла
 CodeSystem: Core_Cs_Nsi_Coverage_Document
 Id:         core-cs-nsi-coverage-document
 Title: "Core CodeSystem Документы-основания для оплаты медицинских услуг"
-Description: "НСИ МЗ РФ справочник [Документы-основания для оплаты](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.724)"
+Description: "НСИ МЗ РФ справочник [Документы-основания для оплаты](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.724). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 
 * #1 "Полис ОМС"
 * #2 "Полис ДМС"
@@ -45,12 +45,12 @@ Description: "НСИ МЗ РФ справочник [Документы-осно
 CodeSystem: Core_Cs_Nsi_Coverage_Document_OMS  
 Id: core-cs-nsi-coverage-document-oms  
 Title: "Core CodeSystem Виды полиса ОМС"
-Description: "НСИ МЗ РФ справочник [Виды полиса ОМС](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035)"
+Description: "НСИ МЗ РФ справочник [Виды полиса ОМС](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1035). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 
 * #1 "Полис ОМС старого образца"  
 * #2 "Полис ОМС единого образца, бессрочный"
@@ -63,11 +63,11 @@ Description: "НСИ МЗ РФ справочник [Виды полиса ОМ�
 CodeSystem: Core_Cs_Nsi_Identity_Document
 Id:         core-cs-nsi-identity-document
 Title: "Core CodeSystem Документы удостоверяющие личность"
-Description: "НСИ МЗ РФ справочник [документы удостоверяющие личность](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.48)"
+Description: "НСИ МЗ РФ справочник [документы удостоверяющие личность](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.48). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 * ^hierarchyMeaning = #is-a
 
 * #100 "Общегражданские документы"
@@ -93,9 +93,7 @@ Description: "НСИ МЗ РФ справочник [Должности меди
 * ^experimental = false
 * ^caseSensitive = false
 
-//* ^content = #not-present
-* ^content = #complete
-* #1 "тестовое значение"
+* ^content = #not-present
 
 
 // Реестр медицинских организаций (ФРМО) - 6
@@ -108,9 +106,7 @@ Description: "НСИ МЗ РФ справочник [Реестр медицин
 * ^experimental = false
 * ^caseSensitive = false
 
-//* ^content = #not-present
-* ^content = #complete
-* #1 "тестовое значение"
+* ^content = #not-present
 
 
 // Типы адресов - 7
@@ -118,11 +114,11 @@ Description: "НСИ МЗ РФ справочник [Реестр медицин
 CodeSystem: Core_Cs_Nsi_Address_Type
 Id:         core-cs-nsi-address-type
 Title: "Core CodeSystem Типы адреса"
-Description: "НСИ МЗ РФ справочник [Тип адреса](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1504)"
+Description: "НСИ МЗ РФ справочник [Тип адреса](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1504). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
           
 * #1 "Адрес по месту жительства (постоянной регистрации)"
 
@@ -132,30 +128,18 @@ Description: "НСИ МЗ РФ справочник [Тип адреса](https:
 CodeSystem: Core_Cs_Nsi_Region_RF
 Id:         core-cs-nsi-region-rf
 Title: "Core CodeSystem Регионы РФ"
-Description: "НСИ МЗ РФ справочник [Регионы РФ](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.206)"
+Description: "НСИ МЗ РФ справочник [Регионы РФ](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.206). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 
 * #77 "г. Москва" 
 * #22 "Алтайский край"
 
 
 // Медицинские услуги - 9
-/*
-CodeSystem: Core_Cs_Nsi_Medical_Services
-Id: core-cs-nsi-medical-services
-Title: "Core CodeSystem NSI Medical Services (Медицинские услуги)"
-Description: "НСИ МЗ РФ справочник медицинских услуг"
-* ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-services"
-* ^experimental = false
-* ^caseSensitive = false
-* ^content = #complete
 
-* #B03.016.002 "Общий (клинический) анализ крови"
-* #A11.12.009 "Взятие крови из периферической вены"
-*/
 
 CodeSystem: Core_Cs_Nsi_Medical_Services
 Id: core-cs-nsi-medical-services
@@ -174,11 +158,11 @@ Description: "Ссылка на НСИ МЗ РФ справочник [меди�
 CodeSystem: Core_Cs_Nsi_Units_Of_Measurement
 Id: core-cs-nsi-units-of-measurement
 Title: "Core CodeSystem Единицы измерения"
-Description: "НСИ МЗ РФ справочник [единиц измерения](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1358)"
+Description: "НСИ МЗ РФ справочник [единиц измерения](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1358). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 
 * #16 "мл"
 * #20 "фл"
@@ -187,21 +171,6 @@ Description: "НСИ МЗ РФ справочник [единиц измерен
 * #13 "пг"
 * #322 "10^9/л"
 * #328 "10^12/л"
-
-// Виды медицинских карт
-//Гипотеза в том, что справочник возник случайно и должен быть удален
-
-//CodeSystem: Core_Cs_Nsi_Types_Medical_Cards
-//Id: core-cs-nsi-types-medical-cards
-//Title: "Core CodeSystem NSI types medical cards (Виды медицинских карт)"
-//Description: "НСИ МЗ РФ справочник видов медицинских карт"
-//* ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-types-medical-cards"
-//* ^experimental = false
-//* ^caseSensitive = false
-//* ^content = #complete
-
-//* #1 "Амбулаторная карта"
-//* #2 "Стационарная карта"
 
 // ОКАТО - 11
 
@@ -213,9 +182,7 @@ Description: "НСИ МЗ РФ справочник [Отраслевой кла
 * ^experimental = false
 * ^caseSensitive = false
 
-//* ^content = #not-present
-* ^content = #complete
-* #1 "тестовое значение"
+* ^content = #not-present
 
 
 // Страховые медицинские организации (страховщики) - 12
@@ -235,11 +202,11 @@ Description: "НСИ МЗ РФ справочник [Страховые меди
 CodeSystem: Core_Cs_Nsi_Diagnosis_Nosology_Kind
 Id: core-cs-nsi-diagnosis-nosology-kind
 Title: "Core CodeSystem Виды нозологических единиц диагноза"
-Description: "НСИ МЗ РФ справочник [Виды нозологических единиц диагноза](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1077). Состав зафиксирован по актуальной версии справочника; ранее исключенные категории, в том числе сочетанные заболевания, не требуются."
+Description: "НСИ МЗ РФ справочник [Виды нозологических единиц диагноза](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1077). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 
 * #1 "Основное заболевание"
 * #2 "Осложнение основного заболевания"
@@ -255,11 +222,11 @@ Description: "НСИ МЗ РФ справочник [Виды нозологич
 CodeSystem: Core_Cs_Nsi_Diagnosis_Justification_Degree
 Id: core-cs-nsi-diagnosis-justification-degree
 Title: "Core CodeSystem Степень обоснованности диагноза"
-Description: "НСИ МЗ РФ справочник [Степень обоснованности диагноза](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.795). Состав зафиксирован по актуальной версии 3.2 справочника, включая иерархию клинических, патолого-анатомических и судебно-медицинских диагнозов. В стационарной практике предварительный клинический диагноз соответствует диагнозу при поступлении, заключительный клинический — выписному."
+Description: "НСИ МЗ РФ справочник [Степень обоснованности диагноза](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.795). В стационарной практике предварительный клинический диагноз соответствует диагнозу при поступлении, заключительный клинический — выписному. RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных."
 * ^url = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree"
 * ^experimental = false
 * ^caseSensitive = false
-* ^content = #complete
+* ^content = #fragment
 * ^hierarchyMeaning = #is-a
 
 * #10 "Клинический диагноз"

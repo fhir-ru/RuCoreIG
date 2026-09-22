@@ -1,0 +1,31 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-nsi-okato",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-nsi-okato</b></p><a name=\"core-cs-nsi-okato\"> </a><a name=\"hccore-cs-nsi-okato\"> </a><p>This case-insensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato</code> defines the following code:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"core-cs-nsi-okato-1\"> </a></td><td>тестовое значение</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato",
+  "version" : "0.20.0",
+  "name" : "Core_Cs_Nsi_OKATO",
+  "title" : "Core CodeSystem ОКАТО",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:39:43+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "НСИ МЗ РФ справочник [Отраслевой классификатор объектов административно-территориального деления](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.2.1.1.608)",
+  "caseSensitive" : false,
+  "content" : "complete",
+  "count" : 1,
+  "concept" : [{
+    "code" : "1",
+    "display" : "тестовое значение"
+  }]
+}

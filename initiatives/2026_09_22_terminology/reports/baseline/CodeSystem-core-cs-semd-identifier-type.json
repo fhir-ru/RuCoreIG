@@ -1,0 +1,82 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-semd-identifier-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-semd-identifier-type</b></p><a name=\"core-cs-semd-identifier-type\"> </a><a name=\"hccore-cs-semd-identifier-type\"> </a><p>This case-sensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">snils<a name=\"core-cs-semd-identifier-type-snils\"> </a></td><td>СНИЛС</td><td>Семантический тип страхового номера индивидуального лицевого счета.</td></tr><tr><td style=\"white-space:nowrap\">inn<a name=\"core-cs-semd-identifier-type-inn\"> </a></td><td>ИНН</td><td>Семантический тип идентификационного номера налогоплательщика.</td></tr><tr><td style=\"white-space:nowrap\">identity-document<a name=\"core-cs-semd-identifier-type-identity-document\"> </a></td><td>Документ, удостоверяющий личность</td><td>Семантический тип реквизитов документа, удостоверяющего личность; конкретный вид документа кодируется дополнительно.</td></tr><tr><td style=\"white-space:nowrap\">oms-policy<a name=\"core-cs-semd-identifier-type-oms-policy\"> </a></td><td>Полис ОМС</td><td>Семантический тип номера полиса обязательного медицинского страхования; конкретный вид полиса кодируется дополнительно.</td></tr><tr><td style=\"white-space:nowrap\">mis-patient<a name=\"core-cs-semd-identifier-type-mis-patient\"> </a></td><td>Идентификатор пациента в экземпляре МИС</td><td>Тип идентификатора пациента, для которого Identifier.system формируется с типовым узлом 10.</td></tr><tr><td style=\"white-space:nowrap\">mis-encounter<a name=\"core-cs-semd-identifier-type-mis-encounter\"> </a></td><td>Идентификатор случая оказания медицинской помощи в экземпляре МИС</td><td>Тип идентификатора случая оказания медицинской помощи с типовым узлом 15.</td></tr><tr><td style=\"white-space:nowrap\">mis-inpatient-record<a name=\"core-cs-semd-identifier-type-mis-inpatient-record\"> </a></td><td>Номер стационарной медицинской карты в экземпляре МИС</td><td>Тип номера стационарной медицинской карты с типовым узлом 16.</td></tr><tr><td style=\"white-space:nowrap\">mis-ambulatory-encounter<a name=\"core-cs-semd-identifier-type-mis-ambulatory-encounter\"> </a></td><td>Идентификатор амбулаторного случая или посещения в экземпляре МИС</td><td>Тип идентификатора амбулаторного случая или посещения с типовым узлом 17.</td></tr><tr><td style=\"white-space:nowrap\">mis-document-set<a name=\"core-cs-semd-identifier-type-mis-document-set\"> </a></td><td>Идентификатор набора версий документа в экземпляре МИС</td><td>Тип идентификатора набора версий документа, соответствующего CDA ClinicalDocument.setId, с типовым узлом 50.</td></tr><tr><td style=\"white-space:nowrap\">mis-document<a name=\"core-cs-semd-identifier-type-mis-document\"> </a></td><td>Идентификатор экземпляра документа в МИС, зависящий от версии</td><td>Тип идентификатора конкретного экземпляра документа, соответствующего CDA ClinicalDocument.id, с типовым узлом 51.</td></tr><tr><td style=\"white-space:nowrap\">mis-practitioner-role<a name=\"core-cs-semd-identifier-type-mis-practitioner-role\"> </a></td><td>Идентификатор роли медицинского работника в экземпляре МИС</td><td>Тип идентификатора роли медицинского работника с типовым узлом 70.</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type",
+  "version" : "0.20.0",
+  "name" : "Core_Cs_Semd_Identifier_Type",
+  "title" : "Core CodeSystem Типы идентификаторов СЭМД",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:39:43+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "Семантические типы идентификаторов, используемых при представлении СЭМД в FHIR. Тип внутренней ссылки на документ не включен, поскольку такая ссылка в зависимости от контекста представляется Element.id, Reference или другим элементом FHIR, а не универсальным Identifier.",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 11,
+  "concept" : [{
+    "code" : "snils",
+    "display" : "СНИЛС",
+    "definition" : "Семантический тип страхового номера индивидуального лицевого счета."
+  },
+  {
+    "code" : "inn",
+    "display" : "ИНН",
+    "definition" : "Семантический тип идентификационного номера налогоплательщика."
+  },
+  {
+    "code" : "identity-document",
+    "display" : "Документ, удостоверяющий личность",
+    "definition" : "Семантический тип реквизитов документа, удостоверяющего личность; конкретный вид документа кодируется дополнительно."
+  },
+  {
+    "code" : "oms-policy",
+    "display" : "Полис ОМС",
+    "definition" : "Семантический тип номера полиса обязательного медицинского страхования; конкретный вид полиса кодируется дополнительно."
+  },
+  {
+    "code" : "mis-patient",
+    "display" : "Идентификатор пациента в экземпляре МИС",
+    "definition" : "Тип идентификатора пациента, для которого Identifier.system формируется с типовым узлом 10."
+  },
+  {
+    "code" : "mis-encounter",
+    "display" : "Идентификатор случая оказания медицинской помощи в экземпляре МИС",
+    "definition" : "Тип идентификатора случая оказания медицинской помощи с типовым узлом 15."
+  },
+  {
+    "code" : "mis-inpatient-record",
+    "display" : "Номер стационарной медицинской карты в экземпляре МИС",
+    "definition" : "Тип номера стационарной медицинской карты с типовым узлом 16."
+  },
+  {
+    "code" : "mis-ambulatory-encounter",
+    "display" : "Идентификатор амбулаторного случая или посещения в экземпляре МИС",
+    "definition" : "Тип идентификатора амбулаторного случая или посещения с типовым узлом 17."
+  },
+  {
+    "code" : "mis-document-set",
+    "display" : "Идентификатор набора версий документа в экземпляре МИС",
+    "definition" : "Тип идентификатора набора версий документа, соответствующего CDA ClinicalDocument.setId, с типовым узлом 50."
+  },
+  {
+    "code" : "mis-document",
+    "display" : "Идентификатор экземпляра документа в МИС, зависящий от версии",
+    "definition" : "Тип идентификатора конкретного экземпляра документа, соответствующего CDA ClinicalDocument.id, с типовым узлом 51."
+  },
+  {
+    "code" : "mis-practitioner-role",
+    "display" : "Идентификатор роли медицинского работника в экземпляре МИС",
+    "definition" : "Тип идентификатора роли медицинского работника с типовым узлом 70."
+  }]
+}
