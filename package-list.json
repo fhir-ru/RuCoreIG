@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "list": [
+    {
+      "version": "0.22.1",
+      "desc": "Draft discussion model of ambulatory care: independent chart and clinical episode grouping, with diagrams and examples; no new profile constraints.",
+      "path": "https://fhir.ru/ig/core/0.22.1",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.22.0",
       "desc": "Draft release defining Russian passport issue date and issuing subdivision identifiers in Core_Patient.",
