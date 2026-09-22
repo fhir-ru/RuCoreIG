@@ -1,0 +1,12 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "coding",
+      "valueCoding": {
+        "system": "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type",
+        "code": "RUC_TERMINOLOGY_NEGATIVE_SENTINEL"
+      }
+    }
+  ]
+}

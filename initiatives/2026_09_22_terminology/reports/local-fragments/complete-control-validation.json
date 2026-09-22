@@ -1,0 +1,106 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "collection",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "OperationOutcome",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>OperationOutcome </b></p><p>All OK</p><table class=\"grid\"><tr><td><b>Severity</b></td><td><b>Location</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td><td><b>Source</b></td></tr><tr><td>Information</td><td>Parameters</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Parameters|5.0.0</td><td/><td>InstanceValidator</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
+        "valueString" : "initiatives/2026_09_22_terminology/reports/local-fragments/Parameters-valid.json"
+      }],
+      "issue" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger" : 1
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger" : 2
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+          "valueString" : "InstanceValidator"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+        }],
+        "severity" : "information",
+        "code" : "informational",
+        "details" : {
+          "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Parameters|5.0.0"
+        },
+        "expression" : ["Parameters"]
+      }]
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "OperationOutcome",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>OperationOutcome </b></p><table class=\"grid\"><tr><td><b>Severity</b></td><td><b>Location</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td><td><b>Source</b></td></tr><tr><td>Information</td><td>Parameters</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Parameters|5.0.0</td><td/><td>InstanceValidator</td></tr><tr><td>Error</td><td>Parameters.parameter[0].value.ofType(Coding).code</td><td>Invalid Code</td><td>Unknown code 'RUC_TERMINOLOGY_NEGATIVE_SENTINEL' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type'</td><td/><td>TerminologyEngine</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
+        "valueString" : "initiatives/2026_09_22_terminology/reports/local-fragments/Parameters-invalid.json"
+      }],
+      "issue" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger" : 1
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger" : 2
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+          "valueString" : "InstanceValidator"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+        }],
+        "severity" : "information",
+        "code" : "informational",
+        "details" : {
+          "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Parameters|5.0.0"
+        },
+        "expression" : ["Parameters"]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger" : 6
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger" : 8
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+          "valueString" : "TerminologyEngine"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueCode" : "Unknown_Code_in"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+          "valueString" : "http://hl7.org/fhir/StructureDefinition/Parameters|5.0.0"
+        }],
+        "severity" : "error",
+        "code" : "code-invalid",
+        "details" : {
+          "text" : "Unknown code 'RUC_TERMINOLOGY_NEGATIVE_SENTINEL' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type'"
+        },
+        "expression" : ["Parameters.parameter[0].value.ofType(Coding).code"]
+      }]
+    }
+  }]
+}

@@ -6,3 +6,4 @@ reports/**/Patient-*.json -text -whitespace
 reports/**/index.html -text -whitespace
 reports/**/coverage-validation.json -text -whitespace
 reports/**/*.html -text -whitespace
+reports/**/*.json -text -whitespace

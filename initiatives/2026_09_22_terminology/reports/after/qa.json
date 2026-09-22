@@ -1,0 +1,19 @@
+{
+  "url" : "https://fhir.ru/ig/core/ImplementationGuide/ru.core",
+  "name" : "RuCoreIG",
+  "title" : null,
+  "description" : "",
+  "status" : "active",
+  "package-id" : "ru.core",
+  "ig-ver" : "0.21.0",
+  "date" : "Tue, 22 Sep, 2026 14:46:32 +0000",
+  "dateISO8601" : "2026-09-22T14:46:32+00:00",
+  "errs" : 49,
+  "warnings" : 166,
+  "hints" : 98,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 9393146600
+}

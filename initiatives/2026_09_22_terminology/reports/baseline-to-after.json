@@ -8,24 +8,6 @@
     "Keep duplicate occurrence counts; no fuzzy matching. Changed text becomes resolved + new."
   ],
   "baseline": {
-    "ig-ver": "0.18.0",
-    "dateISO8601": "2026-09-01T14:48:57+00:00",
-    "errs": 56,
-    "warnings": 155,
-    "hints": 88,
-    "version": "5.0.0",
-    "tool": "5.0.0 (3)",
-    "publisher_version": "2.3.3",
-    "source": "initiatives/2026_09_22_terminology/reports/preexisting/qa.xml",
-    "sha256": "8ee1b411a6532000de7eba97fc028ebd36a747f6fef590fa3d4c58f5622fa4aa",
-    "counts": {
-      "warning": 155,
-      "information": 88,
-      "error": 56
-    },
-    "total": 299
-  },
-  "after": {
     "ig-ver": "0.20.0",
     "dateISO8601": "2026-09-22T14:39:43+00:00",
     "errs": 54,
@@ -43,44 +25,206 @@
     },
     "total": 301
   },
+  "after": {
+    "ig-ver": "0.21.0",
+    "dateISO8601": "2026-09-22T14:46:32+00:00",
+    "errs": 49,
+    "warnings": 166,
+    "hints": 98,
+    "version": "5.0.0",
+    "tool": "5.0.0 (3)",
+    "publisher_version": "2.3.4",
+    "source": "initiatives/2026_09_22_terminology/reports/after/qa.xml",
+    "sha256": "b58d88708abf450c0d42e7ebb09f4f7b82a980804ff9b3177cf348728ea2ec61",
+    "counts": {
+      "warning": 166,
+      "information": 98,
+      "error": 49
+    },
+    "total": 313
+  },
   "counts": {
     "new": {
-      "occurrences": 12,
-      "distinct": 12,
+      "occurrences": 17,
+      "distinct": 17,
       "by_severity": {
-        "warning": 7,
-        "error": 4,
-        "information": 1
+        "warning": 8,
+        "information": 9
       }
     },
     "resolved": {
-      "occurrences": 10,
-      "distinct": 10,
+      "occurrences": 5,
+      "distinct": 5,
       "by_severity": {
-        "error": 6,
-        "warning": 4
+        "error": 5
       }
     },
     "unchanged": {
-      "occurrences": 289,
-      "distinct": 289,
+      "occurrences": 296,
+      "distinct": 296,
       "by_severity": {
-        "warning": 151,
-        "information": 88,
-        "error": 50
+        "warning": 158,
+        "information": 89,
+        "error": 49
       }
     }
   },
   "new": [
     {
-      "file": "fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json",
-      "location": "HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system",
+      "file": "fsh-generated/resources/Organization-example-core-organization-polyclinic.json",
+      "location": "Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].system",
       "message_id": "UNKNOWN_CODESYSTEM",
       "severity": "warning",
       "source": "TerminologyEngine",
-      "text": "A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated",
+      "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' could not be found, so the code cannot be validated",
       "count": 1
     },
+    {
+      "file": "fsh-generated/resources/Patient-example-core-patient-ivanov.json",
+      "location": "Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code",
+      "message_id": "UNKNOWN_CODE_IN_FRAGMENT",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "Unknown Code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.21.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json",
+      "location": "PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].system",
+      "message_id": "UNKNOWN_CODESYSTEM",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json",
+      "location": "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].system",
+      "message_id": "UNKNOWN_CODESYSTEM",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json",
+      "location": "PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].system",
+      "message_id": "UNKNOWN_CODESYSTEM",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-address-type.json",
+      "location": "ValueSet/core-vs-nsi-address-type: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-coverage-document-oms.json",
+      "location": "ValueSet/core-vs-nsi-coverage-document-oms: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-coverage-document.json",
+      "location": "ValueSet/core-vs-nsi-coverage-document: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-diagnosis-justification-degree.json",
+      "location": "ValueSet/core-vs-nsi-diagnosis-justification-degree: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-diagnosis-nosology-kind.json",
+      "location": "ValueSet/core-vs-nsi-diagnosis-nosology-kind: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-identity-documents.json",
+      "location": "ValueSet/core-vs-nsi-identity-documents: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-medical-workers-positions.json",
+      "location": "ValueSet.where(id = 'core-vs-nsi-medical-workers-positions')",
+      "message_id": "",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the value set cannot be expanded",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-okato.json",
+      "location": "ValueSet.where(id = 'core-vs-nsi-okato')",
+      "message_id": "",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' could not be found, so the value set cannot be expanded",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-region-rf.json",
+      "location": "ValueSet/core-vs-nsi-region-rf: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-register-of-medical-organizations.json",
+      "location": "ValueSet.where(id = 'core-vs-nsi-register-of-medical-organizations')",
+      "message_id": "",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations' could not be found, so the value set cannot be expanded",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-sources-of-payment.json",
+      "location": "ValueSet/core-vs-nsi-sources-of-payment: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment' which has status 'fragment'",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/ValueSet-core-vs-nsi-units-of-measurement.json",
+      "location": "ValueSet/core-vs-nsi-units-of-measurement: ValueSet.compose.include[0]",
+      "message_id": "VALUESET_INCLUDE_CS_CONTENT",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement' which has status 'fragment'",
+      "count": 1
+    }
+  ],
+  "resolved": [
     {
       "file": "fsh-generated/resources/Organization-example-core-organization-polyclinic.json",
       "location": "Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code",
@@ -97,33 +241,6 @@
       "severity": "error",
       "source": "TerminologyEngine",
       "text": "Unknown code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.20.0'",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Patient-example-core-patient-oms-no-kind.json",
-      "location": "Patient/example-core-patient-oms-no-kind: Patient.identifier[0]",
-      "message_id": "http://hl7.org/fhir/StructureDefinition/Identifier#ident-1",
-      "severity": "warning",
-      "source": "InstanceValidator",
-      "text": "Constraint failed: ident-1: 'Identifier with no value has limited utility. If communicating that an identifier value has been suppressed or missing, the value element SHOULD be present with an extension indicating the missing semantic - e.g. data-absent-reason (value.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Identifier)",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Patient-example-core-patient-oms-oid.json",
-      "location": "Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2]",
-      "message_id": "Details_for__matching_against_Profile_",
-      "severity": "information",
-      "source": "InstanceValidator",
-      "text": "This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-patient|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Patient-example-core-patient-oms-oid.json",
-      "location": "Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2].system",
-      "message_id": "UNKNOWN_CODESYSTEM",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated",
       "count": 1
     },
     {
@@ -145,131 +262,12 @@
       "count": 1
     },
     {
-      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
-      "location": "StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0]",
-      "message_id": "",
-      "severity": "warning",
-      "source": "InstanceValidator",
-      "text": "The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
-      "location": "StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0].type",
-      "message_id": "DEPRECATED_CONCEPT_FOUND",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "The concept 'pattern' is deprecated and its use should be reviewed",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
-      "location": "StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0]",
-      "message_id": "",
-      "severity": "warning",
-      "source": "InstanceValidator",
-      "text": "The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
-      "location": "StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0].type",
-      "message_id": "DEPRECATED_CONCEPT_FOUND",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "The concept 'pattern' is deprecated and its use should be reviewed",
-      "count": 1
-    }
-  ],
-  "resolved": [
-    {
-      "file": "fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms-min.json",
-      "location": "Coverage/example-core-coverage-ivanov-oms-min: Coverage.identifier[0]",
-      "message_id": "SLICING_CANNOT_BE_EVALUATED",
-      "severity": "error",
-      "source": "InstanceValidator",
-      "text": "Slicing cannot be evaluated: Could not match discriminator (system) for slice Coverage.identifier:coverageDocument in profile https://fhir.ru/ig/core/StructureDefinition/core-coverage|<IG_VERSION> - the discriminator [system] does not have fixed value, binding or existence assertions",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms-min.json",
-      "location": "Coverage/example-core-coverage-ivanov-oms-min: Coverage.identifier[0].type.coding[1].system",
-      "message_id": "UNKNOWN_CODESYSTEM",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json",
-      "location": "Coverage/example-core-coverage-ivanov-oms: Coverage.identifier[0]",
-      "message_id": "SLICING_CANNOT_BE_EVALUATED",
-      "severity": "error",
-      "source": "InstanceValidator",
-      "text": "Slicing cannot be evaluated: Could not match discriminator (system) for slice Coverage.identifier:coverageDocument in profile https://fhir.ru/ig/core/StructureDefinition/core-coverage|<IG_VERSION> - the discriminator [system] does not have fixed value, binding or existence assertions",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json",
-      "location": "Coverage/example-core-coverage-ivanov-oms: Coverage.identifier[0].type.coding[1]",
-      "message_id": "",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json",
-      "location": "HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0]",
-      "message_id": "",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Organization-example-core-organization-polyclinic.json",
-      "location": "Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code",
-      "message_id": "Unknown_Code_in_Version",
+      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json",
+      "location": "PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].display",
+      "message_id": "Display_Name_for__should_be_one_of__instead_of",
       "severity": "error",
       "source": "TerminologyEngine",
-      "text": "Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.18.0'",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Patient-example-core-patient-ivanov.json",
-      "location": "Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code",
-      "message_id": "Unknown_Code_in_Version",
-      "severity": "error",
-      "source": "TerminologyEngine",
-      "text": "Unknown code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.18.0'",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Patient-example-core-patient-ivanov.json",
-      "location": "Patient/example-core-patient-ivanov: Patient.identifier[3].type.coding[2]",
-      "message_id": "",
-      "severity": "warning",
-      "source": "TerminologyEngine",
-      "text": "A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json",
-      "location": "PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].code",
-      "message_id": "Unknown_Code_in_Version",
-      "severity": "error",
-      "source": "TerminologyEngine",
-      "text": "Unknown code '2' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.18.0'",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json",
-      "location": "PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].code",
-      "message_id": "Unknown_Code_in_Version",
-      "severity": "error",
-      "source": "TerminologyEngine",
-      "text": "Unknown code '01.001' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.18.0'",
+      "text": "Wrong Display Name 'Врач-терапевт участковый' for https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions#1. Valid display is 'тестовое значение' (for the language(s) 'en-US')",
       "count": 1
     }
   ],
@@ -1374,6 +1372,15 @@
     },
     {
       "file": "fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json",
+      "location": "HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system",
+      "message_id": "UNKNOWN_CODESYSTEM",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json",
       "location": "HealthcareService/example-core-healthcareservice-therapy: HealthcareService.endpoint[0]",
       "message_id": "Reference_REF_CantResolve",
       "severity": "error",
@@ -1814,6 +1821,33 @@
       "count": 1
     },
     {
+      "file": "fsh-generated/resources/Patient-example-core-patient-oms-no-kind.json",
+      "location": "Patient/example-core-patient-oms-no-kind: Patient.identifier[0]",
+      "message_id": "http://hl7.org/fhir/StructureDefinition/Identifier#ident-1",
+      "severity": "warning",
+      "source": "InstanceValidator",
+      "text": "Constraint failed: ident-1: 'Identifier with no value has limited utility. If communicating that an identifier value has been suppressed or missing, the value element SHOULD be present with an extension indicating the missing semantic - e.g. data-absent-reason (value.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Identifier)",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/Patient-example-core-patient-oms-oid.json",
+      "location": "Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2]",
+      "message_id": "Details_for__matching_against_Profile_",
+      "severity": "information",
+      "source": "InstanceValidator",
+      "text": "This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-patient|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/Patient-example-core-patient-oms-oid.json",
+      "location": "Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2].system",
+      "message_id": "UNKNOWN_CODESYSTEM",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
       "file": "fsh-generated/resources/Practitioner-example-core-practitioner-smirnov.json",
       "location": "Practitioner/example-core-practitioner-smirnov: Practitioner.identifier[1]",
       "message_id": "Validation_VAL_Profile_Minimum",
@@ -1838,15 +1872,6 @@
       "severity": "warning",
       "source": "InstanceValidator",
       "text": "No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70'",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json",
-      "location": "PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].display",
-      "message_id": "Display_Name_for__should_be_one_of__instead_of",
-      "severity": "error",
-      "source": "TerminologyEngine",
-      "text": "Wrong Display Name 'Врач-терапевт участковый' for https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions#1. Valid display is 'тестовое значение' (for the language(s) 'en-US')",
       "count": 1
     },
     {
@@ -2216,6 +2241,42 @@
       "severity": "information",
       "source": "Publisher",
       "text": "The resource StructureDefinition/core-coverage could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
+      "location": "StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0]",
+      "message_id": "",
+      "severity": "warning",
+      "source": "InstanceValidator",
+      "text": "The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
+      "location": "StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0].type",
+      "message_id": "DEPRECATED_CONCEPT_FOUND",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "The concept 'pattern' is deprecated and its use should be reviewed",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
+      "location": "StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0]",
+      "message_id": "",
+      "severity": "warning",
+      "source": "InstanceValidator",
+      "text": "The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/StructureDefinition-core-coverage.json",
+      "location": "StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0].type",
+      "message_id": "DEPRECATED_CONCEPT_FOUND",
+      "severity": "warning",
+      "source": "TerminologyEngine",
+      "text": "The concept 'pattern' is deprecated and its use should be reviewed",
       "count": 1
     },
     {

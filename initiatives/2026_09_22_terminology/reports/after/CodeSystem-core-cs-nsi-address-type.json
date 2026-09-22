@@ -1,0 +1,30 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-nsi-address-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-nsi-address-type</b></p><a name=\"core-cs-nsi-address-type\"> </a><a name=\"hccore-cs-nsi-address-type\"> </a><p>This case-insensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type</code> provides <b>a fragment</b> that includes following code:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"core-cs-nsi-address-type-1\"> </a></td><td>Адрес по месту жительства (постоянной регистрации)</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type",
+  "version" : "0.21.0",
+  "name" : "Core_Cs_Nsi_Address_Type",
+  "title" : "Core CodeSystem Типы адреса",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:46:32+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "НСИ МЗ РФ справочник [Тип адреса](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1504). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных.",
+  "caseSensitive" : false,
+  "content" : "fragment",
+  "concept" : [{
+    "code" : "1",
+    "display" : "Адрес по месту жительства (постоянной регистрации)"
+  }]
+}

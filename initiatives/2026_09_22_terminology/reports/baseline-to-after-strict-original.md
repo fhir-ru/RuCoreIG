@@ -2,90 +2,96 @@
 
 | Category | Occurrences | Distinct |
 |---|---:|---:|
-| new | 12 | 12 |
-| resolved | 10 | 10 |
-| unchanged | 289 | 289 |
+| new | 18 | 18 |
+| resolved | 6 | 6 |
+| unchanged | 295 | 295 |
 
 ## Normalization
 
 - Collapse whitespace in message fields.
 - Replace absolute build-root prefixes before output/, input/, fsh-generated/ or temp/ with <ROOT>/.
-- Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> or v<ig-ver> with <IG_VERSION>.
+- Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> with <IG_VERSION>.
 - Do not replace CodeSystem/ValueSet versions, systems, codes, indexes or other numbers.
 - Ignore source line/column offsets; compare file, expression, severity, message-id, source and text.
 - Keep duplicate occurrence counts; no fuzzy matching. Changed text becomes resolved + new.
 
 ## new
 
-- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
-  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system`
-  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
+- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
+  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.21.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODE_IN_FRAGMENT` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
+  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code`
+  - Unknown Code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.21.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the code cannot be validated
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].system`
+  - A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the code cannot be validated
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-address-type.json`
+  - Location: `ValueSet/core-vs-nsi-address-type: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' which has status 'fragment'
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-coverage-document-oms.json`
+  - Location: `ValueSet/core-vs-nsi-coverage-document-oms: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document-oms' which has status 'fragment'
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-coverage-document.json`
+  - Location: `ValueSet/core-vs-nsi-coverage-document: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-coverage-document' which has status 'fragment'
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-diagnosis-justification-degree.json`
+  - Location: `ValueSet/core-vs-nsi-diagnosis-justification-degree: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree' which has status 'fragment'
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-diagnosis-nosology-kind.json`
+  - Location: `ValueSet/core-vs-nsi-diagnosis-nosology-kind: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind' which has status 'fragment'
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-identity-documents.json`
+  - Location: `ValueSet/core-vs-nsi-identity-documents: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-identity-document' which has status 'fragment'
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-medical-workers-positions.json`
+  - Location: `ValueSet.where(id = 'core-vs-nsi-medical-workers-positions')`
+  - Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' could not be found, so the value set cannot be expanded
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-okato.json`
+  - Location: `ValueSet.where(id = 'core-vs-nsi-okato')`
+  - Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' could not be found, so the value set cannot be expanded
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-region-rf.json`
+  - Location: `ValueSet/core-vs-nsi-region-rf: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-region-rf' which has status 'fragment'
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/ValueSet-core-vs-nsi-register-of-medical-organizations.json`
+  - Location: `ValueSet.where(id = 'core-vs-nsi-register-of-medical-organizations')`
+  - Error from https://tx.fhir.org/r5: Error: A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-register-of-medical-organizations' could not be found, so the value set cannot be expanded
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-sources-of-payment.json`
+  - Location: `ValueSet/core-vs-nsi-sources-of-payment: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-sources-of-payment' which has status 'fragment'
+- **information ×1** `VALUESET_INCLUDE_CS_CONTENT` — `fsh-generated/resources/ValueSet-core-vs-nsi-units-of-measurement.json`
+  - Location: `ValueSet/core-vs-nsi-units-of-measurement: ValueSet.compose.include[0]`
+  - The value set references CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement' which has status 'fragment'
+
+## resolved
+
+- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
+  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.20.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
 - **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
   - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code`
   - Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.20.0'
 - **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
   - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code`
   - Unknown code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.20.0'
-- **warning ×1** `http://hl7.org/fhir/StructureDefinition/Identifier#ident-1` — `fsh-generated/resources/Patient-example-core-patient-oms-no-kind.json`
-  - Location: `Patient/example-core-patient-oms-no-kind: Patient.identifier[0]`
-  - Constraint failed: ident-1: 'Identifier with no value has limited utility. If communicating that an identifier value has been suppressed or missing, the value element SHOULD be present with an extension indicating the missing semantic - e.g. data-absent-reason (value.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Identifier)
-- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Patient-example-core-patient-oms-oid.json`
-  - Location: `Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2]`
-  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-patient|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
-- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Patient-example-core-patient-oms-oid.json`
-  - Location: `Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2].system`
-  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
 - **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json`
   - Location: `PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].code`
   - Unknown code '2' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.20.0'
 - **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json`
   - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].code`
   - Unknown code '01.001' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.20.0'
-- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
-  - Location: `StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0]`
-  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
-- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
-  - Location: `StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0].type`
-  - The concept 'pattern' is deprecated and its use should be reviewed
-- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
-  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0]`
-  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
-- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
-  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0].type`
-  - The concept 'pattern' is deprecated and its use should be reviewed
-
-## resolved
-
-- **error ×1** `SLICING_CANNOT_BE_EVALUATED` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms-min.json`
-  - Location: `Coverage/example-core-coverage-ivanov-oms-min: Coverage.identifier[0]`
-  - Slicing cannot be evaluated: Could not match discriminator (system) for slice Coverage.identifier:coverageDocument in profile https://fhir.ru/ig/core/StructureDefinition/core-coverage|<IG_VERSION> - the discriminator [system] does not have fixed value, binding or existence assertions
-- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms-min.json`
-  - Location: `Coverage/example-core-coverage-ivanov-oms-min: Coverage.identifier[0].type.coding[1].system`
-  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
-- **error ×1** `SLICING_CANNOT_BE_EVALUATED` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
-  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.identifier[0]`
-  - Slicing cannot be evaluated: Could not match discriminator (system) for slice Coverage.identifier:coverageDocument in profile https://fhir.ru/ig/core/StructureDefinition/core-coverage|<IG_VERSION> - the discriminator [system] does not have fixed value, binding or existence assertions
-- **warning ×1** `(no message ID)` — `fsh-generated/resources/Coverage-example-core-coverage-ivanov-oms.json`
-  - Location: `Coverage/example-core-coverage-ivanov-oms: Coverage.identifier[0].type.coding[1]`
-  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
-- **warning ×1** `(no message ID)` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
-  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0]`
-  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
-- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
-  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code`
-  - Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.18.0'
-- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
-  - Location: `Patient/example-core-patient-ivanov: Patient.address[0].extension[2].value.ofType(CodeableConcept).coding[0].code`
-  - Unknown code '3' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.18.0'
-- **warning ×1** `(no message ID)` — `fsh-generated/resources/Patient-example-core-patient-ivanov.json`
-  - Location: `Patient/example-core-patient-ivanov: Patient.identifier[3].type.coding[2]`
-  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
-- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-nurse.json`
-  - Location: `PractitionerRole/example-core-practitionerrole-nurse: PractitionerRole.code[0].coding[0].code`
-  - Unknown code '2' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.18.0'
-- **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist-min.json`
-  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist-min: PractitionerRole.code[0].coding[0].code`
-  - Unknown code '01.001' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions' version '0.18.0'
+- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
+  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].display`
+  - Wrong Display Name 'Врач-терапевт участковый' for https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions#1. Valid display is 'тестовое значение' (for the language(s) 'en-US')
 
 ## unchanged
 
@@ -455,6 +461,9 @@
 - **error ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
   - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system`
   - No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/benefit-category'
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
+  - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system`
+  - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
 - **error ×1** `Reference_REF_CantResolve` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
   - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.endpoint[0]`
   - Unable to resolve resource with reference 'Endpoint/example-core-endpoint-therapy'
@@ -575,9 +584,6 @@
 - **error ×1** `Validation_VAL_Profile_Minimum` — `fsh-generated/resources/Organization-example-core-organization-polyclinic-min.json`
   - Location: `Organization/example-core-organization-polyclinic-min: Organization.identifier[0]`
   - Organization.identifier:INN.type: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION>)
-- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
-  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
-  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v<IG_VERSION> is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
 - **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
   - Location: `Organization/example-core-organization-polyclinic: Organization.qualification[0]`
   - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -602,6 +608,15 @@
 - **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/Patient-example-core-patient-laboratory-semd-min.json`
   - Location: `Patient/example-core-patient-laboratory-semd-min: Patient.identifier[0].system`
   - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10'
+- **warning ×1** `http://hl7.org/fhir/StructureDefinition/Identifier#ident-1` — `fsh-generated/resources/Patient-example-core-patient-oms-no-kind.json`
+  - Location: `Patient/example-core-patient-oms-no-kind: Patient.identifier[0]`
+  - Constraint failed: ident-1: 'Identifier with no value has limited utility. If communicating that an identifier value has been suppressed or missing, the value element SHOULD be present with an extension indicating the missing semantic - e.g. data-absent-reason (value.exists())' (defined in http://hl7.org/fhir/StructureDefinition/Identifier)
+- **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Patient-example-core-patient-oms-oid.json`
+  - Location: `Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2]`
+  - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-patient|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)
+- **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/Patient-example-core-patient-oms-oid.json`
+  - Location: `Patient/example-core-patient-oms-oid: Patient.identifier[0].type.coding[2].system`
+  - A definition for CodeSystem 'urn:oid:1.2.643.5.1.13.13.11.1035' could not be found, so the code cannot be validated
 - **error ×1** `Validation_VAL_Profile_Minimum` — `fsh-generated/resources/Practitioner-example-core-practitioner-smirnov.json`
   - Location: `Practitioner/example-core-practitioner-smirnov: Practitioner.identifier[1]`
   - Practitioner.identifier:identityDocument.type: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/core-practitioner|<IG_VERSION>)
@@ -611,9 +626,6 @@
 - **warning ×1** `Type_Specific_Checks_DT_URL_Resolve` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-laboratory-semd-min.json`
   - Location: `PractitionerRole/example-core-practitionerrole-laboratory-semd-min: PractitionerRole.identifier[0].system`
   - No definition could be found for URL value 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70'
-- **error ×1** `Display_Name_for__should_be_one_of__instead_of` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
-  - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.code[0].coding[0].display`
-  - Wrong Display Name 'Врач-терапевт участковый' for https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-medical-workers-positions#1. Valid display is 'тестовое значение' (for the language(s) 'en-US')
 - **information ×1** `Terminology_TX_NoValid_3_CC` — `fsh-generated/resources/PractitionerRole-example-core-practitionerrole-smirnov-therapist.json`
   - Location: `PractitionerRole/example-core-practitionerrole-smirnov-therapist: PractitionerRole.specialty[0]`
   - None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/c80-practice-codes#GP)
@@ -737,6 +749,18 @@
 - **information ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
   - Location: `Resource`
   - The resource StructureDefinition/core-coverage could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.differential.element[8].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
+- **warning ×1** `(no message ID)` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0]`
+  - The discriminator type 'pattern' has been deprecated. Use type=value with a pattern[x] instead (if this is not an inherited slicing)
+- **warning ×1** `DEPRECATED_CONCEPT_FOUND` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
+  - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[26].slicing.discriminator[0].type`
+  - The concept 'pattern' is deprecated and its use should be reviewed
 - **warning ×1** `SD_ED_EXPERIMENTAL_BINDING` — `fsh-generated/resources/StructureDefinition-core-coverage.json`
   - Location: `StructureDefinition/core-coverage: StructureDefinition.snapshot.element[48].binding`
   - The definition for the element 'Coverage.status' binds to the value set 'http://hl7.org/fhir/ValueSet/fm-status|5.0.0' which is experimental, but this structure is not labeled as experimental

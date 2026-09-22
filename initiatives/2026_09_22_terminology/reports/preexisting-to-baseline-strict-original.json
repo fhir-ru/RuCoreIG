@@ -2,7 +2,7 @@
   "normalization": [
     "Collapse whitespace in message fields.",
     "Replace absolute build-root prefixes before output/, input/, fsh-generated/ or temp/ with <ROOT>/.",
-    "Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> or v<ig-ver> with <IG_VERSION>.",
+    "Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> with <IG_VERSION>.",
     "Do not replace CodeSystem/ValueSet versions, systems, codes, indexes or other numbers.",
     "Ignore source line/column offsets; compare file, expression, severity, message-id, source and text.",
     "Keep duplicate occurrence counts; no fuzzy matching. Changed text becomes resolved + new."
@@ -45,29 +45,29 @@
   },
   "counts": {
     "new": {
-      "occurrences": 12,
-      "distinct": 12,
+      "occurrences": 13,
+      "distinct": 13,
       "by_severity": {
         "warning": 7,
-        "error": 4,
+        "error": 5,
         "information": 1
       }
     },
     "resolved": {
-      "occurrences": 10,
-      "distinct": 10,
+      "occurrences": 11,
+      "distinct": 11,
       "by_severity": {
-        "error": 6,
+        "error": 7,
         "warning": 4
       }
     },
     "unchanged": {
-      "occurrences": 289,
-      "distinct": 289,
+      "occurrences": 288,
+      "distinct": 288,
       "by_severity": {
         "warning": 151,
         "information": 88,
-        "error": 50
+        "error": 49
       }
     }
   },
@@ -79,6 +79,15 @@
       "severity": "warning",
       "source": "TerminologyEngine",
       "text": "A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/Organization-example-core-organization-polyclinic.json",
+      "location": "Organization/example-core-organization-polyclinic: Organization.contact[0].address",
+      "message_id": "Extension_EXTP_Context_Wrong",
+      "severity": "error",
+      "source": "InstanceValidator",
+      "text": "The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.20.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)",
       "count": 1
     },
     {
@@ -225,6 +234,15 @@
       "severity": "warning",
       "source": "TerminologyEngine",
       "text": "A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated",
+      "count": 1
+    },
+    {
+      "file": "fsh-generated/resources/Organization-example-core-organization-polyclinic.json",
+      "location": "Organization/example-core-organization-polyclinic: Organization.contact[0].address",
+      "message_id": "Extension_EXTP_Context_Wrong",
+      "severity": "error",
+      "source": "InstanceValidator",
+      "text": "The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.18.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)",
       "count": 1
     },
     {
@@ -1730,15 +1748,6 @@
       "severity": "error",
       "source": "InstanceValidator",
       "text": "Organization.identifier:INN.type: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION>)",
-      "count": 1
-    },
-    {
-      "file": "fsh-generated/resources/Organization-example-core-organization-polyclinic.json",
-      "location": "Organization/example-core-organization-polyclinic: Organization.contact[0].address",
-      "message_id": "Extension_EXTP_Context_Wrong",
-      "severity": "error",
-      "source": "InstanceValidator",
-      "text": "The extension https://fhir.ru/ig/core/StructureDefinition/okato v<IG_VERSION> is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)",
       "count": 1
     },
     {

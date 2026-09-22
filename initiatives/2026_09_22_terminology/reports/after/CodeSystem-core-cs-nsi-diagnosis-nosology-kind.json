@@ -1,0 +1,54 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-nsi-diagnosis-nosology-kind",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-nsi-diagnosis-nosology-kind</b></p><a name=\"core-cs-nsi-diagnosis-nosology-kind\"> </a><a name=\"hccore-cs-nsi-diagnosis-nosology-kind\"> </a><p>This case-insensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"core-cs-nsi-diagnosis-nosology-kind-1\"> </a></td><td>Основное заболевание</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"core-cs-nsi-diagnosis-nosology-kind-2\"> </a></td><td>Осложнение основного заболевания</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"core-cs-nsi-diagnosis-nosology-kind-3\"> </a></td><td>Сопутствующее заболевание</td></tr><tr><td style=\"white-space:nowrap\">4<a name=\"core-cs-nsi-diagnosis-nosology-kind-4\"> </a></td><td>Конкурирующее заболевание</td></tr><tr><td style=\"white-space:nowrap\">5<a name=\"core-cs-nsi-diagnosis-nosology-kind-5\"> </a></td><td>Внешние причины заболеваемости и смертности</td></tr><tr><td style=\"white-space:nowrap\">6<a name=\"core-cs-nsi-diagnosis-nosology-kind-6\"> </a></td><td>Фоновое заболевание</td></tr><tr><td style=\"white-space:nowrap\">7<a name=\"core-cs-nsi-diagnosis-nosology-kind-7\"> </a></td><td>Осложнение сопутствующего заболевания</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind",
+  "version" : "0.21.0",
+  "name" : "Core_Cs_Nsi_Diagnosis_Nosology_Kind",
+  "title" : "Core CodeSystem Виды нозологических единиц диагноза",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:46:32+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "НСИ МЗ РФ справочник [Виды нозологических единиц диагноза](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1077). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных.",
+  "caseSensitive" : false,
+  "content" : "fragment",
+  "concept" : [{
+    "code" : "1",
+    "display" : "Основное заболевание"
+  },
+  {
+    "code" : "2",
+    "display" : "Осложнение основного заболевания"
+  },
+  {
+    "code" : "3",
+    "display" : "Сопутствующее заболевание"
+  },
+  {
+    "code" : "4",
+    "display" : "Конкурирующее заболевание"
+  },
+  {
+    "code" : "5",
+    "display" : "Внешние причины заболеваемости и смертности"
+  },
+  {
+    "code" : "6",
+    "display" : "Фоновое заболевание"
+  },
+  {
+    "code" : "7",
+    "display" : "Осложнение сопутствующего заболевания"
+  }]
+}

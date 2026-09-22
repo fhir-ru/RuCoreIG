@@ -2,15 +2,15 @@
 
 | Category | Occurrences | Distinct |
 |---|---:|---:|
-| new | 12 | 12 |
-| resolved | 10 | 10 |
-| unchanged | 289 | 289 |
+| new | 13 | 13 |
+| resolved | 11 | 11 |
+| unchanged | 288 | 288 |
 
 ## Normalization
 
 - Collapse whitespace in message fields.
 - Replace absolute build-root prefixes before output/, input/, fsh-generated/ or temp/ with <ROOT>/.
-- Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> or v<ig-ver> with <IG_VERSION>.
+- Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> with <IG_VERSION>.
 - Do not replace CodeSystem/ValueSet versions, systems, codes, indexes or other numbers.
 - Ignore source line/column offsets; compare file, expression, severity, message-id, source and text.
 - Keep duplicate occurrence counts; no fuzzy matching. Changed text becomes resolved + new.
@@ -20,6 +20,9 @@
 - **warning ×1** `UNKNOWN_CODESYSTEM` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
   - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0].system`
   - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
+- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
+  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.20.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
 - **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
   - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code`
   - Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.20.0'
@@ -71,6 +74,9 @@
 - **warning ×1** `(no message ID)` — `fsh-generated/resources/HealthcareService-example-core-healthcareservice-therapy.json`
   - Location: `HealthcareService/example-core-healthcareservice-therapy: HealthcareService.eligibility[0].code.coding[0]`
   - A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/benefit-category' could not be found, so the code cannot be validated
+- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
+  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
+  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v0.18.0 is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
 - **error ×1** `Unknown_Code_in_Version` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
   - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address.extension[0].value.ofType(CodeableConcept).coding[0].code`
   - Unknown code '45000000000' in the CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato' version '0.18.0'
@@ -575,9 +581,6 @@
 - **error ×1** `Validation_VAL_Profile_Minimum` — `fsh-generated/resources/Organization-example-core-organization-polyclinic-min.json`
   - Location: `Organization/example-core-organization-polyclinic-min: Organization.identifier[0]`
   - Organization.identifier:INN.type: minimum required = 1, but only found 0 (from https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION>)
-- **error ×1** `Extension_EXTP_Context_Wrong` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
-  - Location: `Organization/example-core-organization-polyclinic: Organization.contact[0].address`
-  - The extension https://fhir.ru/ig/core/StructureDefinition/okato v<IG_VERSION> is not allowed to be used at this point (this element is [Address, ExtendedContactDetail.address, Organization.contact.address]; allowed for this version = e:Organization)
 - **information ×1** `Details_for__matching_against_Profile_` — `fsh-generated/resources/Organization-example-core-organization-polyclinic.json`
   - Location: `Organization/example-core-organization-polyclinic: Organization.qualification[0]`
   - This element does not match any known slice defined in the profile https://fhir.ru/ig/core/StructureDefinition/core-organization|<IG_VERSION> (this may not be a problem, but you should check that it's not intended to match a slice)

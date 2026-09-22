@@ -1,0 +1,54 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "core-cs-nsi-units-of-measurement",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem core-cs-nsi-units-of-measurement</b></p><a name=\"core-cs-nsi-units-of-measurement\"> </a><a name=\"hccore-cs-nsi-units-of-measurement\"> </a><p>This case-insensitive code system <code>https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">16<a name=\"core-cs-nsi-units-of-measurement-16\"> </a></td><td>мл</td></tr><tr><td style=\"white-space:nowrap\">20<a name=\"core-cs-nsi-units-of-measurement-20\"> </a></td><td>фл</td></tr><tr><td style=\"white-space:nowrap\">53<a name=\"core-cs-nsi-units-of-measurement-53\"> </a></td><td>%</td></tr><tr><td style=\"white-space:nowrap\">60<a name=\"core-cs-nsi-units-of-measurement-60\"> </a></td><td>г/л</td></tr><tr><td style=\"white-space:nowrap\">13<a name=\"core-cs-nsi-units-of-measurement-13\"> </a></td><td>пг</td></tr><tr><td style=\"white-space:nowrap\">322<a name=\"core-cs-nsi-units-of-measurement-322\"> </a></td><td>10^9/л</td></tr><tr><td style=\"white-space:nowrap\">328<a name=\"core-cs-nsi-units-of-measurement-328\"> </a></td><td>10^12/л</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement",
+  "version" : "0.21.0",
+  "name" : "Core_Cs_Nsi_Units_Of_Measurement",
+  "title" : "Core CodeSystem Единицы измерения",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-22T14:46:32+00:00",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "НСИ МЗ РФ справочник [единиц измерения](https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.11.1358). RuCore сопровождает ограниченное локальное представление перечисленных в этом ресурсе кодов НСИ для использования в профилях и примерах руководства. Границы фрагмента определяются опубликованными здесь концептами; изменения этого состава проходят рассмотрение в рамках развития RuCore. Это не полная выгрузка НСИ и не утверждение соответствия последней редакции справочника. Отсутствие кода во фрагменте не означает его недопустимость в исходной системе; проверка остальных кодов требует внешних терминологических данных.",
+  "caseSensitive" : false,
+  "content" : "fragment",
+  "concept" : [{
+    "code" : "16",
+    "display" : "мл"
+  },
+  {
+    "code" : "20",
+    "display" : "фл"
+  },
+  {
+    "code" : "53",
+    "display" : "%"
+  },
+  {
+    "code" : "60",
+    "display" : "г/л"
+  },
+  {
+    "code" : "13",
+    "display" : "пг"
+  },
+  {
+    "code" : "322",
+    "display" : "10^9/л"
+  },
+  {
+    "code" : "328",
+    "display" : "10^12/л"
+  }]
+}

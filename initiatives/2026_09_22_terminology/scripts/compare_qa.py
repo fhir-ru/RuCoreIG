@@ -18,7 +18,7 @@ NS = {"f": "http://hl7.org/fhir"}
 NORMALIZATION = [
     "Collapse whitespace in message fields.",
     "Replace absolute build-root prefixes before output/, input/, fsh-generated/ or temp/ with <ROOT>/.",
-    "Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> with <IG_VERSION>.",
+    "Replace ru.core#<ig-ver> and local StructureDefinition |<ig-ver> or v<ig-ver> with <IG_VERSION>.",
     "Do not replace CodeSystem/ValueSet versions, systems, codes, indexes or other numbers.",
     "Ignore source line/column offsets; compare file, expression, severity, message-id, source and text.",
     "Keep duplicate occurrence counts; no fuzzy matching. Changed text becomes resolved + new.",
@@ -33,7 +33,26 @@ def normalize(value, version):
         value = value.replace("ru.core#" + version, "ru.core#<IG_VERSION>")
         value = re.sub(r"(https://fhir\.ru/ig/core/StructureDefinition/[^\s|'\"<>]+\|)"
                        + re.escape(version) + r"(?![\w.])", r"\1<IG_VERSION>", value)
+        value = re.sub(r"(https://fhir\.ru/ig/core/StructureDefinition/[^\s|'\"<>]+ v)"
+                       + re.escape(version) + r"(?![\w.])", r"\1<IG_VERSION>", value)
     return value
+
+
+def check_normalization():
+    """Guard against hiding terminology changes while ignoring IG profile versions."""
+    version = "0.21.0"
+    profile = "https://fhir.ru/ig/core/StructureDefinition/okato"
+    for separator in ("|", " v"):
+        assert normalize(profile + separator + version, version) == profile + separator + "<IG_VERSION>"
+    for text in (
+        "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato|0.21.0",
+        "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-okato v0.21.0",
+        "Unknown code '3' in CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-address-type' version '0.21.0'",
+        "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-okato|0.21.0",
+        profile + " v0.21.0.1",
+        profile + " v0.20.0",
+    ):
+        assert normalize(text, version) == text, text
 
 
 def xml_value(parent, path):
@@ -148,6 +167,7 @@ def markdown(result):
 
 
 def main():
+    check_normalization()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("baseline")
     parser.add_argument("after")
