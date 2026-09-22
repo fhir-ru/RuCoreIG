@@ -1,3 +1,4 @@
 # Preserve raw validator/publisher JSON evidence, including original CRLF.
 rucore-*/fhir-validation.json -text -whitespace
 rucore-*/publisher-*.json -text -whitespace
+rucore-*/suffix-validator.json -text -whitespace
