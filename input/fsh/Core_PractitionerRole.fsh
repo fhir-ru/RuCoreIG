@@ -14,7 +14,7 @@ Description: "Профиль PractitionerRole для RuCore"
 
 * identifier[misPractitionerRole] ^short = "Идентификатор роли медицинского работника в экземпляре МИС"
 * identifier[misPractitionerRole] ^definition = "Локальный идентификатор роли медицинского работника в экземпляре медицинской информационной системы, передаваемый с system, сформированным по правилам СЭМД."
-* identifier[misPractitionerRole] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.70."
+* identifier[misPractitionerRole] ^comment = "Identifier.system передаётся в URI-форме urn:oid:... с конечным узлом .70. RuCore проверяет URI-форму OID и конечный узел типа; корень медицинской организации, ветка и номера МИС не ограничиваются. Принадлежность OID организации требует отдельной проверки по реестру."
   * type 1..1
   * type = Core_Cs_Semd_Identifier_Type#mis-practitioner-role
   * system 1..1
@@ -31,6 +31,6 @@ Description: "Профиль PractitionerRole для RuCore"
 * code from https://fhir.ru/ig/core/ValueSet/core-vs-nsi-medical-workers-positions (extensible)
 
 Invariant: core-practitionerrole-mis-system
-Description: "Система идентификатора роли медицинского работника в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.70"
+Description: "Система идентификатора роли медицинского работника в МИС должна быть OID в URI-форме urn:oid:... с конечным узлом .70"
 Severity: #error
-Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]70$')"
+Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]70$')"

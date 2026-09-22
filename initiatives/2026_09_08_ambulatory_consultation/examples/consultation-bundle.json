@@ -2220,6 +2220,11 @@
             }
           }
         ],
+        "meta": {
+          "profile": [
+            "https://fhir.ru/ig/core/StructureDefinition/core-practitionerrole"
+          ]
+        },
         "code": [
           {
             "coding": [

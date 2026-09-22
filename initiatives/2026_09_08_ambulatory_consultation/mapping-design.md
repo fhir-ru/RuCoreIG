@@ -1,5 +1,7 @@
 # Реализованный маппинг
 
+APP-03 закрыт для прототипа в RuCore 0.24.0: проверяются URI-форма OID и конечный узел; исходный исторический OID сохранён, PractitionerRole заявляет профиль Core. FHIR Validator: 0 errors / 256 warnings / 152 information (`-tx n/a`). Принадлежность OID организации не подтверждается этой проверкой. [Результат](reports/rucore-0.24.0/summary.json).
+
 Полная единица трассировки — атрибут либо непустой текст/хвост XML. [trace.json](examples/trace.json) содержит стабильный `amb-map-NNNN`, исходный XPath с пространствами имён и индексами, номер строки, значение, правило, статус и список целей. Цель имеет вид `ResourceType/id#/JSON/pointer` либо `Bundle#/identifier`. [mapping.tsv](examples/mapping.tsv) — тот же материал для табличного просмотра. Все XPath и цели проверяются кодом.
 
 ## Основные группы

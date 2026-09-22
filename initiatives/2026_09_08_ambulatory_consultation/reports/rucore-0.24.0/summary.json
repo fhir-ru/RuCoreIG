@@ -1,0 +1,18 @@
+{
+  "version": "0.24.0",
+  "validator": "6.10.4",
+  "terminology_server": "n/a",
+  "counts": {
+    "information": 152,
+    "warning": 256
+  },
+  "errors": 0,
+  "source_sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+  "bundle_sha256": "d566a7a3261a606896da71bb06e21535c93eaeb08efd272d27a127a51c5a7f60",
+  "closed_for_prototype": [
+    "APP-01",
+    "APP-02",
+    "APP-03"
+  ],
+  "remaining": "Community approval; APP-04–10; source inconsistencies. Offline validation does not establish external terminology validity or OID ownership."
+}

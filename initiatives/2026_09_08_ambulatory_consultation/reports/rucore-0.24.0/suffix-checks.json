@@ -1,0 +1,44 @@
+[
+  {
+    "invariant": "core-bundle-mis-id-system",
+    "expression": "type.coding.where(system = 'https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type' and code = 'mis-document').exists() implies (system.exists() and value.exists() and system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]51$'))",
+    "cases": 8,
+    "passed": true
+  },
+  {
+    "invariant": "core-patient-mis-patient-system",
+    "expression": "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]10$')",
+    "cases": 8,
+    "passed": true
+  },
+  {
+    "invariant": "core-composition-mis-document-set-system",
+    "expression": "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]50$')",
+    "cases": 8,
+    "passed": true
+  },
+  {
+    "invariant": "core-practitionerrole-mis-system",
+    "expression": "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]70$')",
+    "cases": 8,
+    "passed": true
+  },
+  {
+    "invariant": "core-encounter-mis-encounter-system",
+    "expression": "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]15$')",
+    "cases": 8,
+    "passed": true
+  },
+  {
+    "invariant": "core-encounter-mis-inpatient-system",
+    "expression": "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]16$')",
+    "cases": 8,
+    "passed": true
+  },
+  {
+    "invariant": "core-encounter-mis-ambulatory-system",
+    "expression": "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]17$')",
+    "cases": 8,
+    "passed": true
+  }
+]

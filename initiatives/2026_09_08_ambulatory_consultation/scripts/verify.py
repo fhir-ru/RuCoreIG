@@ -91,10 +91,10 @@ def main():
     # Source person collisions must not be collapsed into a single person.
     names = {r['name'][0]['family'] for r in all_resources if r['resourceType'] == 'Practitioner'}
     assert {'Смирнов', 'Иванов', 'Иванова', 'Кузнецов'} <= names
-    # Nonconforming legacy referral role is retained as base R5, not normalized falsely.
+    # Legacy OID is preserved and now conforms to the suffix-only Core constraint.
     legacy = [r for r in all_resources if r['resourceType'] == 'PractitionerRole' and
               any(x.get('system', '').startswith('urn:oid:1.2.643.5.1.13.3.25.') for x in r.get('identifier', []))]
-    assert len(legacy) == 1 and 'meta' not in legacy[0]
+    assert len(legacy) == 1 and legacy[0]['meta']['profile'] == [SD + 'core-practitionerrole']
     # True source observations survive numerically, including clinically suspect pulse unit.
     obs = [r for r in all_resources if r['resourceType'] == 'Observation']
     pulse = next(r for r in obs if any(x.get('code') == '5' and x.get('system', '').endswith('.262') for x in r['code'].get('coding', [])))

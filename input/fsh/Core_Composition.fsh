@@ -14,7 +14,7 @@ Description: "Базовый профиль Composition для РФ"
 
 * identifier[misDocumentSet] ^short = "Идентификатор набора версий документа в экземпляре МИС"
 * identifier[misDocumentSet] ^definition = "Локальный идентификатор набора версий документа (CDA setId) в экземпляре медицинской информационной системы по правилам СЭМД."
-* identifier[misDocumentSet] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.50. Этот идентификатор соответствует CDA ClinicalDocument.setId и остается общим для набора версий. Идентификатор экземпляра документа с узлом 51 соответствует Bundle.identifier."
+* identifier[misDocumentSet] ^comment = "Identifier.system передаётся в URI-форме urn:oid:... с конечным узлом .50. RuCore проверяет URI-форму OID и конечный узел типа; корень медицинской организации, ветка и номера МИС не ограничиваются. Принадлежность OID организации требует отдельной проверки по реестру. Этот идентификатор соответствует CDA ClinicalDocument.setId и остается общим для набора версий. Идентификатор экземпляра документа с узлом 51 соответствует Bundle.identifier."
   * type 1..1
   * type = Core_Cs_Semd_Identifier_Type#mis-document-set
   * system 1..1
@@ -35,6 +35,6 @@ Description: "Базовый профиль Composition для РФ"
 * attester.party only Reference(Core_Organization or Core_Patient or Core_Practitioner or Core_PractitionerRole or Core_RelatedPerson)
 
 Invariant: core-composition-mis-document-set-system
-Description: "Система идентификатора набора версий документа в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.50"
+Description: "Система идентификатора набора версий документа в МИС должна быть OID в URI-форме urn:oid:... с конечным узлом .50"
 Severity: #error
-Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]50$')"
+Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]50$')"

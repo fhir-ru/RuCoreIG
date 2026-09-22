@@ -16,7 +16,7 @@ Description: "Профиль Encounter для RuCore"
 
 * identifier[misEncounter] ^short = "Идентификатор случая оказания медицинской помощи в экземпляре МИС"
 * identifier[misEncounter] ^definition = "Локальный идентификатор общего случая оказания медицинской помощи в экземпляре медицинской информационной системы по правилам СЭМД."
-* identifier[misEncounter] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.15."
+* identifier[misEncounter] ^comment = "Identifier.system передаётся в URI-форме urn:oid:... с конечным узлом .15. RuCore проверяет URI-форму OID и конечный узел типа; корень медицинской организации, ветка и номера МИС не ограничиваются. Принадлежность OID организации требует отдельной проверки по реестру."
   * type 1..1
   * type = Core_Cs_Semd_Identifier_Type#mis-encounter
   * system 1..1
@@ -25,7 +25,7 @@ Description: "Профиль Encounter для RuCore"
 
 * identifier[misInpatientRecord] ^short = "Номер стационарной медицинской карты в экземпляре МИС"
 * identifier[misInpatientRecord] ^definition = "Локальный номер стационарной медицинской карты (истории болезни), связанной со случаем обслуживания, в экземпляре медицинской информационной системы по правилам СЭМД."
-* identifier[misInpatientRecord] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.16."
+* identifier[misInpatientRecord] ^comment = "Identifier.system передаётся в URI-форме urn:oid:... с конечным узлом .16. RuCore проверяет URI-форму OID и конечный узел типа; корень медицинской организации, ветка и номера МИС не ограничиваются. Принадлежность OID организации требует отдельной проверки по реестру."
   * type 1..1
   * type = Core_Cs_Semd_Identifier_Type#mis-inpatient-record
   * system 1..1
@@ -34,7 +34,7 @@ Description: "Профиль Encounter для RuCore"
 
 * identifier[misAmbulatoryEncounter] ^short = "Номер амбулаторной медицинской карты в экземпляре МИС"
 * identifier[misAmbulatoryEncounter] ^definition = "Локальный номер амбулаторной медицинской карты в экземпляре МИС. Источник: Протокол консультации, редакция 5, У1-22.1.2, с. 61 (https://portal.egisz.rosminzdrav.ru/materials/4557). Если передаётся только ссылка на карту, номер размещается в partOf.identifier посещения."
-* identifier[misAmbulatoryEncounter] ^comment = "Identifier.system формируется как urn:oid:1.2.643.5.1.13.13.12.2.{код субъекта Российской Федерации}.{идентификатор медицинской организации в ФРМО}.100.{номер МИС}.{номер экземпляра МИС}.17."
+* identifier[misAmbulatoryEncounter] ^comment = "Identifier.system передаётся в URI-форме urn:oid:... с конечным узлом .17. RuCore проверяет URI-форму OID и конечный узел типа; корень медицинской организации, ветка и номера МИС не ограничиваются. Принадлежность OID организации требует отдельной проверки по реестру."
   * type 1..1
   * type = Core_Cs_Semd_Identifier_Type#mis-ambulatory-encounter
   * system 1..1
@@ -91,19 +91,19 @@ Description: "Профиль Encounter для RuCore"
     * code from Core_Vs_Nsi_Diagnosis_Justification_Degree (extensible)
 
 Invariant: core-encounter-mis-encounter-system
-Description: "Система идентификатора общего случая в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.15"
+Description: "Система идентификатора общего случая в МИС должна быть OID в URI-форме urn:oid:... с конечным узлом .15"
 Severity: #error
-Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]15$')"
+Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]15$')"
 
 Invariant: core-encounter-mis-inpatient-system
-Description: "Система номера стационарной медицинской карты в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.16"
+Description: "Система номера стационарной медицинской карты в МИС должна быть OID в URI-форме urn:oid:... с конечным узлом .16"
 Severity: #error
-Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]16$')"
+Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]16$')"
 
 Invariant: core-encounter-mis-ambulatory-system
-Description: "Система номера амбулаторной медицинской карты в МИС должна соответствовать структуре urn:oid:1.2.643.5.1.13.13.12.2.{субъект РФ}.{медицинская организация ФРМО}.100.{МИС}.{экземпляр МИС}.17"
+Description: "Система номера амбулаторной медицинской карты в МИС должна быть OID в URI-форме urn:oid:... с конечным узлом .17"
 Severity: #error
-Expression: "system.matches('^urn:oid:1[.]2[.]643[.]5[.]1[.]13[.]13[.]12[.]2[.](0|[1-9][0-9]*)[.][1-9][0-9]*[.]100[.][1-9][0-9]*[.][1-9][0-9]*[.]17$')"
+Expression: "system.matches('^urn:oid:[0-2]([.](0|[1-9][0-9]*))+[.]17$')"
 
 Invariant: core-encounter-diagnosis-condition
 Description: "В диагнозе случая должен быть указан код и/или текст и/или ссылка на ресурс Condition"

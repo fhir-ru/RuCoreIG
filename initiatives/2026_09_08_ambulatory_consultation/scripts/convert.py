@@ -309,7 +309,7 @@ class Conversion:
         for node in ids:
             if node.get('root', '').endswith('.70'):
                 root = node.get('root', '')
-                valid &= bool(re.fullmatch(r'1\.2\.643\.5\.1\.13\.13\.12\.2\.(0|[1-9][0-9]*)\.[1-9][0-9]*\.100\.[1-9][0-9]*\.[1-9][0-9]*\.70', root))
+                valid &= bool(re.fullmatch(r'[0-2](\.(0|[1-9][0-9]*))+\.70', root))
                 role['identifier'].append(self.identifier(node, dest + '/identifier/' + str(len(role['identifier'])), 'mis-practitioner-role'))
         if valid:
             role['meta'] = {'profile': [SD + 'core-practitionerrole']}
