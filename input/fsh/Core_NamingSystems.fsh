@@ -550,3 +550,18 @@ Usage: #definition
 * uniqueId[3]
   * type = #uri
   * value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.795"
+
+Instance: core-ns-rf-frmo-department
+InstanceOf: NamingSystem
+Title: "Core NamingSystem Идентификатор - Подразделение ФРМО"
+Usage: #definition
+* name = "Core_Ns_Rf_FRMO_Department"
+* status = #active
+* kind = #identifier
+* date = "2026-09-22"
+* description = "Идентификаторы структурных подразделений медицинских организаций. Источник — «ФРМО. Справочник структурных подразделений» (OID 1.2.643.5.1.13.13.99.2.114), поле «OID структурного подразделения». Identifier.value содержит OID подразделения без префикса urn:oid:. OID медицинской организации из соседнего поля относится к родительской организации, а не к подразделению."
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.ru/ig/core/systems/frmo-department"
+* uniqueId[0].preferred = true
+* uniqueId[1].type = #uri
+* uniqueId[1].value = "https://nsi.rosminzdrav.ru/dictionaries/1.2.643.5.1.13.13.99.2.114"

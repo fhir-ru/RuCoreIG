@@ -3,8 +3,15 @@
   "canonical": "https://fhir.ru/ig/core",
   "title": "Russian FHIR Semantic Model IG",
   "introduction": "IG for semantic data model based on FHIR.",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "list": [
+    {
+      "version": "0.25.0",
+      "desc": "Add an optional FRMO department identifier slice, NamingSystem and Organization example.",
+      "path": "https://fhir.ru/ig/core/0.25.0",
+      "status": "draft",
+      "sequence": "Draft"
+    },
     {
       "version": "0.24.0",
       "desc": "Validate SEMD identifier OID URI syntax and type suffix without imposing a fixed FRMO prefix or MIS branch.",

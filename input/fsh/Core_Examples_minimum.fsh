@@ -692,3 +692,14 @@ Description: "Минимальный пример адреса на террит
 * type = #physical
 * city = "Москва"
 * country = "RU" 
+
+Instance: example-core-organization-department
+InstanceOf: Core_Organization
+Title: "Подразделение ФРМО со ссылкой на медицинскую организацию"
+Description: "Идентификаторы из учебного примера СЭМД «Протокол консультации». Название подразделения неизвестно; актуальность записи ФРМО не утверждается."
+Usage: #example
+* identifier[NSI-FRMO-Department].system = "https://fhir.ru/ig/core/systems/frmo-department"
+* identifier[NSI-FRMO-Department].value = "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
+* partOf.type = "Organization"
+* partOf.identifier.system = "https://fhir.ru/ig/core/systems/frmo"
+* partOf.identifier.value = "1.2.643.5.1.13.13.12.2.77.7831"

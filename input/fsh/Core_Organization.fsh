@@ -23,7 +23,8 @@ Description: "Базовый профиль организации для рос
   INN 0..1 and
   OGRN 0..1 and
   OKPO 0..1 and
-  NSI-FRMO 0..1
+  NSI-FRMO 0..1 and
+  NSI-FRMO-Department 0..1
 
 * identifier[INN] ^short = "Государственный идентификационный номер налогоплательщика (ИНН)"
   * value only string
@@ -46,6 +47,14 @@ Description: "Базовый профиль организации для рос
   * value only string
   * system 1..1
   * system = "https://fhir.ru/ig/core/systems/frmo"
+
+* identifier[NSI-FRMO] ^comment = "OID самой медицинской организации. Если ресурс представляет подразделение, OID головной организации указывается в Organization, на которую ссылается partOf, а не как идентификатор подразделения."
+
+* identifier[NSI-FRMO-Department] ^short = "OID структурного подразделения по ФРМО"
+* identifier[NSI-FRMO-Department] ^comment = "Используется, если Organization представляет структурное подразделение. Значение — поле «OID структурного подразделения» справочника 1.2.643.5.1.13.13.99.2.114, без префикса urn:oid:. Срез необязателен; при его использовании system и value обязательны. Принадлежность подразделения медицинской организации представляется через partOf."
+* identifier[NSI-FRMO-Department].system 1..1
+* identifier[NSI-FRMO-Department].system = "https://fhir.ru/ig/core/systems/frmo-department"
+* identifier[NSI-FRMO-Department].value 1..1
 
 * qualification ^slicing.discriminator.type = #value
 * qualification ^slicing.discriminator.path = "code.text"
