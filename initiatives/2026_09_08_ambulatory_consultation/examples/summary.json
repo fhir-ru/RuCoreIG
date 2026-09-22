@@ -10,7 +10,7 @@
   "resources": {
     "Composition": 1,
     "Patient": 1,
-    "Organization": 9,
+    "Organization": 14,
     "PractitionerRole": 8,
     "Practitioner": 7,
     "Encounter": 1,
@@ -24,6 +24,6 @@
     "Condition": 2,
     "CarePlan": 1
   },
-  "resource_count": 94,
+  "resource_count": 99,
   "source_sections": 18
 }

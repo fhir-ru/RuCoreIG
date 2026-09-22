@@ -788,10 +788,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831",
     "status": "mapped",
     "targets": [
-      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/0/value",
-      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/1/system"
+      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/0/value"
     ],
-    "rule": "OID namespace -> URI",
+    "rule": "FRMO organization OID",
     "id": "amb-map-0074"
   },
   {
@@ -800,9 +799,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531",
     "status": "mapped",
     "targets": [
-      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/1/value"
+      "Organization/9b9377e9-7935-5d94-98a7-31b63e748ea4#/identifier/0/value"
     ],
-    "rule": "copy",
+    "rule": "FRMO department OID",
     "id": "amb-map-0075"
   },
   {
@@ -844,7 +843,7 @@
     "value": "1027739578404",
     "status": "mapped",
     "targets": [
-      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/2/value"
+      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/1/value"
     ],
     "rule": "copy",
     "id": "amb-map-0079"
@@ -855,7 +854,7 @@
     "value": "5009247",
     "status": "mapped",
     "targets": [
-      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/3/value"
+      "Organization/44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf#/identifier/2/value"
     ],
     "rule": "copy",
     "id": "amb-map-0080"
@@ -1306,10 +1305,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831",
     "status": "mapped",
     "targets": [
-      "Organization/05421865-1429-5bb3-a92a-e2290284f92a#/identifier/0/value",
-      "Organization/05421865-1429-5bb3-a92a-e2290284f92a#/identifier/1/system"
+      "Organization/05421865-1429-5bb3-a92a-e2290284f92a#/identifier/0/value"
     ],
-    "rule": "OID namespace -> URI",
+    "rule": "FRMO organization OID",
     "id": "amb-map-0121"
   },
   {
@@ -1318,9 +1316,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531",
     "status": "mapped",
     "targets": [
-      "Organization/05421865-1429-5bb3-a92a-e2290284f92a#/identifier/1/value"
+      "Organization/2b7446b3-0e86-5d8d-b921-b8952c321824#/identifier/0/value"
     ],
-    "rule": "copy",
+    "rule": "FRMO department OID",
     "id": "amb-map-0122"
   },
   {
@@ -2731,10 +2729,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831",
     "status": "mapped",
     "targets": [
-      "Organization/bf4ab503-064e-5e99-b244-f5475fc8d44c#/identifier/0/value",
-      "Organization/bf4ab503-064e-5e99-b244-f5475fc8d44c#/identifier/1/system"
+      "Organization/bf4ab503-064e-5e99-b244-f5475fc8d44c#/identifier/0/value"
     ],
-    "rule": "OID namespace -> URI",
+    "rule": "FRMO organization OID",
     "id": "amb-map-0251"
   },
   {
@@ -2743,9 +2740,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531",
     "status": "mapped",
     "targets": [
-      "Organization/bf4ab503-064e-5e99-b244-f5475fc8d44c#/identifier/1/value"
+      "Organization/4b4f1206-5df5-57c0-a5c6-b12c29adf498#/identifier/0/value"
     ],
-    "rule": "copy",
+    "rule": "FRMO department OID",
     "id": "amb-map-0252"
   },
   {
@@ -3373,10 +3370,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831",
     "status": "mapped",
     "targets": [
-      "Organization/6fc10948-d46f-5107-a598-ccf93da76fd0#/identifier/0/value",
-      "Organization/6fc10948-d46f-5107-a598-ccf93da76fd0#/identifier/1/system"
+      "Organization/6fc10948-d46f-5107-a598-ccf93da76fd0#/identifier/0/value"
     ],
-    "rule": "OID namespace -> URI",
+    "rule": "FRMO organization OID",
     "id": "amb-map-0310"
   },
   {
@@ -3385,9 +3381,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531",
     "status": "mapped",
     "targets": [
-      "Organization/6fc10948-d46f-5107-a598-ccf93da76fd0#/identifier/1/value"
+      "Organization/70c5ad7b-ea10-58b9-b492-da620f7f7407#/identifier/0/value"
     ],
-    "rule": "copy",
+    "rule": "FRMO department OID",
     "id": "amb-map-0311"
   },
   {
@@ -3684,10 +3680,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831",
     "status": "mapped",
     "targets": [
-      "Organization/4d041a79-88b0-541f-a66e-bbd708e26058#/identifier/0/value",
-      "Organization/4d041a79-88b0-541f-a66e-bbd708e26058#/identifier/1/system"
+      "Organization/4d041a79-88b0-541f-a66e-bbd708e26058#/identifier/0/value"
     ],
-    "rule": "OID namespace -> URI",
+    "rule": "FRMO organization OID",
     "id": "amb-map-0338"
   },
   {
@@ -3696,9 +3691,9 @@
     "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531",
     "status": "mapped",
     "targets": [
-      "Organization/4d041a79-88b0-541f-a66e-bbd708e26058#/identifier/1/value"
+      "Organization/a30fe7fd-913a-5e59-a773-74dec5df6fa7#/identifier/0/value"
     ],
-    "rule": "copy",
+    "rule": "FRMO department OID",
     "id": "amb-map-0339"
   },
   {

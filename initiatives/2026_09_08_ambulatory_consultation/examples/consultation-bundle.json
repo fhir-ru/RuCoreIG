@@ -844,10 +844,6 @@
             "value": "1.2.643.5.1.13.13.12.2.77.7831"
           },
           {
-            "system": "urn:oid:1.2.643.5.1.13.13.12.2.77.7831",
-            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
-          },
-          {
             "system": "https://fhir.ru/ig/core/systems/ogrn",
             "value": "1027739578404"
           },
@@ -950,6 +946,31 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:9b9377e9-7935-5d94-98a7-31b63e748ea4",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "9b9377e9-7935-5d94-98a7-31b63e748ea4",
+        "meta": {
+          "profile": [
+            "https://fhir.ru/ig/core/StructureDefinition/core-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.ru/ig/core/systems/frmo-department",
+            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
+          }
+        ],
+        "partOf": {
+          "reference": "urn:uuid:44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
+        }
+      }
+    },
+    {
       "fullUrl": "urn:uuid:6715b4b6-261f-5d37-b28f-fdaec0148fc9",
       "resource": {
         "resourceType": "PractitionerRole",
@@ -1005,7 +1026,7 @@
           }
         ],
         "organization": {
-          "reference": "urn:uuid:05421865-1429-5bb3-a92a-e2290284f92a"
+          "reference": "urn:uuid:2b7446b3-0e86-5d8d-b921-b8952c321824"
         },
         "text": {
           "status": "generated",
@@ -1105,10 +1126,6 @@
           {
             "system": "https://fhir.ru/ig/core/systems/frmo",
             "value": "1.2.643.5.1.13.13.12.2.77.7831"
-          },
-          {
-            "system": "urn:oid:1.2.643.5.1.13.13.12.2.77.7831",
-            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
           }
         ],
         "contact": [
@@ -1165,6 +1182,31 @@
             }
           }
         ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2b7446b3-0e86-5d8d-b921-b8952c321824",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "2b7446b3-0e86-5d8d-b921-b8952c321824",
+        "meta": {
+          "profile": [
+            "https://fhir.ru/ig/core/StructureDefinition/core-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.ru/ig/core/systems/frmo-department",
+            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
+          }
+        ],
+        "partOf": {
+          "reference": "urn:uuid:05421865-1429-5bb3-a92a-e2290284f92a"
+        },
         "text": {
           "status": "generated",
           "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
@@ -1481,7 +1523,7 @@
           "reference": "urn:uuid:20e7b661-ffe9-55e1-af83-a6bbec433090"
         },
         "serviceProvider": {
-          "reference": "urn:uuid:44de7ca7-d79c-5b5f-88d7-eddd0d8ea9cf"
+          "reference": "urn:uuid:9b9377e9-7935-5d94-98a7-31b63e748ea4"
         },
         "identifier": [
           {
@@ -1740,7 +1782,7 @@
           }
         ],
         "organization": {
-          "reference": "urn:uuid:6fc10948-d46f-5107-a598-ccf93da76fd0"
+          "reference": "urn:uuid:70c5ad7b-ea10-58b9-b492-da620f7f7407"
         },
         "text": {
           "status": "generated",
@@ -1789,10 +1831,6 @@
           {
             "system": "https://fhir.ru/ig/core/systems/frmo",
             "value": "1.2.643.5.1.13.13.12.2.77.7831"
-          },
-          {
-            "system": "urn:oid:1.2.643.5.1.13.13.12.2.77.7831",
-            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
           }
         ],
         "contact": [
@@ -1856,6 +1894,31 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:70c5ad7b-ea10-58b9-b492-da620f7f7407",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "70c5ad7b-ea10-58b9-b492-da620f7f7407",
+        "meta": {
+          "profile": [
+            "https://fhir.ru/ig/core/StructureDefinition/core-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.ru/ig/core/systems/frmo-department",
+            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
+          }
+        ],
+        "partOf": {
+          "reference": "urn:uuid:6fc10948-d46f-5107-a598-ccf93da76fd0"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
+        }
+      }
+    },
+    {
       "fullUrl": "urn:uuid:d88a7406-3a8b-5684-ad76-0cc03bb9ce65",
       "resource": {
         "resourceType": "PractitionerRole",
@@ -1911,7 +1974,7 @@
           }
         ],
         "organization": {
-          "reference": "urn:uuid:4d041a79-88b0-541f-a66e-bbd708e26058"
+          "reference": "urn:uuid:a30fe7fd-913a-5e59-a773-74dec5df6fa7"
         },
         "text": {
           "status": "generated",
@@ -1960,10 +2023,6 @@
           {
             "system": "https://fhir.ru/ig/core/systems/frmo",
             "value": "1.2.643.5.1.13.13.12.2.77.7831"
-          },
-          {
-            "system": "urn:oid:1.2.643.5.1.13.13.12.2.77.7831",
-            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
           }
         ],
         "contact": [
@@ -2020,6 +2079,31 @@
             }
           }
         ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a30fe7fd-913a-5e59-a773-74dec5df6fa7",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "a30fe7fd-913a-5e59-a773-74dec5df6fa7",
+        "meta": {
+          "profile": [
+            "https://fhir.ru/ig/core/StructureDefinition/core-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.ru/ig/core/systems/frmo-department",
+            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
+          }
+        ],
+        "partOf": {
+          "reference": "urn:uuid:4d041a79-88b0-541f-a66e-bbd708e26058"
+        },
         "text": {
           "status": "generated",
           "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
@@ -2257,7 +2341,7 @@
           }
         ],
         "organization": {
-          "reference": "urn:uuid:bf4ab503-064e-5e99-b244-f5475fc8d44c"
+          "reference": "urn:uuid:4b4f1206-5df5-57c0-a5c6-b12c29adf498"
         },
         "text": {
           "status": "generated",
@@ -2357,10 +2441,6 @@
           {
             "system": "https://fhir.ru/ig/core/systems/frmo",
             "value": "1.2.643.5.1.13.13.12.2.77.7831"
-          },
-          {
-            "system": "urn:oid:1.2.643.5.1.13.13.12.2.77.7831",
-            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
           }
         ],
         "contact": [
@@ -2417,6 +2497,31 @@
             }
           }
         ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4b4f1206-5df5-57c0-a5c6-b12c29adf498",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "4b4f1206-5df5-57c0-a5c6-b12c29adf498",
+        "meta": {
+          "profile": [
+            "https://fhir.ru/ig/core/StructureDefinition/core-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.ru/ig/core/systems/frmo-department",
+            "value": "1.2.643.5.1.13.13.12.2.77.7831.0.107531"
+          }
+        ],
+        "partOf": {
+          "reference": "urn:uuid:bf4ab503-064e-5e99-b244-f5475fc8d44c"
+        },
         "text": {
           "status": "generated",
           "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization</p></div>"

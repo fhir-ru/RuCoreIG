@@ -264,10 +264,11 @@ class Conversion:
             out['extension'] = ext
         return out
 
-    def organization(self, el):
+    def organization(self, el, prefer_department=False):
         r = self.resource('Organization', el, profile='core-organization'); dest = self.loc(r)
         r['name'] = self.scalar(one(el, 'cda:name'), 'text()', dest + '/name')
         r['identifier'] = []
+        department = None
         for node in many(el, 'cda:id'):
             root = node.get('root', '')
             target = dest + '/identifier/' + str(len(r['identifier']))
@@ -275,8 +276,13 @@ class Conversion:
                 # Distinct contextual organizations retained; conflicting identities not merged.
                 r['identifier'].append({'system': CORE + 'systems/frmo', 'value': self.scalar(node, 'root', target + '/value', 'FRMO organization OID')})
                 if node.get('extension'):
-                    target = dest + '/identifier/' + str(len(r['identifier']))
-                    r['identifier'].append(self.identifier(node, target))
+                    if department is not None:
+                        raise ValueError('Multiple department identifiers require an explicit mapping decision')
+                    department = self.resource('Organization', el, suffix='department', profile='core-organization')
+                    dd = self.loc(department)
+                    department['identifier'] = [{'system': CORE + 'systems/frmo-department',
+                        'value': self.scalar(node, 'extension', dd + '/identifier/0/value', 'FRMO department OID')}]
+                    department['partOf'] = self.ref(r)
             elif root == '1.2.643.5.1.13.2.1.1.1504.101':
                 q = {'code': {'text': 'Лицензия на осуществление медицинской деятельности'},
                      'identifier': [self.identifier(node, dest + '/qualification/0/identifier/0', system=CORE + 'systems/medlicense')]}
@@ -300,7 +306,7 @@ class Conversion:
             contact['address'] = self.address(one(el, 'cda:addr'), dest + '/contact/0/address')
         if contact:
             r['contact'] = [contact]
-        return r
+        return department if prefer_department and department is not None else r
 
     def actor(self, el, fallback_org=None):
         role = self.resource('PractitionerRole', el); dest = self.loc(role)
@@ -332,7 +338,7 @@ class Conversion:
         if org is None:
             org = one(el, 'cda:scopingOrganization')
         if org is not None:
-            role['organization'] = self.ref(self.organization(org))
+            role['organization'] = self.ref(self.organization(org, prefer_department=True))
         elif fallback_org is not None:
             role['organization'] = self.ref(fallback_org)
         return role
@@ -622,7 +628,7 @@ class Conversion:
         self.date_field(pr, 'birthDate', one(person, 'cda:birthTime'))
         pr['address'] = [self.address(x, pd + '/address/' + str(i)) for i, x in enumerate(many(pat, 'cda:addr'))]
         pr['telecom'] = [self.telecom(x, pd + '/telecom/' + str(i)) for i, x in enumerate(many(pat, 'cda:telecom'))]
-        org = self.organization(one(pat, 'cda:providerOrganization'))
+        org = self.organization(one(pat, 'cda:providerOrganization'), prefer_department=True)
         comp['subject'] = [self.ref(pr)]
         comp['author'] = [self.ref(self.actor(one(self.doc, 'cda:author/cda:assignedAuthor')))]
         cust = one(self.doc, 'cda:custodian/cda:assignedCustodian/cda:representedCustodianOrganization')

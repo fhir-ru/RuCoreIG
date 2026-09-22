@@ -63,6 +63,25 @@ def main():
                 walk(child)
     walk(result)
     encounter = next(r for r in resources.values() if r['resourceType'] == 'Encounter')
+    by_url = {e['fullUrl']: e['resource'] for e in result['entry']}
+    department = by_url[encounter['serviceProvider']['reference']]
+    assert department['identifier'] == [{'system': 'https://fhir.ru/ig/core/systems/frmo-department',
+                                        'value': '1.2.643.5.1.13.13.12.2.77.7831.0.107531'}]
+    parent = by_url[department['partOf']['reference']]
+    assert any(i['system'] == 'https://fhir.ru/ig/core/systems/frmo' and
+               i['value'] == '1.2.643.5.1.13.13.12.2.77.7831' for i in parent['identifier'])
+    assert 'name' not in department and parent['name']
+    assert not any(i['system'].endswith('/frmo-department') for i in parent['identifier'])
+    # Removing only the provider's subdivision yields a direct link to the same MO.
+    alternate = Conversion(source, manifest['assembled_at'])
+    provider_id = alternate.doc.xpath('cda:recordTarget/cda:patientRole/cda:providerOrganization/cda:id', namespaces=NS)[0]
+    del provider_id.attrib['extension']
+    alternate_bundle = alternate.build()
+    alternate_urls = {e['fullUrl']: e['resource'] for e in alternate_bundle['entry']}
+    alternate_encounter = next(r for r in alternate_urls.values() if r['resourceType'] == 'Encounter')
+    alternate_provider = alternate_urls[alternate_encounter['serviceProvider']['reference']]
+    assert alternate_provider['id'] == parent['id']
+    assert not any(i['system'].endswith('/frmo-department') for i in alternate_provider['identifier'])
     assert [(i['system'].rsplit('.', 1)[-1], i['value']) for i in encounter['identifier']] == [('15', '5469-16')]
     chart = encounter['partOf']['identifier']
     assert encounter['partOf']['type'] == 'Encounter' and 'reference' not in encounter['partOf']

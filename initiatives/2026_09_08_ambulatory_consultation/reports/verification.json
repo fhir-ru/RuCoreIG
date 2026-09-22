@@ -1,9 +1,9 @@
 {
   "passed": true,
   "source_values_accounted_for": 1347,
-  "resolvable_mapping_targets": 1049,
-  "internal_references": 225,
-  "resources": 94,
+  "resolvable_mapping_targets": 1044,
+  "internal_references": 230,
+  "resources": 99,
   "source_sections": 18,
   "coverage": {
     "technical": 395,
