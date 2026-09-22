@@ -2,6 +2,8 @@
 
 Вид полиса ОМС необязателен. Для него нормировано кодирование с canonical URI RuCore; альтернативный OID `urn:oid:1.2.643.5.1.13.13.11.1035` сохранён в NamingSystem и допускается открытой нарезкой без отдельного среза. Ограничения `omsType` к OID-кодированию не применяются: NamingSystem не обеспечивает автоматическую эквивалентность при валидации. Полноту проверки альтернативных кодирований определяют прикладные профили и их средства валидации; базовые ограничения FHIR и RuCore сохраняются.
 
+Для российского паспорта дата выдачи передаётся в `identifier[identityDocument].period.start`: по принятому соглашению она совпадает с началом действия идентификатора. Для остальных видов документов это совпадение не предполагается. Наименование выдавшего органа передаётся в `assigner.display`, код подразделения — в `assigner.identifier.value` с `system = "https://fhir.ru/ig/core/systems/ns-division-code"` ([NamingSystem](NamingSystem-core-ns-rf-ns-division-code.html)). Дата, наименование органа и код подразделения необязательны; при передаче кода обязательны его `system` и `value`.
+
 ## Принятые решения по профилированию
 
 | Бизнес-требование | Атрибут | Решение по профилированию |
@@ -88,6 +90,14 @@ Description: "Базовый профиль пациента для россий
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #identity-document
   * type from Core_Vs_Nsi_Identity_Documents (extensible)
+  * period.start ^short = "Начало действия документа; для российского паспорта — дата выдачи"
+  * period.start ^comment = "Для российского паспорта дата выдачи передаётся как начало действия идентификатора в period.start. Это соглашение не распространяется автоматически на другие виды документов. Наличие даты не обязательно."
+  * assigner.display ^short = "Наименование органа, выдавшего документ"
+  * assigner.identifier ^short = "Код подразделения, выдавшего документ"
+  * assigner.identifier ^comment = "Код подразделения необязателен. При его передаче обязательны system и value; используется существующая система идентификации RuCore ns-division-code."
+  * assigner.identifier.system 1..1
+  * assigner.identifier.system = "https://fhir.ru/ig/core/systems/ns-division-code"
+  * assigner.identifier.value 1..1
 
 * identifier[omsPolicy] ^short = "Полис ОМС"
   * value only string

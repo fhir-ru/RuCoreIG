@@ -47,6 +47,14 @@ Description: "Базовый профиль пациента для россий
   * type ^patternCodeableConcept.coding[0].system = "https://fhir.ru/ig/core/CodeSystem/core-cs-semd-identifier-type"
   * type ^patternCodeableConcept.coding[0].code = #identity-document
   * type from Core_Vs_Nsi_Identity_Documents (extensible)
+  * period.start ^short = "Начало действия документа; для российского паспорта — дата выдачи"
+  * period.start ^comment = "Для российского паспорта дата выдачи передаётся как начало действия идентификатора в period.start. Это соглашение не распространяется автоматически на другие виды документов. Наличие даты не обязательно."
+  * assigner.display ^short = "Наименование органа, выдавшего документ"
+  * assigner.identifier ^short = "Код подразделения, выдавшего документ"
+  * assigner.identifier ^comment = "Код подразделения необязателен. При его передаче обязательны system и value; используется существующая система идентификации RuCore ns-division-code."
+  * assigner.identifier.system 1..1
+  * assigner.identifier.system = "https://fhir.ru/ig/core/systems/ns-division-code"
+  * assigner.identifier.value 1..1
 
 * identifier[omsPolicy] ^short = "Полис ОМС"
   * value only string
