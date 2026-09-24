@@ -122,6 +122,18 @@ def main():
     # DGN maps to Condition and the two independent Encounter.diagnosis.use axes.
     enc = next(r for r in all_resources if r['resourceType'] == 'Encounter')
     assert len(enc['diagnosis']) == 2 and all(len(x['use']) == 2 for x in enc['diagnosis'])
+    for diagnosis, rubric in zip(enc['diagnosis'], ['1', '2']):
+        structure, stage = diagnosis['use']
+        assert len(structure['coding']) == len(stage['coding']) == 1
+        assert structure['coding'][0]['system'].endswith('/core-cs-nsi-diagnosis-nosology-kind')
+        assert structure['coding'][0]['code'] == rubric
+        assert structure['coding'][0]['version'] == '2.1'
+        assert stage['coding'][0]['system'].endswith('/core-cs-nsi-diagnosis-justification-degree')
+        assert stage['coding'][0]['code'] == '3' and stage['coding'][0]['version'] == '3.1'
+    for row in trace:
+        if row['id'] in {'amb-map-1176', 'amb-map-1198', 'amb-map-1214', 'amb-map-1237'}:
+            assert row['status'] == 'mapped' and len(row['targets']) == 1
+            assert resolve_target(row['targets'][0]) == row['value']
     assert {r['code']['coding'][0]['code'] for r in all_resources if r['resourceType'] == 'Condition'} == {'I11.9', 'H35.0'}
     # Completed treatment and recommendations must not be conflated or parsed with NLP.
     medication = next(r for r in all_resources if r['resourceType'] == 'MedicationStatement')

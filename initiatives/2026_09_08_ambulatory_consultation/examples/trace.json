@@ -12340,9 +12340,11 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:code[1]/@codeSystemVersion",
     "line": 1517,
     "value": "2.1",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/diagnosis/0/use/0/coding/0/version"
+    ],
+    "rule": "Preserve NSI version when normalizing an alias of the same system",
     "id": "amb-map-1176"
   },
   {
@@ -12566,9 +12568,11 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:entryRelationship[1]/cda:observation[1]/cda:value[1]/@codeSystemVersion",
     "line": 1531,
     "value": "3.1",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/diagnosis/0/use/1/coding/0/version"
+    ],
+    "rule": "Preserve NSI version when normalizing an alias of the same system",
     "id": "amb-map-1198"
   },
   {
@@ -12724,9 +12728,11 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[2]/cda:observation[1]/cda:code[1]/@codeSystemVersion",
     "line": 1554,
     "value": "2.1",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/diagnosis/1/use/0/coding/0/version"
+    ],
+    "rule": "Preserve NSI version when normalizing an alias of the same system",
     "id": "amb-map-1214"
   },
   {
@@ -12961,9 +12967,11 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[2]/cda:observation[1]/cda:entryRelationship[1]/cda:observation[1]/cda:value[1]/@codeSystemVersion",
     "line": 1568,
     "value": "3.1",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "Encounter/55c69e53-bab0-50e5-9280-036b4aa7cae9#/diagnosis/1/use/1/coding/0/version"
+    ],
+    "rule": "Preserve NSI version when normalizing an alias of the same system",
     "id": "amb-map-1237"
   },
   {

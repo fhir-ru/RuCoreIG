@@ -1,0 +1,38 @@
+{
+  "validator": "6.10.4",
+  "terminology_server": "n/a",
+  "counts": {
+    "information": 157,
+    "warning": 264
+  },
+  "errors": 0,
+  "bundle_sha256": "a3511d5d7410ec5b469acbe4035eebcc7b3968be042c89b3a7c39c76d5d57fdb",
+  "profile_sha256": "4d625e9ef36869d34511ead9ccfd85bb48dfe575858784715b3eb35641785ea4",
+  "source_sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+  "diagnostic_diff": {
+    "added": [
+      {
+        "severity": "warning",
+        "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind' version '2.1' could not be found, so the code cannot be validated. No versions of this code system are known",
+        "count": 2
+      },
+      {
+        "severity": "warning",
+        "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree' version '3.1' could not be found, so the code cannot be validated. No versions of this code system are known",
+        "count": 2
+      },
+      {
+        "severity": "warning",
+        "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind' version '2.1' could not be found, so the code cannot be validated. Valid versions: ",
+        "count": 2
+      },
+      {
+        "severity": "warning",
+        "text": "A definition for CodeSystem 'https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree' version '3.1' could not be found, so the code cannot be validated. Valid versions: ",
+        "count": 2
+      }
+    ],
+    "removed": []
+  },
+  "scope": "APP-05; same-system aliases for NSI 1077 and 795 only; code-system versions preserved, not independently verified."
+}

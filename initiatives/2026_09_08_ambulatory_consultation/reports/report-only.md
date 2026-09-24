@@ -1,6 +1,6 @@
 # Значения без структурного переноса
 
-После решений APP-01/02 осталось 48 значений. Все сохранены в исходном XML и полной трассировке.
+После APP-05 осталось 44 значения. Все сохранены в исходном XML и полной трассировке.
 
 | ID | Строка XML | XPath | Значение | Причина |
 |---|---:|---|---|---|
@@ -39,10 +39,6 @@
 | amb-map-0987 | 1316 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[10]/cda:section[1]/cda:entry[4]/cda:organizer[1]/cda:component[1]/cda:observation[1]/cda:value[1]/cda:translation[1]/@codeSystemVersion | 3.23 | GAP: no structured rule; source retained |
 | amb-map-1020 | 1354 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[10]/cda:section[1]/cda:entry[5]/cda:organizer[1]/cda:component[1]/cda:observation[1]/cda:value[1]/cda:translation[1]/@codeSystemVersion | 3.23 | GAP: no structured rule; source retained |
 | amb-map-1052 | 1393 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[11]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:value[1]/cda:translation[1]/@codeSystemVersion | 3.23 | GAP: no structured rule; source retained |
-| amb-map-1176 | 1517 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:code[1]/@codeSystemVersion | 2.1 | GAP: no structured rule; source retained |
-| amb-map-1198 | 1531 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:entryRelationship[1]/cda:observation[1]/cda:value[1]/@codeSystemVersion | 3.1 | GAP: no structured rule; source retained |
-| amb-map-1214 | 1554 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[2]/cda:observation[1]/cda:code[1]/@codeSystemVersion | 2.1 | GAP: no structured rule; source retained |
-| amb-map-1237 | 1568 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[12]/cda:section[1]/cda:entry[2]/cda:observation[1]/cda:entryRelationship[1]/cda:observation[1]/cda:value[1]/@codeSystemVersion | 3.1 | GAP: no structured rule; source retained |
 | amb-map-1282 | 1633 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[14]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:performer[1]/cda:modeCode[1]/@codeSystem | 1.2.643.5.1.13.13.99.2.368 | GAP: no structured rule; source retained |
 | amb-map-1284 | 1633 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[14]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:performer[1]/cda:modeCode[1]/@code | AUTHOR | GAP: no structured rule; source retained |
 | amb-map-1285 | 1633 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[14]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:performer[1]/cda:modeCode[1]/@codeSystemVersion | 2.7 | GAP: no structured rule; source retained |

@@ -1615,7 +1615,8 @@
                   {
                     "system": "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind",
                     "code": "1",
-                    "display": "Основное заболевание"
+                    "display": "Основное заболевание",
+                    "version": "2.1"
                   }
                 ]
               },
@@ -1624,7 +1625,8 @@
                   {
                     "system": "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree",
                     "code": "3",
-                    "display": "Заключительный клинический диагноз"
+                    "display": "Заключительный клинический диагноз",
+                    "version": "3.1"
                   }
                 ]
               }
@@ -1644,7 +1646,8 @@
                   {
                     "system": "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-nosology-kind",
                     "code": "2",
-                    "display": "Осложнение основного заболевания"
+                    "display": "Осложнение основного заболевания",
+                    "version": "2.1"
                   }
                 ]
               },
@@ -1653,7 +1656,8 @@
                   {
                     "system": "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-diagnosis-justification-degree",
                     "code": "3",
-                    "display": "Заключительный клинический диагноз"
+                    "display": "Заключительный клинический диагноз",
+                    "version": "3.1"
                   }
                 ]
               }

@@ -39,6 +39,14 @@ NORMALIZE = {
 }
 
 
+# Confirmed aliases of the same NSI systems, not translations to RuCore codes.
+# Preserve the NSI business version under the preferred URI; one Coding suffices.
+SAME_SYSTEM_ALIASES = {
+    '1.2.643.5.1.13.13.11.1077',
+    '1.2.643.5.1.13.13.99.2.795',
+}
+
+
 def qname(tag):
     q = E.QName(tag)
     return PREFIX.get(q.namespace, 'ns') + ':' + q.localname if q.namespace else q.localname
@@ -163,11 +171,13 @@ class Conversion:
                 if node.get(src):
                     c[dst] = self.scalar(node, src, dest + '/' + dst)
             normalized = node.get('codeSystem') in NORMALIZE
-            if node.get('codeSystemVersion') and not normalized:
-                c['version'] = self.scalar(node, 'codeSystemVersion', dest + '/version')
+            same_system = node.get('codeSystem') in SAME_SYSTEM_ALIASES
+            if node.get('codeSystemVersion') and (not normalized or same_system):
+                c['version'] = self.scalar(node, 'codeSystemVersion', dest + '/version',
+                    'Preserve NSI version when normalizing an alias of the same system' if same_system else 'copy')
             codings.append({k: v for k, v in c.items() if v is not None})
-            if normalized and retain_original:
-                # NSI edition is not the version of the RuCore CodeSystem.
+            if normalized and retain_original and not same_system:
+                # Other mappings retain their original coding until alias/version semantics are reviewed.
                 original_dest = target + '/coding/' + str(len(codings))
                 original = dict(c)
                 original['system'] = 'urn:oid:' + node.get('codeSystem')
