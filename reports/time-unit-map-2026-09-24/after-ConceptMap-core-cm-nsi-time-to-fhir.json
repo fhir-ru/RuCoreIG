@@ -1,0 +1,89 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "core-cm-nsi-time-to-fhir",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap core-cm-nsi-time-to-fhir</b></p><a name=\"core-cm-nsi-time-to-fhir\"> </a><a name=\"hccore-cm-nsi-time-to-fhir\"> </a><p>Mapping from <a href=\"ValueSet-core-vs-nsi-units-of-measurement.html\">Core ValueSet Единицы измерения</a> to <a href=\"http://hl7.org/fhir/R5/valueset-units-of-time.html\">UnitsOfTime</a></p><br/><p>Mapping from <a href=\"CodeSystem-core-cs-nsi-units-of-measurement.html\">Core CodeSystem Единицы измерения</a> to <code>http://unitsofmeasure.org</code> (Unified Code for Units of Measure (UCUM))</p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>21 (с)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>s</td><td/></tr><tr><td>22 (мин)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>min</td><td/></tr><tr><td>23 (ч)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>h</td><td/></tr><tr><td>24 (сут)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>d</td><td/></tr><tr><td>520 (нед)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>wk</td><td/></tr><tr><td>521 (мес)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>mo</td><td>Соответствие единицы в контексте Timing; не правило пересчёта календарного периода в фиксированное число дней или секунд.</td></tr><tr><td>522 (год)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#concept-map-relationship-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>a</td><td>Соответствие единицы в контексте Timing; не правило пересчёта календарного периода в фиксированное число дней или секунд.</td></tr></table></div>"
+  },
+  "url" : "https://fhir.ru/ig/core/ConceptMap/core-cm-nsi-time-to-fhir",
+  "version" : "0.26.0",
+  "name" : "CoreCmNsiTimeToFhir",
+  "title" : "Единицы времени НСИ — единицы расписания FHIR",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-09-24",
+  "publisher" : "HL7 FHIR Россия",
+  "contact" : [{
+    "name" : "HL7 FHIR Россия",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://fhir.ru"
+    }]
+  }],
+  "description" : "Семь единиц времени НСИ МЗ РФ 1.2.643.5.1.13.13.11.1358 сопоставлены с UCUM для Timing.repeat.periodUnit и durationUnit. Соответствия подтверждены колонкой UCUM архивной копии НСИ (каталог API Crafter, обновление 25.10.2021); номер редакции НСИ не установлен. Это предложение RuCore, а не утверждённое Минздравом соответствие.",
+  "purpose" : "Общее правило перевода кодов единиц расписания для прикладных профилей. Число не пересчитывается. Календарная семантика месяцев и лет определяется расписанием; карта не задаёт перевод в дни или секунды. Отсутствие кода означает отсутствие установленного соответствия.",
+  "sourceScopeCanonical" : "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-units-of-measurement",
+  "targetScopeCanonical" : "http://hl7.org/fhir/ValueSet/units-of-time",
+  "group" : [{
+    "source" : "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "21",
+      "display" : "с",
+      "target" : [{
+        "code" : "s",
+        "relationship" : "equivalent"
+      }]
+    },
+    {
+      "code" : "22",
+      "display" : "мин",
+      "target" : [{
+        "code" : "min",
+        "relationship" : "equivalent"
+      }]
+    },
+    {
+      "code" : "23",
+      "display" : "ч",
+      "target" : [{
+        "code" : "h",
+        "relationship" : "equivalent"
+      }]
+    },
+    {
+      "code" : "24",
+      "display" : "сут",
+      "target" : [{
+        "code" : "d",
+        "relationship" : "equivalent"
+      }]
+    },
+    {
+      "code" : "520",
+      "display" : "нед",
+      "target" : [{
+        "code" : "wk",
+        "relationship" : "equivalent"
+      }]
+    },
+    {
+      "code" : "521",
+      "display" : "мес",
+      "target" : [{
+        "code" : "mo",
+        "relationship" : "equivalent",
+        "comment" : "Соответствие единицы в контексте Timing; не правило пересчёта календарного периода в фиксированное число дней или секунд."
+      }]
+    },
+    {
+      "code" : "522",
+      "display" : "год",
+      "target" : [{
+        "code" : "a",
+        "relationship" : "equivalent",
+        "comment" : "Соответствие единицы в контексте Timing; не правило пересчёта календарного периода в фиксированное число дней или секунд."
+      }]
+    }]
+  }]
+}

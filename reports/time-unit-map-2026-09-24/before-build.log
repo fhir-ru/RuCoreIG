@@ -1,0 +1,214 @@
+INFO:root:about to clone!
+DEBUG:root:running: git clone --recursive https://github.com/fhir-ru/RuCoreIG --branch main repo
+Cloning into 'repo'...
+DEBUG:root:Time to deadline 35879.99587 seconds
+DEBUG:root:running: wget -q https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -O publisher.jar
+DEBUG:root:Time to deadline 35879.026247 seconds
+DEBUG:root:running: npm -g install fsh-sushi
+DEBUG:root:Time to deadline 35877.756585 seconds
+npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 143 packages in 8s
+
+14 packages are looking for funding
+  run `npm fund` for details
+npm notice
+npm notice New major version of npm available! 10.9.7 -> 12.1.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+npm notice To update run: npm install -g npm@12.1.0
+npm notice
+DEBUG:root:running: java -Xms19000m -Xmx19000m -jar ../publisher.jar -ig ig.json -api-key-file /etc/ig.builder.keyfile.ini -fhir-settings /etc/fhir-settings.json -auto-ig-build -tx http://tx.fhir.org -target https://build.fhir.org/ig/fhir-ru/RuCoreIG/ -out /scratch/repo
+DEBUG:root:Time to deadline 35870.052993 seconds
+FHIR IG Publisher Version 2.3.4 (Git# 7ae92f79415a). Built 2026-09-04T06:21:07.840Z (20 days old)
+Detected Java version: 21.0.10 from /opt/java/openjdk on Linux/amd64 (64bit). 19008MB available
+dir = /scratch/repo, path = /opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Parameters: -ig ig.json -api-key-file /etc/ig.builder.keyfile.ini -fhir-settings /etc/fhir-settings.json -auto-ig-build -tx http://tx.fhir.org -target https://build.fhir.org/ig/fhir-ru/RuCoreIG/ -out /scratch/repo
+Character encoding = UTF-8 / UTF-8
+Start Clock @ Thursday, September 24, 2026, 5:08:40 PM Coordinated Universal Time (2026-09-24T17:08:40Z)
+
+Build FHIR IG from /scratch/repo                                                                     (00:00.033 / 00:00.033, 121Mb)
+FHIR settings loaded from /etc/fhir-settings.json                                                    (00:00.003 / 00:00.036, 121Mb)
+Package Cache: /var/lib/.fhir/packages                                                               (00:00.003 / 00:00.040, 121Mb)
+Run Sushi on /scratch/repo                                                                           (00:00.010 / 00:00.050, 121Mb)
+Sushi: info  Running SUSHI v3.20.1 (implements FHIR Shorthand specification v3.0.0)                  (00:00.621 / 00:00.672, 137Mb)
+Sushi: info  Arguments:                                                                              (00:00.000 / 00:00.672, 137Mb)
+Sushi: info    --require-latest                                                                      (00:00.000 / 00:00.672, 137Mb)
+Sushi: info    --out /scratch/repo                                                                   (00:00.000 / 00:00.673, 137Mb)
+Sushi: info    /scratch/repo                                                                         (00:00.000 / 00:00.673, 137Mb)
+Sushi: info  Using configuration file: /scratch/repo/sushi-config.yaml                               (00:00.443 / 00:01.116, 137Mb)
+Sushi: info  Importing FSH text...                                                                   (00:00.133 / 00:01.249, 137Mb)
+Sushi: info  Preprocessed 21 documents with 0 aliases.                                               (00:01.048 / 00:02.298, 137Mb)
+Sushi: info  Imported 52 definitions and 84 instances.                                               (00:00.060 / 00:02.359, 137Mb)
+Sushi: info  Resolved hl7.fhir.uv.tools.r5#latest to concrete version 1.2.0                          (00:00.795 / 00:03.154, 137Mb)
+Sushi: info  Attempting to download hl7.fhir.uv.tools.r5#1.2.0 from https://packages.fhir.org/hl7.fhir.uv.tools.r5/1.2.0 (00:00.001 / 00:03.156, 137Mb)
+Sushi: info  Downloaded hl7.fhir.uv.tools.r5#1.2.0                                                   (00:00.681 / 00:03.837, 137Mb)
+Sushi: info  Cached hl7.fhir.uv.tools.r5#1.2.0 to /home/fhiruser/.fhir/packages/hl7.fhir.uv.tools.r5#1.2.0 (00:00.003 / 00:03.840, 137Mb)
+Sushi: info  Loaded hl7.fhir.uv.tools.r5#1.2.0 with 120 resources                                    (00:00.080 / 00:03.920, 137Mb)
+Sushi: info  Resolved hl7.terminology.r5#latest to concrete version 7.4.0                            (00:00.140 / 00:04.061, 137Mb)
+Sushi: info  Attempting to download hl7.terminology.r5#7.4.0 from https://packages.fhir.org/hl7.terminology.r5/7.4.0 (00:00.000 / 00:04.061, 137Mb)
+Sushi: info  Downloaded hl7.terminology.r5#7.4.0                                                     (00:02.965 / 00:07.026, 137Mb)
+Sushi: info  Cached hl7.terminology.r5#7.4.0 to /home/fhiruser/.fhir/packages/hl7.terminology.r5#7.4.0 (00:00.003 / 00:07.030, 137Mb)
+Sushi: info  Loaded hl7.terminology.r5#7.4.0 with 4211 resources                                     (00:01.089 / 00:08.120, 137Mb)
+Sushi: info  Attempting to download hl7.fhir.r5.core#5.0.0 from https://packages.fhir.org/hl7.fhir.r5.core/5.0.0 (00:00.000 / 00:08.120, 137Mb)
+Sushi: info  Downloaded hl7.fhir.r5.core#5.0.0                                                       (00:03.242 / 00:11.363, 137Mb)
+Sushi: info  Cached hl7.fhir.r5.core#5.0.0 to /home/fhiruser/.fhir/packages/hl7.fhir.r5.core#5.0.0   (00:00.001 / 00:11.365, 137Mb)
+Sushi: info  Loaded hl7.fhir.r5.core#5.0.0 with 2968 resources                                       (00:00.853 / 00:12.219, 137Mb)
+Sushi: info  Resolved hl7.fhir.uv.extensions.r5#latest to concrete version 5.3.0                     (00:00.135 / 00:12.354, 137Mb)
+Sushi: info  Attempting to download hl7.fhir.uv.extensions.r5#5.3.0 from https://packages.fhir.org/hl7.fhir.uv.extensions.r5/5.3.0 (00:00.000 / 00:12.355, 137Mb)
+Sushi: info  Downloaded hl7.fhir.uv.extensions.r5#5.3.0                                              (00:01.145 / 00:13.500, 137Mb)
+Sushi: info  Cached hl7.fhir.uv.extensions.r5#5.3.0 to /home/fhiruser/.fhir/packages/hl7.fhir.uv.extensions.r5#5.3.0 (00:00.001 / 00:13.501, 137Mb)
+Sushi: info  Loaded hl7.fhir.uv.extensions.r5#5.3.0 with 856 resources                               (00:00.247 / 00:13.749, 137Mb)
+Sushi: info  Loaded virtual package sushi-local#LOCAL with 0 resources                               (00:00.014 / 00:13.764, 137Mb)
+Sushi: info  Converting FSH to FHIR resources...                                                     (00:00.018 / 00:13.782, 137Mb)
+Sushi: info  Converted 22 FHIR StructureDefinitions.                                                 (00:03.809 / 00:17.592, 137Mb)
+Sushi: info  Converted 15 FHIR CodeSystems.                                                          (00:00.447 / 00:18.040, 137Mb)
+Sushi: info  Converted 15 FHIR ValueSets.                                                            (00:00.578 / 00:18.618, 137Mb)
+Sushi: info  Converted 84 FHIR instances.                                                            (00:06.602 / 00:25.221, 137Mb)
+Sushi: info  Exporting FHIR resources as JSON...                                                     (00:00.000 / 00:25.221, 137Mb)
+Sushi: info  Exported 124 FHIR resources as JSON.                                                    (00:00.078 / 00:25.300, 137Mb)
+Sushi: info  Assembling Implementation Guide sources...                                              (00:00.004 / 00:25.304, 137Mb)
+Sushi: info  Generated ImplementationGuide-ru.core.json                                              (00:00.019 / 00:25.323, 137Mb)
+Sushi: info  Assembled Implementation Guide sources; ready for IG Publisher.                         (00:00.000 / 00:25.324, 137Mb)
+Sushi: info  The _build script hosted at https://github.com/HL7/ig-publisher-scripts is useful for downloading and running the IG Publisher. (00:00.000 / 00:25.324, 137Mb)
+Sushi: ========================= SUSHI RESULTS ===========================                           (00:00.000 / 00:25.324, 137Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:25.325, 137Mb)
+Sushi: | |    Profiles   |  Extensions  |   Logicals   |   Resources   | |                           (00:00.000 / 00:25.325, 137Mb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:25.325, 137Mb)
+Sushi: | |      15       |      7       |      0       |       0       | |                           (00:00.000 / 00:25.325, 137Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:25.326, 137Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:25.326, 137Mb)
+Sushi: | |      ValueSets     |    CodeSystems    |     Instances      | |                           (00:00.000 / 00:25.326, 137Mb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:25.326, 137Mb)
+Sushi: | |         15         |        15         |         84         | |                           (00:00.000 / 00:25.326, 137Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:25.327, 137Mb)
+Sushi: |                                                                 |                           (00:00.000 / 00:25.327, 137Mb)
+Sushi: ===================================================================                           (00:00.000 / 00:25.327, 137Mb)
+Sushi: | Catch of the day, right here!          0 Errors      0 Warnings |                           (00:00.000 / 00:25.327, 137Mb)
+Sushi: ===================================================================                           (00:00.000 / 00:25.327, 137Mb)
+Root directory: /scratch/repo                                                                        (00:00.043 / 00:25.371, 137Mb)
+Load Template from fhir.base.template#current                                                        (00:00.647 / 00:26.018, 38Mb)
+[33mThis content depends on fhir.base.template which is no longer considered secure to use
+[0;39m[33mSee Security notification at https://www.fhir.org/guides/security-notices/2026-03-npm-dependencies.html
+[0;39m[39mInstalling fhir.base.template#current to the package cache
+[0;39m[39m  Fetching:
+[0;39m[39m
+[0;39m[39mInstalling fhir.base.template#current
+[0;39m[39m done.
+[0;39m[39m loaded @ /var/lib/.fhir/packages/fhir.base.template#current
+[0;39mScanning directory: /scratch/repo/template
+======================================================================
+Terminology Cache is at /scratch/repo/input-cache/txcache. Trimming now                              (00:06.137 / 00:32.156, 189Mb)
+Core Package hl7.fhir.r5.core#5.0.0                                                                  (00:00.001 / 00:32.157, 189Mb)
+Running Terminology Log: /tmp/ohfu-fhir-ig-5684759026473721720.html
+Connect to Terminology Server at http://tx.fhir.org                                                  (00:04.902 / 00:37.060, 692Mb)
+[39mInstalling hl7.fhir.pubpack#0.2.5 to the package cache
+[0;39m[39m  Fetching:
+[0;39m[39m
+[0;39m[39mInstalling hl7.fhir.pubpack#0.2.5
+[0;39m[39m done.
+[0;39m[39m loaded @ /var/lib/.fhir/packages/hl7.fhir.pubpack#0.2.5
+[0;39m[39mLoad Package hl7.fhir.pubpack#0.2.5
+[0;39m[39mInstalling hl7.fhir.xver-extensions#0.1.0 to the package cache
+[0;39m[39m  Fetching:
+[0;39m[39m
+[0;39m[39mInstalling hl7.fhir.xver-extensions#0.1.0
+[0;39m[39m done.
+[0;39m[39m loaded @ /var/lib/.fhir/packages/hl7.fhir.xver-extensions#0.1.0
+[0;39m[39mLoad Package hl7.fhir.xver-extensions#0.1.0
+[0;39m[39mLoad Package hl7.terminology.r5#7.4.0
+[0;39m[39mLoad Package hl7.fhir.uv.extensions.r5#5.3.0
+[0;39m[39mInstalling hl7.fhir.uv.tools.r5#1.1.2 to the package cache
+[0;39m[39m  Fetching:
+[0;39m[39m
+[0;39m[39mInstalling hl7.fhir.uv.tools.r5#1.1.2
+[0;39m[39m done.
+[0;39m[39m loaded @ /var/lib/.fhir/packages/hl7.fhir.uv.tools.r5#1.1.2
+[0;39m[39mLoad Package hl7.fhir.uv.tools.r5#1.1.2
+[0;39mInitialization complete                                                                              (00:07.331 / 00:44.391, 531Mb)
+Load IG                                                                                              (00:00.000 / 00:44.391, 531Mb)
+Load Content                                                                                         (00:00.003 / 00:44.395, 534Mb)
+Using en-US as the default narrative language. (no language information in Implementation Guide)     (00:00.050 / 00:44.445, 539Mb)
+Process Loaded Resources                                                                             (00:00.539 / 00:44.984, 611Mb)
+Generating Snapshots                                                                                 (00:00.396 / 00:45.381, 659Mb)
+
+Signing Certificate: RSA key for Subject: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us from: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us
+Fetch https://fhir.ru/ig/core/package-list.json for version check                                    (00:00.822 / 00:46.203, 835Mb)
+Checking Language                                                                                    (00:00.131 / 00:46.335, 851Mb)
+Load Dependency Info                                                                                 (00:00.004 / 00:46.339, 851Mb)
+Load Info                                                                                            (00:00.002 / 00:46.342, 851Mb)
+Load Paths                                                                                           (00:00.001 / 00:46.343, 856Mb)
+Check R4 / R4B                                                                                       (00:00.002 / 00:46.345, 856Mb)
+Assign Comparison Ids                                                                                (00:00.038 / 00:46.383, 859Mb)
+Propagating status                                                                                   (00:00.000 / 00:46.384, 859Mb)
+Generating Narratives                                                                                (00:00.000 / 00:46.384, 859Mb)
+Validating Conformance Resources                                                                     (00:01.828 / 00:48.212, 490Mb)
+Check profiles & code systems                                                                        (00:12.302 / 01:00.515, 837Mb)
+Check realm rules                                                                                    (00:00.006 / 01:00.521, 837Mb)
+Previous Version Comparison                                                                          (00:00.000 / 01:00.522, 837Mb)
+.. loaded. Process                                                                                   (00:00.000 / 01:00.522, 837Mb)
+finish previous version comparison                                                                   (00:00.000 / 01:00.522, 837Mb)
+finish ipa version                                                                                   (00:00.000 / 01:00.522, 837Mb)
+finish ips version                                                                                   (00:00.000 / 01:00.523, 837Mb)
+comparisons done                                                                                     (00:00.000 / 01:00.523, 837Mb)
+Checking for Bundles to sign                                                                         (00:00.040 / 01:00.564, 845Mb)
+Validating Resources                                                                                 (00:00.000 / 01:00.564, 845Mb)
+Processing Provenance Records                                                                        (00:04.885 / 01:05.450, 941Mb)
+Generating Outputs in /scratch/repo/output                                                           (00:00.000 / 01:05.450, 941Mb)
+Generate Native Outputs                                                                              (00:00.550 / 01:06.001, 957Mb)
+Run Template                                                                                         (00:16.667 / 01:22.669, 532Mb)
+Generate HTML Outputs                                                                                (00:01.426 / 01:24.096, 628Mb)
+Generate Spreadsheets                                                                                (00:10.532 / 01:34.628, 575Mb)
+Generate Summaries                                                                                   (00:05.213 / 01:39.841, 2Gb)
+Generating Summary Outputs                                                                           (00:00.000 / 01:39.841, 2Gb)
+DB Cumulative Time invested: 00:00:01.702
+Sending Usage Stats to Server                                                                        (00:01.700 / 01:41.542, 2Gb)
+## Memory (MB): Use = 2511, Free = 16496, Total = 19008, Max = 19008                                 (00:00.011 / 01:41.554, 2Gb)
+Reclaiming memory...                                                                                 (00:00.000 / 01:41.554, 2Gb)
+Generating combined package                                                                          (00:00.009 / 01:41.565, 2Gb)
+Error generating combined package: /scratch/repo/output/package.tgz (No such file or directory)      (00:00.005 / 01:41.570, 2Gb)
+## Memory (MB): Use = 477, Free = 18530, Total = 19008, Max = 19008                                  (00:00.421 / 01:41.992, 501Mb)
+Run jekyll: jekyll build --destination "/scratch/repo/output" (in folder /scratch/repo/temp/pages)   (00:00.003 / 01:41.995, 501Mb)
+Troubleshooting Note: usual cases for Jekyll to fail are:                                            (00:00.000 / 01:41.995, 501Mb)
+* A failure to produce a fragment that is already logged in the output above                         (00:00.000 / 01:41.995, 501Mb)
+* A reference to a manually edited file that hasn't been provided                                    (00:00.000 / 01:41.995, 501Mb)
+Jekyll: Source: /scratch/repo/temp/pages                                                             (00:00.637 / 01:42.633, 517Mb)
+Jekyll: Generating...                                                                                (00:00.000 / 01:42.634, 517Mb)
+Jekyll: done in 5.471 seconds.                                                                       (00:05.470 / 01:48.104, 517Mb)
+Checking Output HTML                                                                                 (00:02.862 / 01:50.967, 741Mb)
+Processed /scratch/repo/output - % reduction = 99 (62182190 ==> 827998)
+found 2101 files                                                                                     (00:01.795 / 01:52.763, 2Gb)
+........................................
+........................................
+  ... 2101 html files, 0 pages invalid xhtml (0%)                                                    (00:28.140 / 02:20.903, 8Gb)
+  ... 254396 links, 5 broken links (0%)                                                              (00:00.000 / 02:20.904, 8Gb)
+Generate fragment-usage-analysis.csv                                                                 (00:00.000 / 02:20.904, 8Gb)
+Build final .zip                                                                                     (00:00.011 / 02:20.916, 8Gb)
+Final .zip built                                                                                     (00:02.129 / 02:23.046, 8Gb)
+[39mInstalling hl7.terminology.r5#7.1.0 to the package cache
+[0;39m[39m  Fetching:
+[0;39m[39m
+[0;39m[39mInstalling hl7.terminology.r5#7.1.0
+[0;39m[39m done.
+[0;39m[39m loaded @ /var/lib/.fhir/packages/hl7.terminology.r5#7.1.0
+[0;39m[39mInstalling hl7.fhir.uv.extensions.r5#5.2.0 to the package cache
+[0;39m[39m  Fetching:
+[0;39m[39m
+[0;39m[39mInstalling hl7.fhir.uv.extensions.r5#5.2.0
+[0;39m[39m done.
+[0;39m[39m loaded @ /var/lib/.fhir/packages/hl7.fhir.uv.extensions.r5#5.2.0
+[0;39mBuilt. Times: loading: 00:01.940, generate: 02:34.544, narrative generation: 00:01.827, realm-rules: 00:00.000, previous-version: 00:00.001, jekyll: 00:06.150, validation: 00:17.077 (#125), template: 00:01.443 (#3) (00:57.835 / 03:20.881, 970Mb)
+Generating QA                                                                                        (00:00.000 / 03:20.881, 970Mb)
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-coverage-document-oms.html', err = 'Illegal HTML: illegal html element: Виды (, может быть известен под следующими идентификаторами: OID'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-coverage-document.html', err = 'Illegal HTML: illegal html element: Типы (, может быть известен под следующими идентификаторами: OID'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-diagnosis-justification-degree.html', err = 'Illegal HTML: illegal html element: Степень (, может быть известен под следующими идентификаторами: '
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-diagnosis-nosology-kind.html', err = 'Illegal HTML: illegal html element: Виды (, может быть известен под следующими идентификаторами: OID'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-insurer.html', err = 'Illegal HTML: illegal html element: Страховые (, может быть известен под следующими идентификаторами'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-medical-workers-positions.html', err = 'Illegal HTML: illegal html element: Должности (, может быть известен под следующими идентификаторами'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-register-of-medical-organizations.html', err = 'Illegal HTML: illegal html element: Реестр (, может быть известен под следующими идентификаторами: O'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/NamingSystem-core-ns-nsi-sources-of-payment.html', err = 'Illegal HTML: illegal html element: Источники (, может быть известен под следующими идентификаторами'
+Internal error in location for message: 'Error @1, 2: Found / expecting a token name', loc = '/scratch/repo/output/history.html', err = 'This IG generates a page named 'history.html'. That file name is reserved by the publication process'
+Validation output in /scratch/repo/output/qa.html
+Errors: 49, Warnings: 167, Info: 99, Broken Links: 28 (00:00.621 / 03:21.502, 1Gb)
+Finished @ 9/24/26, 5:12 PM. Max Memory Used = 8Gb                                                   (00:00.055 / 03:21.558, 1Gb)
