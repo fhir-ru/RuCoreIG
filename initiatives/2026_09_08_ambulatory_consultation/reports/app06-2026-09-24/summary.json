@@ -1,0 +1,18 @@
+{
+  "validator": "6.10.4",
+  "extension_package": "hl7.fhir.uv.extensions.r5#5.2.0",
+  "terminology_server": "n/a",
+  "counts": {
+    "information": 157,
+    "warning": 264
+  },
+  "errors": 0,
+  "bundle_sha256": "8af64e07cc34bb927c81dcd7e507bde22751ceaacb4edb640cc5ce16cb32d913",
+  "source_sha256": "c40d609b70093cd7a044cdad3bd76f950b7929ec863a5b4b0ba33cf495ff5b45",
+  "diagnostic_diff": {
+    "added": [],
+    "removed": []
+  },
+  "negative_check": "timing-exact valueString rejected; boolean expected",
+  "scope": "Mapping only; no RuCore profile changes. APP-06 remains open for source unit versions and period translation."
+}

@@ -1,14 +1,14 @@
 {
   "passed": true,
   "source_values_accounted_for": 1347,
-  "resolvable_mapping_targets": 1048,
+  "resolvable_mapping_targets": 1049,
   "internal_references": 230,
   "resources": 99,
   "source_sections": 18,
   "coverage": {
     "technical": 395,
-    "mapped": 858,
-    "report-only": 44,
+    "mapped": 859,
+    "report-only": 43,
     "transformed": 50
   },
   "checks": [

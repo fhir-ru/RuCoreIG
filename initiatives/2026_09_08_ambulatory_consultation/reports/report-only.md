@@ -1,6 +1,6 @@
 # Значения без структурного переноса
 
-После APP-05 осталось 44 значения. Все сохранены в исходном XML и полной трассировке.
+После частичного решения APP-06 осталось 43 значения. Все сохранены в исходном XML и полной трассировке.
 
 | ID | Строка XML | XPath | Значение | Причина |
 |---|---:|---|---|---|
@@ -23,7 +23,6 @@
 | amb-map-0678 | 915 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[5]/cda:section[1]/cda:component[2]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:entryRelationship[1]/cda:observation[1]/cda:code[1]/@displayName | Краткая характеристика клинической картины | GAP: no structured rule; source retained |
 | amb-map-0679 | 915 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[5]/cda:section[1]/cda:component[2]/cda:section[1]/cda:entry[1]/cda:observation[1]/cda:entryRelationship[1]/cda:observation[1]/cda:code[1]/@codeSystemVersion | 5.27 | GAP: no structured rule; source retained |
 | amb-map-0786 | 1093 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[9]/cda:section[1]/cda:entry[1]/cda:substanceAdministration[1]/cda:code[1]/@nullFlavor | NI | GAP: no structured rule; source retained |
-| amb-map-0791 | 1104 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[9]/cda:section[1]/cda:entry[1]/cda:substanceAdministration[1]/cda:effectiveTime[2]/@institutionSpecified | false | GAP: no structured rule; source retained |
 | amb-map-0794 | 1108 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[9]/cda:section[1]/cda:entry[1]/cda:substanceAdministration[1]/cda:effectiveTime[2]/cda:period[1]/cda:translation[1]/@value | 12 | GAP: no structured rule; source retained |
 | amb-map-0795 | 1108 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[9]/cda:section[1]/cda:entry[1]/cda:substanceAdministration[1]/cda:effectiveTime[2]/cda:period[1]/cda:translation[1]/@code | 23 | GAP: no structured rule; source retained |
 | amb-map-0796 | 1108 | /cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[9]/cda:section[1]/cda:entry[1]/cda:substanceAdministration[1]/cda:effectiveTime[2]/cda:period[1]/cda:translation[1]/@displayName | ч | GAP: no structured rule; source retained |

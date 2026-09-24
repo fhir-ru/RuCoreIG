@@ -117,8 +117,10 @@ def main():
     # True source observations survive numerically, including clinically suspect pulse unit.
     obs = [r for r in all_resources if r['resourceType'] == 'Observation']
     pulse = next(r for r in obs if any(x.get('code') == '5' and x.get('system', '').endswith('.262') for x in r['code'].get('coding', [])))
-    assert pulse['valueQuantity']['value'] == 100 and pulse['valueQuantity']['unit'] == 'U/s'
-    assert pulse['valueQuantity']['extension'][0]['valueQuantity']['code'] == '168'
+    assert pulse['valueQuantity']['value'] == 100 and pulse['valueQuantity']['unit'] == 'Ед/с'
+    assert pulse['valueQuantity']['system'] == 'urn:oid:1.2.643.5.1.13.13.11.1358'
+    assert pulse['valueQuantity']['code'] == '168'
+    assert pulse['valueQuantity']['extension'][0]['valueQuantity']['unit'] == 'U/s'
     # DGN maps to Condition and the two independent Encounter.diagnosis.use axes.
     enc = next(r for r in all_resources if r['resourceType'] == 'Encounter')
     assert len(enc['diagnosis']) == 2 and all(len(x['use']) == 2 for x in enc['diagnosis'])
@@ -138,6 +140,28 @@ def main():
     # Completed treatment and recommendations must not be conflated or parsed with NLP.
     medication = next(r for r in all_resources if r['resourceType'] == 'MedicationStatement')
     assert medication['dosage'][0]['timing']['repeat']['period'] == 12
+    repeat = medication['dosage'][0]['timing']['repeat']
+    assert repeat['periodUnit'] == 'h' and repeat['frequency'] == 1
+    assert repeat['extension'] == [{'url': 'http://hl7.org/fhir/StructureDefinition/timing-exact', 'valueBoolean': True}]
+    dose = medication['dosage'][0]['doseAndRate'][0]['doseQuantity']
+    assert dose['system'] == 'urn:oid:1.2.643.5.1.13.13.11.1358' and dose['code'] == '293'
+    assert dose['value'] == 1 and dose['unit'] == 'шт'
+    assert dose['extension'][0]['valueQuantity']['unit'] == '{таблетка}'
+    for flag, expected in [('true', False), ('1', False), ('false', True), ('0', True), (None, None)]:
+        variant = Conversion(source, manifest['assembled_at'])
+        periodic = variant.doc.xpath('//*[@institutionSpecified]', namespaces=NS)[0]
+        if flag is None:
+            del periodic.attrib['institutionSpecified']
+        else:
+            periodic.set('institutionSpecified', flag)
+        vb = variant.build()
+        vm = next(e['resource'] for e in vb['entry'] if e['resource']['resourceType'] == 'MedicationStatement')
+        vr = vm['dosage'][0]['timing']['repeat']
+        if expected is None:
+            assert 'extension' not in vr
+        else:
+            assert vr['extension'][0]['valueBoolean'] is expected
+
     assert 'БЕНДАЗОЛ' in medication['medication']['concept']['coding'][0]['display']
     plan = next(r for r in all_resources if r['resourceType'] == 'CarePlan')
     assert 'Бисопролол' in plan['description'] and 'activity' not in plan

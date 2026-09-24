@@ -3071,17 +3071,17 @@
         },
         "valueQuantity": {
           "value": 30.0,
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "53",
           "unit": "%",
-          "system": "http://unitsofmeasure.org",
-          "code": "%",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 30.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "53",
-                "unit": "%"
+                "unit": "%",
+                "system": "http://unitsofmeasure.org",
+                "code": "%"
               }
             }
           ]
@@ -3757,17 +3757,17 @@
               {
                 "doseQuantity": {
                   "value": 1.0,
-                  "unit": "{таблетка}",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "{таблетка}",
+                  "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+                  "code": "293",
+                  "unit": "шт",
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
                       "valueQuantity": {
                         "value": 1.0,
-                        "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                        "code": "293",
-                        "unit": "шт"
+                        "unit": "{таблетка}",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "{таблетка}"
                       }
                     }
                   ]
@@ -3778,7 +3778,13 @@
               "repeat": {
                 "frequency": 1,
                 "period": 12.0,
-                "periodUnit": "h"
+                "periodUnit": "h",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/timing-exact",
+                    "valueBoolean": true
+                  }
+                ]
               }
             },
             "patientInstruction": "2 часа до или через 2 часа после приема пищи",
@@ -3890,17 +3896,17 @@
         "effectiveDateTime": "2023-05-02T15:35:00+03:00",
         "valueQuantity": {
           "value": 100.0,
-          "unit": "U/s",
-          "system": "http://unitsofmeasure.org",
-          "code": "U/s",
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "168",
+          "unit": "Ед/с",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 100.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "168",
-                "unit": "Ед/с"
+                "unit": "U/s",
+                "system": "http://unitsofmeasure.org",
+                "code": "U/s"
               }
             }
           ]
@@ -4014,17 +4020,17 @@
         "effectiveDateTime": "2023-05-02T15:35:00+03:00",
         "valueQuantity": {
           "value": 140.0,
-          "unit": "mm[Hg]",
-          "system": "http://unitsofmeasure.org",
-          "code": "mm[Hg]",
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "50",
+          "unit": "мм.рт.ст.",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 140.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "50",
-                "unit": "мм.рт.ст."
+                "unit": "mm[Hg]",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
               }
             }
           ]
@@ -4101,17 +4107,17 @@
         "effectiveDateTime": "2023-05-02T15:35:00+03:00",
         "valueQuantity": {
           "value": 90.0,
-          "unit": "mm[Hg]",
-          "system": "http://unitsofmeasure.org",
-          "code": "mm[Hg]",
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "50",
+          "unit": "мм.рт.ст.",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 90.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "50",
-                "unit": "мм.рт.ст."
+                "unit": "mm[Hg]",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
               }
             }
           ]
@@ -4222,15 +4228,15 @@
         "effectiveDateTime": "2023-05-02T15:35:00+03:00",
         "valueQuantity": {
           "value": 21.0,
-          "unit": "kg/m^2",
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "532",
+          "unit": "кг/м^2",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 21.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "532",
-                "unit": "кг/м^2"
+                "unit": "kg/m^2"
               }
             }
           ]
@@ -4341,17 +4347,17 @@
         "effectiveDateTime": "2023-05-02T15:35:00+03:00",
         "valueQuantity": {
           "value": 158.0,
-          "unit": "cm",
-          "system": "http://unitsofmeasure.org",
-          "code": "cm",
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "3",
+          "unit": "см",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 158.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "3",
-                "unit": "см"
+                "unit": "cm",
+                "system": "http://unitsofmeasure.org",
+                "code": "cm"
               }
             }
           ]
@@ -4462,17 +4468,17 @@
         "effectiveDateTime": "2023-05-02T15:35:00+03:00",
         "valueQuantity": {
           "value": 53.0,
-          "unit": "kg",
-          "system": "http://unitsofmeasure.org",
-          "code": "kg",
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "9",
+          "unit": "кг",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 53.0,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "9",
-                "unit": "кг"
+                "unit": "kg",
+                "system": "http://unitsofmeasure.org",
+                "code": "kg"
               }
             }
           ]
@@ -4549,17 +4555,17 @@
         "effectiveDateTime": "2023-05-02T15:30:00+03:00",
         "valueQuantity": {
           "value": 11.14,
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": "53",
           "unit": "%",
-          "system": "http://unitsofmeasure.org",
-          "code": "%",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation",
               "valueQuantity": {
                 "value": 11.14,
-                "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
-                "code": "53",
-                "unit": "%"
+                "unit": "%",
+                "system": "http://unitsofmeasure.org",
+                "code": "%"
               }
             }
           ]

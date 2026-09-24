@@ -1,0 +1,29 @@
+{
+  "resourceType": "MedicationStatement",
+  "status": "recorded",
+  "subject": {
+    "display": "Test"
+  },
+  "medication": {
+    "concept": {
+      "text": "Test"
+    }
+  },
+  "dosage": [
+    {
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 12.0,
+          "periodUnit": "h",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/timing-exact",
+              "valueString": "true"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

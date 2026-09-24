@@ -382,6 +382,21 @@ class Conversion:
                           'code': self.scalar(tr, 'code', dest + '/code'),
                           'unit': self.scalar(tr, 'displayName', dest + '/unit')}
             out['extension'].append({'url': 'http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation', 'valueQuantity': translated})
+        # Prefer the source NSI quantity without inferring a conversion from UCUM.
+        translations = many(el, 'cda:translation')
+        if (len(translations) == 1 and
+                translations[0].get('codeSystem') == '1.2.643.5.1.13.13.11.1358'):
+            original_target = target + '/extension/0/valueQuantity'
+            primary = out.pop('extension')[0]['valueQuantity']
+            primary['extension'] = [{'url': 'http://hl7.org/fhir/StructureDefinition/iso21090-PQ-translation',
+                                     'valueQuantity': out}]
+            # Swap destinations simultaneously; retain both original numbers/units.
+            for row in self.trace.values():
+                row['targets'] = [
+                    target + x[len(original_target):] if x.startswith(original_target + '/') else
+                    original_target + x[len(target):] if x.startswith(target + '/') else x
+                    for x in row['targets']]
+            return primary
         return out
 
     def narrative(self, el, target):
@@ -539,6 +554,17 @@ class Conversion:
                 dosage['timing'] = {'repeat': {'frequency': 1,
                     'period': self.scalar(interval, 'value', dest + '/dosage/0/timing/repeat/period', 'CDA periodic interval', float),
                     'periodUnit': self.scalar(interval, 'unit', dest + '/dosage/0/timing/repeat/periodUnit')}}
+                specified = times[1].get('institutionSpecified')
+                if specified is not None:
+                    if specified not in ('true', 'false', '1', '0'):
+                        raise ValueError('Invalid CDA institutionSpecified boolean')
+                    dosage['timing']['repeat']['extension'] = [{
+                        'url': 'http://hl7.org/fhir/StructureDefinition/timing-exact',
+                        'valueBoolean': self.scalar(times[1], 'institutionSpecified',
+                            dest + '/dosage/0/timing/repeat/extension/0/valueBoolean',
+                            'CDA institutionSpecified -> inverse timing-exact',
+                            lambda x: x in ('false', '0'))}]
+
                 pre = one(node, 'cda:precondition/cda:criterion/cda:value')
                 dosage['patientInstruction'] = self.scalar(pre, 'text()', dest + '/dosage/0/patientInstruction')
                 route = one(node, 'cda:routeCode')

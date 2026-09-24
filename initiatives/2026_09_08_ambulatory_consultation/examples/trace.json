@@ -5951,7 +5951,7 @@
     "value": "30",
     "status": "mapped",
     "targets": [
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/value"
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0557"
@@ -5962,8 +5962,8 @@
     "value": "%",
     "status": "mapped",
     "targets": [
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/unit",
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/code"
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-0558"
@@ -5974,7 +5974,7 @@
     "value": "30",
     "status": "mapped",
     "targets": [
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0559"
@@ -5985,7 +5985,7 @@
     "value": "53",
     "status": "mapped",
     "targets": [
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0560"
@@ -5996,7 +5996,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0561"
@@ -6016,7 +6016,7 @@
     "value": "%",
     "status": "mapped",
     "targets": [
-      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/bf9e5eb9-8595-51ed-b891-c79dd7a2a2cf#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0563"
@@ -8352,9 +8352,11 @@
     "xpath": "/cda:ClinicalDocument[1]/cda:component[1]/cda:structuredBody[1]/cda:component[9]/cda:section[1]/cda:entry[1]/cda:substanceAdministration[1]/cda:effectiveTime[2]/@institutionSpecified",
     "line": 1104,
     "value": "false",
-    "status": "report-only",
-    "targets": [],
-    "rule": "GAP: no structured rule; source retained",
+    "status": "mapped",
+    "targets": [
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/timing/repeat/extension/0/valueBoolean"
+    ],
+    "rule": "CDA institutionSpecified -> inverse timing-exact",
     "id": "amb-map-0791"
   },
   {
@@ -8492,7 +8494,7 @@
     "value": "1",
     "status": "mapped",
     "targets": [
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/value"
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0805"
@@ -8503,8 +8505,8 @@
     "value": "{таблетка}",
     "status": "mapped",
     "targets": [
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/unit",
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/code"
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/unit",
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-0806"
@@ -8515,7 +8517,7 @@
     "value": "1",
     "status": "mapped",
     "targets": [
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/value"
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0807"
@@ -8526,7 +8528,7 @@
     "value": "293",
     "status": "mapped",
     "targets": [
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/code"
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0808"
@@ -8537,7 +8539,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/system"
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0809"
@@ -8557,7 +8559,7 @@
     "value": "шт",
     "status": "mapped",
     "targets": [
-      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/extension/0/valueQuantity/unit"
+      "MedicationStatement/2e16883a-7324-5c1c-9ee1-67e1f24fe826#/dosage/0/doseAndRate/0/doseQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0811"
@@ -8993,7 +8995,7 @@
     "value": "100",
     "status": "mapped",
     "targets": [
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/value"
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0852"
@@ -9004,8 +9006,8 @@
     "value": "U/s",
     "status": "mapped",
     "targets": [
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/unit",
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/code"
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-0853"
@@ -9016,7 +9018,7 @@
     "value": "100",
     "status": "mapped",
     "targets": [
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0854"
@@ -9027,7 +9029,7 @@
     "value": "168",
     "status": "mapped",
     "targets": [
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0855"
@@ -9038,7 +9040,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0856"
@@ -9058,7 +9060,7 @@
     "value": "Ед/с",
     "status": "mapped",
     "targets": [
-      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/8455d26b-3b6a-5c5f-83b8-3199dbe8005e#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0858"
@@ -9331,7 +9333,7 @@
     "value": "140",
     "status": "mapped",
     "targets": [
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/value"
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0885"
@@ -9342,8 +9344,8 @@
     "value": "mm[Hg]",
     "status": "mapped",
     "targets": [
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/unit",
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/code"
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-0886"
@@ -9354,7 +9356,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0887"
@@ -9374,7 +9376,7 @@
     "value": "140",
     "status": "mapped",
     "targets": [
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0889"
@@ -9385,7 +9387,7 @@
     "value": "50",
     "status": "mapped",
     "targets": [
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0890"
@@ -9396,7 +9398,7 @@
     "value": "мм.рт.ст.",
     "status": "mapped",
     "targets": [
-      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/9f8ccf0f-b4b1-5e45-abbd-f7e6f9d75915#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0891"
@@ -9629,7 +9631,7 @@
     "value": "90",
     "status": "mapped",
     "targets": [
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/value"
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0914"
@@ -9640,8 +9642,8 @@
     "value": "mm[Hg]",
     "status": "mapped",
     "targets": [
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/unit",
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/code"
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-0915"
@@ -9652,7 +9654,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0916"
@@ -9672,7 +9674,7 @@
     "value": "90",
     "status": "mapped",
     "targets": [
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0918"
@@ -9683,7 +9685,7 @@
     "value": "50",
     "status": "mapped",
     "targets": [
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0919"
@@ -9694,7 +9696,7 @@
     "value": "мм.рт.ст.",
     "status": "mapped",
     "targets": [
-      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/0454d85f-8f6b-5cf8-9993-e6b9e2dd8ea2#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0920"
@@ -9966,7 +9968,7 @@
     "value": "21",
     "status": "mapped",
     "targets": [
-      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/value"
+      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0947"
@@ -9977,7 +9979,7 @@
     "value": "kg/m^2",
     "status": "mapped",
     "targets": [
-      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/unit"
+      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/extension/0/valueQuantity/unit"
     ],
     "rule": "literal source unit; no silent UCUM repair",
     "id": "amb-map-0948"
@@ -9988,7 +9990,7 @@
     "value": "21",
     "status": "mapped",
     "targets": [
-      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0949"
@@ -9999,7 +10001,7 @@
     "value": "532",
     "status": "mapped",
     "targets": [
-      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0950"
@@ -10010,7 +10012,7 @@
     "value": "кг/м^2",
     "status": "mapped",
     "targets": [
-      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0951"
@@ -10021,7 +10023,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/3f32b1e8-6c00-53e7-bf52-32984b3a05f9#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0952"
@@ -10302,7 +10304,7 @@
     "value": "158",
     "status": "mapped",
     "targets": [
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/value"
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-0980"
@@ -10313,8 +10315,8 @@
     "value": "cm",
     "status": "mapped",
     "targets": [
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/unit",
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/code"
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-0981"
@@ -10325,7 +10327,7 @@
     "value": "158",
     "status": "mapped",
     "targets": [
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-0982"
@@ -10336,7 +10338,7 @@
     "value": "3",
     "status": "mapped",
     "targets": [
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-0983"
@@ -10347,7 +10349,7 @@
     "value": "см",
     "status": "mapped",
     "targets": [
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-0984"
@@ -10358,7 +10360,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/c14319be-8461-56fe-9356-209db17df756#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-0985"
@@ -10639,7 +10641,7 @@
     "value": "53",
     "status": "mapped",
     "targets": [
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/value"
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-1013"
@@ -10650,8 +10652,8 @@
     "value": "kg",
     "status": "mapped",
     "targets": [
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/unit",
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/code"
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-1014"
@@ -10662,7 +10664,7 @@
     "value": "53",
     "status": "mapped",
     "targets": [
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-1015"
@@ -10673,7 +10675,7 @@
     "value": "9",
     "status": "mapped",
     "targets": [
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-1016"
@@ -10684,7 +10686,7 @@
     "value": "кг",
     "status": "mapped",
     "targets": [
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-1017"
@@ -10695,7 +10697,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/a5da3a95-171e-5dd6-b725-a7bd83f39f97#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-1018"
@@ -10981,7 +10983,7 @@
     "value": "11.14",
     "status": "mapped",
     "targets": [
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/value"
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/value"
     ],
     "rule": "decimal",
     "id": "amb-map-1046"
@@ -10992,8 +10994,8 @@
     "value": "%",
     "status": "mapped",
     "targets": [
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/unit",
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/code"
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/unit",
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/code"
     ],
     "rule": "CDA PQ UCUM unit",
     "id": "amb-map-1047"
@@ -11004,7 +11006,7 @@
     "value": "1.2.643.5.1.13.13.11.1358",
     "status": "mapped",
     "targets": [
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/system"
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/system"
     ],
     "rule": "original unit code system",
     "id": "amb-map-1048"
@@ -11024,7 +11026,7 @@
     "value": "11.14",
     "status": "mapped",
     "targets": [
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/value"
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/value"
     ],
     "rule": "translated quantity",
     "id": "amb-map-1050"
@@ -11035,7 +11037,7 @@
     "value": "53",
     "status": "mapped",
     "targets": [
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/code"
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/code"
     ],
     "rule": "copy",
     "id": "amb-map-1051"
@@ -11055,7 +11057,7 @@
     "value": "%",
     "status": "mapped",
     "targets": [
-      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/extension/0/valueQuantity/unit"
+      "Observation/a215061a-a666-5c74-9140-6b9e3b585986#/valueQuantity/unit"
     ],
     "rule": "copy",
     "id": "amb-map-1053"
