@@ -1,0 +1,95 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>OperationOutcome </b></p><table class=\"grid\"><tr><td><b>Severity</b></td><td><b>Location</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td><td><b>Source</b></td></tr><tr><td>Warning</td><td>ConceptMap.group[0].source</td><td>Not Found</td><td>Source Code System https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement doesn't have all content (content = fragment), so the source codes cannot be checked</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>ConceptMap.group[0].target</td><td>Not Found</td><td>Target Code System http://unitsofmeasure.org doesn't have all content (content = not-present), so the target codes cannot be checked</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>ConceptMap.group[0]</td><td>Content not supported</td><td>The terminology server null used for the CodeSystem http://unitsofmeasure.org does not support batch validation (tx version Not Known), so the codes have not been validated</td><td/><td>InstanceValidator</td></tr></table></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
+      "valueString": "fsh-generated/resources/ConceptMap-core-cm-nsi-time-to-fhir.json"
+    }
+  ],
+  "issue": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 6
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 6
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+          "valueString": "InstanceValidator"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueCode": "CONCEPTMAP_GROUP_SOURCE_INCOMPLETE"
+        }
+      ],
+      "severity": "warning",
+      "code": "not-found",
+      "details": {
+        "text": "Source Code System https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement doesn't have all content (content = fragment), so the source codes cannot be checked"
+      },
+      "expression": [
+        "ConceptMap.group[0].source"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 6
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 6
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+          "valueString": "InstanceValidator"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueCode": "CONCEPTMAP_GROUP_TARGET_INCOMPLETE"
+        }
+      ],
+      "severity": "warning",
+      "code": "not-found",
+      "details": {
+        "text": "Target Code System http://unitsofmeasure.org doesn't have all content (content = not-present), so the target codes cannot be checked"
+      },
+      "expression": [
+        "ConceptMap.group[0].target"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 6
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 6
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+          "valueString": "InstanceValidator"
+        }
+      ],
+      "severity": "warning",
+      "code": "not-supported",
+      "details": {
+        "text": "The terminology server null used for the CodeSystem http://unitsofmeasure.org does not support batch validation (tx version Not Known), so the codes have not been validated"
+      },
+      "expression": [
+        "ConceptMap.group[0]"
+      ]
+    }
+  ]
+}

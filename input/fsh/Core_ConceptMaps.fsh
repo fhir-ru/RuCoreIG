@@ -1,0 +1,47 @@
+Instance: core-cm-nsi-time-to-fhir
+InstanceOf: ConceptMap
+Usage: #definition
+* url = "https://fhir.ru/ig/core/ConceptMap/core-cm-nsi-time-to-fhir"
+* version = "0.26.0"
+* name = "CoreCmNsiTimeToFhir"
+* title = "Единицы времени НСИ — единицы расписания FHIR"
+* status = #draft
+* experimental = true
+* date = "2026-09-24"
+* publisher = "HL7 FHIR Россия"
+* description = "Семь единиц времени НСИ МЗ РФ 1.2.643.5.1.13.13.11.1358 сопоставлены с UCUM для Timing.repeat.periodUnit и durationUnit. Соответствия подтверждены колонкой UCUM архивной копии НСИ (каталог API Crafter, обновление 25.10.2021); номер редакции НСИ не установлен. Это предложение RuCore, а не утверждённое Минздравом соответствие."
+* purpose = "Общее правило перевода кодов единиц расписания для прикладных профилей. Число не пересчитывается. Календарная семантика месяцев и лет определяется расписанием; карта не задаёт перевод в дни или секунды. Отсутствие кода означает отсутствие установленного соответствия."
+* sourceScopeCanonical = "https://fhir.ru/ig/core/ValueSet/core-vs-nsi-units-of-measurement"
+* targetScopeCanonical = "http://hl7.org/fhir/ValueSet/units-of-time"
+* group[0].source = "https://fhir.ru/ig/core/CodeSystem/core-cs-nsi-units-of-measurement"
+* group[0].target = "http://unitsofmeasure.org"
+* group[0].element[0].code = #21
+* group[0].element[0].display = "с"
+* group[0].element[0].target[0].code = #s
+* group[0].element[0].target[0].relationship = #equivalent
+* group[0].element[1].code = #22
+* group[0].element[1].display = "мин"
+* group[0].element[1].target[0].code = #min
+* group[0].element[1].target[0].relationship = #equivalent
+* group[0].element[2].code = #23
+* group[0].element[2].display = "ч"
+* group[0].element[2].target[0].code = #h
+* group[0].element[2].target[0].relationship = #equivalent
+* group[0].element[3].code = #24
+* group[0].element[3].display = "сут"
+* group[0].element[3].target[0].code = #d
+* group[0].element[3].target[0].relationship = #equivalent
+* group[0].element[4].code = #520
+* group[0].element[4].display = "нед"
+* group[0].element[4].target[0].code = #wk
+* group[0].element[4].target[0].relationship = #equivalent
+* group[0].element[5].code = #521
+* group[0].element[5].display = "мес"
+* group[0].element[5].target[0].code = #mo
+* group[0].element[5].target[0].relationship = #equivalent
+* group[0].element[5].target[0].comment = "Соответствие единицы в контексте Timing; не правило пересчёта календарного периода в фиксированное число дней или секунд."
+* group[0].element[6].code = #522
+* group[0].element[6].display = "год"
+* group[0].element[6].target[0].code = #a
+* group[0].element[6].target[0].relationship = #equivalent
+* group[0].element[6].target[0].comment = "Соответствие единицы в контексте Timing; не правило пересчёта календарного периода в фиксированное число дней или секунд."

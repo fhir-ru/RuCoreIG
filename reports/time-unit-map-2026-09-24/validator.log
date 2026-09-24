@@ -1,0 +1,26 @@
+FHIR Validation tool Version 6.10.4 (Git# 1b90fb13f77b). Built 2026-09-04T05:45:41.468Z (20 days old)
+  Java:   21.0.12.1 from /private/tmp/rucore-validation/jdk-21.0.12.1+1-jre/Contents/Home on aarch64 (64bit). 3072MB available
+  Paths:  Current = /Users/ekogan/git3/RuCoreIG, Package Cache = /Users/ekogan/.fhir/packages
+  Params: fsh-generated/resources/ConceptMap-core-cm-nsi-time-to-fhir.json -version 5.0.0 -ig fsh-generated/resources -tx n/a -output /tmp/time-map-validation.json
+  Locale: Russia/RU
+  Jurisdiction: Russian Federation
+Loading
+  Loading FHIR v5.0.0 from hl7.fhir.r5.core#5.0.0
+  Load hl7.terminology.r5#6.2.0 - 4288 resources (00:04.286)
+  Load hl7.fhir.uv.extensions.r5#5.2.0 - 759 resources (00:00.030)
+  Loaded FHIR - 8001 resources (00:00.000)
+  Terminology server null - Version n/a: No Terminology Server (00:00.000)
+  Load hl7.terminology#7.4.0 - 4181 resources (00:04.172)
+  Load fsh-generated/resources - 126 resources (00:00.069)
+  Package Summary: [hl7.fhir.r5.core#5.0.0, hl7.fhir.xver-extensions#0.1.0, hl7.terminology.r5#6.2.0, hl7.fhir.uv.extensions.r5#5.2.0, hl7.terminology#7.4.0]
+  Terminology Cache at /var/folders/q2/q5m76v8x55n6yqhrjk3xp8qr0000gn/T/default-tx-cache
+  Get set...
+  ...go! (00:00.901)
+Cached new session. Cache size = 1
+Sources to validate: fsh-generated/resources/ConceptMap-core-cm-nsi-time-to-fhir.json
+Validating
+  Validate fsh-generated/resources/ConceptMap-core-cm-nsi-time-to-fhir.json
+ 00:00.129
+Done. Times: Loading: 00:09.514, validation: 00:00.129. Memory = 437Mb
+
+Done. Times: Loading: 00:09.514, validation: 00:00.129. Max Memory = 3Gb

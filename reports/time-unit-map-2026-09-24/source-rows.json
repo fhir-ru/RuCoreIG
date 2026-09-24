@@ -1,0 +1,156 @@
+[
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "1",
+    "table_field_OKEI_CODE": "354",
+    "SYS_RECORDID": 21,
+    "table_field_UCUM": "s",
+    "table_field_PRINTNAME": "с",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 21,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "Секунда",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "с",
+    "table_field_CONVERSION_ID": 21
+  },
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "60",
+    "table_field_OKEI_CODE": "355",
+    "SYS_RECORDID": 22,
+    "table_field_UCUM": "min",
+    "table_field_PRINTNAME": "мин",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 22,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "Минута",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "мин",
+    "table_field_CONVERSION_ID": 21
+  },
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "3600",
+    "table_field_OKEI_CODE": "356",
+    "SYS_RECORDID": 23,
+    "table_field_UCUM": "h",
+    "table_field_PRINTNAME": "ч",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 23,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "Час",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "ч",
+    "table_field_CONVERSION_ID": 21
+  },
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "86400",
+    "table_field_OKEI_CODE": "359",
+    "SYS_RECORDID": 24,
+    "table_field_UCUM": "d",
+    "table_field_PRINTNAME": "сут",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 24,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "День",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "сут",
+    "table_field_CONVERSION_ID": 21
+  },
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "604800",
+    "table_field_OKEI_CODE": "360",
+    "SYS_RECORDID": 495,
+    "table_field_UCUM": "wk",
+    "table_field_PRINTNAME": "нед",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 520,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "Неделя",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "нед",
+    "table_field_CONVERSION_ID": 21
+  },
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "2629800",
+    "table_field_OKEI_CODE": "362",
+    "SYS_RECORDID": 496,
+    "table_field_UCUM": "mo",
+    "table_field_PRINTNAME": "мес",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 521,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "Месяц",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "мес",
+    "table_field_CONVERSION_ID": 21
+  },
+  {
+    "searchInput": null,
+    "table_field_dictionaryId": null,
+    "table_field_COEFFICIENT": "31557600",
+    "table_field_OKEI_CODE": "366",
+    "SYS_RECORDID": 497,
+    "table_field_UCUM": "a",
+    "table_field_PRINTNAME": "год",
+    "table_field_NSI_CODE_EEC": null,
+    "table_field_ID": 522,
+    "subscribed": null,
+    "table_field_CONVERSION_NAME": "с",
+    "table_field_FORMULA": null,
+    "table_field_NSI_ELEMENT_CODE_EEC": null,
+    "version": {
+      "id": 13887
+    },
+    "table_field_FULLNAME": "Год",
+    "table_field_MEASUREMENT": "Время",
+    "table_field_SHORTNAME": "год",
+    "table_field_CONVERSION_ID": 21
+  }
+]

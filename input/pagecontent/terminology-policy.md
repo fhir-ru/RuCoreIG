@@ -38,3 +38,7 @@ Canonical URI систем RuCore сохраняются. OID и ссылки н
 Предупреждения Publisher о недоступной терминологии разбираются отдельно от ошибок данных. Объявлять ложный `complete` или ослаблять привязки ради исчезновения таких сообщений недопустимо.
 
 Определения режимов соответствуют [FHIR R5 CodeSystem content modes](https://hl7.org/fhir/R5/codesystem-codesystem-content-mode.html).
+
+## Общие соответствия
+
+[Единицы времени НСИ — единицы расписания FHIR](ConceptMap-core-cm-nsi-time-to-fhir.html): семь соответствий для `Timing.repeat.periodUnit` и `durationUnit`, пример и границы применения. Карта позволяет использовать одно правило в наследованных профилях.

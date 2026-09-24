@@ -1,0 +1,12 @@
+{
+  "url": "https://beta.apicrafter.ru/tables/nsimz/4416/export/jsonl",
+  "catalog": "https://beta.apicrafter.ru/tables/nsimz/4416",
+  "retrieved": "2026-09-24",
+  "catalog_updated": "2021-10-25",
+  "full_download_sha256": "031eb0b76ad45f81be14b5b0983aaa557ad42f0fc59fe220200ff7b649622d4a",
+  "full_download_rows": 528,
+  "nsi_oid": "1.2.643.5.1.13.13.11.1358",
+  "nsi_version": null,
+  "note": "Archived mirror of NSI; internal version.id 13887 is not an NSI release version. Selected original rows retained.",
+  "baseline_commit": "a714bea98e52d8fa124adf6e920f41f98817c9b0"
+}
